@@ -1,29 +1,26 @@
-import { type Config } from 'tailwindcss'
+// tailwind.config.ts
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/**/*.{js,ts,jsx,tsx}", // Scan all files inside src
+    "./src/app/**/*.{ts,tsx}",
+    "./src/components/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        obsidian: '#1A1A1A', // Deep, matte black
-        bone: '#F5F5F4',     // Off-white, soft stone
-        gold: '#C5A059',     // Muted metallic executive gold
-        slate: '#4A4A4A',    // Mature grey for secondary text
-        ash: '#7A7A7A',      // Optional lighter grey for text
+        obsidian: "#0D0D0D",
+        bone: "#F9F8F6",
+        gold: "#B89655",
+        ash: "#454545",
       },
       fontFamily: {
-        display: ['Playfair Display', 'serif'], // Headers
-        body: ['Inter', 'sans-serif'],          // Body text
-      },
-      spacing: {
-        'section': '6rem',   // Custom spacing between sections
-        'section-lg': '10rem',
+        body: ["Inter", "sans-serif"],
+        display: ["Playfair Display", "serif"],
       },
     },
   },
   plugins: [],
-}
+};
 
 export default config;
