@@ -1,23 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Define the specific keys your components are looking for */
+  --font-display: var(--font-playfair), serif;
+  --font-body: var(--font-inter), sans-serif;
+  
+  /* Brand Colors */
+  --color-obsidian: #0D0D0D;
+  --color-bone: #F9F8F6;
+  --color-gold: #B89655;
+  --color-ash: #454545;
+}
 
 @layer base {
-  html {
-    font-family: theme(fontFamily.body);
-    background-color: theme(colors.bone);
-    color: theme(colors.obsidian);
-  }
-
   body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+    @apply bg-bone text-obsidian antialiased;
+    font-family: var(--font-body);
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: theme(fontFamily.display);
-    font-weight: 600;
-    letter-spacing: -0.02em;
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
   }
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bone); }
+::-webkit-scrollbar-thumb { background: var(--color-obsidian); border-radius: 10px; }
