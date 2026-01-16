@@ -10,6 +10,7 @@ const videos = [
 export default function Hero() {
   const [index, setIndex] = useState(0);
 
+  // Switch videos every 8 seconds for a calm, executive pace
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev === 0 ? 1 : 0));
@@ -18,16 +19,16 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-start bg-obsidian text-bone overflow-hidden">
+    <section className="relative h-screen w-full flex items-center justify-center bg-obsidian text-bone overflow-hidden">
       {/* 1. Cross-Fading Video Layer */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.35 }}
+            animate={{ opacity: 0.4 }} // Keeping opacity low for text readability
             exit={{ opacity: 0 }}
-            transition={{ duration: 3, ease: "easeInOut" }}
+            transition={{ duration: 3, ease: "easeInOut" }} // Soft 3-second transition
             className="absolute inset-0 w-full h-full"
           >
             <video
@@ -43,41 +44,37 @@ export default function Hero() {
         </AnimatePresence>
       </div>
 
-      {/* 2. Linear Gradient Scrim (Heavy on left for text readability) */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-obsidian via-obsidian/40 to-transparent" />
+      {/* 2. Professional Overlays (Spotlight Effect) */}
+      <div className="absolute inset-0 z-10 bg-radial-gradient from-transparent via-obsidian/20 to-obsidian/90" />
 
-      {/* 3. Left-Justified Content Layer */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 w-full">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-4xl"
-        >
-          {/* David Jackson Fernandez Tag */}
-          <p className="text-gold tracking-[0.5em] uppercase text-xs font-bold mb-6">
-            David Jackson Fernandez
-          </p>
-
-          {/* 3-Line Headline */}
-          <h1 className="text-5xl md:text-7xl font-display tracking-tighter uppercase leading-[1.1] mb-8 text-left">
-            FIN<span className="text-gold italic">TECH</span> INTEGRATION <br />
-            CORPORATE STRATEGY <br />
-            & MODERN DESIGN
-          </h1>
-          
-          {/* Executive Subtext */}
-          <div className="flex items-center gap-6">
-            <div className="h-px w-12 bg-gold" />
-            <p className="text-bone/50 text-[10px] uppercase tracking-[0.3em] font-light">
-              Strategic Growth • Digital Transformation • GFA 2030
+      {/* 3. The Content (Static and Sharp) */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
+        className="relative z-20 text-center px-6"
+      >
+        <h1 className="text-5xl md:text-8xl font-display mb-8 tracking-tighter uppercase leading-[0.9]">
+          AT THE INTERSECTION OF <br /> 
+          FIN<span className="text-gold italic">TECH</span>, CORPORATE <br />
+          STRATEGY AND DESIGN
+        </h1>
+        
+        <div className="flex flex-col items-center gap-6">
+          <div className="h-px w-24 bg-gold/50" />
+          <div className="space-y-1">
+            <p className="text-gold tracking-[0.5em] uppercase text-sm font-bold">
+              David Jackson Fernandez
+            </p>
+            <p className="text-bone/40 text-[10px] uppercase tracking-[0.3em] font-light">
+              Strategic Growth • Digital Integration • Aesthetic Innovation
             </p>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
 
-      {/* 4. Minimalist Architectural Detail (Vertical Line) */}
-      <div className="absolute left-12 bottom-0 w-px h-32 bg-gradient-to-t from-gold/50 to-transparent z-20 hidden md:block" />
+      {/* 4. Elegant Line Detail */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-t from-gold/40 to-transparent z-20" />
     </section>
   );
 }
