@@ -64,7 +64,8 @@ export default function Hero() {
           FIN<span className="text-gold italic">TECH</span>, CORPORATE <br />
         STRATEGY, AND DESIGN
       </h1>
-      <p className="text-bone/60 uppercase text-[10px] tracking-[0.3em] font-light">
+      <p className="text-bone/60 uppercase text-[14px] tracking-[0.3em]
+      font-normal">
         Leading Digital Transformation and Aesthetic Innovation
       </p>
     </motion.div>
@@ -76,13 +77,13 @@ export default function Hero() {
       transition={ { duration: 1.2, delay: 0.3 }}
       className="space-y-4 max-w-md lg:ml-auto"
       >
-      <h3 className="text-gold tracking-widest uppercase text-[10px] font-bold mb-6">Quick Stats</h3>
+      <h3 className="text-gold tracking-widest uppercase text-[14px] font-bold mb-6">Quick Stats</h3>
 
       {/* Stat Button 1 */}
       <div className="group flex items-center justify-between p-4 bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-gold/10 hover:border-gold/50 cursor-pointer">
         <div className="flex flex-col">
           <span className="text-gold font-bold text-lg">20+</span>
-          <span className="text-[10px] uppercase tracking-widest text-bone/60">Years in Finance</span>
+          <span className="text-[12px] uppercase tracking-widest text-bone/60">Years in Finance</span>
         </div>
         <div className="w-2 h-2 bg-gold/50 rotate-45 group-hover:bg-gold" />
       </div>
@@ -91,7 +92,7 @@ export default function Hero() {
       <div className="group flex items-center justify-between p-4 bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-gold/10 hover:border-gold/50 cursor-pointer">
         <div className="flex flex-col">
           <span className="text-gold font-bold text-lg">10+</span>
-          <span className="text-[10px] uppercase tracking-widest text-bone/60">Digital Projects</span>
+          <span className="text-[12px] uppercase tracking-widest text-bone/60">Digital Projects</span>
         </div>
         <div className="w-2 h-2 bg-gold/50 rotate-45 group-hover:bg-gold" />
       </div>
@@ -102,7 +103,7 @@ export default function Hero() {
           <span className="text-gold font-bold text-lg inline-flex items-center gap-2">
             GLOBAL
           </span>
-          <span className="text-[10px] uppercase tracking-widest text-bone/60">Operations & Strategy</span>
+          <span className="text-[12px] uppercase tracking-widest text-bone/60">Operations & Strategy</span>
         </div>
         <div className="w-2 h-2 bg-gold/50 rotate-45 group-hover:bg-gold" />
       </div>
