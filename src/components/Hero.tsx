@@ -53,12 +53,12 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.5, delay: 0.5 }}
         className="relative z-20 text-center px-6"
-      >
-        <h1 className="text-5xl md:text-8xl font-display mb-8 tracking-tighter uppercase leading-[0.9]">
-          AT THE INTERSECTION OF <br /> 
-          FIN<span className="text-gold italic">TECH</span>, CORPORATE <br />
-          STRATEGY AND DESIGN
-        </h1>
+      ><h1 className="text-5xl md:text-8xl font-display mb-8 tracking-tighter uppercase leading-[0.9] text-left">
+  AT THE INTERSECTION OF <br />
+  FIN<span className="text-gold italic">TECH</span> & CORPORATE <br />
+  STRATEGY AND DESIGN
+</h1>
+
         
         <div className="flex flex-col items-center gap-6">
           <div className="h-px w-24 bg-gold/50" />
