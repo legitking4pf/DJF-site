@@ -8,7 +8,7 @@ export default function CTODossier() {
       {/* 1. EXECUTIVE HEADER */}
       <section className="relative h-[70vh] w-full bg-obsidian flex items-end pb-20">
          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover grayscale opacity-30">
-          <source src="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Hero%20Video%20Background-P51XsIl1YPox7tNRCZLrxRKES9if7c" type="video/mp4" />
+          <source src="https://cdn.prod.website-files.com/68363d5a1fb3537423263b85/684082b08064a259b26c8ac3_final-p-1080.jpg" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-bone via-transparent to-transparent" />
         
