@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import { Cpu, ShieldCheck, Palette, Globe, ArrowUpRight } from 'lucide-react';
+import CTODossier from "@dossier/CTODossier.tsx"
 
 const specializations = [
 {
@@ -9,7 +10,7 @@ const specializations = [
   icon: <Cpu className="w-5 h-5" />,
   role: "Chief Technology Officer",
   metric: "Vision 2030 Alignment",
-  link: "dossier/CTODossier.tsx" 
+  link: CTODossier
 },
 {
   title: "Strategic Growth",
@@ -17,7 +18,7 @@ const specializations = [
   icon: <ShieldCheck className="w-5 h-5" />,
   role: "Chief Administrative Officer",
   metric: "Operational Compliance",
-  link: "/dossier/corporate-strategy"
+  link: ""
 },
 {
   title: "Lifestyle Investment",
