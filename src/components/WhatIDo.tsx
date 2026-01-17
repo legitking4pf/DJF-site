@@ -9,7 +9,7 @@ const specializations = [
   icon: <Cpu className="w-5 h-5" />,
   role: "Chief Technology Officer",
   metric: "Vision 2030 Alignment",
-  link: "/dossier/digital-integration/page.tsx"
+  link: "/dossier/digital-integration"
 },
 {
   title: "Strategic Growth",
