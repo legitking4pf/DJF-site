@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 
 export default function ExecutiveProfile() {
-  return (
+  return ( 
     <section className="relative py-32 bg-bone text-obsidian overflow-hidden border-t border-gold/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
