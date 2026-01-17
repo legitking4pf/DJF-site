@@ -10,7 +10,7 @@ export default function LandingPage() {
     <main className="relative">
       <Header />
       <Hero />
-      <ProfileFactSheet /> 
+      <ExecutiveProfile /> 
       <WhatIDo />
       <CareerFeed />
       <Footer />
