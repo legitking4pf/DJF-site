@@ -15,7 +15,7 @@ export default function CTODossier() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="text-gold tracking-[0.5em] text-[10px] font-bold uppercase mb-4 block">Strategic Briefing // 01</span>
-            <h1 className="text-4xl md:text-8xl font-display uppercase tracking-tighter leading-[0.85] mb-6">
+            <h1 className="text-5xl md:text-8xl font-display uppercase tracking-tighter leading-[0.85] mb-6">
               Digital <br /> Integration
             </h1>
             <div className="flex items-center gap-4 text-obsidian/60 uppercase text-xs tracking-widest font-medium">
@@ -64,8 +64,8 @@ export default function CTODossier() {
               <h2 className="text-4xl font-display uppercase tracking-tighter mb-8">
                 The Group <br /> <span className="text-gold">Technical Roadmap</span>
               </h2>
-              <p className="text-ash/30 font-light leading-loose mb-10">
-                Our roadmap is a meticulously phased digital transformation aimed at achieving 100% digital integration. As CTO, my focus is on ensuring that technology serves as a seamless bridge for corporate strategy and lifestyle investments. see more at <a href="www.bancatlan.hn" target="blank">Banco Atlantida Honduras</a>
+              <p className="text-ash/95 font-light leading-loose mb-10">
+                Our roadmap is a meticulously phased digital transformation aimed at achieving 100% digital integration. As CTO, my focus is on ensuring that technology serves as a seamless bridge for corporate strategy and lifestyle investments. see more at <a href="www.bancatlan.hn" className="inline-flex items-center gap-2 text-gold text-[10px] uppercase tracking-[0.4em] font-bold hover:gap-4 transition-all" target="blank">Banco Atlantida Honduras<ArrowUpRight className="w-3 h-3" /></a>
               </p>
               
               <div className="space-y-6">
