@@ -15,7 +15,7 @@ export default function CTODossier() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="text-gold tracking-[0.5em] text-[10px] font-bold uppercase mb-4 block">Strategic Briefing // 01</span>
-            <h1 className="text-6xl md:text-8xl font-display uppercase tracking-tighter leading-[0.85] mb-6">
+            <h1 className="text-4xl md:text-8xl font-display uppercase tracking-tighter leading-[0.85] mb-6">
               Digital <br /> Integration
             </h1>
             <div className="flex items-center gap-4 text-obsidian/60 uppercase text-xs tracking-widest font-medium">
@@ -23,7 +23,7 @@ export default function CTODossier() {
               <span className="text-gold">•</span>
               <span>CTO Office</span>
               <span className="text-gold">•</span>
-              <span>Vision 2030</span>
+              <span>Core 2030</span>
             </div>
           </motion.div>
         </div>
@@ -62,10 +62,10 @@ export default function CTODossier() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
             <div>
               <h2 className="text-4xl font-display uppercase tracking-tighter mb-8">
-                The 2026-2030 <br /> <span className="text-gold">Technical Roadmap</span>
+                The Group <br /> <span className="text-gold">Technical Roadmap</span>
               </h2>
-              <p className="text-ash/80 font-light leading-loose mb-10">
-                Our roadmap is a meticulously phased digital transformation aimed at achieving 100% digital integration by 2030. As CTO, my focus is on ensuring that technology serves as a seamless bridge for corporate strategy and lifestyle investments.
+              <p className="text-ash/30 font-light leading-loose mb-10">
+                Our roadmap is a meticulously phased digital transformation aimed at achieving 100% digital integration. As CTO, my focus is on ensuring that technology serves as a seamless bridge for corporate strategy and lifestyle investments. see more at <a href="www.bancatlan.hn" target="blank">Banco Atlantida Honduras</a>
               </p>
               
               <div className="space-y-6">
