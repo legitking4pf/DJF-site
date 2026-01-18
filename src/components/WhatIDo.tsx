@@ -47,7 +47,7 @@ export default function WhatIDo() {
             <h2 className="text-5xl md:text-6xl font-display tracking-tighter mb-6 uppercase">
               Strategic <span className="text-gold italic font-light">Ecosystems</span>
             </h2>
-            <p className="text-ash text-sm uppercase tracking-[0.2em] font-light max-w-md">
+            <p className="text-[#838383] text-sm uppercase tracking-[0.2em] font-light max-w-md">
               A comprehensive scope of influence across Digital Banking, Corporate Administration, and High-End Design.
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function WhatIDo() {
                 </div>
                 
                 <h3 className="text-2xl font-display mb-4 uppercase tracking-tight">{item.title}</h3>
-                <p className="text-sm text-ash font-light leading-relaxed mb-8 max-w-xs">
+                <p className="text-sm text-[#838383] font-light leading-relaxed mb-8 max-w-xs">
                   {item.desc}
                 </p>
               </div>
