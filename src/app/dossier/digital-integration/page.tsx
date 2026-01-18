@@ -30,10 +30,11 @@ export default function CTODossier() {
             animate={{ opacity: 0.3, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 2, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full object-cover grayscale"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-t from-bone via-transparent to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#00000087] via-transparent to-bone z-10" />
+
       </div>
 
       {/* 2. EXECUTIVE HEADER CONTENT */}

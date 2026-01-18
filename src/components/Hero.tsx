@@ -37,7 +37,7 @@ export default function Hero() {
             transition={ { duration: 3 }}
             className="absolute inset-0 w-full h-full"
             >
-            <video autoPlay muted loop playsInline className="h-full w-full object-cover grayscale">
+            <video autoPlay muted loop playsInline className="h-full w-full object-cover">
               <source src={videos[index]} type="video/mp4" />
           </video>
         </motion.div>
