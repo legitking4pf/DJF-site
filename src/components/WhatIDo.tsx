@@ -17,7 +17,7 @@ const specializations = [
   icon: <ShieldCheck className="w-5 h-5" />,
   role: "Chief Administrative Officer",
   metric: "Operational Compliance",
-  link: ""
+  link: "/src/app/dossier/strategic-growth/page.tsx"
 },
 {
   title: "Lifestyle Investment",

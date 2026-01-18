@@ -1,25 +1,87 @@
 "use client";
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function ExecutiveProfile() {
+  const positions = [
+    {
+      role: "Chief Administration Officer",
+      company: "Grupo Financiero Atlántida",
+      url: "https://www.gfa.hn", // Placeholder - verify actual GFA corporate link
+      tag: "Group Governance"
+    },
+    {
+      role: "Chief Technology Officer",
+      company: "Banco Atlántida Honduras",
+      url: "https://www.bancatlan.hn",
+      tag: "Digital Core"
+    },
+    {
+      role: "Founder",
+      company: "KONCEPTO Décor",
+      url: "https://www.konceptodecor.com", // Placeholder
+      tag: "Design Culture"
+    }
+  ];
+
   return ( 
     <section className="relative py-32 bg-bone text-obsidian overflow-hidden border-t border-gold/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
-        {/* SECTION 1: HEADER & SIGNATURE */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-end">
-          <div className="lg:col-span-8">
+        {/* SECTION 1: HEADER & POSITIONS */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+          <div className="lg:col-span-7">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl font-display uppercase tracking-tighter leading-none"
+              className="text-5xl md:text-7xl font-display uppercase tracking-tighter leading-none mb-12"
             >
               Strategic <br /> Leadership
             </motion.h2>
+
+            {/* THE EXECUTIVE POSITIONS LEDGER */}
+            <div className="space-y-0 border-t border-obsidian/10">
+              {positions.map((pos, idx) => (
+                <motion.a
+                  key={idx}
+                  href={pos.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="group flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-obsidian/10 hover:bg-gold/[0.03] transition-colors px-2"
+                >
+                  <div>
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold block mb-1">
+                      {pos.tag}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-display uppercase group-hover:translate-x-2 transition-transform duration-300">
+                      {pos.role}
+                    </h3>
+                  </div>
+                  <div className="flex items-center gap-3 mt-2 md:mt-0">
+                    <span className="text-xs uppercase tracking-widest text-obsidian/40 group-hover:text-obsidian transition-colors">
+                      {pos.company}
+                    </span>
+                    <ArrowUpRight size={16} className="text-gold opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </div>
+                </motion.a>
+              ))}
+            </div>
           </div>
-          <div className="lg:col-span-4 lg:text-right">
-            <p className="text-gold font-serif italic text-2xl">David Jackson Fernandez</p>
-            <p className="text-obsidian/40 text-[10px] uppercase tracking-[0.3em] mt-2">Executive Profile — GFA Site 2026</p>
+
+          <div className="lg:col-span-5 lg:text-right flex flex-col justify-between py-2">
+            <div>
+              <p className="text-gold font-serif italic text-3xl">David Jackson Fernandez</p>
+              <p className="text-obsidian/40 text-[10px] uppercase tracking-[0.3em] mt-2">Executive Profile — GFA Site 2026</p>
+            </div>
+            
+            {/* Minimalist QR/Auth Graphic (Optional style element) */}
+            <div className="hidden lg:block opacity-20 mt-auto self-end">
+                <div className="w-16 h-1 bg-gold mb-1" />
+                <div className="w-12 h-1 bg-gold" />
+            </div>
           </div>
         </div>
 
