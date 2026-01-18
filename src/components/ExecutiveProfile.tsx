@@ -113,21 +113,21 @@ export default function ExecutiveProfile() {
           {/* Right: Hard Metrics (The "Robust" side) */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-white/40 p-8 border border-white/60 backdrop-blur-md">
-              <h4 className="text-gold uppercase tracking-widest text-[10px] font-bold mb-8">Governance & Impact</h4>
+              <h4 className="text-gold uppercase tracking-widest text-[14px] font-bold mb-8">Governance & Impact</h4>
               
               <div className="space-y-8">
                 <div>
                   <p className="text-3xl font-display">CENTRAL AMERICA</p>
-                  <p className="text-[10px] text-obsidian/40 uppercase tracking-widest">Regional Strategic Hub</p>
+                  <p className="text-[12px] text-obsidian/40 uppercase tracking-widest">Regional Strategic Hub</p>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="text-2xl font-display">10+</p>
-                    <p className="text-[10px] text-obsidian/40 uppercase tracking-widest italic">Digital Enterprises</p>
+                    <p className="text-[12px] text-obsidian/40 uppercase tracking-widest italic">Digital Enterprises</p>
                   </div>
                   <div>
                     <p className="text-2xl font-display">2030</p>
-                    <p className="text-[10px] text-obsidian/40 uppercase tracking-widest italic">Vision Horizon</p>
+                    <p className="text-[12px] text-obsidian/40 uppercase tracking-widest italic">Vision Horizon</p>
                   </div>
                 </div>
               </div>
