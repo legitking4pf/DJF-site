@@ -113,22 +113,22 @@ export default function CTODossier() {
                <div className="p-6 border border-gold/30 flex flex-col items-center text-center">
                   <Database className="text-gold mb-4" size={32} />
                   <span className="text-2xl font-display">99.9%</span>
-                  <span className="text-[10px] uppercase tracking-widest text-[#B2B2B2]">System Uptime Target</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[#838383]">System Uptime Target</span>
                </div>
                <div className="p-6 border border-gold/30 flex flex-col items-center text-center">
                   <Shield className="text-gold mb-4" size={32} />
                   <span className="text-2xl font-display">ISO/IEC</span>
-                  <span className="text-[10px] uppercase tracking-widest text-[#B2B2B2]">27001 Compliance</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[#838383]">27001 Compliance</span>
                </div>
                <div className="p-6 border border-gold/30 flex flex-col items-center text-center">
                   <Cpu className="text-gold mb-4" size={32} />
                   <span className="text-2xl font-display">4.0M+</span>
-                  <span className="text-[10px] uppercase tracking-widest text-[#B2B2B2]">Active User Capacity</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[#838383]">Active User Capacity</span>
                </div>
                <div className="p-6 border border-gold/30 flex flex-col items-center text-center">
                   <Globe className="text-gold mb-4" size={32} />
                   <span className="text-2xl font-display">HND/ES/GT</span>
-                  <span className="text-[10px] uppercase tracking-widest text-[#B2B2B2]">Regional Markets</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[#838383]">Regional Markets</span>
                </div>
             </div>
           </div>
