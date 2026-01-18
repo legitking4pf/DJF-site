@@ -53,7 +53,7 @@ export default function ExecutiveProfile() {
                   className="group flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-obsidian/10 hover:bg-gold/[0.03] transition-colors px-2"
                 >
                   <div>
-                    <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold block mb-1">
+                    <span className="text-[12px] uppercase tracking-[0.3em] text-gold font-bold block mb-1">
                       {pos.tag}
                     </span>
                     <h3 className="text-xl md:text-2xl font-display uppercase group-hover:translate-x-2 transition-transform duration-300">
@@ -74,7 +74,7 @@ export default function ExecutiveProfile() {
           <div className="lg:col-span-5 lg:text-right flex flex-col justify-between py-2">
             <div>
               <p className="text-gold font-serif italic text-3xl">David Jackson Fernandez</p>
-              <p className="text-obsidian/40 text-[10px] uppercase tracking-[0.3em] mt-2">Executive Profile — GFA Site 2026</p>
+              <p className="text-obsidian/40 text-[12px] uppercase tracking-[0.3em] mt-2">Executive Profile — GFA</p>
             </div>
             
             {/* Minimalist QR/Auth Graphic (Optional style element) */}
@@ -105,7 +105,7 @@ export default function ExecutiveProfile() {
                 <div className="w-10 h-10 border border-gold rounded-full flex items-center justify-center group-hover:bg-gold transition-all">
                   <span className="text-gold group-hover:text-bone">↓</span>
                 </div>
-                <span className="text-[10px] uppercase tracking-[0.4em] font-bold">Download Executive Dossier</span>
+                <span className="text-[12px] uppercase tracking-[0.4em] font-bold">Download Executive Dossier</span>
               </button>
             </div>
           </div>
@@ -134,8 +134,8 @@ export default function ExecutiveProfile() {
             </div>
             
             <div className="p-8 border border-gold/20">
-              <p className="text-[10px] uppercase tracking-widest text-obsidian/60 mb-4">Core Competencies</p>
-              <ul className="text-xs space-y-2 uppercase tracking-tighter font-medium">
+              <p className="text-14px uppercase tracking-widest text-obsidian/60 mb-4">Core Competencies</p>
+              <ul className="text-12 space-y-2 uppercase tracking-tighter font-medium">
                 <li>• Digital Banking Infrastructure</li>
                 <li>• Strategic Corporate Governance</li>
                 <li>• Minimalist Aesthetic Innovation</li>
