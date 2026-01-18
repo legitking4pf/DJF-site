@@ -1,18 +1,44 @@
 "use client";
-import { motion } from 'framer-motion';
-import { Shield, Zap, Database, BarChart3, Layers, Globe, Cpu, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { useState, useEffect } from 'react'; // Added missing hooks
+import { motion, AnimatePresence } from 'framer-motion'; // Added AnimatePresence
+import { Shield, Zap, Database, Globe, Cpu, ArrowUpRight } from 'lucide-react';
+
+const heroImages = [
+  'https://cdn.prod.website-files.com/68363d5a1fb3537423263b85/684082b08064a259b26c8ac3_final-p-1080.jpg',
+  'https://www.bancatlan.hn/sala-de-prensa/img/portada-09-02-2024-111-juntos.jpg'
+];
 
 export default function CTODossier() {
+  const [index, setIndex] = useState(0);
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
+    }, 8000);
+    return () => clearInterval(timer);
+  }, []);
+  
   return (
-    <main className="min-h-screen bg-bone text-obsidian pb-24">
-      {/* 1. EXECUTIVE HEADER */}
-      <section className="relative h-[70vh] w-full bg-obsidian flex items-end pb-20">
-         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover grayscale opacity-30">
-          <source src="https://cdn.prod.website-files.com/68363d5a1fb3537423263b85/684082b08064a259b26c8ac3_final-p-1080.jpg" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-bone via-transparent to-transparent" />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+    <main className="min-h-screen bg-bone text-obsidian pb-24 relative">
+      {/* 1. BACKGROUND IMAGE TRANSITION ENGINE */}
+      <div className="absolute inset-0 h-[70vh] z-0 bg-obsidian overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={index}
+            src={heroImages[index]}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 0.3, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            className="absolute inset-0 w-full h-full object-cover grayscale"
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-t from-bone via-transparent to-transparent z-10" />
+      </div>
+
+      {/* 2. EXECUTIVE HEADER CONTENT */}
+      <section className="relative z-20 h-[70vh] flex items-end pb-20 px-6">
+        <div className="max-w-7xl mx-auto w-full">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="text-gold tracking-[0.5em] text-[10px] font-bold uppercase mb-4 block">Strategic Briefing // 01</span>
             <h1 className="text-5xl md:text-8xl font-display uppercase tracking-tighter leading-[0.85] mb-6">
