@@ -31,7 +31,7 @@ export default function CAODossier() {
             animate={{ opacity: 0.25, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 3 }}
-            className="absolute inset-0 w-full h-full object-cover grayscale"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
         {/* Your requested Top Black Gradient to Bottom Bone Gradient */}
@@ -42,7 +42,6 @@ export default function CAODossier() {
       <section className="relative z-20 h-[70vh] flex items-end pb-20 px-6 lg:px-12">
         <div className="max-w-7xl mx-auto w-full">
           <Link href="/" className="inline-flex items-center gap-2 text-gold text-[10px] uppercase tracking-[0.4em] mb-12 hover:gap-4 transition-all">
-            <ArrowLeft size={12} /> Return to Executive HQ
           </Link>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="text-gold tracking-[0.5em] text-[10px] font-bold uppercase mb-4 block">Strategic Briefing // 02</span>
