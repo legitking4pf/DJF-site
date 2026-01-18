@@ -42,7 +42,7 @@ export default function CTODossier() {
         <div className="max-w-7xl mx-auto w-full">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="text-gold tracking-[0.5em] text-[10px] font-bold uppercase mb-4 block">Strategic Briefing // 01</span>
-            <h1 className=" text-bold text-5xl md:text-8xl font-display uppercase tracking-tighter leading-[0.85] mb-6">
+            <h1 className=" font-bold text-5xl md:text-8xl font-display uppercase tracking-tighter leading-[0.85] mb-6">
               Digital <br /> Integration
             </h1>
             <div className="flex items-center gap-4 text-obsidian/60 uppercase text-xs tracking-widest font-medium">
@@ -113,22 +113,22 @@ export default function CTODossier() {
                <div className="p-6 border border-gold/30 flex flex-col items-center text-center">
                   <Database className="text-gold mb-4" size={32} />
                   <span className="text-2xl font-display">99.9%</span>
-                  <span className="text-[10px] uppercase tracking-widest text-ash">System Uptime Target</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[#B2B2B2]">System Uptime Target</span>
                </div>
                <div className="p-6 border border-gold/30 flex flex-col items-center text-center">
                   <Shield className="text-gold mb-4" size={32} />
                   <span className="text-2xl font-display">ISO/IEC</span>
-                  <span className="text-[10px] uppercase tracking-widest text-ash">27001 Compliance</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[#B2B2B2]">27001 Compliance</span>
                </div>
                <div className="p-6 border border-gold/30 flex flex-col items-center text-center">
                   <Cpu className="text-gold mb-4" size={32} />
                   <span className="text-2xl font-display">4.0M+</span>
-                  <span className="text-[10px] uppercase tracking-widest text-ash">Active User Capacity</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[#B2B2B2]">Active User Capacity</span>
                </div>
                <div className="p-6 border border-gold/30 flex flex-col items-center text-center">
                   <Globe className="text-gold mb-4" size={32} />
                   <span className="text-2xl font-display">HND/ES/GT</span>
-                  <span className="text-[10px] uppercase tracking-widest text-ash">Regional Markets</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[#B2B2B2]">Regional Markets</span>
                </div>
             </div>
           </div>
