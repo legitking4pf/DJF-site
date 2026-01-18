@@ -33,7 +33,7 @@ export default function CTODossier() {
             className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00000087] via-transparent to-bone z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#000000B0] via-transparent to-bone z-10" />
 
       </div>
 
@@ -42,7 +42,7 @@ export default function CTODossier() {
         <div className="max-w-7xl mx-auto w-full">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="text-gold tracking-[0.5em] text-[10px] font-bold uppercase mb-4 block">Strategic Briefing // 01</span>
-            <h1 className="text-5xl md:text-8xl font-display uppercase tracking-tighter leading-[0.85] mb-6">
+            <h1 className=" text-bold text-5xl md:text-8xl font-display uppercase tracking-tighter leading-[0.85] mb-6">
               Digital <br /> Integration
             </h1>
             <div className="flex items-center gap-4 text-obsidian/60 uppercase text-xs tracking-widest font-medium">
