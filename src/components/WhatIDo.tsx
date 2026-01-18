@@ -52,7 +52,7 @@ export default function WhatIDo() {
             </p>
           </div>
           <div className="hidden md:block h-px flex-1 bg-gold/20 mx-12 mb-4" />
-          <span className="text-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4">
+          <span className="text-gold uppercase tracking-[0.4em] text-[12px] font-bold mb-4">
             David Jackson Fernandez
           </span>
         </div>
@@ -75,7 +75,7 @@ export default function WhatIDo() {
                   <div className="p-3 border border-gold/30 text-gold rounded-sm group-hover:bg-gold group-hover:text-obsidian transition-colors duration-500">
                     {item.icon}
                   </div>
-                  <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-bold">
+                  <span className="text-[14px] uppercase tracking-[0.3em] text-gold font-bold">
                     {item.metric}
                   </span>
                 </div>
@@ -88,14 +88,14 @@ export default function WhatIDo() {
 
               <div className="space-y-6">
                 <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-bone/40 mb-1">Functional Role</span>
-                  <span className="text-sm font-medium tracking-wide">{item.role}</span>
+                  <span className="text-[12px] uppercase tracking-[0.2em] text-bone/40 mb-1">Functional Role</span>
+                  <span className="text-[14px] font-medium tracking-wide">{item.role}</span>
                 </div>
 
                 {/* External Dossier Link */}
                 <a 
                   href={item.link} 
-                  className="inline-flex items-center gap-2 text-gold text-[10px] uppercase tracking-[0.4em] font-bold hover:gap-4 transition-all"
+                  className="inline-flex items-center gap-2 text-gold text-[12px] uppercase tracking-[0.4em] font-bold hover:gap-4 transition-all"
                 >
                   View Full Dossier <ArrowUpRight className="w-3 h-3" />
                 </a>
