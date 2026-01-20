@@ -1,7 +1,15 @@
 {
   "name": "DJF-site",
+  "description": "",
   "version": "0.1.0",
   "private": true,
+  "company": {
+    "brand": "Legit Creations",
+    "developer": "King Marvis",
+    "creator": "King Marvis",
+    "git": "https://github.com/legitking4pf",
+    "github repository": "https://github.com/legitking4pf/DJF-site"
+  },
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build",
