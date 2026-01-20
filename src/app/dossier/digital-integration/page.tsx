@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'; // Added AnimatePresenc
 import { Shield, Zap, Database, Globe, Cpu, ArrowUpRight } from 'lucide-react';
 
 const heroImages = [
-  'https://cdn.prod.website-files.com/68363d5a1fb3537423263b85/684082b08064a259b26c8ac3_final-p-1080.jpg',
-  'https://www.bancatlan.hn/sala-de-prensa/img/portada-09-02-2024-111-juntos.jpg'
+  'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/portada-09-02-2024-111-juntos-tdHAoirlE7TMdek7ReGI43HDBa3wqm.jpg',
+  'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/portada-09-02-2024-111-juntos-tdHAoirlE7TMdek7ReGI43HDBa3wqm.jpg'
 ];
 
 export default function CTODossier() {

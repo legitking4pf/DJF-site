@@ -5,8 +5,8 @@ import { ShieldCheck, BarChart, Scale, Users, Globe, FileCheck, ArrowLeft, Arrow
 import Link from 'next/link';
 
 const caoImages = [
-  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070', // Modern Architecture/Corporate HQ
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2069'  // High-end Boardroom
+  'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM',
+  'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/ebn-Atlantida-zpqvrZCN2sUPlWwyYQVopLkJd5s3RF.jpg'  
 ];
 
 export default function CAODossier() {
