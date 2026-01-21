@@ -15,8 +15,9 @@ const config: Config = {
         ash: "#454545",
       },
       fontFamily: {
-        body: ["Inter", "sans-serif"],
-        display: ["Playfair Display", "serif"],
+        serif: ["var(--font-primary)", "serif"],
+        sans: ["var(--font-secondary)", "sans-serif"],
+        mono: ["var(--font-tertiary)", "monospace"],
       },
     },
   },

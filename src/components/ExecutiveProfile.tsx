@@ -107,7 +107,7 @@ export default function ExecutiveProfile() {
               </p>
             </div>
             <div className="pt-6">
-  <Link href="/dossier" className="flex items-center gap-6 group w-fit">
+  <Link href="/dossier/executive-profile/page.tsx" className="flex items-center gap-6 group w-fit">
     <div className="w-14 h-14 border border-gold rounded-full flex items-center justify-center group-hover:bg-gold transition-all duration-500">
       <ArrowRight className="text-gold group-hover:text-bone w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
     </div>
