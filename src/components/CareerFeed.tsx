@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Plus, ExternalLink, Clock } from 'lucide-react';
+import { ArrowUpRight, ExternalLink, Clock } from 'lucide-react';
 
 const ledgerData = [
   {
@@ -37,7 +37,7 @@ const ledgerData = [
   }
 ];
 
-export default function CareerFeed() {
+export default function ExecutiveLedger() {
   return (
     <section id="ledger" className="py-20 md:py-32 bg-[#F8F8F8] text-obsidian px-6">
       <div className="max-w-7xl mx-auto">
@@ -48,7 +48,7 @@ export default function CareerFeed() {
             <span className="text-gold font-bold text-[10px] md:text-xs uppercase tracking-[0.4em] mb-4 block">
               Intelligence & Affiliates
             </span>
-            <h2 className="text-4xl md:text-6xl font-serif italic tracking-tighter leading-none mb-6">
+            <h2 className="text-5xl md:text-8xl font-serif italic tracking-tighter leading-none mb-6">
               The Executive <span className="font-black not-italic text-obsidian">Ledger</span>
             </h2>
           </div>
@@ -57,7 +57,7 @@ export default function CareerFeed() {
           </p>
         </div>
 
-        {/* Responsive Grid System */}
+        {/* Responsive Grid System - No 'Add Feed' Box */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
           {ledgerData.map((item, index) => (
             <motion.article 
@@ -92,7 +92,7 @@ export default function CareerFeed() {
                   {item.title}
                 </h3>
 
-                <p className="text-ash text-sm md:text-[15px] font-light leading-relaxed mb-8 line-clamp-3">
+                <p className="text-ash text-[13px] md:text-[14px] font-light leading-relaxed mb-8 line-clamp-3">
                   {item.desc} [cite: 2025-12-09]
                 </p>
 
@@ -101,7 +101,7 @@ export default function CareerFeed() {
                   <a 
                     href={item.link}
                     className={`flex items-center gap-2 text-[11px] font-black uppercase tracking-widest transition-all duration-300
-                      ${item.isHighlight ? "bg-gold text-obsidian px-4 py-2 rounded-sm shadow-lg shadow-gold/20" : "text-obsidian hover:text-gold"}`}
+                      ${item.isHighlight ? "bg-gold text-obsidian px-5 py-2.5 rounded-sm shadow-lg shadow-gold/20" : "text-obsidian hover:text-gold"}`}
                   >
                     {item.cta} <ArrowUpRight size={14} />
                   </a>
@@ -110,19 +110,6 @@ export default function CareerFeed() {
               </div>
             </motion.article>
           ))}
-
-          {/* Add New Update Placeholder: Simplified for Mobile */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="border-2 border-dashed border-gray-200 flex flex-col items-center justify-center p-12 text-center group hover:border-gold/40 transition-all rounded-sm min-h-[400px]"
-          >
-            <div className="w-16 h-16 rounded-full border border-gray-100 flex items-center justify-center mb-6 group-hover:bg-gold transition-all duration-500">
-              <Plus className="text-ash group-hover:text-white" size={32} />
-            </div>
-            <h4 className="text-[11px] font-bold uppercase tracking-[0.4em] text-ash mb-2">Post New Update</h4>
-            <p className="text-[10px] text-ash/40 italic">CAO Administrative Access Only</p>
-          </motion.div>
         </div>
       </div>
     </section>
