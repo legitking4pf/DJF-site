@@ -52,7 +52,7 @@ export default function ExecutiveLedger() {
               The Executive <span className="font-black not-italic text-obsidian">Ledger</span>
             </h2>
           </div>
-          <p className="text-ash text-sm md:text-base max-w-sm font-light leading-relaxed">
+          <p className="text-[16px] md:text-base max-w-sm font-light leading-relaxed">
             Personalized updates on digital transformation, strategic investments, and design milestones across the GFA ecosystem. [cite: 2025-12-09]
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function ExecutiveLedger() {
                   className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-obsidian/90 backdrop-blur-md text-white text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 border border-gold/30">
+                  <span className="bg-obsidian/90 backdrop-blur-md text-white text-[10px] md: text-[13px] font-bold uppercase tracking-widest px-3 py-1.5 border border-gold/30">
                     {item.category}
                   </span>
                 </div>
@@ -84,15 +84,15 @@ export default function ExecutiveLedger() {
 
               {/* Card Body */}
               <div className="flex flex-col flex-grow p-6 md:p-8">
-                <div className="flex items-center gap-2 text-ash/40 text-[10px] font-medium mb-4">
-                  <Clock size={10} /> <span>{item.date}</span>
+                <div className="flex items-center gap-2 text-[10px] font-medium mb-4">
+                  <Clock size={12} /> <span>{item.date}</span>
                 </div>
 
                 <h3 className="text-xl md:text-2xl font-bold leading-tight uppercase tracking-tighter mb-4 group-hover:text-gold transition-colors duration-300">
                   {item.title}
                 </h3>
 
-                <p className="text-ash text-[13px] md:text-[14px] font-light leading-relaxed mb-8 line-clamp-3">
+                <p className="text-ash text-[14px] font-light leading-relaxed mb-8 line-clamp-3">
                   {item.desc} [cite: 2025-12-09]
                 </p>
 
@@ -105,7 +105,7 @@ export default function ExecutiveLedger() {
                   >
                     {item.cta} <ArrowUpRight size={14} />
                   </a>
-                  <span className="text-[9px] text-ash/30 font-serif italic">David Jackson Fernández</span>
+                  <span className="text-[10px] font-serif italic">David Jackson Fernández</span>
                 </div>
               </div>
             </motion.article>
