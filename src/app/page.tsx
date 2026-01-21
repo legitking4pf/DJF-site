@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import ExecutiveProfile from '@/components/ExecutiveProfile';
+import StrategicGallery from '@/components/StrategicGallery'
 import WhatIDo from '@/components/WhatIDo';
 import CareerFeed from '@/components/CareerFeed';
 import Footer from '@/components/Footer';
