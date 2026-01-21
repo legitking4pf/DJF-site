@@ -6,19 +6,19 @@ import Link from 'next/link';
 
 const caoImages = [
   'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM',
-  'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/ebn-Atlantida-zpqvrZCN2sUPlWwyYQVopLkJd5s3RF.jpg'  
+  'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/ebn-Atlantida-zpqvrZCN2sUPlWwyYQVopLkJd5s3RF.jpg'
 ];
 
 export default function CAODossier() {
   const [index, setIndex] = useState(0);
-
+  
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev === caoImages.length - 1 ? 0 : prev + 1));
     }, 10000);
     return () => clearInterval(timer);
   }, []);
-
+  
   return (
     <main className="min-h-screen bg-bone text-obsidian pb-24 relative">
       {/* 1. ATMOSPHERIC BACKGROUND */}
@@ -92,53 +92,64 @@ export default function CAODossier() {
         </div>
 
         {/* 4. PERFORMANCE MATRIX (THE CAO ENGINE) */}
-        <div className="bg-obsidian text-bone p-12 md:p-24 relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 relative z-10">
-            <div>
-              <h2 className="text-3xl md: text-4x1 font-display uppercase tracking-tighter mb-10 leading-tight">
-                Governance <br /> <span className="text-gold">Impact Matrix</span>
-              </h2>
-              <p className="text-xl text-white/90 font-light leading-loose mb-12">
-                As CAO, my mandate is to ensure the group's administrative engine matches the velocity of its technology. We reject experimental adoption in favor of borderless corporate structures that provide executive-level privacy and institutional security.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="flex flex-col gap-3">
-                  <span className="text-gold text-xs uppercase tracking-[0.3em] font-bold">Scope</span>
-                  <span className="text-2xl uppercase font-display tracking-tight">Regional Sovereignty</span>
-                </div>
-                <div className="flex flex-col gap-3">
-                  <span className="text-gold text-xs uppercase tracking-[0.3em] font-bold">Framework</span>
-                  <span className="text-2xl uppercase font-display tracking-tight">Zero-Friction Admin</span>
-                </div>
-              </div>
-              
-              <div className="mt-16">
-                <Link 
-                  href="https://www.gfa.hn" 
-                  target="_blank"
-                  className="inline-flex items-center gap-4 text-gold text-sm uppercase tracking-[0.5em] font-bold hover:gap-7 transition-all"
-                >
-                  GFA Corporate Portal <ArrowUpRight size={18} />
-                </Link>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              {[
-                { label: "Administrative Automation", value: "92%" },
-                { label: "Institutional Compliance", value: "100%" },
-                { label: "Regional Interoperability", value: "OPTIMIZED" },
-                { label: "Governance Integrity", value: "ABSOLUTE" }
-              ].map((stat, i) => (
-                <div key={i} className="group p-8 border border-bone/10 bg-white/5 backdrop-blur-sm hover:border-gold/50 transition-all flex justify-between items-center">
-                  <span className="text-xs uppercase tracking-[0.4em] text-ash group-hover:text-bone transition-colors">{stat.label}</span>
-                  <span className="text-3xl font-display text-gold">{stat.value}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="bg-obsidian text-bone p-6 md:p-24 relative overflow-hidden">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+    <div>
+      <h2 className="text-4xl md:text-5xl font-display uppercase tracking-tighter mb-10 leading-tight">
+        Governance <br /> <span className="text-gold">Impact Matrix</span>
+      </h2>
+      <p className="text-lg md:text-xl text-white/90 font-light leading-loose mb-12">
+        As CAO, my mandate is to ensure the group's administrative engine matches the velocity of its technology. We reject experimental adoption in favor of borderless corporate structures that provide executive-level privacy and institutional security.
+      </p>
+      
+      {/* Scope & Framework Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+        <div className="flex flex-col gap-3">
+          <span className="text-gold text-xs uppercase tracking-[0.3em] font-bold">Scope</span>
+          <span className="text-xl md:text-2xl uppercase font-display tracking-tight">Regional Sovereignty</span>
         </div>
+        <div className="flex flex-col gap-3">
+          <span className="text-gold text-xs uppercase tracking-[0.3em] font-bold">Framework</span>
+          <span className="text-xl md:text-2xl uppercase font-display tracking-tight">Zero-Friction Admin</span>
+        </div>
+      </div>
+      
+      <div className="mt-16">
+        <Link 
+          href="https://www.gfa.hn" 
+          target="_blank"
+          className="inline-flex items-center gap-4 text-gold text-xs md:text-sm uppercase tracking-[0.5em] font-bold hover:gap-7 transition-all"
+        >
+          GFA Corporate Portal <ArrowUpRight size={18} />
+        </Link>
+      </div>
+    </div>
+
+    {/* Fixed Stats Grid for Mobile */}
+    <div className="space-y-4">
+      {[
+        { label: "Administrative Automation", value: "92%" },
+        { label: "Institutional Compliance", value: "100%" },
+        { label: "Regional Interoperability", value: "OPTIMIZED" },
+        { label: "Governance Integrity", value: "ABSOLUTE" }
+      ].map((stat, i) => (
+        <div 
+          key={i} 
+          className="group p-6 md:p-8 border border-bone/10 bg-white/5 backdrop-blur-sm hover:border-gold/50 transition-all 
+                     flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+        >
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-ash group-hover:text-bone transition-colors">
+            {stat.label}
+          </span>
+          <span className="text-2xl md:text-3xl font-display text-gold">
+            {stat.value}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
       </section>
 
       {/* 5. THE STRATEGIC FILTER (ESSENTIALISM) */}
