@@ -1,30 +1,30 @@
 "use client";
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Download } from 'lucide-react';
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ExecutiveProfile() {
   const positions = [
-    {
-      role: "Chief Administration Officer",
-      company: "Grupo Financiero Atlántida",
-      url: "https://www.gfa.hn", 
-      tag: "Group Governance"
-    },
-    {
-      role: "Chief Technology Officer",
-      company: "Banco Atlántida Honduras",
-      url: "https://www.bancatlan.hn",
-      tag: "Digital Core"
-    },
-    {
-      role: "Founder",
-      company: "KONCEPTO Décor",
-      url: "https://www.konceptodecor.com",
-      tag: "Design Culture"
-    }
-  ];
-
-  return ( 
+  {
+    role: "Chief Administration Officer",
+    company: "Grupo Financiero Atlántida",
+    url: "https://www.gfa.hn",
+    tag: "Group Governance"
+  },
+  {
+    role: "Chief Technology Officer",
+    company: "Banco Atlántida Honduras",
+    url: "https://www.bancatlan.hn",
+    tag: "Digital Core"
+  },
+  {
+    role: "Founder",
+    company: "KONCEPTO Décor",
+    url: "https://www.konceptodecor.com",
+    tag: "Design Culture"
+  }];
+  
+  return (
     <section className="relative py-32 bg-bone text-obsidian overflow-hidden border-t border-gold/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
@@ -106,15 +106,17 @@ export default function ExecutiveProfile() {
                 Every deployment is subjected to a philosophy of "Essentialism": the removal of friction to reveal the absolute velocity of wealth and strategic growth.
               </p>
             </div>
-            
             <div className="pt-6">
-              <button className="flex items-center gap-6 group">
-                <div className="w-14 h-14 border border-gold rounded-full flex items-center justify-center group-hover:bg-gold transition-all duration-500">
-                  <Download className="text-gold group-hover:text-bone w-5 h-5" />
-                </div>
-                <span className="text-sm uppercase tracking-[0.5em] font-bold">Download Executive Dossier</span>
-              </button>
-            </div>
+  <Link href="/dossier" className="flex items-center gap-6 group w-fit">
+    <div className="w-14 h-14 border border-gold rounded-full flex items-center justify-center group-hover:bg-gold transition-all duration-500">
+      <ArrowRight className="text-gold group-hover:text-bone w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
+    </div>
+    <span className="text-sm uppercase tracking-[0.5em] font-bold group-hover:text-obsidian/80 transition-colors">
+      Access Executive Dossier
+    </span>
+  </Link>
+</div>
+
           </div>
 
           {/* Right: Skeptical Benchmarks */}
