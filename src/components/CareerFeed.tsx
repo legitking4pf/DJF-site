@@ -3,7 +3,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Clock } from 'lucide-react';
 
-const ledgerData = [
+interface LedgerItem {
+  id: number;
+  category: string;
+  title: string;
+  desc: string;
+  image: string;
+  date: string;
+  link: string;
+  cta: string;
+  isHighlight?: boolean;
+}
+
+const ledgerData: LedgerItem[] = [
    {
    id: 1,
    category: "Press",
@@ -15,7 +27,7 @@ const ledgerData = [
    cta: "Read report"
  },
   {
-    id: 2.,
+    id: 2,
     category: "Business",
     title: "VIII CEAPI Congress: Guillermo Bueso on Latin American Investment in Spain",
     desc: "Seville hosted more than 500 business leaders to strengthen economic ties. Guillermo Bueso participated as a panelist, highlighting GFA as the first Honduran financial group authorized to operate within the Spanish banking system following the acquisition of EBN Banco and EBN Capital stakes.",
@@ -24,14 +36,23 @@ const ledgerData = [
     link: "https://invatlan.hn/blogs/guillermo-bueso-presidente-de-grupo-financiero-atlantida-participa-en-el-viii-congreso-ceapi-sobre-inversion-latinoamericana-en-espana",
     cta: "Read report"
   },
- ];
+  {
+    id: 3,
+    category: "Investment",
+    title: "Strategic Wealth Acceleration: $1,000 Pro-Tier Now Live",
+    desc: "Our strategic growth network has expanded, offering a dedicated $1,000 tier designed for long-term digital asset appreciation and institutional security.",
+    image: "https://images.unsplash.com/photo-1611974717482-95edec13969c?auto=format&fit=crop&q=80",
+    date: "JAN 21, 2026",
+    link: "/wealth-acceleration",
+    cta: "Access Opportunity",
+    isHighlight: true
+  }
+];
 
 export default function ExecutiveLedger() {
   return (
     <section id="ledger" className="py-20 md:py-32 bg-[#F8F8F8] text-obsidian px-6">
       <div className="max-w-7xl mx-auto">
-        
-        {/* Header Section */}
         <div className="border-t border-gold/30 pt-8 mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
           <div className="max-w-3xl">
             <span className="text-gold font-bold text-[10px] md:text-xs uppercase tracking-[0.4em] mb-4 block">
@@ -41,12 +62,11 @@ export default function ExecutiveLedger() {
               The Executive <span className="font-black not-italic text-obsidian">Ledger</span>
             </h2>
           </div>
-          <p className="text-[16px] md:text-base max-w-sm font-light leading-relaxed">
-            Personalized updates on digital transformation, strategic investments, and design milestones across the GFA ecosystem. [cite: 2025-12-09]
+          <p className="text-[16px] md:text-base max-w-sm font-light leading-relaxed text-ash">
+            Personalized updates on digital transformation, strategic investments, and milestones across the GFA ecosystem.
           </p>
         </div>
 
-        {/* The Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
           {ledgerData.map((item, index) => (
             <motion.article 
@@ -57,7 +77,6 @@ export default function ExecutiveLedger() {
               transition={{ delay: index * 0.1, duration: 0.8 }}
               className="group flex flex-col h-full bg-white border border-gray-100 p-1 hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500"
             >
-              {/* Card Image */}
               <div className="relative aspect-[4/3] overflow-hidden bg-obsidian">
                 <img 
                   src={item.image} 
@@ -71,23 +90,19 @@ export default function ExecutiveLedger() {
                 </div>
               </div>
 
-              {/* Card Body */}
               <div className="flex flex-col flex-grow p-6 md:p-8">
                 <div className="flex items-center gap-2 text-ash/60 text-[10px] font-medium mb-4">
                   <Clock size={12} /> <span>{item.date}</span>
                 </div>
 
-                {/* Title with Ellipsis Control */}
                 <h3 className="text-xl md:text-2xl font-bold leading-tight uppercase tracking-tighter mb-4 group-hover:text-gold transition-colors duration-300 line-clamp-2 h-[3.5rem] overflow-hidden text-ellipsis">
                   {item.title}
                 </h3>
 
-                {/* Description with Ellipsis Control */}
                 <p className="text-ash text-[14px] font-light leading-relaxed mb-8 line-clamp-3 overflow-hidden text-ellipsis">
-                  {item.desc} [cite: 2026-01-21]
+                  {item.desc}
                 </p>
 
-                {/* Footer / CTA */}
                 <div className="mt-auto pt-6 border-t border-gray-50 flex items-center justify-between">
                   <a 
                     href={item.link}
