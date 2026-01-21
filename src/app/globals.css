@@ -21,16 +21,14 @@
     /* DEFAULT: Wikipedia Readability (Inter) */
     @apply bg-bone text-obsidian antialiased selection:bg-gold/30;
     font-family: var(--font-sans);
-    line-height: 1.6;
   }
 
   /* HEADINGS: Institutional Weight (Merriweather) */
   h1, h2, h3, .font-display {
     font-family: var(--font-serif);
-    @apply font-bold tracking-tight text-black;
   }
 
-  h1 { @apply text-5xl md:text-7xl leading-[1.05] mb-8; }
+  h1 { @apply text-4xl md:text-6xl leading-[1.05] mb-8; }
   h2 { @apply text-3xl md:text-5xl leading-tight mb-6; }
   h3 { @apply text-xl md:text-2xl italic font-light text-ash; }
 
@@ -45,7 +43,7 @@
   /* CTO/Data Label: High-density technical metadata */
   .label-tech {
     font-family: var(--font-mono);
-    @apply text-[10px] uppercase tracking-[0.4em] text-gold font-bold;
+    @apply text-[14px] uppercase tracking-[0.4em] text-gold font-bold;
   }
 
   /* The "Invatlan" Editorial Underline */
@@ -58,3 +56,9 @@
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--color-bone); }
 ::-webkit-scrollbar-thumb { background: var(--color-gold); border-radius: 10px; }
+
+
+
+
+
+
