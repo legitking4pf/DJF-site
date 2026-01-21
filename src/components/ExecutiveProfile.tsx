@@ -34,7 +34,7 @@ export default function ExecutiveProfile() {
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-8xl font-display uppercase tracking-tighter leading-[0.85] mb-12"
+              className="text-4xl md:text-6xl font-display uppercase tracking-tighter leading-[0.85] mb-12"
             >
               Institutional <br /> Authority
             </motion.h2>
