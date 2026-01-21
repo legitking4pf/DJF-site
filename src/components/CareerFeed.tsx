@@ -4,38 +4,27 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Clock } from 'lucide-react';
 
 const ledgerData = [
+   {
+   id: 1,
+   category: "Press",
+   title: "Banco Atlántida opens new branches in La Ceiba and Quimistán, Santa Bárbara, consolidating its presence nationwide.",
+   desc: "As part of its expansion strategy and closer relationship with customers, Banco Atlántida opened new branches in La Ceiba and Quimistán, Santa Bárbara, strengthening its national presence and reaffirming its leadership in the Honduran financial system.",
+   image: "https://www.bancatlan.hn/sala-de-prensa/img/2026-01-09-plaza-teknos-quimistan/portada.jpg",
+   date: "JAN 9, 2026",
+   link: "https://www.bancatlan.hn/sala-de-prensa/2026-01-09-plaza-teknos-quimistan.php",
+   cta: "Read report"
+ },
   {
-    id: 1,
-    category: "BUSINESS",
+    id: 2.,
+    category: "Business",
     title: "VIII CEAPI Congress: Guillermo Bueso on Latin American Investment in Spain",
     desc: "Seville hosted more than 500 business leaders to strengthen economic ties. Guillermo Bueso participated as a panelist, highlighting GFA as the first Honduran financial group authorized to operate within the Spanish banking system following the acquisition of EBN Banco and EBN Capital stakes.",
     image: "https://cdn.prod.website-files.com/68363d5a1fb3537423263bff/6841f518e2c7e3dea8ea93a4_ceapi-2024-portada.jpg",
     date: "JUNE 04, 2025",
     link: "https://invatlan.hn/blogs/guillermo-bueso-presidente-de-grupo-financiero-atlantida-participa-en-el-viii-congreso-ceapi-sobre-inversion-latinoamericana-en-espana",
-    cta: "Read Report"
+    cta: "Read report"
   },
-  {
-    id: 2,
-    category: "Technological",
-    title: "Banco Atlántida: Cloud-Native Architecture Deployment",
-    desc: "Leading Phase III of digital migration to secure digital sovereignty and enhance cross-border banking efficiency across Central American operations.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
-    date: "JAN 18, 2026",
-    link: "/dossier/digital-integration",
-    cta: "Full Insight"
-  },
-  {
-    id: 3,
-    category: "Investment",
-    title: "New Pro-Tier Opportunity Now Live",
-    desc: "The $1,000 Pro-Tier is now accessible within our strategic growth network, engineered for consistent wealth acceleration and portfolio scalability.",
-    image: "https://images.unsplash.com/photo-1611974717482-95edec13969c?auto=format&fit=crop&q=80",
-    date: "JAN 15, 2026",
-    link: "/wealth-acceleration",
-    cta: "Access Opportunity",
-    isHighlight: true
-  }
-];
+ ];
 
 export default function ExecutiveLedger() {
   return (
