@@ -128,19 +128,19 @@ export default function ExecutiveProfile() {
                 <div>
                   <p className="text-sm uppercase tracking-[0.3em] text-obsidian/40 mb-2">Regional Reach</p>
                   <p className="text-4xl font-display">HND // ES // GT</p>
-                  <p className="text-xs text-obsidian/60 mt-2 italic">Strategic Hub Connectivity</p>
+                  <p className="text-sm text-obsidian/60 mt-2 italic">Strategic Hub Connectivity</p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-10">
                   <div className="group">
                     <p className="text-sm uppercase tracking-[0.3em] text-obsidian/40 mb-2 group-hover:text-gold transition-colors">Digital Sovereignty</p>
                     <p className="text-4xl font-display">100% INTEGRATED</p>
-                    <p className="text-xs text-obsidian/60 mt-2 italic">Unified Administrative Core</p>
+                    <p className="text-sm text-obsidian/60 mt-2 italic">Unified Administrative Core</p>
                   </div>
                   <div className="group">
                     <p className="text-sm uppercase tracking-[0.3em] text-obsidian/40 mb-2 group-hover:text-gold transition-colors">Asset Philosophy</p>
                     <p className="text-4xl font-display">ULTRA-MINIMAL</p>
-                    <p className="text-xs text-obsidian/60 mt-2 italic">Precision-Led Curation</p>
+                    <p className="text-12px text-obsidian/60 mt-2 italic">Precision-Led Curation</p>
                   </div>
                 </div>
               </div>

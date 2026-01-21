@@ -11,6 +11,7 @@ export default function LandingPage() {
       <Header />
       <Hero />
       <ExecutiveProfile /> 
+      <StrategicGallery /> 
       <WhatIDo />
       <CareerFeed />
       <Footer />
