@@ -81,14 +81,14 @@ export default function WhatIDo() {
                 </div>
                 
                 <h3 className="text-2xl font-display mb-4 uppercase tracking-tight">{item.title}</h3>
-                <p className="text-sm text-[#838383] font-light leading-relaxed mb-8 max-w-xs">
+                <p className="text-12px text-[#838383] font-light leading-relaxed mb-8 max-w-xs">
                   {item.desc}
                 </p>
               </div>
 
               <div className="space-y-6">
                 <div className="flex flex-col">
-                  <span className="text-[12px] uppercase tracking-[0.2em] text-bone/40 mb-1">Functional Role</span>
+                  <span className="text-[14px] uppercase tracking-[0.2em] text-bone/40 mb-1">Functional Role</span>
                   <span className="text-[14px] font-medium tracking-wide">{item.role}</span>
                 </div>
 

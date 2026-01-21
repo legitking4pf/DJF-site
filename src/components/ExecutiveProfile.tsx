@@ -134,7 +134,7 @@ export default function ExecutiveProfile() {
             </div>
             
             <div className="p-8 border border-gold/20">
-              <p className="text-14px uppercase tracking-widest text-obsidian/60 mb-4">Core Competencies</p>
+              <p className="text-xl uppercase tracking-widest text-obsidian/60 mb-4">Core Competencies</p>
               <ul className="text-12 space-y-2 tracking-tighter font-medium">
                 <li>• Digital Banking Infrastructure</li>
                 <li>• Strategic Corporate Governance</li>
