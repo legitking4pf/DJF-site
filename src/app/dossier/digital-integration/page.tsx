@@ -41,7 +41,7 @@ export default function CTODossier() {
         <div className="max-w-7xl mx-auto w-full">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="text-gold tracking-[0.5em] text-[12px] font-bold uppercase mb-4 block">Strategic Briefing // 01</span>
-            <h1 className="text-6xl md:text-9xl font-display uppercase tracking-tighter leading-[0.8] mb-8">
+            <h1 className="text-4xl md:text-7xl font-display uppercase tracking-tighter leading-[0.8] mb-8">
               Digital <br /> Integration
             </h1>
             <div className="flex flex-wrap items-center gap-4 md:gap-8 text-obsidian/70 uppercase text-sm tracking-[0.2em] font-medium">
@@ -60,21 +60,21 @@ export default function CTODossier() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-24">
           <div className="space-y-6">
             <h3 className="text-gold text-sm uppercase tracking-[0.3em] font-bold">01. Infrastructure</h3>
-            <h4 className="text-3xl font-display uppercase italic">Cloud-Native <br /> Architecture</h4>
+            <h5 className="text-3xl font-display uppercase italic">Cloud-Native <br /> Architecture</h5>
             <p className="text-base md:text-lg text-obsidian/80 leading-relaxed font-light">
               Transitioning legacy banking cores to a hybrid-cloud environment. This ensures horizontal scalability during high-traffic fiscal periods while maintaining rigorous data sovereignty for Honduras.
             </p>
           </div>
           <div className="space-y-6">
             <h3 className="text-gold text-sm uppercase tracking-[0.3em] font-bold">02. Security</h3>
-            <h4 className="text-3xl font-display uppercase italic">Zero-Trust <br /> Framework</h4>
+            <h5 className="text-3xl font-display uppercase italic">Zero-Trust <br /> Framework</h5>
             <p className="text-base md:text-lg text-obsidian/80 leading-relaxed font-light">
               Implementing end-to-end encryption and multi-factor biometric authentication across all digital touchpoints. We prioritize "Security by Design" to protect the wealth acceleration opportunities of our clients.
             </p>
           </div>
           <div className="space-y-6">
             <h3 className="text-gold text-sm uppercase tracking-[0.3em] font-bold">03. Ecosystem</h3>
-            <h4 className="text-3xl font-display uppercase italic">Open Banking <br /> & API Economy</h4>
+            <h5 className="text-3xl font-display uppercase italic">Open Banking <br /> & API Economy</h5>
             <p className="text-base md:text-lg text-obsidian/80 leading-relaxed font-light">
               Creating a strategic growth network through API integration with global fintech partners. This allows GFA to offer hyper-personalized financial products in real-time.
             </p>
@@ -87,7 +87,7 @@ export default function CTODossier() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 relative z-10">
             <div>
-              <h2 className="text-5xl font-display uppercase tracking-tighter mb-10">
+              <h2 className="text-3xl md: text-4x1 font-display uppercase tracking-tighter mb-10">
                 The Group <br /> <span className="text-gold">Technical Roadmap</span>
               </h2>
               <p className="text-lg text-white/90 font-light leading-loose mb-12">

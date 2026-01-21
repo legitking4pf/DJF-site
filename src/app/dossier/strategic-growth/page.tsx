@@ -31,7 +31,7 @@ export default function CAODossier() {
             animate={{ opacity: 0.25, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 3 }}
-            className="absolute inset-0 w-full h-full object-cover grayscale"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-b from-[#000000B0] via-transparent to-bone z-10" />
@@ -45,7 +45,7 @@ export default function CAODossier() {
           </Link>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="text-gold tracking-[0.5em] text-xs font-bold uppercase mb-4 block">Strategic Briefing // 02</span>
-            <h1 className="text-6xl md:text-9xl font-display uppercase tracking-tighter leading-[0.8] mb-8">
+            <h1 className="text-4xl md:text-7xl font-display uppercase tracking-tighter leading-[0.8] mb-8">
               Strategic <br /> Growth
             </h1>
             <div className="flex flex-wrap items-center gap-6 md:gap-10 text-obsidian/70 uppercase text-sm tracking-[0.2em] font-medium">
@@ -66,7 +66,7 @@ export default function CAODossier() {
             <div className="w-14 h-14 border border-gold/30 flex items-center justify-center text-gold">
               <Scale size={24} />
             </div>
-            <h4 className="text-3xl font-display uppercase italic">Corporate <br /> Sovereignty</h4>
+            <h5 className="text-3xl font-display uppercase italic">Corporate <br /> Sovereignty</h5>
             <p className="text-lg text-obsidian/80 leading-relaxed font-light">
               Architecting standardized administrative frameworks across regional territories. We prioritize absolute compliance and structural transparency to insulate the GFA ecosystem from market volatility.
             </p>
@@ -75,7 +75,7 @@ export default function CAODossier() {
             <div className="w-14 h-14 border border-gold/30 flex items-center justify-center text-gold">
               <BarChart size={24} />
             </div>
-            <h4 className="text-3xl font-display uppercase italic">Operational <br /> Precision</h4>
+            <h5 className="text-3xl font-display uppercase italic">Operational <br /> Precision</h5>
             <p className="text-lg text-obsidian/80 leading-relaxed font-light">
               Treating administration as a high-precision instrument. We optimize group-wide resource allocation to ensure that the velocity of wealth is never hindered by legacy friction.
             </p>
@@ -84,7 +84,7 @@ export default function CAODossier() {
             <div className="w-14 h-14 border border-gold/30 flex items-center justify-center text-gold">
               <ShieldCheck size={24} />
             </div>
-            <h4 className="text-3xl font-display uppercase italic">Institutional <br /> Resilience</h4>
+            <h5 className="text-3xl font-display uppercase italic">Institutional <br /> Resilience</h5>
             <p className="text-lg text-obsidian/80 leading-relaxed font-light">
               Integrating ESG principles not as a trend, but as a defensive asset. We ensure the long-term permanence of the institution through rigorous sustainability protocols.
             </p>
@@ -95,7 +95,7 @@ export default function CAODossier() {
         <div className="bg-obsidian text-bone p-12 md:p-24 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 relative z-10">
             <div>
-              <h2 className="text-5xl font-display uppercase tracking-tighter mb-10 leading-tight">
+              <h2 className="text-3xl md: text-4x1 font-display uppercase tracking-tighter mb-10 leading-tight">
                 Governance <br /> <span className="text-gold">Impact Matrix</span>
               </h2>
               <p className="text-xl text-white/90 font-light leading-loose mb-12">
@@ -146,7 +146,7 @@ export default function CAODossier() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-16">
           <div className="md:w-1/3">
             <h3 className="text-sm uppercase tracking-[0.5em] text-gold font-bold mb-6 italic">The Standard</h3>
-            <p className="text-4xl font-display uppercase leading-tight">Architectural <br /> Essentialism</p>
+            <p className="text-3xl font-display uppercase leading-tight">Architectural <br /> Essentialism</p>
           </div>
           <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className="space-y-6">
