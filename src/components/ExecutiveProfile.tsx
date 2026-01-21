@@ -126,28 +126,28 @@ export default function ExecutiveProfile() {
               
               <div className="space-y-12">
                 <div>
-                  <p className="text-sm uppercase tracking-[0.3em] text-obsidian/40 mb-2">Regional Reach</p>
-                  <p className="text-4xl font-display">HND // ES // GT</p>
+                  <p className="text-[13px] uppercase tracking-[0.3em] text-obsidian/40 mb-2">Regional Reach</p>
+                  <p className="text-2xl md:text-3xl font-display">HND // ES // GT</p>
                   <p className="text-sm text-obsidian/60 mt-2 italic">Strategic Hub Connectivity</p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-10">
                   <div className="group">
-                    <p className="text-sm uppercase tracking-[0.3em] text-obsidian/40 mb-2 group-hover:text-gold transition-colors">Digital Sovereignty</p>
-                    <p className="text-4xl font-display">100% INTEGRATED</p>
+                    <p className="text-[13px] uppercase tracking-[0.3em] text-obsidian/40 mb-2 group-hover:text-gold transition-colors">Digital Sovereignty</p>
+                    <p className="text-2xl md:text-3xl font-display">100% INTEGRATED</p>
                     <p className="text-sm text-obsidian/60 mt-2 italic">Unified Administrative Core</p>
                   </div>
                   <div className="group">
-                    <p className="text-sm uppercase tracking-[0.3em] text-obsidian/40 mb-2 group-hover:text-gold transition-colors">Asset Philosophy</p>
-                    <p className="text-4xl font-display">ULTRA-MINIMAL</p>
-                    <p className="text-12px text-obsidian/60 mt-2 italic">Precision-Led Curation</p>
+                    <p className="text-[13px] uppercase tracking-[0.3em] text-obsidian/40 mb-2 group-hover:text-gold transition-colors">Asset Philosophy</p>
+                    <p className="text-2xl md:text-3xl font-display">ULTRA-MINIMAL</p>
+                    <p className="text-sm text-obsidian/60 mt-2 italic">Precision-Led Curation</p>
                   </div>
                 </div>
               </div>
             </div>
             
             <div className="p-10 border border-gold/20 bg-obsidian text-bone">
-              <p className="text-xs uppercase tracking-[0.5em] text-gold mb-8 font-bold">Institutional Filters</p>
+              <p className="text-2xl md:text-3xl uppercase tracking-[0.5em] text-gold mb-8 font-bold">Institutional Filters</p>
               <ul className="text-sm space-y-4 uppercase tracking-widest font-medium opacity-90">
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-gold rounded-full" /> Digital Sovereignty</li>
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-gold rounded-full" /> Strategic Governance</li>

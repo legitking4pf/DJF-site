@@ -58,11 +58,11 @@ export default function ExecutiveLedger() {
             <span className="text-gold font-bold text-[10px] md:text-xs uppercase tracking-[0.4em] mb-4 block">
               Intelligence & Affiliates
             </span>
-            <h2 className="text-5xl md:text-8xl font-serif italic tracking-tighter leading-none mb-6">
+            <h2 className="text-4xl md:text-6xl font-serif italic tracking-tighter leading-none mb-6">
               The Executive <span className="font-black not-italic text-obsidian">Ledger</span>
             </h2>
           </div>
-          <p className="text-[16px] md:text-base max-w-sm font-light leading-relaxed text-ash">
+          <p className="text-[16px] md:text-base max-w-sm font-light leading-relaxed">
             Personalized updates on digital transformation, strategic investments, and milestones across the GFA ecosystem.
           </p>
         </div>
@@ -91,7 +91,7 @@ export default function ExecutiveLedger() {
               </div>
 
               <div className="flex flex-col flex-grow p-6 md:p-8">
-                <div className="flex items-center gap-2 text-ash/60 text-[10px] font-medium mb-4">
+                <div className="flex items-center gap-2 text-italic text-[10px] font-medium mb-4">
                   <Clock size={12} /> <span>{item.date}</span>
                 </div>
 
@@ -99,7 +99,7 @@ export default function ExecutiveLedger() {
                   {item.title}
                 </h3>
 
-                <p className="text-ash text-[14px] font-light leading-relaxed mb-8 line-clamp-3 overflow-hidden text-ellipsis">
+                <p className="text-[14px] font-light leading-relaxed mb-8 line-clamp-3 overflow-hidden text-ellipsis">
                   {item.desc}
                 </p>
 
@@ -113,7 +113,6 @@ export default function ExecutiveLedger() {
                   >
                     {item.cta} <ArrowUpRight size={14} />
                   </a>
-                  <span className="text-[10px] font-serif italic text-ash/40">David Jackson Fernández</span>
                 </div>
               </div>
             </motion.article>

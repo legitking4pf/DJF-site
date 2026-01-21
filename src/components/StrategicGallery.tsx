@@ -66,11 +66,11 @@ export default function StrategicGallery() {
         
         {/* Header Content */}
         <div className="mb-12 text-center">
-  <h2 id="gallery-heading" className="text-3xl md:text-5xl font-bold text-obsidian mb-4 tracking-tight">
+  <h2 id="gallery-heading" className="text-4xl md:text-6xl font-bold text-obsidian mb-4 tracking-tight">
     Strategic Environments
   </h2>
   <div className="w-16 h-[1px] bg-gold mx-auto mb-6" /> {/* Spanish-modern minimalist accent */}
-  <p className="text-sm md:text-lg text-ash max-w-2xl mx-auto leading-relaxed font-light">
+  <p className="text-sm md:text-lg max-w-2xl mx-auto leading-relaxed font-light">
     A visual manifestation of the **GFA Strategic Vision 2030**—mapping the intersection of digital integration, investment partnerships, and sustainable design across our global reach.
   </p>
 </div>
