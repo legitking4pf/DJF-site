@@ -1,10 +1,13 @@
 "use client";
 import React from 'react';
 import { ArrowUpRight, History, Award, Briefcase, ExternalLink } from 'lucide-react';
-
-// 1. REUSABLE SMART LINK COMPONENT
-// This handles the link styling and the "Alt Text" tooltip on hover
-const SmartLink = ({ href, children, role, tag }) => (
+interface SmartLinkProps {
+  href: string;
+  children: React.ReactNode;
+  role: string;
+  tag: string;
+}
+const SmartLink = ({ href, children, role, tag }: SmartLinkProps) => (
   <a 
     href={href}
     target="_blank"
@@ -14,10 +17,9 @@ const SmartLink = ({ href, children, role, tag }) => (
     {children}
     
     {/* THE HOVER TOOLTIP (ALT TEXT) */}
-    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-obsidian text-white text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-xl border border-gold/20 z-20">
+    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-[#1A1A1A] text-white text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-xl border border-gold/20 z-20">
       {role} <span className="text-gold">//</span> {tag}
-      {/* Little arrow pointing down */}
-      <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-obsidian"></span>
+      <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-[#1A1A1A]"></span>
     </span>
   </a>
 );
