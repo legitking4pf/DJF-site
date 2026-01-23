@@ -51,16 +51,16 @@ export default function WhatIDo() {
             <h2 className="text-4xl md:text-6xl font-display tracking-tighter mb-6 uppercase leading-tight">
               Strategic <span className="text-gold italic font-light md:block lg:inline">Ecosystems</span>
             </h2>
-            <p className="text-[#838383] text-sm uppercase tracking-[0.2em] font-light max-w-md">
+            <p className="text-bone text-sm uppercase tracking-[0.2em] font-light max-w-md">
               A comprehensive scope of influence across Digital Banking, Corporate Administration, and Global Finance.
             </p>
           </div>
           <div className="hidden md:block h-px flex-1 bg-gold/20 mx-12 mb-4" />
           <div className="flex flex-col items-end">
-             <span className="text-gold uppercase tracking-[0.4em] text-[10px] md:text-[12px] font-bold mb-1">
+             <span className="text-gold uppercase tracking-[0.4em] text-10px md: text-12px font-bold mb-1">
               David Jackson Fernandez
             </span>
-            <span className="text-bone/20 text-[9px] uppercase tracking-widest">CAO • CTO • FOUNDER</span>
+            <span className="text-bone text-10px md: text-12px uppercase tracking-widest">CAO • CTO • FOUNDER</span>
           </div>
         </div>
 

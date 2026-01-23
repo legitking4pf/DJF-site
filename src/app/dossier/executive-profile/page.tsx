@@ -1,11 +1,52 @@
 "use client";
-import { ArrowUpRight, Globe, Building2, Layers, MapPin, ExternalLink, History, Award, Briefcase } from 'lucide-react';
+import React from 'react';
+import { ArrowUpRight, History, Award, Briefcase, ExternalLink } from 'lucide-react';
+
+// 1. REUSABLE SMART LINK COMPONENT
+// This handles the link styling and the "Alt Text" tooltip on hover
+const SmartLink = ({ href, children, role, tag }) => (
+  <a 
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="relative inline-flex items-baseline font-bold text-black border-b border-gold/50 hover:border-gold hover:bg-gold/10 transition-colors cursor-pointer group mx-1"
+  >
+    {children}
+    
+    {/* THE HOVER TOOLTIP (ALT TEXT) */}
+    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-obsidian text-white text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-xl border border-gold/20 z-20">
+      {role} <span className="text-gold">//</span> {tag}
+      {/* Little arrow pointing down */}
+      <span className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-obsidian"></span>
+    </span>
+  </a>
+);
 
 export default function ExecutiveDossier() {
+  
+  // 2. FIXED DATA STRUCTURE (Clean Objects)
+  const entities = {
+    group: {
+      role: "Chief Administration Officer",
+      url: "https://www.grupofinancieroatlantida.com",
+      tag: "Governance"
+    },
+    bank: {
+      role: "Chief Technology Officer",
+      url: "https://www.bancatlan.hn",
+      tag: "Digital Core"
+    },
+    design: {
+      role: "Founder",
+      url: "https://www.konceptodecor.com",
+      tag: "Design Culture"
+    }
+  };
+
   return (
-    <main className="min-h-screen bg-[#FDFBF7] text-[#1A1A1A] pt-24 pb-32 font-sans">
+    <main className="min-h-screen bg-[#FDFBF7] text-[#1A1A1A] pt-24 pb-32 font-sans selection:bg-gold/20">
       
-      {/* 1. EDITORIAL HEADER */}
+      {/* HEADER */}
       <header className="max-w-6xl mx-auto px-6 lg:px-12 mb-20 border-b border-black/10 pb-12">
         <div className="flex flex-col gap-5">
           <div className="flex items-center gap-3">
@@ -14,7 +55,7 @@ export default function ExecutiveDossier() {
               Executive Profile // GFA-HQ
             </span>
           </div>
-          <h1 className="font-serif text-5xl md:text-7xl text-black leading-[0.9] tracking-tight">
+          <h1 className="font-serif text-4xl md:text-6xl text-black leading-[0.9] tracking-tight">
             David Jackson Fernandez
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 font-light max-w-4xl leading-relaxed mt-4">
@@ -23,13 +64,13 @@ export default function ExecutiveDossier() {
         </div>
       </header>
 
-      {/* 2. THE CONTENT GRID */}
+      {/* CONTENT GRID */}
       <div className="max-w-6xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
         
-        {/* LEFT COLUMN: DEEP NARRATIVE (8 Columns) */}
+        {/* LEFT COLUMN: NARRATIVE */}
         <article className="lg:col-span-8 space-y-20">
           
-          {/* NARRATIVE 1: THE ORIGIN & MANDATE */}
+          {/* NARRATIVE 1 */}
           <section className="space-y-6">
             <div className="flex items-center gap-4 mb-4">
                <History className="text-gold w-6 h-6" />
@@ -37,7 +78,16 @@ export default function ExecutiveDossier() {
             </div>
             <div className="prose prose-lg text-gray-700 leading-loose text-justify">
               <p>
-                David Jackson Fernandez’s integration into <strong>Grupo Financiero Atlántida (GFA)</strong> was not a conventional hire, but a strategic alignment designed to bridge the "Legacy Gap." 
+                David Jackson Fernandez’s integration into 
+                {/* LINK INSERTED HERE */}
+                <SmartLink 
+                  href={entities.group.url} 
+                  role={entities.group.role}
+                  tag={entities.group.tag}
+                >
+                   Grupo Financiero Atlántida (GFA)
+                </SmartLink>
+                was not a conventional hire, but a strategic alignment designed to bridge the "Legacy Gap." 
               </p>
               <p>
                 Recruited during a pivotal era of regional consolidation, David was tasked with a singular, high-stakes objective: <strong>to immunize the bank’s operational core against technological obsolescence.</strong> Recognizing that traditional banking models were becoming vulnerable to agile fintech disruptors, he engineered a "Hybrid-Core" strategy—maintaining the institutional trust of a century-old bank while deploying the cloud-native velocity of a startup.
@@ -48,7 +98,7 @@ export default function ExecutiveDossier() {
             </div>
           </section>
 
-          {/* NARRATIVE 2: THE CTO/CAO CONVERGENCE */}
+          {/* NARRATIVE 2 */}
           <section className="space-y-6">
             <div className="flex items-center gap-4 mb-4">
                <Briefcase className="text-gold w-6 h-6" />
@@ -56,7 +106,16 @@ export default function ExecutiveDossier() {
             </div>
             <div className="prose prose-lg text-gray-700 leading-loose text-justify">
               <p>
-                Uniquely, David holds the dual titles of <strong>Chief Technology Officer</strong> and <strong>Chief Administrative Officer</strong>. In most organizations, these roles are siloed. Under his "Unified Command" doctrine, they are inseparable.
+                Uniquely, David holds the dual titles of <strong>Chief Administrative Officer</strong> and 
+                {/* LINK INSERTED HERE */}
+                <SmartLink 
+                  href={entities.bank.url} 
+                  role={entities.bank.role}
+                  tag={entities.bank.tag}
+                >
+                  Chief Technology Officer
+                </SmartLink>. 
+                In most organizations, these roles are siloed. Under his "Unified Command" doctrine, they are inseparable.
               </p>
               <p>
                 He operates on the conviction that in the modern financial landscape, <em>code is policy.</em> Administrative decisions regarding compliance, hiring, and expansion are now inextricably linked to data rights and system architecture. By consolidating these powers, he has eliminated the friction between "Management" and "IT," allowing GFA to execute cross-border acquisitions in <strong>Honduras, El Salvador, and Guatemala</strong> with military precision.
@@ -64,7 +123,7 @@ export default function ExecutiveDossier() {
             </div>
           </section>
 
-          {/* NARRATIVE 3: AESTHETIC PHILOSOPHY */}
+          {/* NARRATIVE 3 */}
           <section className="space-y-6">
             <div className="flex items-center gap-4 mb-4">
                <Award className="text-gold w-6 h-6" />
@@ -72,7 +131,16 @@ export default function ExecutiveDossier() {
             </div>
             <div className="prose prose-lg text-gray-700 leading-loose text-justify">
               <p>
-                David’s influence extends beyond the server room into the physical realm through <strong>KONCEPTO Décor</strong>. This venture is not a hobby; it is a manifestation of his executive philosophy: <strong>Essentialism.</strong>
+                David’s influence extends beyond the server room into the physical realm through 
+                {/* LINK INSERTED HERE */}
+                <SmartLink 
+                  href={entities.design.url} 
+                  role={entities.design.role}
+                  tag={entities.design.tag}
+                >
+                  KONCEPTO Décor
+                </SmartLink>. 
+                This venture is not a hobby; it is a manifestation of his executive philosophy: <strong>Essentialism.</strong>
               </p>
               <p>
                 Just as he removes redundant code to speed up a banking transaction, he removes visual clutter to clarify executive thought. His designs draw heavily from <strong>Spanish Modernism</strong>—favoring raw materials, light, and silence. This "Aesthetic Rigor" creates environments where high-level decisions can be made without distraction, reflecting the very stability he engineers into the bank’s digital core.
@@ -109,7 +177,7 @@ export default function ExecutiveDossier() {
           </section>
         </article>
 
-        {/* RIGHT COLUMN: THE EXECUTIVE INFOBOX (4 Columns) */}
+        {/* RIGHT COLUMN: EXECUTIVE INFOBOX */}
         <aside className="lg:col-span-4 space-y-8">
           <div className="bg-white border border-gray-200 shadow-lg p-8 lg:sticky lg:top-12">
             

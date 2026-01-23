@@ -22,8 +22,8 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Identity */}
         <div className="flex flex-col">
-          <span className="text-gold font-display text-2xl tracking-tighter leading-none">DJF</span>
-          <span className="text-[10px] uppercase tracking-[0.3em] text-ash mt-1">Executive HQ</span>
+          <span className="text-gold font-display text-2xl md: text-3x1 tracking-tighter leading-none">DJF</span>
+          <span className="text-10px md: text-12px uppercase tracking-[0.3em] text-bone mt-1">Executive HQ</span>
         </div>
 
         {/* Navigation */}

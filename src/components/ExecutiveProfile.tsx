@@ -8,7 +8,7 @@ export default function ExecutiveProfile() {
   {
     role: "Chief Administration Officer",
     company: "Grupo Financiero Atlántida",
-    url: "https://www.gfa.hn",
+    url: "https://www.grupofinancieroatlantida.com",
     tag: "Group Governance"
   },
   {
@@ -147,8 +147,10 @@ export default function ExecutiveProfile() {
             </div>
             
             <div className="p-10 border border-gold/20 bg-obsidian text-bone">
-              <h2 className="text-2xl md:text-4xl tracking-[0.5em] text-gold mb-8 font-bold">Institutional Filters</h2> 
-              <ul className="text-sm space-y-4 tracking-widest font-medium opacity-90">
+              <h2 className="text-2xl md:text-3xl font-display tracking-tighter mb-6 uppercase leading-tight">
+              Institutional <span className="text-gold italic font-light md:block lg:inline">Fiters</span>
+            </h2>
+              <ul className="text-sm tracking-widest font-medium opacity-90">
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-gold rounded-full" /> Digital Sovereignty</li>
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-gold rounded-full" /> Strategic Governance</li>
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-gold rounded-full" /> Aesthetic Innovation</li>
