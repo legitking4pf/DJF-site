@@ -60,7 +60,7 @@ export default function WhatIDo() {
              <span className="text-gold uppercase tracking-[0.4em] text-10px md: text-12px font-bold mb-1">
               David Jackson Fernandez
             </span>
-            <span className="text-bone text-10px md: text-12px uppercase tracking-widest">CAO • CTO • FOUNDER</span>
+            <span className="text-bone text-9px md: text-12px uppercase tracking-widest">CAO • CTO • FOUNDER</span>
           </div>
         </div>
 
