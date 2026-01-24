@@ -69,7 +69,7 @@ export default function CAODossier() {
               <Scale size={24} />
             </div>
             <h5 className="text-3xl font-display uppercase italic">Corporate <br /> Sovereignty</h5>
-            <p className="text-lg text-obsidian/80 leading-relaxed font-light">
+            <p className="text-lg text-obsidian/80 leading-relaxed -light">
               Architecting standardized administrative frameworks across regional territories. We prioritize absolute compliance and structural transparency to insulate the GFA ecosystem from market volatility.
             </p>
           </div>

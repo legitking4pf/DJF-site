@@ -1,170 +1,177 @@
 "use client";
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Zap, Database, Globe, Cpu, ArrowUpRight } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Cpu, 
+  ShieldAlert, 
+  Globe, 
+  Zap, 
+  Database, 
+  Lock, 
+  ArrowRight,
+  Fingerprint
+} from 'lucide-react';
 
-const heroImages = [
-  'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/portada-09-02-2024-111-juntos-tdHAoirlE7TMdek7ReGI43HDBa3wqm.jpg',
-  'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Fachada-1-Banco-Atlantida.webp' // Swapped for a distinct image to show transition
+const technicalMandates = [
+  {
+    id: "CORE-01",
+    title: "Fintech Core Infrastructure",
+    desc: "Architecting the backbone of regional digital banking. We deploy cloud-native, high-velocity systems designed for 100% operational uptime and regional scalability.",
+    icon: <Cpu className="w-5 h-5" />,
+    metrics: "High-Velocity Throughput",
+    status: "Active"
+  },
+  {
+    id: "SEC-02",
+    title: "Cybersecurity & Sovereignty",
+    desc: "Implementing zero-trust protocols and sovereign encryption layers to insulate GFA assets from global volatility and digital intrusion.",
+    icon: <Lock className="w-5 h-5" />,
+    metrics: "Zero-Trust Architecture",
+    status: "Encrypted"
+  },
+  {
+    id: "DATA-03",
+    title: "Big Data & Predictive Growth",
+    desc: "Leveraging strategic data nodes to identify wealth acceleration opportunities and optimize group-wide administrative efficiency.",
+    icon: <Database className="w-5 h-5" />,
+    metrics: "Algorithmic Precision",
+    status: "Optimized"
+  }
 ];
 
+// Type-safe Variants for Next.js 16.1.1
+const containerVars = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15, delayChildren: 0.3 }
+  }
+};
+
+const itemVars = {
+  hidden: { opacity: 0, y: 20 },
+  show: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.8, 
+      ease: [0.22, 1, 0.36, 1] as const // Fixed for build safety
+    } 
+  }
+};
+
 export default function CTODossier() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
-    }, 10000); // Slower, more prestigious transition
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <main className="min-h-screen bg-bone text-obsidian selection:bg-gold/30 selection:text-obsidian">
-      
-      {/* 1. HERO ENGINE: HIGH-CONTRAST OVERLAY */}
-      <section className="relative h-[85vh] w-full overflow-hidden bg-obsidian">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 0.4, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={heroImages[index]}
-              alt="Strategic Infrastructure"
-              fill
-              priority
-              className="object-cover grayscale-[30%]"
-            />
-          </motion.div>
-        </AnimatePresence>
+    <section className="relative py-32 bg-obsidian text-bone overflow-hidden">
+      {/* BACKGROUND ELEMENT: Digital Topography */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none grayscale">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+        <svg width="100%" height="100%" className="stroke-gold fill-none">
+          <circle cx="100%" cy="0%" r="40%" strokeWidth="0.5" />
+          <circle cx="100%" cy="0%" r="30%" strokeWidth="0.5" strokeDasharray="10 10" />
+        </svg>
+      </div>
 
-        {/* VIGNETTE & SCRIM: Ensures text legibility */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent" />
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-obsidian/60 via-transparent to-transparent" />
-
-        <div className="relative z-20 h-full max-w-7xl mx-auto px-6 flex flex-col justify-end pb-24">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }} 
-            animate={{ opacity: 1, x: 0 }} 
-            transition={{ duration: 1, delay: 0.5 }}
-            className="max-w-3xl"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <span className="h-[1px] w-12 bg-gold" />
-              <span className="text-gold tracking-[0.4em] text-[10px] font-bold uppercase">Executive Dossier // CTO 01</span>
-            </div>
-            <h1 className="text-5xl md:text-8xl font-display text-white uppercase leading-[0.85] tracking-tighter mb-8">
-              Digital <br /> <span className="text-gold italic">Integration</span>
-            </h1>
-            <p className="text-white/70 text-sm md:text-base tracking-[0.2em] uppercase font-light">
-              Architecting Sovereignty for Banco Atlántida Honduras
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 2. STRATEGIC PILLARS: MINIMALIST GRID */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 border-l border-obsidian/10 pl-8 md:pl-16">
-          {[
-            { 
-              num: "01", 
-              title: "Cloud Sovereignty", 
-              desc: "Migrating core banking assets into hybrid-cloud environments while maintaining strict regional data governance." 
-            },
-            { 
-              num: "02", 
-              title: "Zero-Trust Core", 
-              desc: "Deploying multi-layered biometric security protocols to immunize the bank's operational layer against external volatility." 
-            },
-            { 
-              num: "03", 
-              title: "API Ecosystem", 
-              desc: "Bridging traditional capital with digital velocity through the GFA strategic growth network." 
-            }
-          ].map((pillar, i) => (
-            <motion.div 
-              key={i}
-              whileHover={{ y: -5 }}
-              className="group cursor-default"
-            >
-              <span className="block text-gold font-mono text-sm mb-6">{pillar.num}</span>
-              <h3 className="text-2xl font-display uppercase tracking-tight mb-4 group-hover:text-gold transition-colors">{pillar.title}</h3>
-              <p className="text-ash leading-relaxed font-light text-sm md:text-base">{pillar.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* 3. TECHNICAL ROADMAP: THE "WAR ROOM" STYLE */}
-      <section className="bg-obsidian text-bone py-32 overflow-hidden relative">
-        {/* Fine-line background deco */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none" 
-             style={{ backgroundImage: 'radial-gradient(circle, #A67C00 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         
-        <div className="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-5">
-            <h2 className="text-4xl md:text-5xl font-display uppercase leading-tight mb-8">
-              The Strategic <br /> <span className="text-gold">Roadmap 2030</span>
-            </h2>
-            <p className="text-bone/60 font-light text-lg mb-12">
-              Technology as the bridge between legacy security and the velocity of future investment partnerships.
-            </p>
-            <div className="space-y-4">
-              {['Phase I: Core Re-Architecture', 'Phase II: Predictive AI Integration', 'Phase III: Global Interoperability'].map((phase, i) => (
-                <div key={i} className="flex items-center gap-4 group p-4 border border-white/5 hover:border-gold/30 hover:bg-white/[0.02] transition-all">
-                  <span className="text-gold font-mono text-xs italic">0{i+1}</span>
-                  <span className="uppercase tracking-widest text-xs font-bold">{phase}</span>
-                  <ArrowUpRight className="ml-auto w-4 h-4 text-white/20 group-hover:text-gold transition-colors" />
-                </div>
-              ))}
+        {/* HEADER: Technical Command */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-2 h-2 bg-gold rounded-full animate-ping" />
+              <span className="text-gold font-bold tracking-[0.6em] text-[10px] uppercase">
+                CTO Mandate // Digital Sovereignty
+              </span>
             </div>
+            <h2 className="text-5xl md:text-8xl font-display uppercase tracking-tighter leading-none mb-8">
+              Digital <br /> <span className="text-gold italic font-light">Integration</span>
+            </h2>
+            <p className="text-bone/60 text-lg md:text-xl font-light leading-relaxed">
+              Orchestrating the convergence of high-end financial infrastructure and the 
+              <span className="text-white font-medium italic"> GFA Strategic Vision 2030</span>.
+            </p>
           </div>
 
-          <div className="lg:col-span-7 grid grid-cols-2 gap-4">
-            {[
-              { label: "Uptime", val: "99.99%", icon: Database },
-              { label: "Compliance", val: "ISO 27001", icon: Shield },
-              { label: "Capacity", val: "4.5M+", icon: Cpu },
-              { label: "Reach", val: "3 Markets", icon: Globe }
-            ].map((stat, i) => (
-              <div key={i} className="p-8 bg-white/[0.03] border border-white/10 flex flex-col justify-between aspect-square">
-                <stat.icon className="text-gold mb-4" size={24} strokeWidth={1} />
-                <div>
-                  <div className="text-3xl md:text-4xl font-display text-white mb-1">{stat.val}</div>
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-white/40">{stat.label}</div>
+          <div className="flex flex-col items-start md:items-end text-gold/40 font-mono text-[10px] tracking-[0.3em] uppercase space-y-2">
+            <div className="flex items-center gap-2"><Fingerprint size={12} /> AUTH: DJF-71-EXEC</div>
+            <div className="flex items-center gap-2"><Globe size={12} /> REGION: HND-ES-GT</div>
+          </div>
+        </div>
+
+        {/* THE SYSTEM MATRIX */}
+        <motion.div 
+          variants={containerVars}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/10 border border-white/10"
+        >
+          {technicalMandates.map((item) => (
+            <motion.div
+              key={item.id}
+              variants={itemVars}
+              className="group relative p-10 md:p-16 bg-obsidian hover:bg-white/[0.02] transition-all duration-700 overflow-hidden"
+            >
+              {/* Card Header */}
+              <div className="flex justify-between items-start mb-16">
+                <div className="w-12 h-12 flex items-center justify-center border border-gold/30 text-gold bg-gold/5 group-hover:bg-gold group-hover:text-obsidian transition-all duration-500">
+                  {item.icon}
+                </div>
+                <span className="font-mono text-[9px] text-gold/40 group-hover:text-gold transition-colors">
+                  {item.id}
+                </span>
+              </div>
+
+              {/* Content */}
+              <div className="space-y-6 mb-16">
+                <h3 className="text-2xl md:text-3xl font-display uppercase tracking-tight group-hover:translate-x-2 transition-transform duration-500">
+                  {item.title}
+                </h3>
+                <p className="text-bone/50 text-sm md:text-base font-light leading-relaxed group-hover:text-bone transition-colors">
+                  {item.desc}
+                </p>
+              </div>
+
+              {/* Card Footer: Metadata */}
+              <div className="pt-8 border-t border-white/5 space-y-4">
+                <div className="flex justify-between items-center">
+                  <span className="text-[10px] uppercase tracking-widest text-gold font-black">Metric</span>
+                  <span className="text-[10px] font-mono text-bone/40">{item.metrics}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-[10px] uppercase tracking-widest text-gold font-black">Status</span>
+                  <span className="flex items-center gap-2 text-[10px] font-mono text-white italic">
+                    <div className="w-1 h-1 bg-green-500 rounded-full animate-pulse" />
+                    {item.status}
+                  </span>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. FINAL STATEMENT */}
-      <section className="py-40 text-center px-6">
-        <motion.div 
-           initial={{ opacity: 0 }} 
-           whileInView={{ opacity: 1 }} 
-           viewport={{ once: true }}
-           className="max-w-4xl mx-auto"
-        >
-          <p className="text-gold tracking-[0.5em] text-[10px] font-bold uppercase mb-12">Chief Technology Officer Statement</p>
-          <h2 className="text-3xl md:text-5xl font-light italic text-obsidian leading-[1.2] mb-16 px-4">
-            "Digital transformation is not an upgrade; it is the deliberate re-engineering of institutional velocity."
-          </h2>
-          <div className="flex flex-col items-center">
-            <div className="w-12 h-px bg-gold mb-6" />
-            <p className="text-sm uppercase tracking-widest font-bold">David Jackson Fernandez</p>
-            <p className="text-[10px] uppercase tracking-widest text-obsidian/40 mt-1">Banco Atlántida // Central America</p>
-          </div>
+            </motion.div>
+          ))}
         </motion.div>
-      </section>
 
-    </main>
+        {/* ACTION: Strategic Connectivity */}
+        <div className="mt-20 flex flex-col md:flex-row items-center justify-between gap-12 border-t border-white/5 pt-12">
+          <div className="flex items-center gap-8">
+            <div className="flex flex-col">
+              <span className="text-gold font-bold text-2xl">100%</span>
+              <span className="text-[9px] uppercase tracking-[0.3em] text-bone/40 font-mono">Infrastructure Uptime</span>
+            </div>
+            <div className="w-px h-10 bg-white/10" />
+            <div className="flex flex-col">
+              <span className="text-gold font-bold text-2xl">Tier IV</span>
+              <span className="text-[9px] uppercase tracking-[0.3em] text-bone/40 font-mono">Security Protocol</span>
+            </div>
+          </div>
+
+          <a 
+            href="/dossier/technical-specs" 
+            className="group flex items-center gap-6 bg-gold text-obsidian px-10 py-5 font-black text-[11px] uppercase tracking-[0.4em] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all"
+          >
+            Request Full Technical Specs <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }

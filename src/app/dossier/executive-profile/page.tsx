@@ -1,8 +1,9 @@
 "use client";
 import NextImage from "next/image";
 import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowUpRight, History, Award, Briefcase, ExternalLink, ShieldCheck, Fingerprint } from 'lucide-react';
+
 interface SmartLinkProps {
   href: string;
   children: React.ReactNode;
@@ -37,17 +38,11 @@ export default function ExecutiveDossier() {
     show: { opacity: 1, transition: { staggerChildren: 0.2 } }
   };
 
-  const itemVars: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 0.8, 
-      ease: [0.22, 1, 0.36, 1] 
-    } 
-  }
-};
+  const itemVars = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+  };
+
   return (
     <main className="min-h-screen bg-[#F9F7F2] text-obsidian selection:bg-gold/20">
       

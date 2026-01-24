@@ -1,48 +1,127 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ShieldCheck, Menu, X, Fingerprint, Globe } from 'lucide-react';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? 'bg-obsidian/90 backdrop-blur-md py-4' : 'bg-transparent py-8'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        {/* Identity */}
-        <div className="flex flex-col">
-          <span className="text-gold font-display text-2xl md: text-3x1 tracking-tighter leading-none">DJF</span>
-          <span className="text-10px md: text-12px uppercase tracking-[0.3em] text-bone mt-1">Executive HQ</span>
-        </div>
+    <>
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 w-full z-[100] transition-all duration-700 ${
+          scrolled 
+            ? 'bg-obsidian/95 backdrop-blur-xl border-b border-white/10 py-4' 
+            : 'bg-transparent py-10'
+        }`}
+      >
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex justify-between items-center">
+          
+          {/* 1. IDENTITY BLOCK: The Executive Monogram */}
+          <div className="flex items-center gap-6 group cursor-pointer">
+            <div className="relative">
+              <span className="text-gold font-display text-3xl md:text-4xl tracking-tighter leading-none block group-hover:scale-110 transition-transform duration-500">
+                DJF
+              </span>
+              {/* Status Pulse */}
+              <div className="absolute -top-1 -right-2 w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+            </div>
+            <div className="hidden lg:flex flex-col border-l border-white/20 pl-6 h-10 justify-center">
+              <span className="text-[10px] uppercase tracking-[0.4em] text-white font-black leading-none mb-1">
+                Executive Command
+              </span>
+              <span className="text-[9px] uppercase tracking-[0.2em] text-gold/60 font-mono leading-none">
+                Ref: GFA-OFFICE-2026
+              </span>
+            </div>
+          </div>
 
-        {/* Navigation */}
-        <nav className="hidden md:flex gap-12 items-center">
-          {['Vision', 'Portfolio', 'News', 'Connect'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-xs uppercase tracking-widest text-bone/70 hover:text-gold transition-colors duration-300"
+          {/* 2. NAVIGATION: Architectural Links */}
+          <nav className="hidden lg:flex gap-16 items-center">
+            {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="relative text-[10px] uppercase tracking-[0.5em] font-bold text-white/50 hover:text-white transition-all duration-300 group"
+              >
+                {item}
+                <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-gold transition-all duration-500 group-hover:w-full" />
+              </a>
+            ))}
+          </nav>
+
+          {/* 3. ACCESS PANEL: CTO Security Layer */}
+          <div className="flex items-center gap-4">
+            <div className="hidden md:flex flex-col items-end mr-6 opacity-40">
+               <span className="text-[8px] font-mono text-white/60 uppercase">System Frequency</span>
+               <span className="text-[9px] font-mono text-gold uppercase tracking-widest">60Hz // Encrypted</span>
+            </div>
+            
+            <button className="hidden md:flex items-center gap-4 border border-gold/30 bg-gold/5 px-8 py-3 group hover:bg-gold transition-all duration-500">
+              <Fingerprint size={14} className="text-gold group-hover:text-obsidian transition-colors" />
+              <span className="text-[10px] uppercase tracking-[0.3em] font-black text-gold group-hover:text-obsidian">
+                Strategic Access
+              </span>
+            </button>
+
+            {/* Mobile Toggle */}
+            <button 
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden w-12 h-12 flex items-center justify-center border border-white/10 text-white"
             >
-              {item}
-            </a>
-          ))}
-          <button className="border border-gold/50 px-6 py-2 text-[10px] uppercase tracking-[0.2em] text-gold hover:bg-gold hover:text-obsidian transition-all duration-500">
-            Strategic Inquiry
-          </button>
-        </nav>
-      </div>
-    </motion.header>
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+      </motion.header>
+
+      {/* MOBILE OVERLAY: Full-Screen Mandate */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: '100%', opacity: 0 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-[90] bg-obsidian flex flex-col p-12 justify-center"
+          >
+            <div className="space-y-12">
+              {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item, idx) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => setIsOpen(false)}
+                  className="block text-4xl font-display uppercase tracking-tighter text-white hover:text-gold transition-colors"
+                >
+                  <span className="text-gold/30 mr-6 text-xl">0{idx + 1}</span>
+                  {item}
+                </a>
+              ))}
+            </div>
+            
+            <div className="mt-24 pt-12 border-t border-white/10 flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                <Globe size={16} className="text-gold" />
+                <span className="text-xs uppercase tracking-widest text-white/40">HND // ES // GT</span>
+              </div>
+              <button className="w-full border border-gold py-5 text-gold uppercase tracking-[0.4em] text-[10px] font-black">
+                Request Security Clearance
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
