@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* 1. IMAGE OPTIMIZATION & WHITELISTING */
-  // This allows Next.js to process and display images from your Vercel Storage
   images: {
     remotePatterns: [
       {
@@ -30,9 +29,15 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: hv4w1qmfjrk8zaij.public.blob.vercel-storage.com bancatlan.hn images.unsplash.com; font-src 'self' data:; connect-src 'self';"
-              .replace(/\s{2,}/g, ' ')
-              .trim(),
+            value: `
+              default-src 'self'; 
+              script-src 'self' 'unsafe-inline' 'unsafe-eval'; 
+              style-src 'self' 'unsafe-inline'; 
+              img-src 'self' blob: data: hv4w1qmfjrk8zaij.public.blob.vercel-storage.com bancatlan.hn images.unsplash.com; 
+              media-src 'self' blob: hv4w1qmfjrk8zaij.public.blob.vercel-storage.com; 
+              font-src 'self' data:; 
+              connect-src 'self';
+            `.replace(/\s{2,}/g, ' ').trim(),
           },
           {
             key: 'Cross-Origin-Opener-Policy',

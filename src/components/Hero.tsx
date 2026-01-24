@@ -15,37 +15,46 @@ const videos = [
 
 export default function Hero() {
   const [index,
-    setIndex] = useState(0);
-
+    setIndex
+  ] = useState(0);
+  
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev === 0 ? 1: 0));
+      setIndex((prev) => (prev === 0 ? 1 : 0));
     }, 8000);
     return () => clearInterval(timer);
   }, []);
-
+  
   return (
     <section className="relative min-h-screen w-full bg-obsidian text-bone overflow-hidden flex flex-col justify-center">
       {/* 1. Background Video Engine */}
-      <div className="absolute inset-0 z-0">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={ { opacity: 0 }}
-            animate={ { opacity: 0.3 }}
-            exit={ { opacity: 0 }}
-            transition={ { duration: 3 }}
-            className="absolute inset-0 w-full h-full"
-            >
-            <video autoPlay muted loop playsInline className="h-full w-full object-cover">
-              <source src={videos[index]} type="video/mp4" />
-          </video>
-        </motion.div>
-      </AnimatePresence>
-      {/* Fintech Circuit Overlay (as seen in image) */}
-      <div className="absolute inset-0 z-10 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]" />
-      <div className="absolute inset-0 z-10 bg-gradient-to-tr from-obsidian via-obsidian/60 to-transparent" />
-    </div>
+<div className="absolute inset-0 z-0">
+  <AnimatePresence mode="wait">
+    <motion.div
+      key={index} // This tells Framer Motion to swap the entire div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 0.3 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2 }}
+      className="absolute inset-0 w-full h-full"
+    >
+      <video 
+        key={`video-${index}`} // KEY IS REQUIRED HERE to force video reload
+        autoPlay 
+        muted 
+        loop 
+        playsInline 
+        className="h-full w-full object-cover"
+      >
+        <source src={videos[index]} type="video/mp4" />
+      </video>
+    </motion.div>
+  </AnimatePresence>
+  {/* Circuit and Gradient Overlays */}
+  <div className="absolute inset-0 z-10 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]" />
+  <div className="absolute inset-0 z-10 bg-gradient-to-tr from-obsidian via-obsidian/60 to-transparent" />
+</div>
+
 
     <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 w-full pt-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
@@ -116,5 +125,5 @@ export default function Hero() {
   <div className="absolute top-10 left-10 w-8 h-8 border-l border-t border-gold/30 hidden md:block" />
   <div className="absolute bottom-10 right-10 w-8 h-8 border-r border-b border-gold/30 hidden md:block" />
 </section>
-);
+  );
 }
