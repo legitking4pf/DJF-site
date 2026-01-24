@@ -16,7 +16,6 @@ import {
 } from 'lucide-react';
 
 export default function ExecutiveContact() {
-  // Integrated Formspree Hook - Replace "meearreg" with your actual ID if changed
   const [state, handleSubmit] = useForm("meearreg");
 
   return (
