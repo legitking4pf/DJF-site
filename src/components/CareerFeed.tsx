@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import Image from 'next/image'
+import NextImage from 'next/image'
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Clock } from 'lucide-react';
 
@@ -79,7 +79,7 @@ export default function ExecutiveLedger() {
               className="group flex flex-col h-full bg-white border border-gray-100 p-1 hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-obsidian">
-                <Image 
+                <NextImage 
                   src={item.image} 
                   alt={item.title} 
                   priority={true}
