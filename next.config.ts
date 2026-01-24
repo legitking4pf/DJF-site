@@ -1,5 +1,28 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* 1. IMAGE OPTIMIZATION & WHITELISTING */
+  // This allows Next.js to process and display images from your Vercel Storage
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'hv4w1qmfjrk8zaij.public.blob.vercel-storage.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'bancatlan.hn',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
+
+  /* 2. SECURITY & PERFORMANCE HEADERS */
   async headers() {
     return [
       {
