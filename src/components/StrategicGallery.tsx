@@ -100,7 +100,7 @@ export default function StrategicGallery() {
               >
                 {/* FIX: Set a concrete width for the card to prevent overflow */}
                 <div className="w-[240px] h-[340px] rounded-lg overflow-hidden shadow-2xl border border-obsidian/10 bg-white">
-                  <image src={Image.src} alt={Image.title} className="w-full h-full object-cover" />
+                  <Image src={Image.src} alt={Image.title} className="w-full h-full object-cover" />
                 </div>
               </div>
             );
@@ -149,7 +149,8 @@ export default function StrategicGallery() {
         <div className="hidden lg:grid grid-cols-4 grid-rows-3 gap-6 h-[850px]">
           {images.map((Image) => (
             <div key={Image.id} className={`relative overflow-hidden rounded-xl shadow-sm border border-obsidian/5 group ${Image.span}`}>
-              <Image src={Image.src} alt={Image.title} className="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" />
+              <Image src={Image.src} alt={Image.title}
+             priority={true} CentralclassName="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" />
               <div className="absolute inset-0 bg-obsidian/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
                 <span className="text-white text-xs tracking-widest uppercase font-medium">{Image.title}</span>
               </div>

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
+// Optimizing fonts to prevent "Flash of Unstyled Text" (FOUT)
 const inter = Inter({ 
   subsets: ['latin'], 
   display: 'swap',
@@ -18,6 +19,7 @@ export const viewport: Viewport = {
   themeColor: "#050505",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5
 };
 
 export const metadata: Metadata = {
