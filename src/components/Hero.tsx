@@ -75,7 +75,7 @@ export default function Hero() {
 
               <div className="flex flex-col md:flex-row md:items-center gap-10 border-l border-gold/40 pl-8">
                 <p className="text-white/90 text-sm md:text-lg font-light tracking-wide max-w-md leading-relaxed">
-                  Leading the <span className="text-gold font-bold">Digital Sovereignty</span> and Architectural Curation of the Grupo Financiero Atlántida ecosystem [cite: 2025-12-09].
+                  Leading the <span className="text-gold font-bold">Digital Sovereignty</span> and Architectural Curation of the Grupo Financiero Atlántida ecosystem.
                 </p>
                 <div className="hidden md:block w-px h-12 bg-white/10" />
                 <div className="flex flex-col">
@@ -139,9 +139,6 @@ export default function Hero() {
               />
             ))}
          </div>
-         <span className="text-[8px] font-mono text-white/30 uppercase tracking-[0.4em]">
-            Operational Phase 0{index + 1} // Sync.2026
-         </span>
       </div>
 
       <motion.div 

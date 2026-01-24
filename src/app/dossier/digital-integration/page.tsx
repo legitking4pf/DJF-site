@@ -83,12 +83,12 @@ export default function CTODossier() {
                 CTO Mandate // Digital Sovereignty
               </span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-display uppercase tracking-tighter leading-none mb-8">
+            <h2 className="text-3xl md:text-6xl font-display uppercase tracking-tighter leading-none mb-8">
               Digital <br /> <span className="text-gold italic font-light">Integration</span>
             </h2>
             <p className="text-bone/60 text-lg md:text-xl font-light leading-relaxed">
-              Orchestrating the convergence of high-end financial infrastructure and the 
-              <span className="text-white font-medium italic"> GFA Strategic Vision 2030</span>.
+              Orchestrating the convergence of high-end financial infrastructure. A core build in the Banco Atlantida Hn service base and scope 
+              <span className="text-white font-medium italic">===</span>.
             </p>
           </div>
 
@@ -136,7 +136,7 @@ export default function CTODossier() {
               <div className="pt-8 border-t border-white/5 space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-[10px] uppercase tracking-widest text-gold font-black">Metric</span>
-                  <span className="text-[10px] font-mono text-bone/40">{item.metrics}</span>
+                  <span className="text-[10px] font-mono text-bone/70">{item.metrics}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-[10px] uppercase tracking-widest text-gold font-black">Status</span>
@@ -154,7 +154,7 @@ export default function CTODossier() {
         <div className="mt-20 flex flex-col md:flex-row items-center justify-between gap-12 border-t border-white/5 pt-12">
           <div className="flex items-center gap-8">
             <div className="flex flex-col">
-              <span className="text-gold font-bold text-2xl">100%</span>
+              <span className="text-gold font-bold text-2xl">Fair</span>
               <span className="text-[9px] uppercase tracking-[0.3em] text-bone/40 font-mono">Infrastructure Uptime</span>
             </div>
             <div className="w-px h-10 bg-white/10" />
@@ -163,13 +163,6 @@ export default function CTODossier() {
               <span className="text-[9px] uppercase tracking-[0.3em] text-bone/40 font-mono">Security Protocol</span>
             </div>
           </div>
-
-          <a 
-            href="/dossier/technical-specs" 
-            className="group flex items-center gap-6 bg-gold text-obsidian px-10 py-5 font-black text-[11px] uppercase tracking-[0.4em] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] transition-all"
-          >
-            Request Full Technical Specs <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
-          </a>
         </div>
       </div>
     </section>

@@ -53,7 +53,7 @@ export default function ExecutiveLedger() {
                <ShieldCheck className="text-gold w-4 h-4" />
                <span className="text-gold font-bold text-[10px] uppercase tracking-[0.5em]">from the Group Governance Hub</span>
             </div>
-            <h2 className="text-3xl md:text-6xl font-serif tracking-tighter leading-[0.8]">
+            <h2 className="text-3xl md:text-6xl font-serif tracking-tighter leading-[1.1]">
               The <span className="italic font-light">Executive</span> <br />
               <span className="font-bold">Ledger</span>
             </h2>

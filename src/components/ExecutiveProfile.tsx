@@ -53,7 +53,7 @@ export default function ExecutiveProfile() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-6xl font-serif italic tracking-tighter leading-[1.1] mb-0"
+              className="text-3xl md:text-6xl font-serif italic tracking-tighter leading-[] mb-0"
             >
               Strategic <br /> <span className="not-italic font-black text-obsidian uppercase">Sovereignty</span>
             </motion.h2>
@@ -117,11 +117,9 @@ export default function ExecutiveProfile() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-ash text-base md:text-lg leading-relaxed font-light">
                 <p>
-                  As a dual-mandate executive within the GFA ecosystem, my focus is the elimination of operational friction. Through high-precision digital integration and administrative rigor, we secure the velocity of wealth across regional borders.
-                </p>
+As a dual-mandate executive within the GFA ecosystem, David Jackson Fernandez maintains a singular focus: the absolute elimination of operational friction. Through high-precision Digital Integration and administrative rigor, he secures the velocity of wealth across regional borders, aligning every milestone with a Strategic Growth Network built for long-term sustainability.                </p>
                 <p>
-                  This philosophy extends into the physical realm via KONCEPTO Décor, where essentialism is used to curate minimalist environments that reflect the structural integrity of a well-governed financial system.
-                </p>
+This philosophy extends into his curation of the physical realm via KONCEPTO Décor. Here, he employs architectural essentialism to curate minimalist environments that reflect the structural integrity and high-end privacy of a well-governed financial system                </p>
               </div>
 
               <Link href="/dossier/executive-profile" className="inline-flex items-center gap-6 group pt-8">

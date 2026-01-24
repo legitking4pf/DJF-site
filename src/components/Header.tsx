@@ -46,31 +46,26 @@ const Header = () => {
             </div>
           </div>
 
-          {/* 2. NAVIGATION: Architectural Links (Raised Z-Index) */}
-          <nav className="hidden lg:flex gap-12 items-center relative z-[120]">
+         {/* 2. NAVIGATION: Architectural Links */}
+          <nav className="hidden lg:flex gap-16 z-[200] items-center">
             {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="relative text-[9px] uppercase tracking-[0.5em] font-bold text-white/50 hover:text-white transition-all duration-300 group"
+                className="relative text-[10px] uppercase tracking-[0.5em] font-bold text-white/50 hover:text-white transition-all duration-300 group"
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all duration-500 group-hover:w-full" />
+                <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-gold transition-all duration-500 group-hover:w-full" />
               </a>
             ))}
           </nav>
-
           {/* 3. ACCESS PANEL */}
           <div className="flex items-center gap-4 relative z-[120]">
-            <div className="hidden xl:flex flex-col items-end mr-4 opacity-40">
-               <span className="text-[7px] font-mono text-white/60 uppercase">System Frequency</span>
-               <span className="text-[8px] font-mono text-gold uppercase tracking-widest">60Hz // Encrypted</span>
-            </div>
-            
+
             <button className="hidden md:flex items-center gap-3 border border-gold/30 bg-gold/5 px-6 py-2.5 group hover:bg-gold transition-all duration-500">
-              <Fingerprint size={12} className="text-gold group-hover:text-obsidian transition-colors" />
+              <Fingerprint size={12} class:Name="text-gold group-hover:text-obsidian transition-colors" />
               <span className="text-[9px] uppercase tracking-[0.3em] font-black text-gold group-hover:text-obsidian">
-                Access
+                Access Contact
               </span>
             </button>
 

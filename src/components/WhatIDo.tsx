@@ -71,7 +71,7 @@ export default function StrategicEcosystems() {
               DAVID's Leadership Assets
               </span>
             </div>
-            <h2 className="text-3xl md:text-6xl font-display tracking-tighter leading-[0.85] uppercase mb-10">
+            <h2 className="text-3xl md:text-6xl font-display tracking-tighter leading-[1.1] uppercase mb-10">
               Institutional <br /> <span className="text-gold italic font-light">Ecosystems</span>
             </h2>
             <p className="text-white/80 text-base md:text-xl font-light leading-relaxed max-w-xl">
@@ -128,7 +128,7 @@ export default function StrategicEcosystems() {
                   </div>
                 </div>
                 
-                <h3 className={`text-3xl md:text-5xl font-display mb-8 uppercase tracking-tighter leading-none transition-transform duration-500 group-hover:translate-x-2
+                <h3 className={`text-2xl md:text-4xl font-display mb-8 uppercase tracking-tighter leading-none transition-transform duration-500 group-hover:translate-x-2
                   ${item.isDesign ? "font-serif italic text-white" : "text-white"}`}>
                   {item.title}
                 </h3>
@@ -182,7 +182,7 @@ export default function StrategicEcosystems() {
            
            <div className="text-right">
              <p className="text-[10px] uppercase tracking-[0.5em] text-white/60 mb-1">
-               Global Reach // HND • ES • GT • ES
+               Global Reach // HND • ES • GT
              </p>
              <p className="text-[9px] uppercase tracking-[0.2em] text-gold">
               DFJ 2026 Strategic Leadership
