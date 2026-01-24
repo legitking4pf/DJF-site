@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, Zap, Database, Globe, Cpu, ArrowUpRight } from 'lucide-react';
-
+const MotionImage = motion.create(Image);
 const heroImages = [
   'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/portada-09-02-2024-111-juntos-tdHAoirlE7TMdek7ReGI43HDBa3wqm.jpg',
   'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/portada-09-02-2024-111-juntos-tdHAoirlE7TMdek7ReGI43HDBa3wqm.jpg'
@@ -24,7 +24,7 @@ export default function CTODossier() {
       {/* 1. BACKGROUND ENGINE */}
       <div className="absolute inset-0 h-[70vh] z-0 bg-obsidian overflow-hidden">
         <AnimatePresence mode="wait">
-          <motion.Image
+          <MotionImage
             key={index}
             src={heroImages[index]}
             priority={true}
