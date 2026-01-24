@@ -39,7 +39,7 @@ export default function Hero() {
                 muted 
                 loop 
                 playsInline 
-                className="h-full w-full object-cover grayscale brightness-75 transition-all duration-1000"
+                className="h-full w-full object-cover brightness-75 transition-all duration-1000"
               >
                 <source src={videos[index]} type="video/mp4" />
               </video>
@@ -65,12 +65,12 @@ export default function Hero() {
             >
               <div className="flex items-center gap-4 mb-10">
                 <span className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase bg-gold/5 px-3 py-1 border border-gold/20">
-                  Institutional Mandate // 2026
+                  Institutional Mandate
                 </span>
                 <div className="h-px w-12 bg-gold/30" />
               </div>
 
-              <h1 className="text-5xl md:text-8xl font-display tracking-tighter uppercase leading-[0.85] mb-12">
+              <h1 className="text-3xl md:text-6xl font-display tracking-tighter uppercase leading-[0.85] mb-12">
                 Governance. <br />
                 <span className="text-gold italic font-light">Infrastructure.</span> <br />
                 Aesthetics.
@@ -99,10 +99,6 @@ export default function Hero() {
               transition={{ duration: 1.2, delay: 0.4 }}
               className="space-y-4"
             >
-              <h3 className="text-white/40 tracking-[0.4em] uppercase text-[10px] font-black mb-6 flex items-center gap-2">
-                <Fingerprint size={12} /> Verification Required
-              </h3>
-
               {/* STAT MODULE 1: CAO */}
               <div className="group relative p-6 bg-white/[0.02] border border-white/10 backdrop-blur-xl transition-all duration-500 hover:border-gold/50">
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">

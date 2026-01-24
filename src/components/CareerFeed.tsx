@@ -51,18 +51,17 @@ export default function ExecutiveLedger() {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
                <ShieldCheck className="text-gold w-4 h-4" />
-               <span className="text-gold font-bold text-[10px] uppercase tracking-[0.5em]">Digital Governance Hub</span>
+               <span className="text-gold font-bold text-[10px] uppercase tracking-[0.5em]">from the Group Governance Hub</span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-serif tracking-tighter leading-[0.8]">
+            <h2 className="text-3xl md:text-6xl font-serif tracking-tighter leading-[0.8]">
               The <span className="italic font-light">Executive</span> <br />
               <span className="font-bold">Ledger</span>
             </h2>
           </div>
           <div className="max-w-xs space-y-4">
-            <p className="text-xs uppercase tracking-[0.2em] font-bold text-obsidian/40">Context // 2026 Fiscal Year</p>
+            <p className="text-xs uppercase tracking-[0.2em] font-bold text-obsidian/40">Executive Log // Leadership & Regional Milestones </p>
             <p className="text-sm font-light leading-relaxed text-ash">
-              Real-time synchronization of regional milestones, digital transformations, and high-value investment partnerships.
-            </p>
+A centralized repository of David Jackson Fernandez’s leadership updates, management insights, and real-time synchronization of regional milestones. This feed tracks the high-velocity digital transformations and investment partnerships orchestrated across Grupo Financiero Atlántida and EBN Group subsidiaries, offering a direct view into the execution of the Group leadership exercises        </p>
           </div>
         </div>
 
@@ -134,13 +133,10 @@ export default function ExecutiveLedger() {
               </div>
               <div className="w-px h-8 bg-obsidian/10" />
               <div className="flex flex-col">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-ash">Last Synchronization</span>
-                <span className="text-xs font-mono">12:38:16 UTC</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-ash">UTC Synchronization</span>
+                <span className="text-xs font-mono">Real-time</span>
               </div>
            </div>
-           <button className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.4em] text-obsidian hover:text-gold transition-colors">
-              <FileText size={14} /> Full Archive Download
-           </button>
         </div>
       </div>
     </section>

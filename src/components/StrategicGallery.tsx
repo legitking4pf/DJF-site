@@ -47,13 +47,13 @@ export default function StrategicGallery() {
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
               <Layers className="text-gold w-4 h-4" />
-              <span className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase">Asset Portfolio // GFA-HQ</span>
+              <span className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase">DJF Asset Portfolio // GFA/EBN</span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-serif tracking-tighter text-obsidian leading-[0.8] mb-8">
-              Strategic <span className="italic font-light">Environments</span>
+            <h2 className="text-3xl md:text-6xl font-serif tracking-tighter text-obsidian leading-[0.8] mb-8">
+              Company <span className="italic font-light">Environments</span>
             </h2>
             <p className="text-ash text-sm md:text-lg max-w-xl font-light leading-relaxed">
-              A comprehensive visualization of GFA's physical and digital footprint, mapped against the **Strategic Vision 2030** pillars of integration and sustainability.
+              A comprehensive visualization of David Jackson Fernandez, The Group and Subsidiaries physical and digital footprint (Images), mapped under DJF Oversight and Leadership Management.
             </p>
           </div>
 
@@ -64,7 +64,7 @@ export default function StrategicGallery() {
           >
             <Map className={`w-4 h-4 transition-transform ${isBlueprint ? 'rotate-180' : ''}`} />
             <span className="text-[10px] uppercase tracking-[0.3em] font-bold">
-              {isBlueprint ? "Deactivate Blueprint" : "Project Blueprint View"}
+              {isBlueprint ? "Project Blueprint View" : "Deactivate Blueprint"}
             </span>
           </button>
         </div>

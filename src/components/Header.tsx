@@ -30,11 +30,11 @@ const Header = () => {
           {/* 1. IDENTITY BLOCK: The Executive Monogram */}
           <div className="flex items-center gap-6 group cursor-pointer">
             <div className="relative">
-              <span className="text-gold font-display text-3xl md:text-4xl tracking-tighter leading-none block group-hover:scale-110 transition-transform duration-500">
+              <span className="text-gold font-display text-3xl md:text-6xl tracking-tighter leading-none block group-hover:scale-110 transition-transform duration-500">
                 DJF
               </span>
               {/* Status Pulse */}
-              <div className="absolute -top-1 -right-2 w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+              <div className="absolute -top-1 -right-2 w-1.5 h-1.5. bg-green-500 rounded-full animate-pulse" />
             </div>
             <div className="hidden lg:flex flex-col border-l border-white/20 pl-6 h-10 justify-center">
               <span className="text-[10px] uppercase tracking-[0.4em] text-white font-black leading-none mb-1">
@@ -47,7 +47,7 @@ const Header = () => {
           </div>
 
           {/* 2. NAVIGATION: Architectural Links */}
-          <nav className="hidden lg:flex gap-16 items-center">
+          <nav className="hidden lg:flex gap-16 z-[200] items-center">
             {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item) => (
               <a
                 key={item}
@@ -115,7 +115,7 @@ const Header = () => {
                 <span className="text-xs uppercase tracking-widest text-white/40">HND // ES // GT</span>
               </div>
               <button className="w-full border border-gold py-5 text-gold uppercase tracking-[0.4em] text-[10px] font-black">
-                Request Security Clearance
+                Request Contact
               </button>
             </div>
           </motion.div>

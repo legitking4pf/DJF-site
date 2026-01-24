@@ -7,27 +7,27 @@ import NextImage from 'next/image';
 const specializations = [
   {
     title: "Digital Integration",
-    desc: "Architecting secure digital banking ecosystems and leading large-scale fintech transformation across GFA subsidiaries to ensure digital integration and sustainability.",
+    desc: "As Chief Technology Officer of Banco Atlántida Honduras—a primary subsidiary of Grupo Financiero Atlántida (GFA)—David Jackson Fernandez orchestrates the architecture of secure digital banking ecosystems. His mandate encompasses leading large-scale fintech transformations across the Banco Atlántida network, subsidiaries, and affiliates. By prioritizing digital integration and institutional sustainability, he ensures a seamless, future-ready experience for both the bank and its global consumer base.",
     icon: <Cpu className="w-5 h-5" />,
     role: "Chief Technology Officer",
     metric: "Digital Sovereignty",
     link: "/dossier/digital-integration",
     cta: "View Full Dossier",
-    tag: "CTO // TECH"
+    tag: "Banco Atlantida"
   },
   {
-    title: "Strategic Growth",
-    desc: "Overseeing corporate governance, administrative efficiency, and regional expansion through investment partnerships within the GFA framework.",
+    title: "Executive Sovereignty",
+    desc: "In his capacity as Chief Administrative Officer, David Jackson Fernandez directs corporate governance and operational efficiency across the Atlantida Group framework. He orchestrates regional expansion by cultivating strategic investment partnerships, ensuring that the group’s administrative architecture supports long-term growth and institutional resilience",
     icon: <ShieldCheck className="w-5 h-5" />,
     role: "Chief Administrative Officer",
     metric: "Operational Compliance",
     link: "/dossier/strategic-growth",
     cta: "View Full Dossier",
-    tag: "CAO // GOV"
+    tag: "GFA Group"
   },
   {
-    title: "Lifestyle Investment",
-    desc: "Curating Spanish-inspired minimalist aesthetics and high-quality modern living through KONCEPTO Décor. We transform executive environments into high-end sanctuaries.",
+    title: "Modern Luxury",
+    desc: "Curating Spanish-inspired minimalist aesthetics and high-quality modern living through KONCEPTO Décor. We architect executive environments, transforming corporate and private spaces into high-end sanctuaries that reflect the precision and balance of essentialist design.",
     icon: <Palette className="w-5 h-5" />,
     role: "Founder & Creative Lead",
     metric: "Aesthetic Innovation",
@@ -36,18 +36,18 @@ const specializations = [
     // Premium marble texture to reflect high-end design
     texture: "https://images.unsplash.com/photo-1504198266287-1659872e6590?auto=format&fit=crop&q=80",
     isDesign: true,
-    tag: "FOUNDER // DESIGN"
+    tag: "Koncepto Decor"
   },
   {
-    title: "Wealth Acceleration",
-    desc: "Direct access to managed asset portfolios and global stocks within our strategic growth network, prioritizing transparency and long-term capital appreciation.",
+    title: "Finance Diversifications",
+    desc: "Understand ad Bargain more with Direct access to managed asset portfolios and global stocks / investment opportunities within the Group strategic growth network, prioritizing transparency and long-term capital appreciation.",
     icon: <Globe className="w-5 h-5" />,
-    role: "Strategic Advisor",
+    role: "Asset Advisory",
     metric: "Growth Network",
     link: "/wealth-acceleration",
     cta: "Access Opportunity",
     isHighlight: true,
-    tag: "GFA // ASSETS"
+    tag: "Finance"
   }
 ];
 
@@ -68,14 +68,14 @@ export default function StrategicEcosystems() {
             <div className="flex items-center gap-4 mb-8">
               <div className="h-[1px] w-12 bg-gold" />
               <span className="text-gold font-bold tracking-[0.6em] text-[10px] uppercase">
-                Strategic Scope // 2026
+              DAVID's Leadership Assets
               </span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-display tracking-tighter leading-[0.85] uppercase mb-10">
+            <h2 className="text-3xl md:text-6xl font-display tracking-tighter leading-[0.85] uppercase mb-10">
               Institutional <br /> <span className="text-gold italic font-light">Ecosystems</span>
             </h2>
             <p className="text-white/80 text-base md:text-xl font-light leading-relaxed max-w-xl">
-              A comprehensive mandate driving <span className="text-white font-medium border-b border-gold/30">Digital Transformation</span> and <span className="text-white font-medium border-b border-gold/30">Design Innovation</span> across the GFA Strategic Vision 2030 pillars.
+              David Jackson Fernandez has Aquired and hold leadership authority from management control and in ownership power in his current career life.  He has A comprehensive mandate driving <span className="text-white font-medium border-b border-gold/30">Digital Transfomation</span> in the banking and finance sector. And <span className="text-white font-medium border-b border-gold/30">Design Innovation</span> in the Luxury / E commerce sector. Having more significant achievements and strategic leadership majorly across the GFA / EBN Group
             </p>
           </motion.div>
 
@@ -122,7 +122,7 @@ export default function StrategicEcosystems() {
                     <span className="text-[10px] uppercase tracking-[0.4em] text-gold font-black mb-1">
                       {item.metric}
                     </span>
-                    <span className="text-[9px] uppercase tracking-widest text-white/30 font-mono">
+                    <span className="text-[9px] uppercase tracking-widest text-white/60 font-mono">
                       {item.tag}
                     </span>
                   </div>
@@ -167,7 +167,7 @@ export default function StrategicEcosystems() {
         <div className="mt-24 flex flex-col md:flex-row items-center justify-between border-t border-white/5 pt-12 gap-10">
            <div className="flex items-center gap-10">
               <div className="flex flex-col">
-                <span className="text-[9px] uppercase tracking-[0.3em] text-white/30 mb-2 font-bold">Security Protocols</span>
+                <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 mb-2 font-bold">Security Protocols</span>
                 <span className="text-[11px] font-mono text-gold flex items-center gap-2">
                   <span className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse" /> 
                   Unified Command Active
@@ -175,18 +175,18 @@ export default function StrategicEcosystems() {
               </div>
               <div className="hidden md:block w-[1px] h-10 bg-white/10" />
               <div className="flex flex-col">
-                <span className="text-[9px] uppercase tracking-[0.3em] text-white/30 mb-2 font-bold">Philosophical Core</span>
+                <span className="text-[9px] uppercase tracking-[0.3em] text-white/60 mb-2 font-bold">Philosophical Core</span>
                 <span className="text-[11px] font-mono text-white italic">Architectural Essentialism</span>
               </div>
            </div>
            
            <div className="text-right">
-             <p className="text-[10px] uppercase tracking-[0.5em] text-white/20 mb-1">
+             <p className="text-[10px] uppercase tracking-[0.5em] text-white/60 mb-1">
                Global Reach // HND • ES • GT • ES
              </p>
-             <p className="text-[9px] uppercase tracking-[0.2em] text-gold/40">
-               © 2026 GFA Strategic Vision 2030
-             </p>
+             <p className="text-[9px] uppercase tracking-[0.2em] text-gold">
+              DFJ 2026 Strategic Leadership
+              </p>
            </div>
         </div>
       </div>
