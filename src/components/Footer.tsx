@@ -56,7 +56,7 @@ export default function Footer() {
       Have a strategic briefing or feedback for the Executive Office?
     </p>
     <a 
-      href="/contact" 
+      href="/app/contact" 
       className="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-white hover:bg-gold hover:text-black transition-all group"
     >
       Open Secure Channel <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -64,7 +64,7 @@ export default function Footer() {
   </div>
 
   <div className="flex gap-4">
-    <SocialLink href="#" icon={<Linkedin size={18} />} label="LinkedIn" />
+    <SocialLink href="https://hn.linkedin.com/company/grupofinancieroatlantida" icon={<Linkedin size={18} />} label="LinkedIn" />
     <SocialLink href="#" icon={<Twitter size={18} />} label="X" />
   </div>
 </div>
