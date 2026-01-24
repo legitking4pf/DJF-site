@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, Zap, Database, Globe, Cpu, ArrowUpRight } from 'lucide-react';
@@ -23,9 +24,10 @@ export default function CTODossier() {
       {/* 1. BACKGROUND ENGINE */}
       <div className="absolute inset-0 h-[70vh] z-0 bg-obsidian overflow-hidden">
         <AnimatePresence mode="wait">
-          <motion.img
+          <motion.Image
             key={index}
             src={heroImages[index]}
+            priority={true}
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 0.3, scale: 1 }}
             exit={{ opacity: 0 }}

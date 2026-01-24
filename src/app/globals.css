@@ -1,27 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  /* Define the specific keys your components are looking for */
+  /* High-Contrast Executive Palette */
   --font-display: var(--font-playfair), serif;
   --font-body: var(--font-inter), sans-serif;
-  --color-obsidian: #0D0D0D;
-  --color-bone: #F9F8F6;
-  --color-gold: #CE9D40;
-  --color-ash: #838383;
+  
+  --color-obsidian: #050505;
+  --color-bone: #FDFBF7;
+  
+  /* Deepened Institutional Gold for AA Contrast Compliance */
+  --color-gold: #946C00; 
+  --color-gold-light: #C5A059;
+  --color-gold-dark: #735400;
+  
+  /* Darker Ash for better legibility on Bone backgrounds */
+  --color-ash: #575757; 
 }
 
 @layer base {
   body {
-    @apply bg-bone text-obsidian antialiased;
+    background-color: var(--color-bone);
+    color: var(--color-obsidian);
+    -webkit-font-smoothing: antialiased;
     font-family: var(--font-body);
   }
 
   h1, h2, h3, .font-display {
     font-family: var(--font-display);
+    /* Fixing the render-blocking typography delay */
+    font-display: swap; 
   }
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar { width: 6px; }
+/* Scrollbar optimized for Spanish Minimalist Aesthetics */
+::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--color-bone); }
-::-webkit-scrollbar-thumb { background: var(--color-obsidian); border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: var(--color-gold); border-radius: 0px; }

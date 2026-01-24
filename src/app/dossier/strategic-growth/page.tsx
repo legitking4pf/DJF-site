@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, BarChart, Scale, Users, FileCheck, ArrowLeft, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
@@ -24,9 +25,10 @@ export default function CAODossier() {
       {/* 1. ATMOSPHERIC BACKGROUND */}
       <div className="absolute inset-0 h-[70vh] z-0 bg-obsidian overflow-hidden">
         <AnimatePresence mode="wait">
-          <motion.img
+          <motion.Image
             key={index}
             src={caoImages[index]}
+            priority={true}
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 0.25, scale: 1 }}
             exit={{ opacity: 0 }}

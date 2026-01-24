@@ -9,10 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: "#0D0D0D",
-        bone: "#F9F8F6",
-        gold: "#B89655",
-        ash: "#454545",
+        gold: {
+          DEFAULT: '#A67C00', // Institutional Gold
+          light: '#C5A059',
+          dark: '#856404',
+        },
+        obsidian: '#050505',
+        bone: '#FDFBF7',
       },
       fontFamily: {
         body: ["Inter", "sans-serif"],

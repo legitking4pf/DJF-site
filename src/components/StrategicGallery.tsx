@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-
+import Image from 'next/image'
 export default function StrategicGallery() {
   const images = [
     { id: 1, src: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/684082b08064a259b26c8ac3_final.jpg",
@@ -83,13 +83,13 @@ export default function StrategicGallery() {
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          {images.map((img, index) => {
+          {images.map((Image, index) => {
             const offset = getOffset(index, active, images.length);
             // Reduced cardWidth for mobile to ensure previews stay tighter
             const cardWidth = 220; 
             return (
               <div
-                key={img.id}
+                key={Image.id}
                 className="absolute transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
                 style={{
                   transform: `translateX(${offset * cardWidth}px) scale(${index === active ? 1 : 0.8})`,
@@ -100,7 +100,7 @@ export default function StrategicGallery() {
               >
                 {/* FIX: Set a concrete width for the card to prevent overflow */}
                 <div className="w-[240px] h-[340px] rounded-lg overflow-hidden shadow-2xl border border-obsidian/10 bg-white">
-                  <img src={img.src} alt={img.title} className="w-full h-full object-cover" />
+                  <image src={Image.src} alt={Image.title} className="w-full h-full object-cover" />
                 </div>
               </div>
             );
@@ -137,9 +137,9 @@ export default function StrategicGallery() {
         <div className="hidden md:block lg:hidden relative h-[500px] overflow-hidden">
           <div className="flex h-full transition-transform duration-1000 ease-in-out"
                style={{ transform: `translateX(-${active * 65}%)` }}>
-            {images.map((img) => (
-              <div key={img.id} className="min-w-[70%] mr-[-12%] h-[450px] overflow-hidden rounded-xl shadow-xl">
-                <img src={img.src} alt={img.title} className="w-full h-full object-cover" />
+            {images.map((Image) => (
+              <div key={Image.id} className="min-w-[70%] mr-[-12%] h-[450px] overflow-hidden rounded-xl shadow-xl">
+                <Image src={Image.src} alt={Image.title} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
@@ -147,11 +147,11 @@ export default function StrategicGallery() {
 
         {/* DESKTOP: Editorial Bento Grid */}
         <div className="hidden lg:grid grid-cols-4 grid-rows-3 gap-6 h-[850px]">
-          {images.map((img) => (
-            <div key={img.id} className={`relative overflow-hidden rounded-xl shadow-sm border border-obsidian/5 group ${img.span}`}>
-              <img src={img.src} alt={img.title} className="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" />
+          {images.map((Image) => (
+            <div key={Image.id} className={`relative overflow-hidden rounded-xl shadow-sm border border-obsidian/5 group ${Image.span}`}>
+              <Image src={Image.src} alt={Image.title} className="w-full h-full object-cover opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000" />
               <div className="absolute inset-0 bg-obsidian/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
-                <span className="text-white text-xs tracking-widest uppercase font-medium">{img.title}</span>
+                <span className="text-white text-xs tracking-widest uppercase font-medium">{Image.title}</span>
               </div>
             </div>
           ))}

@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image'
 import React from 'react';
 import { ArrowUpRight, History, Award, Briefcase, ExternalLink } from 'lucide-react';
 interface SmartLinkProps {
@@ -190,9 +191,10 @@ tag = { entities.group.tag }> Chief Administrative Officer</SmartLink> and
             {/* Image Placeholder */}
             <div className="w-full aspect-[3/4] bg-gray-100 mb-8 relative overflow-hidden group">
                <div className="absolute inset-0 bg-gold/10 z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
-               <img 
+               <Image 
                  src="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM" 
                  alt="David Jackson Fernandez"
+                 priority={true}
                  className="absolute inset-0 w-full h-full object-cover contrast-125"
                />
             </div>

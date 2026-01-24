@@ -1,23 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const inter = Inter({ 
+  subsets: ['latin'], 
+  display: 'swap',
+  variable: '--font-inter' 
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const playfair = Playfair_Display({ 
+  subsets: ['latin'], 
+  display: 'swap',
+  variable: '--font-playfair' 
 });
 
-// Viewport configuration for high-end mobile UI integrity
 export const viewport: Viewport = {
-  themeColor: "#0A0A0A", // Obsidian branding
+  themeColor: "#050505",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
 };
 
 export const metadata: Metadata = {
@@ -46,19 +46,20 @@ export const metadata: Metadata = {
     title: "David Jackson Fernandez | Strategic Growth & Digital Transformation",
     description: "CAO & CTO leading institutional expansion and fintech innovation across Central and South America.",
     images: [
-      {
-        url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM", 
-        width: 1200,
-        height: 630,
-        alt: "David Jackson Fernandez - Executive Profile",
-      }, 
-    ],
+    {
+      url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM",
+      width: 1200,
+      height: 630,
+      alt: "David Jackson Fernandez - Executive Profile",
+    }, ],
   },
   twitter: {
     card: "summary_large_image",
     title: "David Jackson Fernandez | CAO & CTO",
     description: "Driving digital integration and strategic growth at Grupo Financiero Atlántida.",
-    images: ["https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM"],
+    images: [
+      "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM"
+    ],
   },
   icons: {
     icon: "/favicon.ico",
@@ -70,46 +71,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  // Structured Data (JSON-LD) for Institutional Authority
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "David Jackson Fernandez",
-    "jobTitle": ["Chief Technology Officer", "Chief Administrative Officer"],
-    "description": "Executive at Grupo Financiero Atlántida focusing on Digital Integration and Strategic Growth.",
-    "worksFor": [
-      {
-        "@type": "Organization",
-        "name": "Grupo Financiero Atlántida"
-      },
-      {
-        "@type": "Organization",
-        "name": "Banco Atlántida"
-      }
-    ],
-    "founder": {
-      "@type": "Organization",
-      "name": "KONCEPTO Décor"
-    },
-    "image": "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM"
-  };
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        {/* CTO Optimization: Preconnect to image storage to reduce LCP delay */}
+        <link rel="preconnect" href="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased selection:bg-gold/30`}
-      >
+      <body className="antialiased selection:bg-gold/30">
         {children}
       </body>
     </html>
