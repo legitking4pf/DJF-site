@@ -1,18 +1,10 @@
 "use client";
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  TrendingUp, ShieldCheck, ArrowRight, Lock, 
-  CheckCircle2, Globe, BarChart3, Landmark 
-} from 'lucide-react';
-
-"use client";
-import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   TrendingUp, ShieldCheck, ArrowRight, Lock, 
-  CheckCircle2, Landmark, BarChart3 
+  CheckCircle2, Globe, BarChart3, Landmark 
 } from 'lucide-react';
 
 export default function ExecutiveContact() {
