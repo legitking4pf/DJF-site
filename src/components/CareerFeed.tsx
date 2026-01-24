@@ -84,7 +84,7 @@ export default function ExecutiveLedger() {
                   alt={item.title} 
                   fill
                   sizes="(max-width: 1024px) 100vw, 33vw"
-                  className="object-cover grayscale-[100%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                  className="object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                 />
                 <div className="absolute top-0 right-0 p-4">
                    <div className="bg-obsidian/80 backdrop-blur-md px-3 py-1 border-l-2 border-gold text-[9px] font-bold text-white uppercase tracking-widest">
