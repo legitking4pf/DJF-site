@@ -1,124 +1,146 @@
 "use client";
 import React from 'react';
-import NextImage from 'next/image'
+import NextImage from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Clock } from 'lucide-react';
+import { ArrowUpRight, Clock, ShieldCheck, FileText } from 'lucide-react';
 
-interface LedgerItem {
-  id: number;
-  category: string;
-  title: string;
-  desc: string;
-  image: string;
-  date: string;
-  link: string;
-  cta: string;
-  isHighlight?: boolean;
-}
-
-const ledgerData: LedgerItem[] = [
+const ledgerData = [
    {
-   id: 1,
-   category: "Press",
-   title: "Banco Atlántida opens new branches in La Ceiba and Quimistán, Santa Bárbara, consolidating its presence nationwide.",
-   desc: "As part of its expansion strategy and closer relationship with customers, Banco Atlántida opened new branches in La Ceiba and Quimistán, Santa Bárbara, strengthening its national presence and reaffirming its leadership in the Honduran financial system.",
+   id: "001",
+   category: "Expansion",
+   title: "National Sovereignty: New Branch Consolidations",
+   desc: "Strategic expansion into La Ceiba and Quimistán, strengthening the physical footprint of the GFA strategic growth network.",
    image: "https://www.bancatlan.hn/sala-de-prensa/img/2026-01-09-plaza-teknos-quimistan/portada.jpg",
    date: "JAN 9, 2026",
    link: "https://www.bancatlan.hn/sala-de-prensa/2026-01-09-plaza-teknos-quimistan.php",
-   cta: "Read report"
+   cta: "View Strategy",
+   tag: "Infrastructure"
  },
   {
-    id: 2,
-    category: "Business",
-    title: "VIII CEAPI Congress: Guillermo Bueso on Latin American Investment in Spain",
-    desc: "Seville hosted more than 500 business leaders to strengthen economic ties. Guillermo Bueso participated as a panelist, highlighting GFA as the first Honduran financial group authorized to operate within the Spanish banking system following the acquisition of EBN Banco and EBN Capital stakes.",
+    id: "002",
+    category: "Global Reach",
+    title: "VIII CEAPI Congress: Spain Market Integration",
+    desc: "Guillermo Bueso highlights GFA as the first Honduran financial group authorized for Spanish banking operations via EBN Banco.",
     image: "https://cdn.prod.website-files.com/68363d5a1fb3537423263bff/6841f518e2c7e3dea8ea93a4_ceapi-2024-portada.jpg",
     date: "JUNE 04, 2025",
     link: "https://invatlan.hn/blogs/guillermo-bueso-presidente-de-grupo-financiero-atlantida-participa-en-el-viii-congreso-ceapi-sobre-inversion-latinoamericana-en-espana",
-    cta: "Read report"
+    cta: "Market Analysis",
+    tag: "M&A"
   },
   {
-    id: 3,
-    category: "Investment",
-    title: "Strategic Wealth Acceleration: $1,000 Pro-Tier Now Live",
-    desc: "Our strategic growth network has expanded, offering a dedicated $1,000 tier designed for long-term digital asset appreciation and institutional security.",
+    id: "003",
+    category: "Strategic Growth",
+    title: "Wealth Acceleration: Institutional $1,000 Tier",
+    desc: "A dedicated wealth acceleration opportunity designed for long-term digital asset appreciation and zero-trust security.",
     image: "https://images.unsplash.com/photo-1611974717482-95edec13969c?auto=format&fit=crop&q=80",
     date: "JAN 21, 2026",
     link: "/wealth-acceleration",
-    cta: "Access Opportunity",
-    isHighlight: true
+    cta: "Access Node",
+    isHighlight: true,
+    tag: "Asset Growth"
   }
 ];
 
 export default function ExecutiveLedger() {
   return (
-    <section id="ledger" className="py-20 md:py-32 bg-[#F8F8F8] text-obsidian px-6">
+    <section id="ledger" className="py-32 bg-[#F6F6F3] text-obsidian px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="border-t border-gold/30 pt-8 mb-16 md:mb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
-          <div className="max-w-3xl">
-            <span className="text-gold font-bold text-[10px] md:text-xs uppercase tracking-[0.4em] mb-4 block">
-              Intelligence & Affiliates
-            </span>
-            <h2 className="text-4xl md:text-6xl font-serif italic tracking-tighter leading-none mb-6">
-              The Executive <span className="font-black not-italic text-obsidian">Ledger</span>
+        
+        {/* HEADER: Institutional Typography */}
+        <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-24 border-b border-obsidian/10 pb-12">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+               <ShieldCheck className="text-gold w-4 h-4" />
+               <span className="text-gold font-bold text-[10px] uppercase tracking-[0.5em]">Digital Governance Hub</span>
+            </div>
+            <h2 className="text-5xl md:text-8xl font-serif tracking-tighter leading-[0.8]">
+              The <span className="italic font-light">Executive</span> <br />
+              <span className="font-bold">Ledger</span>
             </h2>
           </div>
-          <p className="text-[16px] md:text-base max-w-sm font-light leading-relaxed">
-            Personalized updates on digital transformation, strategic investments, and milestones across the GFA ecosystem.
-          </p>
+          <div className="max-w-xs space-y-4">
+            <p className="text-xs uppercase tracking-[0.2em] font-bold text-obsidian/40">Context // 2026 Fiscal Year</p>
+            <p className="text-sm font-light leading-relaxed text-ash">
+              Real-time synchronization of regional milestones, digital transformations, and high-value investment partnerships.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+        {/* LEDGER GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {ledgerData.map((item, index) => (
             <motion.article 
               key={item.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.8 }}
-              className="group flex flex-col h-full bg-white border border-gray-100 p-1 hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500"
+              transition={{ delay: index * 0.15, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative bg-white border border-obsidian/5 p-2 shadow-sm hover:shadow-2xl hover:shadow-gold/10 transition-all duration-700"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-obsidian">
+              {/* IMAGE ENGINE */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-obsidian">
                 <NextImage 
                   src={item.image} 
                   alt={item.title} 
-                  priority={true}
-                  className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover grayscale-[100%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-obsidian/90 backdrop-blur-md text-white text-[10px] md:text-[13px] font-bold uppercase tracking-widest px-3 py-1.5 border border-gold/30">
-                    {item.category}
-                  </span>
+                <div className="absolute top-0 right-0 p-4">
+                   <div className="bg-obsidian/80 backdrop-blur-md px-3 py-1 border-l-2 border-gold text-[9px] font-bold text-white uppercase tracking-widest">
+                     {item.tag}
+                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col flex-grow p-6 md:p-8">
-                <div className="flex items-center gap-2 text-italic text-[10px] font-medium mb-4">
-                  <Clock size={12} /> <span>{item.date}</span>
+              {/* DATA CONTENT */}
+              <div className="p-8 space-y-6">
+                <div className="flex justify-between items-center">
+                  <span className="text-gold font-mono text-xs">{item.id}</span>
+                  <div className="flex items-center gap-2 text-obsidian/40 text-[10px] font-bold uppercase tracking-widest">
+                    <Clock size={10} /> {item.date}
+                  </div>
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold leading-tight uppercase tracking-tighter mb-4 group-hover:text-gold transition-colors duration-300 line-clamp-2 h-[3.5rem] overflow-hidden text-ellipsis">
+                <h3 className="text-xl font-bold uppercase tracking-tighter leading-tight h-14 line-clamp-2">
                   {item.title}
                 </h3>
 
-                <p className="text-[14px] font-light leading-relaxed mb-8 line-clamp-3 overflow-hidden text-ellipsis">
+                <p className="text-sm font-light leading-relaxed text-ash line-clamp-3">
                   {item.desc}
                 </p>
 
-                <div className="mt-auto pt-6 border-t border-gray-50 flex items-center justify-between">
+                <div className="pt-6 border-t border-obsidian/5">
                   <a 
                     href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center gap-2 text-[11px] font-black uppercase tracking-widest transition-all duration-300
-                      ${item.isHighlight ? "bg-gold text-obsidian px-5 py-2.5 rounded-sm shadow-lg shadow-gold/20" : "text-obsidian hover:text-gold"}`}
+                    className={`flex items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.3em] transition-all group/btn
+                      ${item.isHighlight ? "bg-gold text-obsidian p-4 shadow-lg" : "text-obsidian hover:text-gold"}`}
                   >
-                    {item.cta} <ArrowUpRight size={14} />
+                    <span>{item.cta}</span>
+                    <ArrowUpRight size={14} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                   </a>
                 </div>
               </div>
             </motion.article>
           ))}
+        </div>
+
+        {/* FOOTER: SYSTEM STATUS */}
+        <div className="mt-24 pt-12 border-t border-obsidian/10 flex flex-col md:flex-row justify-between items-center gap-6">
+           <div className="flex items-center gap-6">
+              <div className="flex flex-col">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-ash">System Integrity</span>
+                <span className="text-xs font-mono text-green-600 font-bold">● OPERATIONAL</span>
+              </div>
+              <div className="w-px h-8 bg-obsidian/10" />
+              <div className="flex flex-col">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-ash">Last Synchronization</span>
+                <span className="text-xs font-mono">12:38:16 UTC</span>
+              </div>
+           </div>
+           <button className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.4em] text-obsidian hover:text-gold transition-colors">
+              <FileText size={14} /> Full Archive Download
+           </button>
         </div>
       </div>
     </section>

@@ -18,18 +18,27 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.prod.website-files.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.bancatlan.hn', // Explicitly allow the www subdomain
+      },
+      
     ],
   },
-
+  
   /* 2. SECURITY & PERFORMANCE HEADERS */
   async headers() {
     return [
+    {
+      source: '/(.*)',
+      headers: [
       {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Content-Security-Policy',
-            value: `
+        key: 'Content-Security-Policy',
+        value: `
               default-src 'self'; 
               script-src 'self' 'unsafe-inline' 'unsafe-eval'; 
               style-src 'self' 'unsafe-inline'; 
@@ -38,26 +47,24 @@ const nextConfig: NextConfig = {
               font-src 'self' data:; 
               connect-src 'self';
             `.replace(/\s{2,}/g, ' ').trim(),
-          },
-          {
-            key: 'Cross-Origin-Opener-Policy',
-            value: 'same-origin',
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
-        ],
       },
-    ];
+      {
+        key: 'Cross-Origin-Opener-Policy',
+        value: 'same-origin',
+      },
+      {
+        key: 'X-Frame-Options',
+        value: 'DENY',
+      },
+      {
+        key: 'X-Content-Type-Options',
+        value: 'nosniff',
+      },
+      {
+        key: 'Referrer-Policy',
+        value: 'strict-origin-when-cross-origin',
+      }, ],
+    }, ];
   },
 };
 
