@@ -1,126 +1,139 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Fingerprint, Globe } from 'lucide-react';
+import { Shield, Cpu, Palette, ArrowDown } from 'lucide-react';
 
-const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+const videos = [
+  "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Hero%20Video%20Background-P51XsIl1YPox7tNRCZLrxRKES9if7c",
+  "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Hero%20Video%20Background%202-NfCSrQzlEgyjm9E1s0Ag6XOLVMFnMJ"
+];
 
+export default function Hero() {
+  const [index, setIndex] = useState(0);
+  
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 8000);
+    return () => clearInterval(timer);
   }, []);
-
-  // Prevent scrolling when mobile menu is open
-  useEffect(() => {
-    if (isOpen) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = 'unset';
-  }, [isOpen]);
-
+  
   return (
-    <>
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className={`fixed top-0 w-full z-[100] transition-all duration-700 ${
-          scrolled ? 'bg-obsidian/95 backdrop-blur-xl border-b border-white/10 py-3' : 'bg-transparent py-8'
-        }`}
-      >
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex justify-between items-center relative">
-          
-          {/* 1. IDENTITY */}
-          <div className="flex items-center gap-6 relative z-[110]">
-            <span className="text-gold font-display text-2xl md:text-3xl tracking-tighter leading-none block">
-              DJF
-            </span>
-            <div className="hidden lg:flex flex-col border-l border-white/20 pl-6 h-8 justify-center">
-              <span className="text-[8px] uppercase tracking-[0.4em] text-white font-black leading-none mb-1">Executive Command</span>
-              <span className="text-[7px] uppercase tracking-[0.2em] text-gold/60 font-mono">Ref: GFA-OFFICE-2026</span>
-            </div>
+    // CHANGE: Adjusted padding and added 'flex-shrink-0' logic to prevent overflow
+    <section className="relative min-h-screen w-full bg-obsidian text-bone overflow-hidden flex flex-col justify-center py-20 md:pt-40 selection:bg-gold/30">
+      
+      {/* 1. ARCHITECTURAL VIDEO VIEWPORT */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 0.35, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0 w-full h-full"
+          >
+            <video 
+              key={`video-${index}`}
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              className="h-full w-full object-cover brightness-[0.6]"
+            >
+              <source src={videos[index]} type="video/mp4" />
+            </video>
+          </motion.div>
+        </AnimatePresence>
+        <div className="absolute inset-0 z-10 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')]" /> 
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-obsidian via-transparent to-obsidian" />
+      </div>
+
+      {/* 2. COMMAND CONTENT */}
+      {/* CHANGE: Added responsive padding-bottom and adjusted grid gaps for mobile */}
+      <div className="relative z-20 max-w-7xl mx-auto px-8 md:px-12 w-full pb-20 md:pb-0">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start lg:items-center">
+
+          {/* LEFT: THE IDENTITY TRIAD */}
+          <div className="lg:col-span-8">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+            >
+              {/* CHANGE: Reduced margin-bottom on mobile to save vertical space */}
+              <div className="flex items-center gap-4 mb-6 md:mb-10">
+                <span className="text-gold font-black tracking-[0.5em] text-[9px] uppercase bg-gold/5 px-3 py-1 border border-gold/20">
+                  Institutional Mandate
+                </span>
+                <div className="h-px w-12 bg-gold/20" />
+              </div>
+
+              {/* CHANGE: Dynamic text sizing for fluid mobile scaling */}
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-display tracking-tighter uppercase leading-[1.2] md:leading-[1.3] mb-8 md:l-12 text-white">
+                Governance <br />
+                <span className="text-gold italic font-serif font-light opacity-90">Infrastructure.</span> <br />
+                Aesthetics.
+              </h1>
+
+              <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 border-l border-gold/40 pl-6 md:pl-8">
+                <p className="text-white/90 text-sm md:text-lg font-light tracking-wide max-w-md leading-relaxed">
+                  Leading the <span className="text-gold font-bold">Digital Sovereignty</span> and Architectural Curation of the Grupo Financiero Atlántida ecosystem.
+                </p>
+                <div className="hidden md:block w-px h-12 bg-white/10" />
+                <div className="flex flex-col">
+                  <span className="text-[8px] text-white/40 uppercase tracking-[0.3em] font-black mb-1">Current Status</span>
+                  <span className="text-[10px] text-gold font-mono uppercase tracking-widest flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]" /> 
+                    Unified Control Active
+                  </span>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
-          {/* 2. DESKTOP NAV */}
-          <nav className="hidden lg:flex gap-16 relative z-[110] items-center">
-            {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="text-[10px] uppercase tracking-[0.5em] font-bold text-white/50 hover:text-white transition-all">
-                {item}
-              </a>
+          {/* RIGHT: STRATEGIC BENCHMARKS */}
+          {/* CHANGE: Reduced card padding on mobile to keep them compact */}
+          <div className="lg:col-span-4 flex flex-col gap-3 md:gap-4 relative z-30">
+            {[
+              { label: "20+ YEARS", sub: "Institutional Governance", icon: Shield },
+              { label: "FINTECH CORE", sub: "Sovereign Infrastructure", icon: Cpu },
+              { label: "KONCEPTO", sub: "Aesthetic Essentialism", icon: Palette }
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, delay: 0.4 + (i * 0.1) }}
+                className="group relative p-4 md:p-6 bg-white/[0.03] border border-white/10 backdrop-blur-xl hover:border-gold/40 transition-all"
+              >
+                <div className="absolute top-0 right-0 p-3 md:p-4 opacity-20 group-hover:opacity-100 transition-opacity">
+                   <stat.icon size={14} className="text-gold" />
+                </div>
+                <p className="text-gold font-display text-xl md:text-2xl mb-1 tracking-tighter">{stat.label}</p>
+                <p className="text-[8px] md:text-[9px] uppercase tracking-[0.3em] text-white/60 font-black">{stat.sub}</p>
+              </motion.div>
             ))}
-          </nav>
-
-          {/* 3. ACCESS & MOBILE TOGGLE */}
-          <div className="flex items-center gap-4 relative z-[110]">
-            <button className="hidden md:flex items-center gap-3 border border-gold/30 bg-gold/5 px-6 py-2.5 group hover:bg-gold transition-all duration-500">
-              <Fingerprint size={12} className="text-gold group-hover:text-obsidian" />
-              <span className="text-[9px] uppercase tracking-[0.3em] font-black text-gold group-hover:text-obsidian">Access Contact</span>
-            </button>
-
-            {/* THE TOGGLE: Needs to stay visible or toggle state */}
-            <button 
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden w-12 h-12 flex items-center justify-center border border-white/10 text-white relative z-[200]"
-              aria-label="Toggle Menu"
-            >
-              {isOpen ? <X size={20} className="text-gold" /> : <Menu size={20} />}
-            </button>
           </div>
         </div>
-      </motion.header>
+      </div>
 
-      {/* MOBILE OVERLAY */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: '-100%' }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: '-100%' }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[150] bg-obsidian flex flex-col justify-between p-8 md:p-12"
-          >
-            {/* Background Branding */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-display text-white/[0.02] pointer-events-none uppercase tracking-tighter">
-              Executive
-            </div>
+      {/* 3. INTERFACE ELEMENTS */}
+      <div className="absolute bottom-10 left-8 md:left-12 flex flex-col gap-4 z-30">
+         <div className="flex gap-2">
+            {[0, 1].map((i) => (
+              <div 
+                key={i} 
+                className={`h-[1px] transition-all duration-1000 ${i === index ? "w-12 md:w-16 bg-gold" : "w-4 md:w-6 bg-white/10"}`} 
+              />
+            ))}
+         </div>
+      </div>
 
-            <div className="mt-20 space-y-8 relative z-10">
-              {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item, idx) => (
-                <motion.a
-                  key={item}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 * idx }}
-                  href={`#${item.toLowerCase()}`}
-                  onClick={() => setIsOpen(false)}
-                  className="group flex items-end gap-4 text-5xl md:text-7xl font-display uppercase tracking-tighter text-white hover:text-gold transition-colors"
-                >
-                  <span className="text-gold/20 text-xl font-mono mb-2">0{idx + 1}</span>
-                  {item}
-                </motion.a>
-              ))}
-            </div>
-
-            <div className="relative z-10 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <Globe size={16} className="text-gold" />
-                  <span className="text-[10px] uppercase tracking-[0.4em] text-white/40">GFA Regional Control: HND // ES // GT</span>
-                </div>
-                <p className="text-[9px] uppercase tracking-[0.2em] text-white/20 max-w-xs">
-                  Unified Command Center for Digital Sovereignty & Strategic Growth [cite: 2025-12-09].
-                </p>
-              </div>
-              
-              <button className="px-10 py-5 bg-gold text-obsidian text-[10px] uppercase tracking-[0.5em] font-black hover:bg-white transition-colors w-full md:w-auto">
-                Request Secure Access
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+      {/* ARCHITECTURAL CORNER ACCENTS */}
+      {/* CHANGE: Ensure these stay fixed relative to the viewport/section edges */}
+      <div className="absolute top-8 md:top-32 left-8 w-8 h-8 md:w-10 md:h-10 border-l border-t border-gold/20 z-10" />
+      <div className="absolute bottom-8 right-8 w-8 h-8 md:w-10 md:h-10 border-r border-b border-gold/20 z-10" />
+    </section>
   );
-};
-
-export default Header;
+}

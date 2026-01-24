@@ -96,7 +96,7 @@ const Header = () => {
                   key={item}
                   href={`#${item.toLowerCase()}`}
                   onClick={() => setIsOpen(false)}
-                  className="block text-4xl font-display uppercase tracking-tighter text-white hover:text-gold transition-colors"
+                  className="block text-3xl font-display uppercase tracking-tighter text-white hover:text-gold transition-colors"
                 >
                   <span className="text-gold/30 mr-6 text-xl">0{idx + 1}</span>
                   {item}

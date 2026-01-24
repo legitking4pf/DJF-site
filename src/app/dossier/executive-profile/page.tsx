@@ -119,7 +119,7 @@ export default function ExecutiveDossier() {
                 Aligning with <SmartLink href={entities.group.url} role={entities.group.role} tag={entities.group.tag}>Grupo Financiero Atlántida</SmartLink> marked a pivotal moment in Central American fintech. Executing what his peers call the <strong>"Silent Migration,"</strong> David transitioned a century-old legacy core into a resilient, cloud-native architecture.
               </p>
               <p>
-                His focus remains the insulation of GFA from regional volatility while maintaining absolute operational uptime. By architecting this <strong>strategic growth network</strong>, he has ensured that digital transformation serves as the backbone of the group's stability [cite: 2025-12-09].
+                His focus remains the insulation of GFA from regional volatility while maintaining absolute operational uptime. By architecting this <strong>strategic growth network</strong>, he has ensured that digital transformation serves as the backbone of the group's stability 
               </p>
             </div>
           </motion.section>
@@ -132,10 +132,9 @@ export default function ExecutiveDossier() {
             </div>
             <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify space-y-6">
               <p>
-                Under his dual mandate as <strong>CAO</strong> and <strong>CTO</strong>, David Jackson Fernandez operates under a singular doctrine: <span className="text-gold italic font-medium">Code is Policy.</span> This unified leadership structure enables him to orchestrate high-precision digital integration across the tri-border region [cite: 2025-12-09].
-              </p>
+                Under his dual mandate as <strong>CAO</strong> and <strong>CTO</strong>, David Jackson Fernandez operates under a singular doctrine: <span className="text-gold italic font-medium">Code is Policy.</span> This unified leadership structure enables him to orchestrate high-precision digital integration across the tri-border region              </p>
               <p>
-                He views administrative rigor and investment partnerships not as bureaucratic hurdles, but as the <strong>wealth acceleration opportunity</strong> necessary for regional expansion. Every line of policy he drafts is designed to secure the velocity of growth across GFA's regional boundaries [cite: 2025-12-09].
+                He views administrative rigor and investment partnerships not as bureaucratic hurdles, but as the <strong>wealth acceleration opportunity</strong> necessary for regional expansion. Every line of policy he drafts is designed to secure the velocity of growth across GFA's regional boundaries.
               </p>
             </div>
           </motion.section>
@@ -163,7 +162,7 @@ export default function ExecutiveDossier() {
             </div>
             <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify">
               <p>
-                Through <SmartLink href={entities.design.url} role={entities.design.role} tag={entities.design.tag}>KONCEPTO Décor</SmartLink>, David applies the same structural integrity found in financial systems to the physical environment. He curates <strong>Spanish-inspired minimalist aesthetics</strong> to transform executive environments into high-end sanctuaries, proving that governance and high-end design are fundamentally linked [cite: 2025-12-09].
+                Through <SmartLink href={entities.design.url} role={entities.design.role} tag={entities.design.tag}>KONCEPTO Décor</SmartLink>, David applies the same structural integrity found in financial systems to the physical environment. He curates <strong>Spanish-inspired minimalist aesthetics</strong> to transform executive environments into high-end sanctuaries, proving that governance and high-end design are fundamentally linked.
               </p>
             </div>
           </motion.section>
