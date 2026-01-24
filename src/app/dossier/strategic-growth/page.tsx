@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, BarChart, Scale, Users, FileCheck, ArrowLeft, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
-
+const MotionImage = motion.create(Image);
 const caoImages = [
   'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM',
   'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/ebn-Atlantida-zpqvrZCN2sUPlWwyYQVopLkJd5s3RF.jpg'
@@ -25,7 +25,7 @@ export default function CAODossier() {
       {/* 1. ATMOSPHERIC BACKGROUND */}
       <div className="absolute inset-0 h-[70vh] z-0 bg-obsidian overflow-hidden">
         <AnimatePresence mode="wait">
-          <motion.Image
+          <MotionImage
             key={index}
             src={caoImages[index]}
             priority={true}
