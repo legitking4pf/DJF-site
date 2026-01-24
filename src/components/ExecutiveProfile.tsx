@@ -53,7 +53,7 @@ export default function ExecutiveProfile() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-6xl font-serif italic tracking-tighter leading-[0.8] mb-0"
+              className="text-3xl md:text-6xl font-serif italic tracking-tighter leading-[1.1] mb-0"
             >
               Strategic <br /> <span className="not-italic font-black text-obsidian uppercase">Sovereignty</span>
             </motion.h2>
