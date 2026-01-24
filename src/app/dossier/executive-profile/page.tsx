@@ -7,9 +7,10 @@ import {
   History,
   ShieldCheck,
   Fingerprint,
-  ExternalLink,
   Command,
-  Globe
+  Globe,
+  Briefcase,
+  Layers
 } from 'lucide-react';
 
 interface SmartLinkProps {
@@ -41,7 +42,6 @@ export default function ExecutiveDossier() {
     design: { role: "Founder", url: "https://www.konceptodecor.com", tag: "Design Culture" }
   };
   
-  // FIXED: Added 'as const' to ease array to satisfy TypeScript/Vercel build
   const containerVars: Variants = {
     hidden: { opacity: 0 },
     show: {
@@ -55,46 +55,44 @@ export default function ExecutiveDossier() {
     show: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 1,
-        ease: [0.22, 1, 0.36, 1] as
-        const // Critical fix for Next.js 16.1.1
-      }
+      transition: { duration: 1, ease: [0.22, 1, 0.36, 1] }
     }
   };
   
   return (
     <main className="min-h-screen bg-[#FBFBF9] text-obsidian selection:bg-gold/20 overflow-x-hidden">
       
-      {/* 1. INSTITUTIONAL HEADER */}
-      <section className="relative pt-48 pb-32 px-6 lg:px-12 border-b border-obsidian/5">
+      {/* 1. INSTITUTIONAL HEADER: The David Jackson Fernandez Identity */}
+      <section className="relative pt-48 pb-32 px-6 lg:px-12 border-b border-obsidian/5 bg-white">
         <div className="max-w-7xl mx-auto relative">
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
-            className="flex items-center gap-3 mb-12"
+            className="flex items-center gap-3 mb-10"
           >
-            <div className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-            <span className="text-gold font-black tracking-[0.6em] text-[10px] uppercase">
-              Official Dossier // DJF-71-GFA
+            <div className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse" />
+            <span className="text-gold font-black tracking-[0.6em] text-[9px] uppercase">
+              Official Dossier // DJF-2026-ARCHIVE
             </span>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-            <div className="lg:col-span-9">
+            <div className="lg:col-span-8">
               <motion.h1 
-                initial={{ opacity: 0, x: -50 }} 
+                initial={{ opacity: 0, x: -30 }} 
                 animate={{ opacity: 1, x: 0 }} 
-                transition={{ duration: 1.2 }}
-                className="font-serif text-3xl md:text-[6x1] text-obsidian tracking-tighter leading-[1.1] mb-0"
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                className="font-serif text-3x1 md:text-[6x1] text-obsidian tracking-tighter leading-[0.9] mb-0"
               >
                 David Jackson <br /> 
                 <span className="italic font-light text-gold/80">Fernandez</span>
               </motion.h1>
             </div>
-            <div className="lg:col-span-3 lg:text-right pb-4">
-               <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-ash mb-2">Primary Mandate</p>
-               <p className="text-xl font-display uppercase tracking-tight">Chief Administrative & Technology Officer</p>
+            <div className="lg:col-span-4 lg:text-right pb-4">
+               <span className="block text-[9px] uppercase tracking-[0.4em] font-black text-ash mb-3">Institutional Mandate</span>
+               <p className="text-xl md:text-2xl font-display uppercase tracking-tighter leading-tight text-obsidian">
+                 Chief Administrative & <br className="hidden md:block"/> Technology Officer
+               </p>
             </div>
           </div>
         </div>
@@ -110,105 +108,120 @@ export default function ExecutiveDossier() {
           viewport={{ once: true }}
           className="lg:col-span-7 space-y-40"
         >
-          {/* SECTION 01: ORIGINS */}
+          {/* SECTION 01: ORIGINS & MIGRATION */}
           <motion.section variants={itemVars} className="relative group">
-            <div className="flex items-center gap-4 mb-12">
-               <History size={20} className="text-gold w-5 h-5" />
-               <h2 className="text-[2x1] font-black uppercase tracking-[0.5em] text-obsidian/40">01 // The Core Migration</h2>
+            <div className="flex items-center gap-4 mb-10">
+               <History size={18} className="text-gold" />
+               <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-obsidian/40">01 // The Core Migration</h2>
             </div>
-            <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify">
+            <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify space-y-6">
               <p>
-                Aligning with 
-                <SmartLink href={entities.group.url} role={entities.group.role} tag={entities.group.tag}>
-                   Grupo Financiero Atlántida
-                </SmartLink>
-                marked a pivotal moment in Central American fintech. Executing the <strong>"Silent Migration,"</strong> David transitioned a century-old legacy core into a resilient, cloud-native architecture—insulating GFA from regional volatility while maintaining 100% operational uptime.
+                Aligning with <SmartLink href={entities.group.url} role={entities.group.role} tag={entities.group.tag}>Grupo Financiero Atlántida</SmartLink> marked a pivotal moment in Central American fintech. Executing what his peers call the <strong>"Silent Migration,"</strong> David transitioned a century-old legacy core into a resilient, cloud-native architecture.
+              </p>
+              <p>
+                His focus remains the insulation of GFA from regional volatility while maintaining absolute operational uptime. By architecting this <strong>strategic growth network</strong>, he has ensured that digital transformation serves as the backbone of the group's stability [cite: 2025-12-09].
               </p>
             </div>
           </motion.section>
 
-          {/* SECTION 02: GOVERNANCE */}
+          {/* SECTION 02: GOVERNANCE & SOVEREIGNTY */}
           <motion.section variants={itemVars} className="relative group">
-            <div className="flex items-center gap-4 mb-12">
-               <ShieldCheck size={20} className="text-gold w-5 h-5" />
-               <h2 className="text-[2x1] font-black uppercase tracking-[0.5em] text-obsidian/40">02 // Digital Sovereignty</h2>
+            <div className="flex items-center gap-4 mb-10">
+               <ShieldCheck size={18} className="text-gold" />
+               <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-obsidian/40">02 // Digital Sovereignty</h2>
             </div>
-            <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify">
+            <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify space-y-6">
               <p>
-                Under the dual mandate of <strong>CAO</strong> and <strong>CTO</strong>, the doctrine is clear: <span className="text-gold italic">Code is Policy.</span> This unified structure enables GFA to orchestrate high-precision integrations across <strong>Honduras, El Salvador, and Guatemala</strong> with institutional rigor and digital velocity.
+                Under his dual mandate as <strong>CAO</strong> and <strong>CTO</strong>, David Jackson Fernandez operates under a singular doctrine: <span className="text-gold italic font-medium">Code is Policy.</span> This unified leadership structure enables him to orchestrate high-precision digital integration across the tri-border region [cite: 2025-12-09].
+              </p>
+              <p>
+                He views administrative rigor and investment partnerships not as bureaucratic hurdles, but as the <strong>wealth acceleration opportunity</strong> necessary for regional expansion. Every line of policy he drafts is designed to secure the velocity of growth across GFA's regional boundaries [cite: 2025-12-09].
               </p>
             </div>
           </motion.section>
 
-          {/* DESIGN INTERLUDE */}
-          <motion.section variants={itemVars} className="relative p-12 md:p-20 bg-obsidian text-bone overflow-hidden border-l-4 border-gold">
+          {/* DESIGN INTERLUDE: Philosophy Corner */}
+          <motion.section variants={itemVars} className="relative p-12 md:p-16 bg-obsidian text-bone overflow-hidden border-l-2 border-gold shadow-2xl">
              <div className="relative z-10">
-               <blockquote className="text-lg font-serif italic leading-tight mb-12">
+               <blockquote className="text-2xl font-serif italic leading-snug mb-10 opacity-90">
                  "Eliminating redundant infrastructure in banking is the same as removing visual noise in a room. Both reveal the absolute velocity of growth."
                </blockquote>
-               <div className="flex items-center gap-6">
-                 <Command className="text-gold w-5 h-5" />
-                 <span className="text-[10px] uppercase tracking-[0.6em] text-gold font-black">Philosophy: Essentialism</span>
+               <div className="flex items-center gap-5">
+                 <Command className="text-gold w-4 h-4" />
+                 <span className="text-[9px] uppercase tracking-[0.6em] text-gold font-black">Philosophy: Essentialism // DJF</span>
                </div>
              </div>
              {/* Architectural grid background */}
              <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')]" />
           </motion.section>
+
+          {/* SECTION 03: THE AESTHETIC REALM */}
+          <motion.section variants={itemVars} className="relative group pb-20">
+            <div className="flex items-center gap-4 mb-10">
+               <Layers size={18} className="text-gold" />
+               <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-obsidian/40">03 // Architectural Curation</h2>
+            </div>
+            <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify">
+              <p>
+                Through <SmartLink href={entities.design.url} role={entities.design.role} tag={entities.design.tag}>KONCEPTO Décor</SmartLink>, David applies the same structural integrity found in financial systems to the physical environment. He curates <strong>Spanish-inspired minimalist aesthetics</strong> to transform executive environments into high-end sanctuaries, proving that governance and high-end design are fundamentally linked [cite: 2025-12-09].
+              </p>
+            </div>
+          </motion.section>
         </motion.article>
 
         {/* 3. FLOATING EXECUTIVE DATA CARD */}
-        <aside className="lg:col-span-5">
+        <aside className="lg:col-span-5 relative">
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="lg:sticky lg:top-32 bg-white border border-obsidian/5 p-10 shadow-2xl rounded-sm"
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:sticky lg:top-32 bg-white border border-obsidian/5 p-8 md:p-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] rounded-sm"
           >
-            {/* Portrait with "Spanish Minimalist" Frame */}
-            <div className="relative aspect-[4/5] mb-12 overflow-hidden bg-ash/5 group">
+            {/* Portrait with "Spanish Minimalist" High-End Frame */}
+            <div className="relative aspect-[4/5] mb-12 overflow-hidden bg-ash/5 group border border-obsidian/5">
                <NextImage 
                 src="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM" 
                 alt="David Jackson Fernandez"
                 priority
                 fill
-                className="object-cover"
+                className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-in-out scale-105 group-hover:scale-100"
               />
-              <div className="absolute inset-0 border-[1.5rem] border-white/20 pointer-events-none" />
+              <div className="absolute inset-0 border-[1rem] border-white/10 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-obsidian/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
 
-            <div className="space-y-10">
-               <div className="flex justify-between items-center border-b border-obsidian/10 pb-6">
+            <div className="space-y-8">
+               <div className="flex justify-between items-center border-b border-obsidian/10 pb-5">
                  <div className="flex flex-col gap-1">
-                   <span className="text-[9px] uppercase tracking-[0.4em] text-ash font-black">Region Control</span>
-                   <span className="text-lg font-display uppercase tracking-tight">HND // ES // GT</span>
+                   <span className="text-[8px] uppercase tracking-[0.4em] text-ash font-black">Region Reach</span>
+                   <span className="text-base font-display uppercase tracking-tight font-bold">HND // ES // GT</span>
                  </div>
-                 <Globe className="text-gold/40 w-5 h-5" />
+                 <Globe className="text-gold/30 w-4 h-4" />
                </div>
 
-               <div className="flex justify-between items-center border-b border-obsidian/10 pb-6">
+               <div className="flex justify-between items-center border-b border-obsidian/10 pb-5">
                  <div className="flex flex-col gap-1">
-                   <span className="text-[9px] uppercase tracking-[0.4em] text-ash font-black">System Status</span>
-                   <span className="text-lg font-display uppercase tracking-tight text-gold">Digital Sovereignty</span>
+                   <span className="text-[8px] uppercase tracking-[0.4em] text-ash font-black">GFA Strategy</span>
+                   <span className="text-base font-display uppercase tracking-tight text-gold font-bold">Vision 2030</span>
                  </div>
-                 <ShieldCheck className="text-gold/40 w-5 h-5" />
+                 <Briefcase className="text-gold/30 w-4 h-4" />
                </div>
 
-               <div className="flex justify-between items-center border-b border-obsidian/10 pb-6">
+               <div className="flex justify-between items-center border-b border-obsidian/10 pb-5">
                  <div className="flex flex-col gap-1">
-                   <span className="text-[9px] uppercase tracking-[0.4em] text-ash font-black">Auth Code</span>
-                   <span className="text-lg font-mono tracking-tighter">71-DJF-GFA</span>
+                   <span className="text-[8px] uppercase tracking-[0.4em] text-ash font-black">Command Code</span>
+                   <span className="text-base font-mono tracking-tighter font-bold">DJF.GFA.CAO-CTO</span>
                  </div>
-                 <Fingerprint className="text-gold/40 w-5 h-5" />
+                 <Fingerprint className="text-gold/30 w-4 h-4" />
                </div>
             </div>
 
-            <a 
-              href="https://www.linkedin.com" 
-              className="mt-16 w-full flex items-center justify-center gap-6 bg-obsidian text-bone py-6 hover:bg-gold hover:text-obsidian transition-all duration-500 text-[10px] uppercase tracking-[0.5em] font-black group shadow-xl shadow-obsidian/10"
+            <button 
+              className="mt-12 w-full flex items-center justify-center gap-5 bg-obsidian text-bone py-5 hover:bg-gold hover:text-obsidian transition-all duration-500 text-[9px] uppercase tracking-[0.5em] font-black group shadow-xl"
             >
-              <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /> 
+              <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /> 
               Secure Access
-            </a>
+            </button>
           </motion.div>
         </aside>
 

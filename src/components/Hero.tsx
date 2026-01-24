@@ -1,157 +1,126 @@
 "use client";
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, Cpu, Palette, ArrowDown } from 'lucide-react';
+import { Menu, X, Fingerprint, Globe } from 'lucide-react';
 
-const videos = [
-  "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Hero%20Video%20Background-P51XsIl1YPox7tNRCZLrxRKES9if7c",
-  "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Hero%20Video%20Background%202-NfCSrQzlEgyjm9E1s0Ag6XOLVMFnMJ"
-];
+const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-export default function Hero() {
-  const [index, setIndex] = useState(0);
-  
-  // Transition between GFA and EBN visual contexts every 8 seconds
   useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev === 0 ? 1 : 0));
-    }, 8000);
-    return () => clearInterval(timer);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (isOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'unset';
+  }, [isOpen]);
+
   return (
-    <section className="relative min-h-screen w-full bg-obsidian text-bone overflow-hidden flex flex-col justify-center pt-28 lg:pt-40 selection:bg-gold/30">
-      
-      {/* 1. ARCHITECTURAL VIDEO VIEWPORT */}
-<div className="absolute inset-0 z-0 overflow-hidden">         <AnimatePresence mode="wait">
-    <motion.div
-      key={index}
-      initial={{ opacity: 0, scale: 1.05 }}
-      animate={{ opacity: 0.35, scale: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 2.5, ease: [0.22, 1, 0.36, 1] }}
-      className="absolute inset-0 w-full h-full"
-    >
-      <video 
-        key={`video-${index}`}
-        autoPlay 
-        muted 
-        loop 
-        playsInline 
-        className="h-full w-full object-cover brightness-[0.6] transition-all duration-1000"
+    <>
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className={`fixed top-0 w-full z-[100] transition-all duration-700 ${
+          scrolled ? 'bg-obsidian/95 backdrop-blur-xl border-b border-white/10 py-3' : 'bg-transparent py-8'
+        }`}
       >
-        <source src={videos[index]} type="video/mp4" />
-      </video>
-    </motion.div>
-  </AnimatePresence>
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex justify-between items-center relative">
           
-          {/* DIGITAL OVERLAYS: Representing the Digital Sovereignty mandate */}
-          <div className="absolute inset-0 z-10 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')]" /> <div className = "absolute inset-0 z-10 bg-gradient-to-b from-obsidian via-transparent to-obsidian" / >
-  </div>
-
-      {/* 2. COMMAND CONTENT: CAO & CTO Positioning */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start lg:items-center">
-
-          {/* LEFT: THE IDENTITY TRIAD */}
-          <div className="lg:col-span-8">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-            >
-              <div className="flex items-center gap-4 mb-10">
-                <span className="text-gold font-black tracking-[0.5em] text-[9px] uppercase bg-gold/5 px-3 py-1 border border-gold/20">
-                  Institutional Mandate
-                </span>
-                <div className="h-px w-12 bg-gold/20" />
-              </div>
-
-              <h1 className="text-4xl md:text-7xl font-display tracking-tighter uppercase leading-[1.3] mb-12 text-white">
-                Governance <br />
-                <span className="text-gold italic font-serif font-light opacity-90">Infrastructure.</span> <br />
-                Aesthetics.
-              </h1>
-
-              <div className="flex flex-col md:flex-row md:items-center gap-10 border-l border-gold/40 pl-8">
-                <p className="text-white/90 text-sm md:text-lg font-light tracking-wide max-w-md leading-relaxed">
-                  Leading the <span className="text-gold font-bold">Digital Sovereignty</span> and Architectural Curation of the Grupo Financiero Atlántida ecosystem.
-                </p>
-                <div className="hidden md:block w-px h-12 bg-white/10" />
-                <div className="flex flex-col">
-                  <span className="text-[8px] text-white/40 uppercase tracking-[0.3em] font-black mb-1">Current Status</span>
-                  <span className="text-[10px] text-gold font-mono uppercase tracking-widest flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]" /> 
-                    Unified Control Active
-                  </span>
-                </div>
-              </div>
-            </motion.div>
+          {/* 1. IDENTITY */}
+          <div className="flex items-center gap-6 relative z-[110]">
+            <span className="text-gold font-display text-2xl md:text-3xl tracking-tighter leading-none block">
+              DJF
+            </span>
+            <div className="hidden lg:flex flex-col border-l border-white/20 pl-6 h-8 justify-center">
+              <span className="text-[8px] uppercase tracking-[0.4em] text-white font-black leading-none mb-1">Executive Command</span>
+              <span className="text-[7px] uppercase tracking-[0.2em] text-gold/60 font-mono">Ref: GFA-OFFICE-2026</span>
+            </div>
           </div>
 
-          {/* RIGHT: STRATEGIC BENCHMARKS (The Stats) */}
-          <div className="lg:col-span-4 flex flex-col gap-4 relative z-30">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.4 }}
-              className="space-y-4"
-            >
-              {/* STAT MODULE: CAO Governance */}
-              <div className="group relative p-6 bg-white/[0.03] border border-white/10 backdrop-blur-xl transition-all duration-500 hover:border-gold/40 hover:bg-white/[0.05]">
-                <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
-                   <Shield size={14} className="text-gold" />
-                </div>
-                <p className="text-gold font-display text-2xl mb-1 tracking-tighter">20+ YEARS</p>
-                <p className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-black">Institutional Governance</p>
-              </div>
-
-              {/* STAT MODULE: CTO Fintech Transformation */}
-              <div className="group relative p-6 bg-white/[0.03] border border-white/10 backdrop-blur-xl transition-all duration-500 hover:border-gold/40 hover:bg-white/[0.05]">
-                <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
-                   <Cpu size={14} className="text-gold" />
-                </div>
-                <p className="text-gold font-display text-2xl mb-1 tracking-tighter">FINTECH CORE</p>
-                <p className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-black">Sovereign Infrastructure</p>
-              </div>
-
-              {/* STAT MODULE: KONCEPTO Design Culture */}
-              <div className="group relative p-6 bg-white/[0.03] border border-white/10 backdrop-blur-xl transition-all duration-500 hover:border-gold/40 hover:bg-white/[0.05]">
-                <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
-                   <Palette size={14} className="text-gold" />
-                </div>
-                <p className="text-gold font-display text-2xl mb-1 tracking-tighter">KONCEPTO</p>
-                <p className="text-[9px] uppercase tracking-[0.3em] text-white/60 font-black">Aesthetic Essentialism</p>
-              </div>
-            </motion.div>
-          </div>
-
-        </div>
-      </div>
-
-      {/* 3. INTERFACE ELEMENTS: Progression Indicators */}
-      <div className="absolute bottom-12 left-6 md:left-12 flex flex-col gap-4 z-30">
-         <div className="flex gap-2">
-            {[0, 1].map((i) => (
-              <div 
-                key={i} 
-                className={`h-[1px] transition-all duration-1000 ${i === index ? "w-16 bg-gold" : "w-6 bg-white/10"}`} 
-              />
+          {/* 2. DESKTOP NAV */}
+          <nav className="hidden lg:flex gap-16 relative z-[110] items-center">
+            {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item) => (
+              <a key={item} href={`#${item.toLowerCase()}`} className="text-[10px] uppercase tracking-[0.5em] font-bold text-white/50 hover:text-white transition-all">
+                {item}
+              </a>
             ))}
-         </div>
-      </div>
+          </nav>
 
-      <motion.div 
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-        className="absolute bottom-12 right-6 md:right-12 text-gold/30 z-30"
-      >
-        <ArrowDown size={18} strokeWidth={1} />
-      </motion.div>
+          {/* 3. ACCESS & MOBILE TOGGLE */}
+          <div className="flex items-center gap-4 relative z-[110]">
+            <button className="hidden md:flex items-center gap-3 border border-gold/30 bg-gold/5 px-6 py-2.5 group hover:bg-gold transition-all duration-500">
+              <Fingerprint size={12} className="text-gold group-hover:text-obsidian" />
+              <span className="text-[9px] uppercase tracking-[0.3em] font-black text-gold group-hover:text-obsidian">Access Contact</span>
+            </button>
 
-      {/* ARCHITECTURAL CORNER ACCENTS */}
-      <div className="absolute top-32 lg:top-40 left-6 w-10 h-10 border-l border-t border-gold/20 z-10" />
-      <div className="absolute bottom-6 right-6 w-10 h-10 border-r border-b border-gold/20 z-10" />
-    </section>
+            {/* THE TOGGLE: Needs to stay visible or toggle state */}
+            <button 
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden w-12 h-12 flex items-center justify-center border border-white/10 text-white relative z-[200]"
+              aria-label="Toggle Menu"
+            >
+              {isOpen ? <X size={20} className="text-gold" /> : <Menu size={20} />}
+            </button>
+          </div>
+        </div>
+      </motion.header>
+
+      {/* MOBILE OVERLAY */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: '-100%' }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: '-100%' }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[150] bg-obsidian flex flex-col justify-between p-8 md:p-12"
+          >
+            {/* Background Branding */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-display text-white/[0.02] pointer-events-none uppercase tracking-tighter">
+              Executive
+            </div>
+
+            <div className="mt-20 space-y-8 relative z-10">
+              {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item, idx) => (
+                <motion.a
+                  key={item}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 * idx }}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => setIsOpen(false)}
+                  className="group flex items-end gap-4 text-5xl md:text-7xl font-display uppercase tracking-tighter text-white hover:text-gold transition-colors"
+                >
+                  <span className="text-gold/20 text-xl font-mono mb-2">0{idx + 1}</span>
+                  {item}
+                </motion.a>
+              ))}
+            </div>
+
+            <div className="relative z-10 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <Globe size={16} className="text-gold" />
+                  <span className="text-[10px] uppercase tracking-[0.4em] text-white/40">GFA Regional Control: HND // ES // GT</span>
+                </div>
+                <p className="text-[9px] uppercase tracking-[0.2em] text-white/20 max-w-xs">
+                  Unified Command Center for Digital Sovereignty & Strategic Growth [cite: 2025-12-09].
+                </p>
+              </div>
+              
+              <button className="px-10 py-5 bg-gold text-obsidian text-[10px] uppercase tracking-[0.5em] font-black hover:bg-white transition-colors w-full md:w-auto">
+                Request Secure Access
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
-}
+};
+
+export default Header;
