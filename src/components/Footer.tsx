@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">
           <div className="flex items-center gap-2 mb-2 md:mb-0">
             <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-            <span>Systems Nominal // GFA Secure Core</span>
+            <span>Systems Nominal // GFA Contact Core</span>
           </div>
           <div className="flex items-center gap-6">
             <span>Tegucigalpa (HQ)</span>
@@ -46,7 +46,7 @@ export default function Footer() {
   <div>
     <h2 className="text-2xl font-serif text-white tracking-tight mb-2">David Jackson Fernandez</h2>
     <p className="text-xs text-gold uppercase tracking-[0.25em] font-bold">
-      CAO & CTO // Grupo Financiero Atlántida [cite: 2025-12-09]
+      CAO & CTO // Grupo Financiero Atlántida 
     </p>
   </div>
   
@@ -59,7 +59,7 @@ export default function Footer() {
       href="/contact" 
       className="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-white hover:bg-gold hover:text-black transition-all group"
     >
-      Open Secure Channel <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+      Open Contact Channel <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
     </a>
   </div>
 

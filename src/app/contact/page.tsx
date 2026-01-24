@@ -18,14 +18,14 @@ export default function ExecutiveContact() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-8">
           <div className="space-y-4">
             <span className="text-gold font-bold tracking-[0.4em] text-[10px] uppercase block">
-              GFA Strategic Growth Network [cite: 2025-12-09]
+              GFA Strategic Growth Network
             </span>
             <h1 className="text-5xl md:text-7xl font-serif leading-[0.85]">
-              Secure <span className="italic text-gray-500">Advisory</span>
+              Contact <span className="italic text-gray-500">Advisory</span>
             </h1>
           </div>
           <p className="text-gray-400 text-sm max-w-xs font-light leading-relaxed">
-            Direct institutional channel for CAO & CTO engagement regarding digital transformation and asset management [cite: 2025-12-09].
+            Direct institutional channel for CAO & CTO engagement regarding digital transformation and asset management.
           </p>
         </div>
       </section>
@@ -41,7 +41,7 @@ export default function ExecutiveContact() {
               <h2 className="text-2xl font-serif text-black">Wealth Acceleration</h2>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
-              True **wealth acceleration** requires more than traditional banking. It demands a **Strategic Growth Network** where capital meets technological sovereignty [cite: 2025-12-09]. Our insights focus on the GFA Strategic Vision 2030, leveraging digital integration to optimize regional asset performance [cite: 2025-12-09].
+              True wealth acceleration requires more than traditional banking. It demands a Strategic Growth Network where capital meets technological sovereignty. Our insights focus on the GFA Strategic Vision 2030, leveraging digital integration to optimize regional asset performance .
             </p>
           </div>
 
@@ -51,7 +51,7 @@ export default function ExecutiveContact() {
               <h2 className="text-2xl font-serif text-black">Digital Transformation</h2>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
-              As part of our commitment to **Digital Integration**, we provide high-level briefings on how fintech core systems are redefining investment horizons in Central America [cite: 2025-12-09].
+              As part of our commitment to Digital Integration, we provide high-level briefings on how fintech core systems are redefining investment horizons in Central America.
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function ExecutiveContact() {
         <div className="lg:col-span-7">
           <div className="bg-white p-8 md:p-12 shadow-2xl border border-gray-100 relative">
             <div className="flex justify-between items-center mb-12">
-               <h3 className="text-xl font-serif italic text-gray-500">Contact Protocol</h3>
+               <h3 className="text-xl font-serif italic text-gray-500">Send a Feedback</h3>
                <Lock className="text-gold opacity-50" size={18} />
             </div>
 
@@ -69,7 +69,7 @@ export default function ExecutiveContact() {
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-20 space-y-4">
                   <CheckCircle2 size={48} className="text-green-500 mx-auto" />
                   <h4 className="text-xl font-serif">Transmission Received</h4>
-                  <p className="text-gray-500 text-xs">Logged into the GFA Executive Registry [cite: 2025-12-09].</p>
+                  <p className="text-gray-500 text-xs">Logged into the GFA Executive Registry .</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-8">
@@ -79,7 +79,7 @@ export default function ExecutiveContact() {
                       <input id="name" name="name" type="text" placeholder="Full Name" required className="w-full bg-gray-50 border-b-2 border-gray-200 px-4 py-3 text-sm focus:border-gold outline-none transition-all" />
                     </div>
                     <div className="group">
-                      <label htmlFor="email" className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-focus-within:text-gold transition-colors">Secure Email</label>
+                      <label htmlFor="email" className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-focus-within:text-gold transition-colors">Email Address</label>
                       <input id="email" name="email" type="email" placeholder="name@organization.com" required className="w-full bg-gray-50 border-b-2 border-gray-200 px-4 py-3 text-sm focus:border-gold outline-none transition-all" />
                       <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-[10px] mt-1" />
                     </div>
@@ -89,8 +89,8 @@ export default function ExecutiveContact() {
                     <label htmlFor="intent" className="text-[10px] font-bold uppercase tracking-widest text-gray-400 group-focus-within:text-gold transition-colors">Strategic Intent</label>
                     <select id="intent" name="intent" className="w-full bg-gray-50 border-b-2 border-gray-200 px-4 py-3 text-sm focus:border-gold outline-none cursor-pointer">
                       <option>Investment Wealth Advisory</option>
-                      <option>GFA Strategic Growth Network Inquiry [cite: 2025-12-09]</option>
-                      <option>Digital Integration Partnership [cite: 2025-12-09]</option>
+                      <option>GFA Strategic Growth Network Inquiry </option>
+                      <option>Digital Integration Partnership </option>
                       <option>Direct Executive Feedback</option>
                     </select>
                   </div>
@@ -106,7 +106,7 @@ export default function ExecutiveContact() {
                     disabled={state.submitting}
                     className="w-full bg-black text-white py-5 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-gold hover:text-black transition-all flex items-center justify-center gap-3 disabled:opacity-50"
                   >
-                    {state.submitting ? "Transmitting..." : "Send Securely"} <ArrowRight size={14} />
+                    {state.submitting ? "TRANSMITTING..." : "Send Securely"} <ArrowRight size={14} />
                   </button>
                 </form>
               )}
@@ -120,7 +120,7 @@ export default function ExecutiveContact() {
         <div className="max-w-7xl mx-auto px-6 text-center space-y-4">
           <ShieldCheck className="mx-auto text-gold/30" size={32} />
           <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400">
-            Authenticated via GFA Security Standards [cite: 2025-12-09]
+            Authenticated via GFA Security Standards 
           </p>
         </div>
       </section>

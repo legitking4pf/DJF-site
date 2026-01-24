@@ -71,7 +71,7 @@ export default function StrategicGallery() {
   </h2>
   <div className="w-16 h-[1px] bg-gold mx-auto mb-6" /> {/* Spanish-modern minimalist accent */}
   <p className="text-sm md:text-lg max-w-2xl mx-auto leading-relaxed font-light">
-    A visual manifestation of the **GFA Strategic Vision 2030**—mapping the intersection of digital integration, investment partnerships, and sustainable design across our global reach.
+    A visual manifestation of the GFA Strategic Vision —mapping the intersection of digital integration, investment partnerships, and sustainable design across our global reach.
   </p>
 </div>
 

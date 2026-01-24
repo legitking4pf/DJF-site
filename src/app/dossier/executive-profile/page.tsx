@@ -44,7 +44,7 @@ export default function ExecutiveDossier() {
       tag: "Design Culture"
     }
   };
-
+  
   return (
     <main className="min-h-screen bg-[#FDFBF7] text-[#1A1A1A] pt-24 pb-32 font-sans selection:bg-gold/20">
       
@@ -108,7 +108,11 @@ export default function ExecutiveDossier() {
             </div>
             <div className="prose prose-lg text-gray-700 leading-loose text-justify">
               <p>
-                Uniquely, David holds the dual titles of <strong>Chief Administrative Officer</strong> and 
+                Uniquely, David holds the dual titles of
+                {} 
+                <SmartLink href = { entities.group.url }
+role = { entities.group.role }
+tag = { entities.group.tag }> Chief Administrative Officer</SmartLink> and 
                 {/* LINK INSERTED HERE */}
                 <SmartLink 
                   href={entities.bank.url} 
@@ -189,7 +193,7 @@ export default function ExecutiveDossier() {
                <img 
                  src="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM" 
                  alt="David Jackson Fernandez"
-                 className="absolute inset-0 w-full h-full object-cover grayscale contrast-125"
+                 className="absolute inset-0 w-full h-full object-cover contrast-125"
                />
             </div>
 
@@ -201,7 +205,7 @@ export default function ExecutiveDossier() {
                
                <div className="border-b border-gray-100 pb-4">
                  <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">Tenure Focus</p>
-                 <p className="text-lg font-serif text-black">2020 — Perpetual</p>
+                 <p className="text-lg font-serif text-black">2016 — Perpetual</p>
                </div>
 
                <div className="border-b border-gray-100 pb-4">
