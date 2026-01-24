@@ -85,7 +85,6 @@ export default function StrategicGallery() {
         >
           {images.map((Image, index) => {
             const offset = getOffset(index, active, images.length);
-            // Reduced cardWidth for mobile to ensure previews stay tighter
             const cardWidth = 220; 
             return (
               <div
