@@ -40,7 +40,7 @@ export default function ExecutiveContact() {
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8">
-              <h1 className="text-6xl md:text-8xl font-display uppercase tracking-tighter leading-[0.8]">
+              <h1 className="text-3xl md:text-6xl font-display uppercase tracking-tighter leading-[1.1">
                 Strategic <br /> <span className="italic font-serif font-light text-gold/80">Inquiry</span>
               </h1>
             </div>

@@ -19,7 +19,6 @@ const Header = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        // FIXED: High Z-index and clear background transition
         className={`fixed top-0 w-full z-[100] transition-all duration-700 ${
           scrolled 
             ? 'bg-obsidian/95 backdrop-blur-xl border-b border-white/10 py-3' 
@@ -46,8 +45,8 @@ const Header = () => {
             </div>
           </div>
 
-         {/* 2. NAVIGATION: Architectural Links */}
-          <nav className="hidden lg:flex gap-16 z-[200] items-center">
+          {/* 2. NAVIGATION: Raised Z-index for clear interaction */}
+          <nav className="hidden lg:flex gap-16 relative z-[120] items-center">
             {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item) => (
               <a
                 key={item}
@@ -59,17 +58,18 @@ const Header = () => {
               </a>
             ))}
           </nav>
+
           {/* 3. ACCESS PANEL */}
           <div className="flex items-center gap-4 relative z-[120]">
-
             <button className="hidden md:flex items-center gap-3 border border-gold/30 bg-gold/5 px-6 py-2.5 group hover:bg-gold transition-all duration-500">
-              <Fingerprint size={12} class:Name="text-gold group-hover:text-obsidian transition-colors" />
+              {/* FIXED: class:Name changed to className */}
+              <Fingerprint size={12} className="text-gold group-hover:text-obsidian transition-colors" />
               <span className="text-[9px] uppercase tracking-[0.3em] font-black text-gold group-hover:text-obsidian">
                 Access Contact
               </span>
             </button>
 
-            {/* Mobile Toggle - Highest Z-index in bar */}
+            {/* Mobile Toggle */}
             <button 
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden w-10 h-10 flex items-center justify-center border border-white/10 text-white relative z-[130]"
@@ -80,7 +80,7 @@ const Header = () => {
         </div>
       </motion.header>
 
-      {/* MOBILE OVERLAY: Full-Screen (Above Header) */}
+      {/* MOBILE OVERLAY */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -90,7 +90,29 @@ const Header = () => {
             transition={{ type: 'spring', damping: 30, stiffness: 200 }}
             className="fixed inset-0 z-[150] bg-obsidian flex flex-col p-10 justify-center"
           >
-            {/* ... rest of your mobile menu content ... */}
+             <div className="space-y-10">
+              {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item, idx) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  onClick={() => setIsOpen(false)}
+                  className="block text-4xl font-display uppercase tracking-tighter text-white hover:text-gold transition-colors"
+                >
+                  <span className="text-gold/30 mr-6 text-xl">0{idx + 1}</span>
+                  {item}
+                </a>
+              ))}
+            </div>
+            
+            <div className="mt-20 pt-10 border-t border-white/10 flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                <Globe size={16} className="text-gold" />
+                <span className="text-xs uppercase tracking-widest text-white/40">HND // ES // GT</span>
+              </div>
+              <button className="w-full border border-gold py-5 text-gold uppercase tracking-[0.4em] text-[10px] font-black">
+                Request Contact
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

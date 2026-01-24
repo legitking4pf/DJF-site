@@ -86,7 +86,7 @@ export default function ExecutiveDossier() {
                 initial={{ opacity: 0, x: -50 }} 
                 animate={{ opacity: 1, x: 0 }} 
                 transition={{ duration: 1.2 }}
-                className="font-serif text-7xl md:text-[10rem] text-obsidian tracking-tighter leading-[0.8] mb-0"
+                className="font-serif text-3xl md:text-[6x1] text-obsidian tracking-tighter leading-[1.1] mb-0"
               >
                 David Jackson <br /> 
                 <span className="italic font-light text-gold/80">Fernandez</span>
@@ -113,10 +113,10 @@ export default function ExecutiveDossier() {
           {/* SECTION 01: ORIGINS */}
           <motion.section variants={itemVars} className="relative group">
             <div className="flex items-center gap-4 mb-12">
-               <History className="text-gold w-5 h-5" />
-               <h2 className="text-[11px] font-black uppercase tracking-[0.5em] text-obsidian/40">01 // The Core Migration</h2>
+               <History size={20} className="text-gold w-5 h-5" />
+               <h2 className="text-[2x1] font-black uppercase tracking-[0.5em] text-obsidian/40">01 // The Core Migration</h2>
             </div>
-            <div className="text-2xl md:text-3xl font-light leading-relaxed text-obsidian/90 text-justify">
+            <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify">
               <p>
                 Aligning with 
                 <SmartLink href={entities.group.url} role={entities.group.role} tag={entities.group.tag}>
@@ -130,10 +130,10 @@ export default function ExecutiveDossier() {
           {/* SECTION 02: GOVERNANCE */}
           <motion.section variants={itemVars} className="relative group">
             <div className="flex items-center gap-4 mb-12">
-               <ShieldCheck className="text-gold w-5 h-5" />
-               <h2 className="text-[11px] font-black uppercase tracking-[0.5em] text-obsidian/40">02 // Digital Sovereignty</h2>
+               <ShieldCheck size={20} className="text-gold w-5 h-5" />
+               <h2 className="text-[2x1] font-black uppercase tracking-[0.5em] text-obsidian/40">02 // Digital Sovereignty</h2>
             </div>
-            <div className="text-2xl md:text-3xl font-light leading-relaxed text-obsidian/90 text-justify">
+            <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify">
               <p>
                 Under the dual mandate of <strong>CAO</strong> and <strong>CTO</strong>, the doctrine is clear: <span className="text-gold italic">Code is Policy.</span> This unified structure enables GFA to orchestrate high-precision integrations across <strong>Honduras, El Salvador, and Guatemala</strong> with institutional rigor and digital velocity.
               </p>
@@ -143,7 +143,7 @@ export default function ExecutiveDossier() {
           {/* DESIGN INTERLUDE */}
           <motion.section variants={itemVars} className="relative p-12 md:p-20 bg-obsidian text-bone overflow-hidden border-l-4 border-gold">
              <div className="relative z-10">
-               <blockquote className="text-3xl md:text-4xl font-serif italic leading-tight mb-12">
+               <blockquote className="text-lg font-serif italic leading-tight mb-12">
                  "Eliminating redundant infrastructure in banking is the same as removing visual noise in a room. Both reveal the absolute velocity of growth."
                </blockquote>
                <div className="flex items-center gap-6">
@@ -171,7 +171,7 @@ export default function ExecutiveDossier() {
                 alt="David Jackson Fernandez"
                 priority
                 fill
-                className="object-cover transition-all duration-1000 grayscale group-hover:grayscale-0 group-hover:scale-105"
+                className="object-cover"
               />
               <div className="absolute inset-0 border-[1.5rem] border-white/20 pointer-events-none" />
             </div>
