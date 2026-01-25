@@ -6,13 +6,18 @@ import { Menu, X, Fingerprint, Globe } from 'lucide-react';
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
+  
   useEffect(() => {
+    const header = document.querySelector('header');
+    if (header) {
+      document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+    }
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+    
   }, []);
-
+  
   return (
     <>
       <motion.header

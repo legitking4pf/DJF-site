@@ -78,15 +78,11 @@ export default function ExecutiveDossier() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8">
-              <motion.h1 
-                initial={{ opacity: 0, x: -30 }} 
-                animate={{ opacity: 1, x: 0 }} 
-                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                className="font-serif text-3x1 md:text-[6x1] text-obsidian tracking-tighter leading-[0.9] mb-0"
+              <h1 className="font-serif text-3x1 md:text-[6x1] text-obsidian tracking-tighter leading-[1.0] mb-0"
               >
                 David Jackson <br /> 
                 <span className="italic font-light text-gold/80">Fernandez</span>
-              </motion.h1>
+              </h1>
             </div>
             <div className="lg:col-span-4 lg:text-right pb-4">
                <span className="block text-[9px] uppercase tracking-[0.4em] font-black text-ash mb-3">Institutional Mandate</span>
@@ -111,8 +107,8 @@ export default function ExecutiveDossier() {
           {/* SECTION 01: ORIGINS & MIGRATION */}
           <motion.section variants={itemVars} className="relative group">
             <div className="flex items-center gap-4 mb-10">
-               <History size={18} className="text-gold" />
-               <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-obsidian/40">01 // The Core Migration</h2>
+               <History size={20} className="text-gold" />
+               <h2 className="text-[2x1] font-black uppercase tracking-[0.5em] text-obsidian/40">01 // The Core Migration</h2>
             </div>
             <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify space-y-6">
               <p>
@@ -127,8 +123,8 @@ export default function ExecutiveDossier() {
           {/* SECTION 02: GOVERNANCE & SOVEREIGNTY */}
           <motion.section variants={itemVars} className="relative group">
             <div className="flex items-center gap-4 mb-10">
-               <ShieldCheck size={18} className="text-gold" />
-               <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-obsidian/40">02 // Digital Sovereignty</h2>
+               <ShieldCheck size={20} className="text-gold" />
+               <h2 className="text-[2x1] font-black uppercase tracking-[0.5em] text-obsidian/40">02 // Digital Sovereignty</h2>
             </div>
             <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify space-y-6">
               <p>
@@ -157,8 +153,8 @@ export default function ExecutiveDossier() {
           {/* SECTION 03: THE AESTHETIC REALM */}
           <motion.section variants={itemVars} className="relative group pb-20">
             <div className="flex items-center gap-4 mb-10">
-               <Layers size={18} className="text-gold" />
-               <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-obsidian/40">03 // Architectural Curation</h2>
+               <Layers size={20} className="text-gold" />
+               <h2 className="text-[2x1] font-black uppercase tracking-[0.5em] text-obsidian/40">03 // Architectural Curation</h2>
             </div>
             <div className="text-lg font-light leading-relaxed text-obsidian/90 text-justify">
               <p>

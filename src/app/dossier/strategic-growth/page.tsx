@@ -1,10 +1,16 @@
 "use client";
-import { useState, useEffect } from 'react';
-import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion';
-import { ShieldCheck, BarChart, Scale, Users, FileCheck, ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { 
+  ShieldCheck, BarChart3, Scale, Users2, 
+  FileCheck, ArrowLeft, ArrowUpRight, 
+  Globe2, Landmark, Fingerprint 
+} from 'lucide-react';
 import Link from 'next/link';
+
 const MotionImage = motion.create(Image);
+
 const caoImages = [
   'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM',
   'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/ebn-Atlantida-zpqvrZCN2sUPlWwyYQVopLkJd5s3RF.jpg'
@@ -12,175 +18,218 @@ const caoImages = [
 
 export default function CAODossier() {
   const [index, setIndex] = useState(0);
-  
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: containerRef });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev === caoImages.length - 1 ? 0 : prev + 1));
-    }, 10000);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
-  
+
   return (
-    <main className="min-h-screen bg-bone text-obsidian pb-24 relative">
-      {/* 1. ATMOSPHERIC BACKGROUND */}
-      <div className="absolute inset-0 h-[70vh] z-0 bg-obsidian overflow-hidden">
+    <main ref={containerRef} className="min-h-screen bg-[#F9F8F6] text-[#1A1A1A] selection:bg-gold/30 overflow-hidden">
+      
+      {/* 1. IMMERSIVE HERO ENGINE */}
+      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-obsidian">
         <AnimatePresence mode="wait">
           <MotionImage
             key={index}
             src={caoImages[index]}
-            priority={true}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 0.25, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 3 }}
-            className="absolute inset-0 w-full h-full object-cover"
+            alt="Strategic Context"
+            fill
+            priority
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 0.4, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 2.5, ease: [0.19, 1, 0.22, 1] }}
+            className="object-cover"
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#000000B0] via-transparent to-bone z-10" />
-      </div>
+        
+        {/* Overlays for Depth */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F9F8F6] via-transparent to-transparent z-20" />
+        <div className="absolute inset-0 bg-black/20 z-10" />
 
-      {/* 2. EXECUTIVE HEADER */}
-      <section className="relative z-20 h-[70vh] flex items-end pb-20 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto w-full">
-          <Link href="/" className="inline-flex items-center gap-3 text-gold text-xs uppercase tracking-[0.5em] mb-12 hover:gap-6 transition-all font-bold">
-            <ArrowLeft size={14} /> Institutional HQ
-          </Link>
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <span className="text-gold tracking-[0.5em] text-xs font-bold uppercase mb-4 block">Strategic Briefing // 02</span>
-            <h1 className="text-4xl md:text-7xl font-display uppercase tracking-tighter leading-[0.8] mb-8">
-              Strategic <br /> Growth
+        <div className="relative z-30 max-w-7xl mx-auto px-6 w-full mt-24">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <Link href="/" className="group inline-flex items-center gap-4 text-gold text-[10px] uppercase tracking-[0.6em] mb-16 font-bold">
+              <span className="w-8 h-[1px] bg-gold group-hover:w-12 transition-all" /> Institutional HQ
+            </Link>
+            
+            <h1 className="text-3xl md:text-[6x1] font-display uppercase tracking-tighter leading-[1.1] mb-12 italic">
+              Wealth <br /> 
+              <span className="text-gold not-italic ml-0 md:ml-20">Acceleration</span>
             </h1>
-            <div className="flex flex-wrap items-center gap-6 md:gap-10 text-obsidian/70 uppercase text-sm tracking-[0.2em] font-medium">
-              <span>Grupo Financiero Atlántida</span>
-              <span className="text-gold hidden md:inline">•</span>
-              <span>CAO Office</span>
-              <span className="text-gold hidden md:inline">•</span>
-              <span>Regional Governance</span>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-end">
+              <div className="space-y-2">
+                <p className="text-gold tracking-[0.4em] text-[10px] font-bold uppercase">Position / Role</p>
+                <p className="text-white text-lg font-light tracking-wide italic">Chief Administrative Officer</p>
+              </div>
+              <div className="space-y-2 border-l border-white/10 pl-8">
+                <p className="text-gold tracking-[0.4em] text-[10px] font-bold uppercase">Focus</p>
+                <p className="text-white text-lg font-light tracking-wide uppercase">Strategic Growth Network</p>
+              </div>
+              <div className="hidden md:block">
+                <motion.div 
+                  animate={{ y: [0, 10, 0] }} 
+                  transition={{ repeat: Infinity, duration: 4 }}
+                  className="w-[1px] h-24 bg-gradient-to-b from-gold to-transparent mx-auto"
+                />
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* 3. CORE MANDATE: OPERATIONAL RIGOR */}
-      <section className="py-24 max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-32">
-          <div className="space-y-6">
-            <div className="w-14 h-14 border border-gold/30 flex items-center justify-center text-gold">
-              <Scale size={24} />
-            </div>
-            <h5 className="text-3xl font-display uppercase italic">Corporate <br /> Sovereignty</h5>
-            <p className="text-lg text-obsidian/80 leading-relaxed -light">
-              Architecting standardized administrative frameworks across regional territories. We prioritize absolute compliance and structural transparency to insulate the GFA ecosystem from market volatility.
+      {/* 2. THE CAO MANDATE: BORDERLESS GOVERNANCE */}
+      <section className="py-32 px-6 lg:px-12 relative">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20">
+          <div className="lg:col-span-5">
+            <h2 className="text-xs uppercase tracking-[0.8em] text-gold font-bold mb-12">The Governance Pillar</h2>
+            <h3 className="text-4xl md:text-5xl font-display uppercase leading-[1.1] tracking-tight mb-8">
+              Standardizing <br /> Regional <br /> Sovereignty.
+            </h3>
+            <p className="text-xl text-obsidian/60 font-light leading-relaxed italic">
+              "Administrative excellence is not a support function; it is a defensive asset. At GFA, we architect frameworks that permit rapid scaling while maintaining absolute executive privacy."
             </p>
           </div>
-          <div className="space-y-6">
-            <div className="w-14 h-14 border border-gold/30 flex items-center justify-center text-gold">
-              <BarChart size={24} />
-            </div>
-            <h5 className="text-3xl font-display uppercase italic">Operational <br /> Precision</h5>
-            <p className="text-lg text-obsidian/80 leading-relaxed font-light">
-              Treating administration as a high-precision instrument. We optimize group-wide resource allocation to ensure that the velocity of wealth is never hindered by legacy friction.
-            </p>
+          
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-px bg-obsidian/10 border border-obsidian/10">
+            {[
+              { 
+                icon: <Fingerprint size={28} />, 
+                title: "Digital Integration", 
+                desc: "Migrating legacy compliance into automated, zero-friction protocols." 
+              },
+              { 
+                icon: <Globe2 size={28} />, 
+                title: "Global Reach", 
+                desc: "Syncing Central American operations with international financial hubs." 
+              },
+              { 
+                icon: <Landmark size={28} />, 
+                title: "Asset Integrity", 
+                desc: "High-level oversight of the strategic growth network portfolios." 
+              },
+              { 
+                icon: <BarChart3 size={28} />, 
+                title: "Velocity", 
+                desc: "Reducing administrative lag to match fintech-speed execution." 
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-[#F9F8F6] p-10 hover:bg-white transition-colors group">
+                <div className="text-gold mb-8 group-hover:scale-110 transition-transform duration-500">{item.icon}</div>
+                <h4 className="text-xl font-display uppercase mb-4">{item.title}</h4>
+                <p className="text-sm text-obsidian/60 leading-relaxed uppercase tracking-wider">{item.desc}</p>
+              </div>
+            ))}
           </div>
-          <div className="space-y-6">
-            <div className="w-14 h-14 border border-gold/30 flex items-center justify-center text-gold">
-              <ShieldCheck size={24} />
-            </div>
-            <h5 className="text-3xl font-display uppercase italic">Institutional <br /> Resilience</h5>
-            <p className="text-lg text-obsidian/80 leading-relaxed font-light">
-              Integrating ESG principles not as a trend, but as a defensive asset. We ensure the long-term permanence of the institution through rigorous sustainability protocols.
-            </p>
-          </div>
         </div>
-
-        {/* 4. PERFORMANCE MATRIX (THE CAO ENGINE) */}
-        <div className="bg-obsidian text-bone p-6 md:p-24 relative overflow-hidden">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
-    <div>
-      <h2 className="text-4xl md:text-5xl font-display uppercase tracking-tighter mb-10 leading-tight">
-        Governance <br /> <span className="text-gold">Impact Matrix</span>
-      </h2>
-      <p className="text-lg md:text-xl text-white/90 font-light leading-loose mb-12">
-        As CAO, my mandate is to ensure the group's administrative engine matches the velocity of its technology. We reject experimental adoption in favor of borderless corporate structures that provide executive-level privacy and institutional security.
-      </p>
-      
-      {/* Scope & Framework Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-        <div className="flex flex-col gap-3">
-          <span className="text-gold text-xs uppercase tracking-[0.3em] font-bold">Scope</span>
-          <span className="text-xl md:text-2xl uppercase font-display tracking-tight">Regional Sovereignty</span>
-        </div>
-        <div className="flex flex-col gap-3">
-          <span className="text-gold text-xs uppercase tracking-[0.3em] font-bold">Framework</span>
-          <span className="text-xl md:text-2xl uppercase font-display tracking-tight">Zero-Friction Admin</span>
-        </div>
-      </div>
-      
-      <div className="mt-16">
-        <Link 
-          href="https://www.gfa.hn" 
-          target="_blank"
-          className="inline-flex items-center gap-4 text-gold text-xs md:text-sm uppercase tracking-[0.5em] font-bold hover:gap-7 transition-all"
-        >
-          GFA Corporate Portal <ArrowUpRight size={18} />
-        </Link>
-      </div>
-    </div>
-
-    {/* Fixed Stats Grid for Mobile */}
-    <div className="space-y-4">
-      {[
-        { label: "Administrative Automation", value: "92%" },
-        { label: "Institutional Compliance", value: "100%" },
-        { label: "Regional Interoperability", value: "OPTIMIZED" },
-        { label: "Governance Integrity", value: "ABSOLUTE" }
-      ].map((stat, i) => (
-        <div 
-          key={i} 
-          className="group p-6 md:p-8 border border-bone/10 bg-white/5 backdrop-blur-sm hover:border-gold/50 transition-all 
-                     flex flex-col sm:flex-row sm:items-center justify-between gap-4"
-        >
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-ash group-hover:text-bone transition-colors">
-            {stat.label}
-          </span>
-          <span className="text-2xl md:text-3xl font-display text-gold">
-            {stat.value}
-          </span>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
-
       </section>
 
-      {/* 5. THE STRATEGIC FILTER (ESSENTIALISM) */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-32 border-t border-obsidian/5">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-16">
-          <div className="md:w-1/3">
-            <h3 className="text-sm uppercase tracking-[0.5em] text-gold font-bold mb-6 italic">The Standard</h3>
-            <p className="text-3xl font-display uppercase leading-tight">Architectural <br /> Essentialism</p>
+      {/* 3. PERFORMANCE MATRIX (REFINED) */}
+      <section className="px-6 lg:px-12 mb-32">
+        <div className="max-w-7xl mx-auto bg-obsidian text-bone rounded-[2px] overflow-hidden relative">
+          <div className="absolute top-0 right-0 p-12 opacity-10">
+            <Scale size={300} strokeWidth={0.5} />
           </div>
-          <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div className="space-y-6">
-              <h5 className="font-bold text-sm uppercase tracking-[0.3em] flex items-center gap-3">
-                <FileCheck size={18} className="text-gold" /> Protocol Mastery
-              </h5>
-              <p className="text-lg text-obsidian/70 leading-relaxed font-light">
-                Digital-first administrative protocols designed to eliminate friction. We treat policy as an asset to accelerate decision-making at the board level.
-              </p>
+          
+          <div className="p-12 md:p-24 relative z-10">
+            <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-20">
+              <div className="max-w-2xl">
+                <span className="text-gold text-[10px] uppercase tracking-[0.5em] font-bold block mb-6">// Operational Intelligence</span>
+                <h2 className="text-4xl md:text-6xl font-display uppercase tracking-tighter leading-none">
+                  Institutional <br /> Resilience <span className="text-gold italic">Matrix</span>
+                </h2>
+              </div>
+              <Link 
+                href="https://www.gfa.hn" 
+                target="_blank"
+                className="group flex items-center gap-4 text-white text-[10px] uppercase tracking-[0.4em] font-bold border-b border-gold/40 pb-2 hover:border-gold transition-all"
+              >
+                GFA Ecosystem <ArrowUpRight size={16} className="text-gold" />
+              </Link>
             </div>
-            <div className="space-y-6">
-              <h5 className="font-bold text-sm uppercase tracking-[0.3em] flex items-center gap-3">
-                <Users size={18} className="text-gold" /> Institutional Culture
-              </h5>
-              <p className="text-lg text-obsidian/70 leading-relaxed font-light">
-                Curating high-end corporate environments through KONCEPTO Décor. We believe the physical workspace must reflect the precision of our digital infrastructure.
-              </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {[
+                { label: "Admin Automation", value: "94.8%" },
+                { label: "Compliance Index", value: "100%" },
+                { label: "Asset Transparency", value: "TOTAL" },
+                { label: "Strategy 2030", value: "ACTIVE" }
+              ].map((stat, i) => (
+                <div key={i} className="p-8 border border-white/5 bg-white/5 backdrop-blur-md">
+                  <p className="text-[9px] uppercase tracking-[0.3em] text-ash mb-4">{stat.label}</p>
+                  <p className="text-4xl font-display text-gold">{stat.value}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
+
+      {/* 4. DESIGN CULTURE (KONCEPTO INTEGRATION) */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-32 border-t border-obsidian/10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-[1px] bg-gold" />
+              <span className="text-gold text-[10px] uppercase tracking-[0.5em] font-bold">Design/Innovation Culture</span>
+            </div>
+            <h3 className="text-5xl font-display uppercase tracking-tighter mb-8 leading-tight">
+              Physical <br /> Excellence <br /> <span className="italic">Meets Digital.</span>
+            </h3>
+            <p className="text-lg text-obsidian/70 leading-loose font-light mb-12">
+              Through **KONCEPTO Décor**, we translate GFA's strategic precision into physical environments. Our office spaces and executive lounges in strategic financial hubs are curated for privacy, productivity, and Spanish-inspired modern minimalism.
+            </p>
+            <div className="flex gap-12">
+              <div className="space-y-2">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-gold">Aesthetic</span>
+                <p className="text-sm uppercase tracking-tighter">Minimalist / High-Quality</p>
+              </div>
+              <div className="space-y-2 border-l border-obsidian/10 pl-12">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-gold">Philosophy</span>
+                <p className="text-sm uppercase tracking-tighter">Balanced / Architectural</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="relative aspect-[4/5] bg-obsidian overflow-hidden group">
+            <Image 
+              src="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/ebn-Atlantida-zpqvrZCN2sUPlWwyYQVopLkJd5s3RF.jpg"
+              alt="Design Philosophy"
+              fill
+              className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000"
+            />
+            <div className="absolute inset-0 border-[40px] border-white/10" />
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CALL TO ACTION: STRATEGIC GROWTH */}
+      <footer className="py-24 bg-white border-t border-obsidian/5 text-center">
+        <motion.div 
+          whileInView={{ opacity: [0, 1], y: [20, 0] }}
+          className="max-w-3xl mx-auto px-6"
+        >
+          <h4 className="text-xs uppercase tracking-[0.6em] text-gold font-bold mb-8 italic">Next Protocol</h4>
+          <h2 className="text-4xl md:text-5xl font-display uppercase mb-12 tracking-tighter">Explore the Wealth <br /> Acceleration Opportunity</h2>
+          <Link 
+            href="/growth-network" 
+            className="inline-block bg-obsidian text-bone px-12 py-5 uppercase text-[10px] tracking-[0.5em] font-bold hover:bg-gold hover:text-obsidian transition-all duration-500"
+          >
+            Enter Growth Network
+          </Link>
+        </motion.div>
+      </footer>
     </main>
   );
 }

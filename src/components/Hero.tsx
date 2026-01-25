@@ -19,9 +19,14 @@ export default function Hero() {
   }, []);
   
   return (
-    // CHANGE: Adjusted padding and added 'flex-shrink-0' logic to prevent overflow
-    <section className="relative min-h-screen w-full bg-obsidian text-bone overflow-hidden flex flex-col justify-center py-20 md:pt-40 selection:bg-gold/30">
-      
+    <section 
+      className="relative w-full bg-obsidian text-bone overflow-hidden flex flex-col selection:bg-gold/30"
+      style={{ 
+        /* MATHEMATICAL ALIGNMENT */
+        marginTop: 'var(--header-height, 0px)', 
+        minHeight: 'calc(100vh - var(--header-height, 0px))' 
+      }}
+    >
       {/* 1. ARCHITECTURAL VIDEO VIEWPORT */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <AnimatePresence mode="wait">
@@ -49,9 +54,8 @@ export default function Hero() {
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-obsidian via-transparent to-obsidian" />
       </div>
 
-      {/* 2. COMMAND CONTENT */}
-      {/* CHANGE: Added responsive padding-bottom and adjusted grid gaps for mobile */}
-      <div className="relative z-20 max-w-7xl mx-auto px-8 md:px-12 w-full pb-20 md:pb-0">
+      {/* 2. COMMAND CONTENT: Center-aligned within the available viewport */}
+      <div className="relative z-20 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-8 md:px-12 w-full py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start lg:items-center">
 
           {/* LEFT: THE IDENTITY TRIAD */}
@@ -61,7 +65,6 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
             >
-              {/* CHANGE: Reduced margin-bottom on mobile to save vertical space */}
               <div className="flex items-center gap-4 mb-6 md:mb-10">
                 <span className="text-gold font-black tracking-[0.5em] text-[9px] uppercase bg-gold/5 px-3 py-1 border border-gold/20">
                   Institutional Mandate
@@ -69,8 +72,7 @@ export default function Hero() {
                 <div className="h-px w-12 bg-gold/20" />
               </div>
 
-              {/* CHANGE: Dynamic text sizing for fluid mobile scaling */}
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-display tracking-tighter uppercase leading-[1.2] md:leading-[1.3] mb-8 md:l-12 text-white">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-display tracking-tighter uppercase leading-[1.1] mb-8 md:mb-12 text-white">
                 Governance <br />
                 <span className="text-gold italic font-serif font-light opacity-90">Infrastructure.</span> <br />
                 Aesthetics.
@@ -78,7 +80,7 @@ export default function Hero() {
 
               <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 border-l border-gold/40 pl-6 md:pl-8">
                 <p className="text-white/90 text-sm md:text-lg font-light tracking-wide max-w-md leading-relaxed">
-                  Leading the <span className="text-gold font-bold">Digital Sovereignty</span> and Architectural Curation of the Grupo Financiero Atlántida ecosystem.
+                  Leading the <span className="text-gold font-bold">Digital Sovereignty</span> and Architectural Curation of the Grupo Financiero Atlántida ecosystem [cite: 2025-12-09].
                 </p>
                 <div className="hidden md:block w-px h-12 bg-white/10" />
                 <div className="flex flex-col">
@@ -93,7 +95,6 @@ export default function Hero() {
           </div>
 
           {/* RIGHT: STRATEGIC BENCHMARKS */}
-          {/* CHANGE: Reduced card padding on mobile to keep them compact */}
           <div className="lg:col-span-4 flex flex-col gap-3 md:gap-4 relative z-30">
             {[
               { label: "20+ YEARS", sub: "Institutional Governance", icon: Shield },
@@ -130,9 +131,16 @@ export default function Hero() {
          </div>
       </div>
 
+      <motion.div 
+        animate={{ y: [0, 8, 0] }}
+        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+        className="absolute bottom-10 right-8 md:right-12 text-gold/30 z-30"
+      >
+        <ArrowDown size={18} strokeWidth={1} />
+      </motion.div>
+
       {/* ARCHITECTURAL CORNER ACCENTS */}
-      {/* CHANGE: Ensure these stay fixed relative to the viewport/section edges */}
-      <div className="absolute top-8 md:top-32 left-8 w-8 h-8 md:w-10 md:h-10 border-l border-t border-gold/20 z-10" />
+      <div className="absolute top-8 md:top-12 left-8 w-8 h-8 md:w-10 md:h-10 border-l border-t border-gold/20 z-10" />
       <div className="absolute bottom-8 right-8 w-8 h-8 md:w-10 md:h-10 border-r border-b border-gold/20 z-10" />
     </section>
   );
