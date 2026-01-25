@@ -1,235 +1,220 @@
 "use client";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
-  ShieldCheck, BarChart3, Scale, Users2, 
-  FileCheck, ArrowLeft, ArrowUpRight, 
-  Globe2, Landmark, Fingerprint 
+  ArrowUpRight, 
+  Terminal, 
+  Copyright, 
+  Scale, 
+  Gem,
+  Building2
 } from 'lucide-react';
 import Link from 'next/link';
 
-const MotionImage = motion.create(Image);
+// --- ASSETS ---
+const PROFILE_IMG = "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM";
+const OFFICE_IMG = "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/ebn-Atlantida-zpqvrZCN2sUPlWwyYQVopLkJd5s3RF.jpg";
 
-const caoImages = [
-  'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/Profile%20Image%20-jlbi7Xn3mevVzx1EjqgyAGgjsnLEuM',
-  'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/ebn-Atlantida-zpqvrZCN2sUPlWwyYQVopLkJd5s3RF.jpg'
-];
+// --- COMPONENTS ---
 
-export default function CAODossier() {
-  const [index, setIndex] = useState(0);
+export default function CAOManifesto() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: containerRef });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev === caoImages.length - 1 ? 0 : prev + 1));
-    }, 8000);
-    return () => clearInterval(timer);
-  }, []);
+  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (
-    <main ref={containerRef} className="min-h-screen bg-[#F9F8F6] text-[#1A1A1A] selection:bg-gold/30 overflow-hidden">
+    <main ref={containerRef} className="bg-[#0a0a0a] text-[#EAEAEA] min-h-screen selection:bg-[#C6A87C] selection:text-black font-sans">
       
-      {/* 1. IMMERSIVE HERO ENGINE */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-obsidian">
-        <AnimatePresence mode="wait">
-          <MotionImage
-            key={index}
-            src={caoImages[index]}
-            alt="Strategic Context"
-            fill
-            priority
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0.4, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 2.5, ease: [0.19, 1, 0.22, 1] }}
-            className="object-cover"
-          />
-        </AnimatePresence>
+      {/* --- 01. THE COVER (EDITORIAL STYLE) --- */}
+      <section className="relative min-h-screen flex flex-col pt-32 px-6 lg:px-12 border-b border-white/10">
         
-        {/* Overlays for Depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F9F8F6] via-transparent to-transparent z-20" />
-        <div className="absolute inset-0 bg-black/20 z-10" />
-
-        <div className="relative z-30 max-w-7xl mx-auto px-6 w-full mt-24">
-          <motion.div 
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            <Link href="/" className="group inline-flex items-center gap-4 text-gold text-[10px] uppercase tracking-[0.6em] mb-16 font-bold">
-              <span className="w-8 h-[1px] bg-gold group-hover:w-12 transition-all" /> Institutional HQ
-            </Link>
-            
-            <h1 className="text-3xl md:text-[6x1] font-display uppercase tracking-tighter leading-[1.1] mb-12 italic">
-              Wealth <br /> 
-              <span className="text-gold not-italic ml-0 md:ml-20">Acceleration</span>
-            </h1>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-end">
-              <div className="space-y-2">
-                <p className="text-gold tracking-[0.4em] text-[10px] font-bold uppercase">Position / Role</p>
-                <p className="text-white text-lg font-light tracking-wide italic">Chief Administrative Officer</p>
-              </div>
-              <div className="space-y-2 border-l border-white/10 pl-8">
-                <p className="text-gold tracking-[0.4em] text-[10px] font-bold uppercase">Focus</p>
-                <p className="text-white text-lg font-light tracking-wide uppercase">Strategic Growth Network</p>
-              </div>
-              <div className="hidden md:block">
-                <motion.div 
-                  animate={{ y: [0, 10, 0] }} 
-                  transition={{ repeat: Infinity, duration: 4 }}
-                  className="w-[1px] h-24 bg-gradient-to-b from-gold to-transparent mx-auto"
-                />
-              </div>
-            </div>
-          </motion.div>
+        {/* Top Meta Data */}
+        <div className="flex justify-between items-start text-[10px] md:text-xs uppercase tracking-[0.2em] text-[#888] font-mono mb-20">
+          <div className="flex flex-col gap-2">
+            <span className="text-[#C6A87C]">/// GFA Institutional HQ</span>
+            <span>Tegucigalpa / Global</span>
+          </div>
+          <div className="flex flex-col gap-2 text-right">
+            <span>Ref: Exec_Dossier_2026</span>
+            <span>Status: Classified</span>
+          </div>
         </div>
+
+        {/* The Headline Engine */}
+        <div className="relative z-20">
+          <motion.h1 
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[14vw] leading-[0.8] font-serif font-medium tracking-tighter text-white mix-blend-difference"
+          >
+            Institutional <br />
+            <span className="italic text-[#C6A87C]">Architecture.</span>
+          </motion.h1>
+          
+          <div className="mt-12 max-w-xl">
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="text-lg md:text-xl leading-relaxed text-[#888] font-light"
+            >
+              The role of the Chief Administrative Officer is not maintenance; it is the rigorous engineering of <span className="text-white">corporate sovereignty</span>. We are building the infrastructure for the next decade of Latin American wealth.
+            </motion.p>
+          </div>
+        </div>
+
+        {/* Hero Image - Placed strategically, not interfering with text */}
+        <motion.div 
+          style={{ y }}
+          className="absolute right-0 bottom-0 w-full md:w-[50vw] h-[60vh] md:h-[80vh] opacity-40 md:opacity-100 grayscale contrast-125 z-0"
+        >
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#0a0a0a]/50 to-[#0a0a0a] z-10" />
+          <Image 
+            src={PROFILE_IMG}
+            alt="David Jackson Fernandez"
+            fill
+            className="object-cover object-top"
+            priority
+          />
+        </motion.div>
       </section>
 
-      {/* 2. THE CAO MANDATE: BORDERLESS GOVERNANCE */}
-      <section className="py-32 px-6 lg:px-12 relative">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20">
-          <div className="lg:col-span-5">
-            <h2 className="text-xs uppercase tracking-[0.8em] text-gold font-bold mb-12">The Governance Pillar</h2>
-            <h3 className="text-4xl md:text-5xl font-display uppercase leading-[1.1] tracking-tight mb-8">
-              Standardizing <br /> Regional <br /> Sovereignty.
-            </h3>
-            <p className="text-xl text-obsidian/60 font-light leading-relaxed italic">
-              "Administrative excellence is not a support function; it is a defensive asset. At GFA, we architect frameworks that permit rapid scaling while maintaining absolute executive privacy."
+      {/* --- 02. THE ARTICLE (MANIFESTO) --- */}
+      <section className="py-32 px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 border-b border-white/10">
+        
+        {/* Sticky Sidebar */}
+        <div className="lg:col-span-3 lg:sticky lg:top-32 h-fit space-y-12">
+          <div>
+            <h3 className="text-[#C6A87C] text-xs uppercase tracking-[0.3em] mb-4 font-mono">Executive Profile</h3>
+            <p className="text-2xl font-serif">David Jackson Fernandez</p>
+            <p className="text-sm text-[#666] mt-2">CAO, Grupo Financiero Atlántida</p>
+          </div>
+          
+          <div className="w-full h-[1px] bg-white/10" />
+          
+          <div className="space-y-4 font-mono text-xs text-[#888]">
+            <p className="flex justify-between"><span>Vision:</span> <span className="text-white">GFA 2030</span></p>
+            <p className="flex justify-between"><span>Sector:</span> <span className="text-white">Fintech / Governance</span></p>
+            <p className="flex justify-between"><span>Design:</span> <span className="text-white">KONCEPTO</span></p>
+          </div>
+        </div>
+
+        {/* Main Content Article */}
+        <div className="lg:col-span-8 lg:col-start-5 space-y-16">
+          
+          {/* Chapter 1 */}
+          <div className="space-y-8">
+            <span className="inline-block px-3 py-1 border border-[#C6A87C] text-[#C6A87C] text-[10px] font-mono uppercase tracking-widest">
+              01 // The Mandate
+            </span>
+            <h2 className="text-4xl md:text-5xl font-light leading-tight">
+              Bridging the gap between legacy banking stability and digital-first acceleration.
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#999] leading-loose text-lg font-light">
+              <p>
+                In an era where capital moves at the speed of light, administrative friction is the greatest threat to growth. My mandate at GFA is absolute: to dismantle bureaucratic latency and replace it with automated, transparent governance frameworks.
+              </p>
+              <p>
+                This is not about "managing" the institution. It is about future-proofing it. We are integrating high-frequency reporting structures that allow our board to make decisions based on real-time data, not quarterly retrospectives.
+              </p>
+            </div>
+          </div>
+
+          {/* Large Stat Break */}
+          <div className="py-12 border-y border-white/10">
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                {[
+                  { label: "Assets Under Oversight", val: "Global" },
+                  { label: "Digital Transformation", val: "Active" },
+                  { label: "Wealth Framework", val: "Strategic" }
+                ].map((item, i) => (
+                  <div key={i}>
+                    <p className="text-[10px] text-[#555] uppercase tracking-[0.3em] font-mono mb-2">{item.label}</p>
+                    <p className="text-3xl font-serif italic text-white">{item.val}</p>
+                  </div>
+                ))}
+             </div>
+          </div>
+
+          {/* Chapter 2 */}
+          <div className="space-y-8">
+            <span className="inline-block px-3 py-1 border border-[#C6A87C] text-[#C6A87C] text-[10px] font-mono uppercase tracking-widest">
+              02 // Wealth Acceleration
+            </span>
+            <h2 className="text-3xl md:text-4xl font-light leading-tight">
+              The Strategic Growth Network.
+            </h2>
+            <p className="text-[#999] leading-loose text-lg font-light">
+              We are curating a specific Tier-1 ecosystem for our partners. The "Assets & Stocks" program is not a public retail offering; it is a <span className="text-white border-b border-[#C6A87C]/50">Strategic Growth Network</span> designed for wealth acceleration. It operates on principles of strict compliance, high-level privacy, and direct access to global markets. 
+            </p>
+            
+            <div className="bg-[#111] p-8 border-l-2 border-[#C6A87C]">
+              <p className="italic text-[#C6A87C] text-xl font-serif">
+                "We do not chase trends. We construct portfolios rooted in infrastructure, technology, and sustainable debt."
+              </p>
+            </div>
+          </div>
+
+          {/* Chapter 3 */}
+          <div className="space-y-8">
+            <span className="inline-block px-3 py-1 border border-[#C6A87C] text-[#C6A87C] text-[10px] font-mono uppercase tracking-widest">
+              03 // Design Philosophy
+            </span>
+             <div className="relative h-[400px] w-full grayscale hover:grayscale-0 transition-all duration-700 ease-out">
+                <Image src={OFFICE_IMG} alt="Office" fill className="object-cover" />
+                <div className="absolute bottom-6 left-6 bg-black/80 backdrop-blur-md px-6 py-4 border border-white/10">
+                  <p className="text-white text-sm uppercase tracking-widest font-bold">KONCEPTO Décor</p>
+                  <p className="text-[#888] text-xs mt-1">Founding Vision</p>
+                </div>
+             </div>
+            <p className="text-[#999] leading-loose text-lg font-light">
+              Excellence is holistic. Through <strong>KONCEPTO Décor</strong>, we bring the same precision to our physical environments that we apply to our balance sheets. A Spanish-inspired minimalist aesthetic defines our spaces—clean, essentialist, and unapologetically modern.
             </p>
           </div>
-          
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-px bg-obsidian/10 border border-obsidian/10">
-            {[
-              { 
-                icon: <Fingerprint size={28} />, 
-                title: "Digital Integration", 
-                desc: "Migrating legacy compliance into automated, zero-friction protocols." 
-              },
-              { 
-                icon: <Globe2 size={28} />, 
-                title: "Global Reach", 
-                desc: "Syncing Central American operations with international financial hubs." 
-              },
-              { 
-                icon: <Landmark size={28} />, 
-                title: "Asset Integrity", 
-                desc: "High-level oversight of the strategic growth network portfolios." 
-              },
-              { 
-                icon: <BarChart3 size={28} />, 
-                title: "Velocity", 
-                desc: "Reducing administrative lag to match fintech-speed execution." 
-              }
-            ].map((item, i) => (
-              <div key={i} className="bg-[#F9F8F6] p-10 hover:bg-white transition-colors group">
-                <div className="text-gold mb-8 group-hover:scale-110 transition-transform duration-500">{item.icon}</div>
-                <h4 className="text-xl font-display uppercase mb-4">{item.title}</h4>
-                <p className="text-sm text-obsidian/60 leading-relaxed uppercase tracking-wider">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+
         </div>
       </section>
 
-      {/* 3. PERFORMANCE MATRIX (REFINED) */}
-      <section className="px-6 lg:px-12 mb-32">
-        <div className="max-w-7xl mx-auto bg-obsidian text-bone rounded-[2px] overflow-hidden relative">
-          <div className="absolute top-0 right-0 p-12 opacity-10">
-            <Scale size={300} strokeWidth={0.5} />
-          </div>
-          
-          <div className="p-12 md:p-24 relative z-10">
-            <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-20">
-              <div className="max-w-2xl">
-                <span className="text-gold text-[10px] uppercase tracking-[0.5em] font-bold block mb-6">// Operational Intelligence</span>
-                <h2 className="text-4xl md:text-6xl font-display uppercase tracking-tighter leading-none">
-                  Institutional <br /> Resilience <span className="text-gold italic">Matrix</span>
-                </h2>
-              </div>
+      {/* --- 03. FOOTER / SIGNATURE --- */}
+      <footer className="bg-[#050505] py-24 px-6 lg:px-12 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+            <div>
+              <h2 className="text-[12vw] leading-none font-serif text-[#1a1a1a] select-none absolute -top-10 left-0 -z-10">
+                GFA/CAO
+              </h2>
+              <p className="text-2xl md:text-3xl text-white font-light max-w-lg leading-normal mb-8">
+                Ready to align with the Strategic Growth Network?
+              </p>
               <Link 
-                href="https://www.gfa.hn" 
-                target="_blank"
-                className="group flex items-center gap-4 text-white text-[10px] uppercase tracking-[0.4em] font-bold border-b border-gold/40 pb-2 hover:border-gold transition-all"
+                href="/growth-network"
+                className="group inline-flex items-center gap-4 text-[#C6A87C] border border-[#C6A87C] px-8 py-4 text-xs uppercase tracking-[0.3em] hover:bg-[#C6A87C] hover:text-black transition-all duration-300"
               >
-                GFA Ecosystem <ArrowUpRight size={16} className="text-gold" />
+                Access Portal <ArrowUpRight size={16} />
               </Link>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { label: "Admin Automation", value: "94.8%" },
-                { label: "Compliance Index", value: "100%" },
-                { label: "Asset Transparency", value: "TOTAL" },
-                { label: "Strategy 2030", value: "ACTIVE" }
-              ].map((stat, i) => (
-                <div key={i} className="p-8 border border-white/5 bg-white/5 backdrop-blur-md">
-                  <p className="text-[9px] uppercase tracking-[0.3em] text-ash mb-4">{stat.label}</p>
-                  <p className="text-4xl font-display text-gold">{stat.value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. DESIGN CULTURE (KONCEPTO INTEGRATION) */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-32 border-t border-obsidian/10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-[1px] bg-gold" />
-              <span className="text-gold text-[10px] uppercase tracking-[0.5em] font-bold">Design/Innovation Culture</span>
-            </div>
-            <h3 className="text-5xl font-display uppercase tracking-tighter mb-8 leading-tight">
-              Physical <br /> Excellence <br /> <span className="italic">Meets Digital.</span>
-            </h3>
-            <p className="text-lg text-obsidian/70 leading-loose font-light mb-12">
-              Through **KONCEPTO Décor**, we translate GFA's strategic precision into physical environments. Our office spaces and executive lounges in strategic financial hubs are curated for privacy, productivity, and Spanish-inspired modern minimalism.
-            </p>
-            <div className="flex gap-12">
-              <div className="space-y-2">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-gold">Aesthetic</span>
-                <p className="text-sm uppercase tracking-tighter">Minimalist / High-Quality</p>
-              </div>
-              <div className="space-y-2 border-l border-obsidian/10 pl-12">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-gold">Philosophy</span>
-                <p className="text-sm uppercase tracking-tighter">Balanced / Architectural</p>
+            
+            <div className="md:text-right space-y-4">
+              <div className="flex flex-col md:items-end gap-2 text-[#555] text-xs font-mono uppercase tracking-wider">
+                 <div className="flex items-center gap-2">
+                   <Terminal size={14} /> System Status: Operational
+                 </div>
+                 <div className="flex items-center gap-2">
+                   <Scale size={14} /> Legal: GFA Compliant
+                 </div>
+                 <div className="flex items-center gap-2">
+                   <Copyright size={14} /> 2026 David J. Fernandez
+                 </div>
               </div>
             </div>
           </div>
-          
-          <div className="relative aspect-[4/5] bg-obsidian overflow-hidden group">
-            <Image 
-              src="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/ebn-Atlantida-zpqvrZCN2sUPlWwyYQVopLkJd5s3RF.jpg"
-              alt="Design Philosophy"
-              fill
-              className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000"
-            />
-            <div className="absolute inset-0 border-[40px] border-white/10" />
-          </div>
         </div>
-      </section>
-
-      {/* 5. CALL TO ACTION: STRATEGIC GROWTH */}
-      <footer className="py-24 bg-white border-t border-obsidian/5 text-center">
-        <motion.div 
-          whileInView={{ opacity: [0, 1], y: [20, 0] }}
-          className="max-w-3xl mx-auto px-6"
-        >
-          <h4 className="text-xs uppercase tracking-[0.6em] text-gold font-bold mb-8 italic">Next Protocol</h4>
-          <h2 className="text-4xl md:text-5xl font-display uppercase mb-12 tracking-tighter">Explore the Wealth <br /> Acceleration Opportunity</h2>
-          <Link 
-            href="/growth-network" 
-            className="inline-block bg-obsidian text-bone px-12 py-5 uppercase text-[10px] tracking-[0.5em] font-bold hover:bg-gold hover:text-obsidian transition-all duration-500"
-          >
-            Enter Growth Network
-          </Link>
-        </motion.div>
       </footer>
+
+      {/* Grain Overlay for Film Effect */}
+      <div className="pointer-events-none fixed inset-0 z-50 opacity-[0.03] mix-blend-overlay" style={{ backgroundImage: 'url("https://grainy-gradients.vercel.app/noise.svg")' }}></div>
     </main>
   );
 }
