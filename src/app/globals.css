@@ -4,16 +4,11 @@
   /* High-Contrast Executive Palette */
   --font-display: var(--font-playfair), serif;
   --font-body: var(--font-inter), sans-serif;
-  
   --color-obsidian: #050505;
   --color-bone: #FDFBF7;
-  
-  /* Deepened Institutional Gold for AA Contrast Compliance */
   --color-gold: #946C00; 
   --color-gold-light: #C5A059;
   --color-gold-dark: #735400;
-  
-  /* Darker Ash for better legibility on Bone backgrounds */
   --color-ash: #575757; 
 }
 
