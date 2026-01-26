@@ -15,15 +15,6 @@ const Timeline = dynamic(() => import("@/components/Timeline"), {
   loading: () => <div className="h-96 w-full bg-neutral-50 animate-pulse rounded-lg" />
 });
 
-const AssetMap = dynamic(() => import("@/components/AssetMap"), { 
-  ssr: false, 
-  loading: () => <div className="h-[500px] w-full bg-neutral-50 animate-pulse rounded-lg" />
-});
-
-/**
- * CAODossier - Institutional Dossier for David Jackson Fernandez
- * Focus: Digital Integration & Investment Partnerships
- */
 export default function CAODossier() {
   return (
     <motion.main 
@@ -37,7 +28,7 @@ export default function CAODossier() {
       <header className="border-b border-neutral-100 pb-12 space-y-4">
         <div className="flex justify-between items-end">
           <div>
-            <h1 className="text-3xl font-light tracking-tighter text-neutral-900">
+            <h1 className="text-3xl text-gold font-light tracking-tighter text-neutral-900">
               David Jackson Fernandez
             </h1>
             <p className="uppercase text-xs tracking-[0.3em] text-neutral-500 mt-2">
@@ -72,15 +63,54 @@ export default function CAODossier() {
         
         <div className="space-y-2">
           <h2 className="text-sm uppercase tracking-widest text-neutral-400">Global Asset Footprint</h2>
-          <AssetMap />
         </div>
       </section>
 
-      <footer className="pt-20 text-center">
-        <p className="text-[10px] uppercase tracking-widest text-neutral-300">
-          GFA Strategic Vision 2030 · Proprietary & Confidential
+<footer className="mt-40 border-t border-neutral-100 pt-16 pb-24">
+  <div className="max-w-6xl mx-auto flex flex-col space-y-12">
+    
+    {/* Strategic Pillars Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="space-y-2">
+        <p className="text-[9px] uppercase tracking-[0.3em] text-neutral-400">Institutional Position</p>
+        <p className="text-[10px] uppercase tracking-widest text-neutral-800 font-medium">
+          Office of the Chief Administrative Officer
         </p>
-      </footer>
+      </div>
+      
+      <div className="md:col-span-2 space-y-2">
+        <p className="text-[9px] uppercase tracking-[0.3em] text-neutral-400">Strategic Alignment</p>
+        <div className="flex flex-wrap gap-x-4 gap-y-1 text-[10px] uppercase tracking-widest text-neutral-600">
+          <span>Digital Integration</span>
+          <span className="text-neutral-200">/</span>
+          <span>Investment Partnerships</span>
+          <span className="text-neutral-200">/</span>
+          <span>Sustainability</span>
+          <span className="text-neutral-200">/</span>
+          <span>Design Culture</span>
+        </div>
+      </div>
+
+      <div className="space-y-2 text-left md:text-right">
+        <p className="text-[9px] uppercase tracking-[0.3em] text-neutral-400">Global Presence</p>
+        <p className="text-[10px] uppercase tracking-widest text-neutral-800">
+          Madrid · San Salvador · Tegucigalpa
+        </p>
+      </div>
+    </div>
+
+    {/* Legal & Growth Network */}
+    <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-neutral-50 gap-4">
+      <p className="text-[9px] uppercase tracking-[0.4em] text-neutral-300">
+        Strategic Growth Network · Proprietary & Confidential
+      </p>
+      <div className="h-[1px] w-12 bg-neutral-200 hidden md:block"></div>
+      <p className="text-[9px] uppercase tracking-[0.3em] text-neutral-400">
+        © {new Date().getFullYear()} Grupo Financiero Atlántida
+      </p>
+    </div>
+  </div>
+</footer>
     </motion.main>
   );
 }

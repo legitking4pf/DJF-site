@@ -86,41 +86,71 @@ const Header = () => {
       </motion.header>
 
       {/* MOBILE OVERLAY */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: '100%', opacity: 0 }}
-            transition={{ type: 'spring', damping: 30, stiffness: 200 }}
-            className="fixed inset-0 z-[150] bg-obsidian flex flex-col p-10 justify-center"
+<AnimatePresence>
+  {isOpen && (
+    <motion.div
+      initial={{ opacity: 0, x: '100%' }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: '100%', opacity: 0 }}
+      transition={{ type: 'spring', damping: 30, stiffness: 200 }}
+      className="fixed inset-0 z-[150] bg-obsidian flex flex-col p-8 md:p-12"
+    >
+      {/* 1. INTERNAL CLOSE ACTION */}
+      <div className="flex justify-between items-center mb-16">
+        <span className="text-[9px] uppercase tracking-[0.4em] text-white/30 font-mono">
+          System // Navigation
+        </span>
+        <button 
+          onClick={() => setIsOpen(false)}
+          className="flex items-center gap-3 group px-4 py-2 border border-white/5 hover:border-gold/50 transition-colors"
+        >
+          <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 group-hover:text-gold transition-colors">
+            Close
+          </span>
+          <X size={18} className="text-white/50 group-hover:text-gold transition-colors" />
+        </button>
+      </div>
+
+      {/* 2. NAVIGATION LINKS */}
+      <div className="flex-grow flex flex-col justify-center space-y-10">
+        {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item, idx) => (
+          <motion.a
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 * idx }}
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            onClick={() => setIsOpen(false)}
+            className="block text-4xl md:text-5xl font-display uppercase tracking-tighter text-white hover:text-gold transition-all duration-500"
           >
-             <div className="space-y-10">
-              {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item, idx) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-3xl font-display uppercase tracking-tighter text-white hover:text-gold transition-colors"
-                >
-                  <span className="text-gold/30 mr-6 text-xl">0{idx + 1}</span>
-                  {item}
-                </a>
-              ))}
-            </div>
-            
-            <div className="mt-20 pt-10 border-t border-white/10 flex flex-col gap-6">
-              <div className="flex items-center gap-4">
-                <Globe size={16} className="text-gold" />
-                <span className="text-xs uppercase tracking-widest text-white/40">HND // ES // GT</span>
-              </div>
-              <button className="w-full border border-gold py-5 text-gold uppercase tracking-[0.4em] text-[10px] font-black">
-                Request Contact
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <span className="text-gold/20 mr-6 text-xl italic">0{idx + 1}</span>
+            {item}
+          </motion.a>
+        ))}
+      </div>
+      
+      {/* 3. FOOTER LOGISTICS */}
+      <div className="mt-auto pt-10 border-t border-white/10 flex flex-col gap-8">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <Globe size={14} className="text-gold/50" />
+            <span className="text-[9px] uppercase tracking-[0.3em] text-white/40">
+              HND // ES // GT
+            </span>
+          </div>
+          <span className="text-[9px] uppercase tracking-[0.3em] text-white/20">
+            © 2026 DJF Institutional
+          </span>
+        </div>
+        
+        <button className="w-full border border-gold/30 py-5 text-gold uppercase tracking-[0.5em] text-[10px] font-black hover:bg-gold hover:text-obsidian transition-all duration-700">
+          Request Secure Contact
+        </button>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
     </>
   );
 };
