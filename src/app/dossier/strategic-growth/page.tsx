@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 
 // Standard Imports
 import DoctrineSection from "@/components/DoctrineSection";
-import PdfExport from "./PdfExport";
 import { doctrines } from "@/data/doctrines";
 
 // Strategic Dynamic Imports (Bypass SSR for browser-heavy components)
@@ -28,14 +27,13 @@ export default function CAODossier() {
       <header className="border-b border-neutral-100 pb-12 space-y-4">
         <div className="flex justify-between items-end">
           <div>
-            <h1 className="text-3xl text-gold font-light tracking-tighter text-neutral-900">
+            <h1 className="text-3xl text-gold font-light tracking-tighter text-neutral-100">
               David Jackson Fernandez
             </h1>
-            <p className="uppercase text-xs tracking-[0.3em] text-neutral-500 mt-2">
+            <p className="uppercase text-xs tracking-[0.3em] text-neutral-300 mt-2">
               Chief Administrative Officer · Institutional Dossier
             </p>
           </div>
-          <PdfExport />
         </div>
       </header>
 
@@ -72,14 +70,14 @@ export default function CAODossier() {
     {/* Strategic Pillars Grid */}
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div className="space-y-2">
-        <p className="text-[9px] uppercase tracking-[0.3em] text-neutral-400">Institutional Position</p>
-        <p className="text-[10px] uppercase tracking-widest text-neutral-800 font-medium">
+        <p className="text-[9px] uppercase tracking-[0.6em] text-neutral-400">Institutional Position</p>
+        <p className="text-[10px] uppercase tracking-widest text-neutral-600 font-medium">
           Office of the Chief Administrative Officer
         </p>
       </div>
       
       <div className="md:col-span-2 space-y-2">
-        <p className="text-[9px] uppercase tracking-[0.3em] text-neutral-400">Strategic Alignment</p>
+        <p className="text-[9px] uppercase tracking-[0.6em] text-neutral-400">Strategic Alignment</p>
         <div className="flex flex-wrap gap-x-4 gap-y-1 text-[10px] uppercase tracking-widest text-neutral-600">
           <span>Digital Integration</span>
           <span className="text-neutral-200">/</span>
@@ -92,8 +90,8 @@ export default function CAODossier() {
       </div>
 
       <div className="space-y-2 text-left md:text-right">
-        <p className="text-[9px] uppercase tracking-[0.3em] text-neutral-400">Global Presence</p>
-        <p className="text-[10px] uppercase tracking-widest text-neutral-800">
+        <p className="text-[9px] uppercase tracking-[0.5em] text-neutral-400">Global Presence</p>
+        <p className="text-[10px] uppercase tracking-widest text-neutral-600">
           Madrid · San Salvador · Tegucigalpa
         </p>
       </div>
