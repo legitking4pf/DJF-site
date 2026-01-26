@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import NextImage from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { 
   ArrowUpRight, History, ShieldCheck, Fingerprint, Command, Globe, 
   Briefcase, Layers, Download, Mail, Linkedin, Twitter, Github, Moon, Sun 
@@ -33,20 +33,38 @@ const TIMELINE = [
   { year: "2025", title: "Strategic Growth Network", description: "Launched multi-region wealth acceleration frameworks under Vision 2030." }
 ];
 
+// --- Animation Variants (Typed for Production) ---
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 15 },
+  show: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.6, 
+      ease: "easeOut" 
+    } 
+  }
+};
+
 // --- Sub-Components ---
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col">
-      <span className="text-[10px] md:text-[11px] uppercase text-ash/70 dark:text-ash tracking-[0.2em] font-black">{label}</span>
+      <span className="text-[10px] md:text-[11px] uppercase text-ash/70 dark:text-ash/60 tracking-[0.2em] font-black">{label}</span>
       <span className="text-xl md:text-3xl font-semibold text-obsidian dark:text-bone">{value}</span>
     </div>
   );
 }
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 15 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
 
 export default function ExecutiveDossier() {
   const [mounted, setMounted] = useState(false);
@@ -61,11 +79,11 @@ export default function ExecutiveDossier() {
 
   return (
     <main className={`${dark ? "dark" : ""} min-h-screen transition-colors duration-500`}>
-      <div className="bg-[#FBFBF9] dark:bg-[#0F0F0F] text-obsidian dark:text-bone min-h-screen selection:bg-gold/30">
+      <div className="bg-[#FBFBF9] dark:bg-[#0F0F0F] text-obsidian dark:text-bone min-h-screen selection:bg-gold/30 font-sans">
         
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
           
-          {/* NAVIGATION / TOP BAR */}
+          {/* HEADER */}
           <header className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-16 border-b border-obsidian/5 dark:border-bone/5 pb-8">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center font-black text-gold">DJ</div>
@@ -95,7 +113,7 @@ export default function ExecutiveDossier() {
               className="lg:col-span-7"
               initial="hidden" 
               animate="show" 
-              variants={{ show: { transition: { staggerChildren: 0.1 } } }}
+              variants={containerVariants}
             >
               <motion.h1 variants={fadeUp} className="font-serif text-5xl md:text-8xl leading-[1.1] tracking-tighter mb-6">
                 {PROFILE.name.split(' ')[0]} <br />
@@ -150,12 +168,11 @@ export default function ExecutiveDossier() {
             </motion.aside>
           </section>
 
-          {/* CONTENT GRID */}
+          {/* MAIN CONTENT GRID */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             
             <div className="lg:col-span-8 space-y-20">
               
-              {/* Executive Summary */}
               <section className="relative">
                 <div className="absolute -left-6 top-0 bottom-0 w-[2px] bg-gold/30" />
                 <h3 className="text-[11px] uppercase tracking-[0.3em] text-gold font-black mb-6">Governance Narrative</h3>
@@ -168,7 +185,6 @@ export default function ExecutiveDossier() {
                 </p>
               </section>
 
-              {/* Business Holdings */}
               <section className="space-y-8">
                 <h3 className="text-[11px] uppercase tracking-[0.3em] text-ash font-black">Strategic Growth Network</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -190,7 +206,6 @@ export default function ExecutiveDossier() {
                 </div>
               </section>
 
-              {/* Timeline */}
               <section className="space-y-8">
                 <h3 className="text-[11px] uppercase tracking-[0.3em] text-ash font-black">Evolutionary Timeline</h3>
                 <div className="space-y-12">
@@ -211,7 +226,7 @@ export default function ExecutiveDossier() {
 
             </div>
 
-            {/* SIDEBAR QUICK STATS */}
+            {/* SIDEBAR PANEL */}
             <aside className="lg:col-span-4 space-y-8">
               <div className="sticky top-12 space-y-6">
                 
@@ -233,7 +248,7 @@ export default function ExecutiveDossier() {
                 </div>
 
                 <div className="p-8 bg-white dark:bg-white/5 border border-obsidian/5 dark:border-white/10 rounded-2xl">
-                  <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-ash mb-6">Recent Thought Leadership</h4>
+                  <h4 className="text-[11px] uppercase tracking-[0.2em] font-black text-ash mb-6">Thought Leadership</h4>
                   <ul className="space-y-6">
                     <li className="group cursor-pointer">
                       <div className="text-xs text-gold font-bold mb-1">Journal of Financial Engineering</div>
