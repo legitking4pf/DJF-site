@@ -1,3 +1,6 @@
+'use client'
+import {doctrines} from '@/data/doctrines'
+
 interface DoctrineProps {
   title: string;
   subtitle: string;
