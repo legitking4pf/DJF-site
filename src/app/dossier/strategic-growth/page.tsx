@@ -1,7 +1,6 @@
 import DoctrineSection from "@/components/DoctrineSection";
 import Timeline from "@/components/Timeline";
 import AssetMap from "@/components/AssetMap";
-import PdfExportButton from "@/components/PdfExportButton";
 import StrategicGrowthClient from "./StrategicGrowthClient";
 
 import { doctrines } from "@/data/doctrines";
