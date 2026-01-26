@@ -1,7 +1,7 @@
 import DoctrineSection from "@/components/DoctrineSection";
 import Timeline from "@/components/Timeline";
 import AssetMap from "@/components/AssetMap";
-import StrategicGrowthClient from "./StrategicGrowthClient";
+import PdfExport from "./PdfExport";
 
 import { doctrines } from "@/data/doctrines";
 export default function CAODossier() {
@@ -14,7 +14,7 @@ export default function CAODossier() {
         <p className="uppercase text-sm tracking-widest text-neutral-400">
           Chief Administrative Officer · Institutional Dossier
         </p>
-        <PdfExportButton />
+        <PdfExport />
       </header>
 
       {doctrines.map((d) => (

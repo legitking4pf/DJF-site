@@ -3,7 +3,7 @@
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
-export default function StrategicGrowthClient() {
+export default function PdfExport() {
   const handleExportPDF = async () => {
     const element = document.getElementById("dossier");
     
