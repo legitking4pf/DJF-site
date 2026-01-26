@@ -13,7 +13,10 @@ const playfair = Playfair_Display({
   display: 'swap',
   variable: '--font-playfair' 
 });
-
+export const metadata = {
+  title: "David Jackson Fernandez | CAO Dossier",
+  description: "Institutional dossier for executive strategic administration",
+};
 export const viewport: Viewport = {
   themeColor: "#050505",
   width: "device-width",
