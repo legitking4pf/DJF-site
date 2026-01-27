@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import type { motion, AnimatePresence, Variants} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import type { Variants } from "framer-motion";
 import {
   ShieldCheck,
   ArrowRight,
