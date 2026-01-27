@@ -2,21 +2,22 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { Fingerprint, Globe } from "lucide-react";
+import { Fingerprint, Globe, X, Menu } from "lucide-react";
 
 const NAV_ITEMS = [
   { label: "Hero", id: "hero" },
   { label: "Dossier", id: "profile" },
   { label: "Gallery", id: "gallery" },
   { label: "Portfolio", id: "whatIDo" },
-  {label: "Ledger", id: "ledger"},
-  {label: "Footer", id: "footer"}
+  { label: "Ledger", id: "ledger" },
+  { label: "Footer", id: "footer" }
 ];
 
 export default function RefinedHeader() {
   const [open, setOpen] = useState(false);
   const { scrollY } = useScroll();
   
+  // Header animations
   const height = useTransform(scrollY, [0, 60], ["96px", "72px"]);
   const bg = useTransform(
     scrollY,
@@ -24,7 +25,16 @@ export default function RefinedHeader() {
     ["rgba(0,0,0,0)", "rgba(4,4,4,0.92)"]
   );
   
-  // ESC key closes menu like a civilized interface
+  // Disable body scroll when menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [open]);
+
+  // ESC key listener
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
@@ -35,19 +45,20 @@ export default function RefinedHeader() {
   
   return (
     <>
-      {/* HEADER */}
+      {/* --- MAIN HEADER (z-50) --- */}
       <motion.header
         style={{ height, backgroundColor: bg }}
         className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.03] backdrop-blur-sm"
       >
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 h-full flex items-center justify-between">
-          {/* BRAND */}
+          
+          {/* BRAND LOGO */}
           <div className="flex items-center gap-4">
-            <div className="w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center font-bold select-none">
+            <div className="w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center font-bold select-none text-sm">
               DJF
             </div>
-            <div className="leading-tight">
-              <div className="text-sm tracking-widest text-white">
+            <div className="leading-tight hidden sm:block">
+              <div className="text-sm tracking-widest text-white font-medium">
                 JACKSON <span className="text-gold">F.</span>
               </div>
               <div className="text-[9px] uppercase tracking-wider text-white/40">
@@ -56,135 +67,111 @@ export default function RefinedHeader() {
             </div>
           </div>
 
-          {/* DESKTOP NAV */}
+          {/* DESKTOP NAVIGATION */}
           <nav className="hidden lg:flex gap-10">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className="relative text-white/60 hover:text-white transition"
+                className="relative group text-white/60 hover:text-white transition-colors duration-300"
               >
-                <span className="text-[10px] uppercase tracking-widest">
+                <span className="text-[11px] uppercase tracking-[0.2em] font-medium">
                   {item.label}
                 </span>
-                <motion.span
-                  layoutId="nav-underline"
-                  className="absolute left-0 right-0 -bottom-1 h-[2px] bg-gold rounded"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.25 }}
-                  style={{ transformOrigin: "left" }}
-                />
+                <span className="absolute left-0 right-0 -bottom-2 h-[1px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </a>
             ))}
           </nav>
 
-          {/* CTA + TOGGLE */}
+          {/* DESKTOP ACTIONS + HAMBURGER */}
           <div className="flex items-center gap-4">
             <a
               href="#contact"
-              className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-[12px] uppercase tracking-wider text-gold border border-white/10 rounded-md hover:bg-white/5"
+              className="hidden md:inline-flex items-center gap-2 px-5 py-2 text-[11px] font-bold uppercase tracking-widest text-gold border border-gold/20 rounded-full hover:bg-gold hover:text-black transition-all duration-300"
             >
               <Fingerprint size={14} />
-              Contact Office
+              <span>Contact Office</span>
             </a>
 
             <button
               aria-label="Toggle menu"
               aria-expanded={open}
               onClick={() => setOpen(true)}
-              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center"
+              className="w-11 h-11 rounded-full border border-white/10 hover:border-gold/50 hover:text-gold flex items-center justify-center transition-colors"
             >
-              ☰
+              <Menu size={20} />
             </button>
           </div>
         </div>
       </motion.header>
 
-      {/* MOBILE OVERLAY */}
+      {/* --- MOBILE OVERLAY (z-[60] to cover header) --- */}
       <AnimatePresence>
         {open && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-obsidian/95 backdrop-blur-sm"
-            onClick={() => setOpen(false)} // CLICK OUTSIDE = CLOSE
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[60] bg-[#050505] text-white"
           >
-            {/* STOP PROPAGATION SO CONTENT CLICKS DON'T CLOSE */}
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 20, opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              onClick={(e) => e.stopPropagation()}
-              className="max-w-[1000px] mx-auto px-8 md:px-16 py-12 h-full flex flex-col"
-            >
-              {/* HEADER */}
-              <div className="flex items-center justify-between mb-10">
+            <div className="max-w-[1600px] mx-auto px-6 md:px-12 py-8 h-full flex flex-col">
+              
+              {/* OVERLAY HEADER */}
+              <div className="flex items-center justify-between mb-8">
+                {/* Brand in Overlay */}
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-gold text-black font-bold flex items-center justify-center rounded-full">
+                  <div className="w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center font-bold text-sm">
                     DJF
                   </div>
-                  <div>
-                    <div className="text-white tracking-wider">
-                      JACKSON F.
+                  <div className="leading-tight">
+                    <div className="text-sm tracking-widest text-white font-medium">
+                      JACKSON <span className="text-gold">F.</span>
                     </div>
-                    <div className="text-xs uppercase tracking-wider text-white/30">
-                      Institutional Portfolio
+                    <div className="text-[9px] uppercase tracking-wider text-white/40">
+                      Menu Active
                     </div>
                   </div>
                 </div>
 
+                {/* Close Button */}
                 <button
-                  aria-label="Close menu"
                   onClick={() => setOpen(false)}
-                  className="text-white text-xl border border-white/10 rounded-md px-3 py-1"
+                  className="w-11 h-11 rounded-full border border-white/10 hover:bg-white/10 flex items-center justify-center transition-colors"
                 >
-                  ✕
+                  <X size={20} />
                 </button>
               </div>
 
-              {/* NAV */}
-              <nav className="flex-1 flex flex-col justify-center gap-6">
+              {/* NAV LINKS (Top Aligned) */}
+              <nav className="flex flex-col gap-6 mt-12 px-2">
                 {NAV_ITEMS.map((item, idx) => (
-                  <a
+                  <motion.a
                     key={item.id}
                     href={`#${item.id}`}
                     onClick={() => setOpen(false)}
-                    className="text-3xl md:text-6xl uppercase tracking-tight text-white hover:text-gold transition"
-                    style={{ transitionDelay: `${idx * 40}ms` }}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.1 + idx * 0.05, duration: 0.4 }}
+                    className="group flex items-center gap-4"
                   >
-                    {item.label}
-                  </a>
+                    <span className="text-3xl md:text-5xl font-serif font-light text-white/80 group-hover:text-gold transition-colors duration-300">
+                      {item.label}
+                    </span>
+                    <span className="h-[1px] bg-gold w-0 group-hover:w-12 transition-all duration-300 opacity-50" />
+                  </motion.a>
                 ))}
               </nav>
 
-              {/* FOOT */}
-              <div className="pt-6 border-t border-white/[0.05] flex flex-col md:flex-row justify-between gap-4">
-                <div className="flex items-center gap-3 text-xs uppercase tracking-wider text-white/40">
-                  <Globe size={14} className="text-gold/70" />
-                  HND · ES · GT
-                </div>
-
-                <div className="flex gap-3">
-                  <a
-                    href="#contact"
-                    onClick={() => setOpen(false)}
-                    className="px-4 py-2 bg-gold text-black uppercase tracking-wider rounded-md"
-                  >
-                    Contact Office
-                  </a>
-                  <a
-                    href="#secure"
-                    onClick={() => setOpen(false)}
-                    className="px-4 py-2 border border-white/10 text-white uppercase tracking-wider rounded-md"
-                  >
-                    Secure Access
-                  </a>
-                </div>
+              {/* FOOTER (Simple, no buttons) */}
+              <div className="mt-auto pt-8 border-t border-white/[0.05] flex items-center gap-3">
+                <Globe size={14} className="text-gold" />
+                <span className="text-[10px] uppercase tracking-widest text-white/40">
+                  Honduras · Spain · Guatemala
+                </span>
               </div>
-            </motion.div>
+              
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
