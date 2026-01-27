@@ -57,7 +57,7 @@ export default function RefinedHeader() {
             <div className="w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center font-bold select-none text-sm">
               DJF
             </div>
-            <div className="leading-tight hidden sm:block">
+            <div className="leading-tight  sm:block">
               <div className="text-sm tracking-widest text-white font-medium">
                 JACKSON <span className="text-gold">F.</span>
               </div>
