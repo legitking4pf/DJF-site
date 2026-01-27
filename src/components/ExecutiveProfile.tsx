@@ -5,31 +5,30 @@ import Link from 'next/link';
 
 export default function ExecutiveProfile() {
   const positions = [
-    {
-      role: "Chief Administration Officer",
-      company: "Grupo Financiero Atlántida",
-      url: "https://www.grupofinancieroatlantida.com",
-      tag: "Institutional Governance",
-      ref: "GFA-CAO-2030"
-    },
-    {
-      role: "Chief Technology Officer",
-      company: "Banco Atlántida Honduras",
-      url: "https://www.bancatlan.hn",
-      tag: "Digital Infrastructure",
-      ref: "BA-CTO-CORE"
-    },
-    {
-      role: "Founder & Creative Lead",
-      company: "KONCEPTO Décor",
-      url: "https://www.konceptodecor.com",
-      tag: "Design Innovation",
-      ref: "KD-EST-2018"
-    }
-  ];
+  {
+    role: "Chief Administration Officer",
+    company: "Grupo Financiero Atlántida",
+    url: "https://www.grupofinancieroatlantida.com",
+    tag: "Institutional Governance",
+    ref: "GFA-CAO-2030"
+  },
+  {
+    role: "Chief Technology Officer",
+    company: "Banco Atlántida Honduras",
+    url: "https://www.bancatlan.hn",
+    tag: "Digital Infrastructure",
+    ref: "BA-CTO-CORE"
+  },
+  {
+    role: "Founder & Creative Lead",
+    company: "KONCEPTO Décor",
+    url: "https://www.konceptodecor.com",
+    tag: "Design Innovation",
+    ref: "KD-EST-2018"
+  }];
   
   return (
-    <section className="relative py-32 md:py-48 bg-[#FBFBF9] text-obsidian overflow-hidden border-t border-gold/10">
+    <section id="profile" className="relative py-32 md:py-48 bg-[#FBFBF9] text-obsidian overflow-hidden border-t border-gold/10">
       {/* BACKGROUND DECOR: Blueprints */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03] pointer-events-none">
         <svg width="100%" height="100%" className="stroke-obsidian fill-none">
@@ -116,21 +115,10 @@ export default function ExecutiveProfile() {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-ash text-base md:text-lg leading-relaxed font-light">
-                <p>
-As a dual-mandate executive within the GFA ecosystem, David Jackson Fernandez maintains a singular focus: the absolute elimination of operational friction. Through high-precision Digital Integration and administrative rigor, he secures the velocity of wealth across regional borders, aligning every milestone with a Strategic Growth Network built for long-term sustainability.                </p>
-                <p>
-This philosophy extends into his curation of the physical realm via KONCEPTO Décor. Here, he employs architectural essentialism to curate minimalist environments that reflect the structural integrity and high-end privacy of a well-governed financial system                </p>
+                <p> As a dual-mandate executive within the GFA ecosystem, David Jackson Fernandez maintains a singular focus: the absolute elimination of operational friction. Through high-precision Digital Integration and administrative rigor, he secures the velocity of wealth across regional borders, aligning every milestone with a Strategic Growth Network built for long-term sustainability.
+              </p>
+              <p>This philosophy extends into his curation of the physical realm via KONCEPTO Décor. Here, he employs architectural essentialism to curate minimalist environments that reflect the structural integrity and high-end privacy of a well-governed financial system        </p>
               </div>
-
-              <Link href="/dossier/executive-profile" className="inline-flex items-center gap-6 group pt-8">
-                <div className="w-16 h-16 border border-gold rounded-full flex items-center justify-center group-hover:bg-gold transition-all duration-700 shadow-xl shadow-gold/5">
-                  <ArrowRight className="text-gold group-hover:text-white w-6 h-6 transform group-hover:translate-x-1 transition-transform" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] uppercase tracking-[0.5em] font-black text-gold mb-1">Dossier Access</span>
-                  <span className="text-sm uppercase tracking-[0.2em] font-bold text-obsidian">Request Full Strategic Profile</span>
-                </div>
-              </Link>
             </div>
           </div>
 

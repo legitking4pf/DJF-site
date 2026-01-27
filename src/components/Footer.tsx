@@ -21,7 +21,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-[#050505] text-white/80 font-sans border-t border-white/10 relative overflow-hidden">
+    <footer id="footer" className="bg-[#050505] text-white/80 font-sans border-t border-white/10 relative overflow-hidden">
       
       {/* 1. TOP BAR: GLOBAL CONTEXT */}
       <div className="border-b border-white/5 bg-white/[0.02]">

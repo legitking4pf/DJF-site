@@ -1,129 +1,193 @@
 "use client";
-import { useState } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { Fingerprint, Globe } from 'lucide-react';
 
-const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { Fingerprint, Globe } from "lucide-react";
+
+const NAV_ITEMS = [
+  { label: "Hero", id: "hero" },
+  { label: "Dossier", id: "profile" },
+  { label: "Gallery", id: "gallery" },
+  { label: "Portfolio", id: "whatIDo" },
+  {label: "Ledger", id: "ledger"},
+  {label: "Footer", id: "footer"}
+];
+
+export default function RefinedHeader() {
+  const [open, setOpen] = useState(false);
   const { scrollY } = useScroll();
   
-  const headerHeight = useTransform(scrollY, [0, 50], ["90px", "70px"]);
-  const headerBg = useTransform(scrollY, [0, 50], ["rgba(10, 10, 10, 0)", "rgba(10, 10, 10, 0.95)"]);
-
+  const height = useTransform(scrollY, [0, 60], ["96px", "72px"]);
+  const bg = useTransform(
+    scrollY,
+    [0, 60],
+    ["rgba(0,0,0,0)", "rgba(4,4,4,0.92)"]
+  );
+  
+  // ESC key closes menu like a civilized interface
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    if (open) document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+  
   return (
     <>
+      {/* HEADER */}
       <motion.header
-        style={{ height: headerHeight, backgroundColor: headerBg }}
-        className="fixed top-0 w-full z-[100] flex items-center backdrop-blur-sm transition-all border-b border-white/[0.03]"
+        style={{ height, backgroundColor: bg }}
+        className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.03] backdrop-blur-sm"
       >
-        <div className="max-w-[1600px] mx-auto px-8 md:px-16 w-full flex justify-between items-center">
-          
-          {/* IDENTITY: Minimalist & Balanced */}
-          <div className="flex items-center gap-10">
-            <div className="flex flex-col cursor-pointer group">
-              <span className="text-xl font-display tracking-[0.4em] text-white">
-                JACKSON <span className="text-gold font-light">F.</span>
-              </span>
-              <span className="text-[7px] uppercase tracking-[0.5em] text-white/30 mt-1 group-hover:text-gold transition-colors">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 h-full flex items-center justify-between">
+          {/* BRAND */}
+          <div className="flex items-center gap-4">
+            <div className="w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center font-bold select-none">
+              DJF
+            </div>
+            <div className="leading-tight">
+              <div className="text-sm tracking-widest text-white">
+                JACKSON <span className="text-gold">F.</span>
+              </div>
+              <div className="text-[9px] uppercase tracking-wider text-white/40">
                 Institutional Portfolio
-              </span>
+              </div>
             </div>
           </div>
 
-          {/* DESKTOP NAVIGATION */}
-          <nav className="hidden lg:flex items-center gap-14">
-            {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item) => (
+          {/* DESKTOP NAV */}
+          <nav className="hidden lg:flex gap-10">
+            {NAV_ITEMS.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-[10px] uppercase tracking-[0.6em] text-white/40 hover:text-white transition-all duration-500"
+                key={item.id}
+                href={`#${item.id}`}
+                className="relative text-white/60 hover:text-white transition"
               >
-                {item}
+                <span className="text-[10px] uppercase tracking-widest">
+                  {item.label}
+                </span>
+                <motion.span
+                  layoutId="nav-underline"
+                  className="absolute left-0 right-0 -bottom-1 h-[2px] bg-gold rounded"
+                  initial={{ scaleX: 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.25 }}
+                  style={{ transformOrigin: "left" }}
+                />
               </a>
             ))}
           </nav>
 
-          {/* ACCESS PANEL */}
-          <div className="flex items-center gap-8">
-            <button className="hidden md:flex items-center gap-4 group">
-               <span className="text-[9px] uppercase tracking-[0.4em] text-white/40 group-hover:text-gold transition-colors">
-                 Secure Access
-               </span>
-               <div className="w-8 h-8 flex items-center justify-center border border-white/10 rounded-full group-hover:border-gold/50 transition-all">
-                <Fingerprint size={14} className="text-white/40 group-hover:text-gold" />
-               </div>
-            </button>
-
-            {/* CUSTOM TOGGLE */}
-            <button 
-              onClick={() => setIsOpen(!isOpen)}
-              className="relative w-8 h-8 flex flex-col justify-center items-end z-[200] group"
+          {/* CTA + TOGGLE */}
+          <div className="flex items-center gap-4">
+            <a
+              href="#contact"
+              className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-[12px] uppercase tracking-wider text-gold border border-white/10 rounded-md hover:bg-white/5"
             >
-              <motion.span 
-                animate={isOpen ? { rotate: 45, y: 3, width: "32px" } : { rotate: 0, y: 0, width: "32px" }}
-                className="h-[1px] bg-white block mb-2 transition-all" 
-              />
-              <motion.span 
-                animate={isOpen ? { rotate: -45, y: -4, width: "32px" } : { rotate: 0, y: 0, width: "20px" }}
-                className="h-[1px] bg-white block transition-all" 
-              />
+              <Fingerprint size={14} />
+              Contact Office
+            </a>
+
+            <button
+              aria-label="Toggle menu"
+              aria-expanded={open}
+              onClick={() => setOpen(true)}
+              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center"
+            >
+              ☰
             </button>
           </div>
         </div>
       </motion.header>
 
-      {/* MOBILE OVERLAY: Kinetic Shutter Effect */}
+      {/* MOBILE OVERLAY */}
       <AnimatePresence>
-        {isOpen && (
+        {open && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[150] bg-obsidian flex flex-col"
+            className="fixed inset-0 z-40 bg-obsidian/95 backdrop-blur-sm"
+            onClick={() => setOpen(false)} // CLICK OUTSIDE = CLOSE
           >
-            {/* Background Texture */}
-            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none" />
-
-            <div className="flex-grow flex flex-col justify-center px-12 md:px-24">
-              <div className="space-y-4">
-                {['Vision', 'Dossier', 'Portfolio', 'Network'].map((item, idx) => (
-                  <motion.div
-                    key={item}
-                    initial={{ y: 50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.1 * idx, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      onClick={() => setIsOpen(false)}
-                      className="inline-block text-5xl md:text-8xl font-display uppercase tracking-tighter text-white/10 hover:text-gold hover:translate-x-4 transition-all duration-700"
-                    >
-                      {item}
-                    </a>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* FOOTER LOGISTICS */}
-              <div className="mt-24 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-                <div className="flex items-center gap-6">
-                  <div className="flex items-center gap-3">
-                    <Globe size={12} className="text-gold/50" />
-                    <span className="text-[9px] uppercase tracking-[0.4em] text-white/30">HND // ES // GT</span>
+            {/* STOP PROPAGATION SO CONTENT CLICKS DON'T CLOSE */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 20, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-[1000px] mx-auto px-8 md:px-16 py-12 h-full flex flex-col"
+            >
+              {/* HEADER */}
+              <div className="flex items-center justify-between mb-10">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-gold text-black font-bold flex items-center justify-center rounded-full">
+                    DJF
                   </div>
-                  <span className="text-[9px] uppercase tracking-[0.4em] text-white/10">Ref: 2026-INTL</span>
+                  <div>
+                    <div className="text-white tracking-wider">
+                      JACKSON F.
+                    </div>
+                    <div className="text-xs uppercase tracking-wider text-white/30">
+                      Institutional Portfolio
+                    </div>
+                  </div>
                 </div>
-                
-                <button className="text-[10px] uppercase tracking-[0.5em] text-gold font-bold hover:tracking-[0.7em] transition-all">
-                  Contact Office
+
+                <button
+                  aria-label="Close menu"
+                  onClick={() => setOpen(false)}
+                  className="text-white text-xl border border-white/10 rounded-md px-3 py-1"
+                >
+                  ✕
                 </button>
               </div>
-            </div>
+
+              {/* NAV */}
+              <nav className="flex-1 flex flex-col justify-center gap-6">
+                {NAV_ITEMS.map((item, idx) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={() => setOpen(false)}
+                    className="text-3xl md:text-6xl uppercase tracking-tight text-white hover:text-gold transition"
+                    style={{ transitionDelay: `${idx * 40}ms` }}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+
+              {/* FOOT */}
+              <div className="pt-6 border-t border-white/[0.05] flex flex-col md:flex-row justify-between gap-4">
+                <div className="flex items-center gap-3 text-xs uppercase tracking-wider text-white/40">
+                  <Globe size={14} className="text-gold/70" />
+                  HND · ES · GT
+                </div>
+
+                <div className="flex gap-3">
+                  <a
+                    href="#contact"
+                    onClick={() => setOpen(false)}
+                    className="px-4 py-2 bg-gold text-black uppercase tracking-wider rounded-md"
+                  >
+                    Contact Office
+                  </a>
+                  <a
+                    href="#secure"
+                    onClick={() => setOpen(false)}
+                    className="px-4 py-2 border border-white/10 text-white uppercase tracking-wider rounded-md"
+                  >
+                    Secure Access
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
     </>
   );
-};
-
-export default Header;
+}

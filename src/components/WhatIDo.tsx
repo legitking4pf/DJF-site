@@ -53,7 +53,7 @@ const specializations = [
 
 export default function StrategicEcosystems() {
   return (
-    <section id="capabilities" className="py-24 md:py-40 bg-obsidian text-bone overflow-hidden selection:bg-gold/30">
+    <section id="whatIDo" className="py-24 md:py-40 bg-obsidian text-bone overflow-hidden selection:bg-gold/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
         {/* EXECUTIVE HEADER: THE COMMAND CENTER */}

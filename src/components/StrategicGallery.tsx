@@ -39,7 +39,7 @@ export default function StrategicGallery() {
   }, [next]);
 
   return (
-    <section className="bg-bone py-24 md:py-40 border-t border-obsidian/5 overflow-hidden">
+    <section id="gallery" className="bg-bone py-24 md:py-40 border-t border-obsidian/5 overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         
         {/* HEADER: Institutional Command */}

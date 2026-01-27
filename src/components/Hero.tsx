@@ -19,8 +19,7 @@ export default function Hero() {
   }, []);
   
   return (
-    <section 
-      className="relative w-full bg-obsidian text-bone overflow-hidden flex flex-col selection:bg-gold/30"
+    <section id="hero" className="relative w-full bg-obsidian text-bone overflow-hidden flex flex-col selection:bg-gold/30"
       style={{ 
         /* MATHEMATICAL ALIGNMENT */
         marginTop: 'var(--header-height, 0px)', 
