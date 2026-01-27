@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import { motion, AnimatePresence } from "framer-motion";
+import type { motion, AnimatePresence, Variants} from "framer-motion";
 import {
   ShieldCheck,
   ArrowRight,
@@ -13,7 +13,6 @@ import {
   Zap,
   Send,
 } from "lucide-react";
-
 export default function ExecutiveContact() {
   const [state, handleSubmit] = useForm("meearreg");
   const [message, setMessage] = useState("");
@@ -27,11 +26,18 @@ export default function ExecutiveContact() {
     show: { opacity: 1, transition: { staggerChildren: 0.06 } },
   };
   
-  const itemVars = {
-    hidden: { opacity: 0, y: 12 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-  };
-  
+const itemVars: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1] as[number, number, number, number],
+    },
+  },
+};
+
   return (
     <main className="min-h-screen bg-[#FBFBF9] text-obsidian selection:bg-gold/20">
       {/* HEADER */}
