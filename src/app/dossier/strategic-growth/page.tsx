@@ -27,7 +27,7 @@ export default function CAODossier() {
       <header className="border-b border-neutral-100 pb-12 space-y-4">
         <div className="flex justify-between items-end">
           <div>
-            <h1 className="text-3xl text-gold font-light tracking-tighter text-neutral-100">
+              <h1 className="text-huge font-display uppercase leading-[0.95] tracking-tight">
               David Jackson Fernandez
             </h1>
             <p className="uppercase text-xs tracking-[0.3em] text-neutral-300 mt-2">

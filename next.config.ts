@@ -1,71 +1,53 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+// next.config.js
+const cspHeader = `
+  default-src 'self';
+  img-src 'self' blob: data: https://www.transparenttextures.com https://images.unsplash.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline';
+`;
 
-const nextConfig: NextConfig = {
-  /* 1. IMAGE OPTIMIZATION & WHITELISTING */
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'hv4w1qmfjrk8zaij.public.blob.vercel-storage.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'bancatlan.hn',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.prod.website-files.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.bancatlan.hn', // Explicitly allow the www subdomain
-      },
-      
-    ],
-  },
-  
-  /* 2. SECURITY & PERFORMANCE HEADERS */
+module.exports = {
   async headers() {
     return [
-    {
-      source: '/(.*)',
-      headers: [
       {
-        key: 'Content-Security-Policy',
-        value: `
-              default-src 'self'; 
-              script-src 'self' 'unsafe-inline' 'unsafe-eval'; 
-              style-src 'self' 'unsafe-inline'; 
-              img-src 'self' blob: data: hv4w1qmfjrk8zaij.public.blob.vercel-storage.com bancatlan.hn images.unsplash.com; 
-              media-src 'self' blob: hv4w1qmfjrk8zaij.public.blob.vercel-storage.com; 
-              font-src 'self' data:; 
-              connect-src 'self';
-            `.replace(/\s{2,}/g, ' ').trim(),
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: cspHeader.replace(/\n/g, ''),
+          },
+        ],
       },
-      {
-        key: 'Cross-Origin-Opener-Policy',
-        value: 'same-origin',
-      },
-      {
-        key: 'X-Frame-Options',
-        value: 'DENY',
-      },
-      {
-        key: 'X-Content-Type-Options',
-        value: 'nosniff',
-      },
-      {
-        key: 'Referrer-Policy',
-        value: 'strict-origin-when-cross-origin',
-      }, ],
-    }, ];
+    ];
   },
+};
+
+const nextConfig = {
+  // 1. Next.js 16 Caching & PPR
+  // This enables the modern "Cache Components" model which replaces the old PPR flag.
+  // It allows your institutional portfolio to load the static shell instantly.
+  experimental: {
+    cacheComponents: true,
+    optimizePackageImports: ['lucide-react'],
+  },
+  
+  // 2. Production Optimizations
+  reactStrictMode: true,
+  
+  // 3. Bundle Optimization
+  // Ensures heavy libraries like 'leaflet' or 'html2canvas' don't bloat the main bundle.
+  bundlePagesRouterDependencies: true,
+  
+  // 4. Image Optimization
+  // Essential for institutional portfolios with many project/team images.
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
+  },
+
+  // 5. Build Speed (Turbopack)
+  // Next 16 uses Turbopack by default, which trims legacy polyfills for modern browsers.
 };
 
 export default nextConfig;

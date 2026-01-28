@@ -66,7 +66,7 @@ export default function ExecutiveContact() {
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-7xl xl:text-8xl font-display uppercase leading-[0.95] tracking-tight">
+              <h1 className="text-huge font-display uppercase leading-[0.95] tracking-tight">
                 Strategic
                 <br />
                 <span className="text-gold italic font-serif font-light">

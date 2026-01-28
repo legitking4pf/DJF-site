@@ -71,7 +71,7 @@ export default function Hero() {
                 <div className="h-px w-12 bg-gold/20" />
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-display tracking-tighter uppercase leading-[1.1] mb-8 md:mb-12 text-white">
+              <h1 className="text-huge font-display uppercase leading-[0.95] tracking-tight">
                 Governance <br />
                 <span className="text-gold italic font-serif font-light opacity-90">Infrastructure.</span> <br />
                 Aesthetics.

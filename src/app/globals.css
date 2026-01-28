@@ -12,8 +12,10 @@
   --color-gold: #946C00; 
   --color-gold-light: #C5A059;
   --color-gold-dark: #735400;
-  --color-ash: #575757; 
+  --color-ash: #575757;
+  --font-size-huge: clamp(3rem, 10vw, 8rem);
 }
+
 
 @layer base {
   body {
@@ -21,6 +23,10 @@
     color: var(--color-obsidian);
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-body);
+    h1 {
+    font-size: revert;
+    margin-block: revert;
+  }
   }
 
   h1, h2, h3, .font-display {

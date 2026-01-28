@@ -11,7 +11,7 @@
     "github repository": "https://github.com/legitking4pf/DJF-site"
   },
   "scripts": {
-    "dev": "next dev --webpack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

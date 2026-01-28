@@ -1,0 +1,11 @@
+# Allow all search engines to crawl everything
+User-agent: *
+Allow: /
+
+# Block specific sensitive folders (Optional - change to your actual paths)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Link to your sitemap (Crucial for SEO)
+Sitemap: https://djf-site.vercel.app
