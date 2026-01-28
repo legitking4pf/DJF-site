@@ -8,3 +8,6 @@
   
   PNPM_FLAGS = "--shamefully-hoist"
   NODE_VERSION = "25.2.1"
+  [[plugins]]
+  package = "@netlify/plugin-nextjs"
+
