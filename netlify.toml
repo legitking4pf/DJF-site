@@ -1,0 +1,10 @@
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[build.environment]
+  # This tells Netlify: "Don't touch my build, I've got it."
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  
+  PNPM_FLAGS = "--shamefully-hoist"
+  NODE_VERSION = "25.2.1"
