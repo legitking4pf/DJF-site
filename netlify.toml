@@ -1,13 +1,15 @@
 [build]
-  command = "pnpm build"
+  command = "npm run build"
   publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 
 [build.environment]
   # This tells Netlify: "Don't touch my build, I've got it."
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
   
   PNPM_FLAGS = "--shamefully-hoist"
   NODE_VERSION = "25.2.1"
   [[plugins]]
   package = "@netlify/plugin-nextjs"
-
