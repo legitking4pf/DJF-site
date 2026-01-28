@@ -33,10 +33,7 @@ export default function ExecutiveContact() {
     show: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-      },
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
     },
   };
   
@@ -45,7 +42,6 @@ export default function ExecutiveContact() {
 
       {/* === HERO / HEADER === */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background layers */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(197,157,72,0.18),transparent_55%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,#0B0D0F_0%,#0E1114_60%,#0B0D0F_100%)]" />
         <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,rgba(255,255,255,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.4)_1px,transparent_1px)] bg-[size:64px_64px]" />
@@ -81,10 +77,7 @@ export default function ExecutiveContact() {
             </motion.div>
 
             {/* Right */}
-            <motion.div
-              variants={itemVars}
-              className="lg:col-span-4 lg:text-right"
-            >
+            <motion.div variants={itemVars} className="lg:col-span-4 lg:text-right">
               <p className="text-[11px] uppercase tracking-[0.35em] text-ash font-bold">
                 Institutional Ops
                 <br />
@@ -97,9 +90,10 @@ export default function ExecutiveContact() {
         </div>
       </section>
 
-      {/* === BODY (UNCHANGED STRUCTURE, VISUALLY SHARPER) === */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-20 py-24 grid grid-cols-1 lg:grid-cols-12 gap-20 bg-[#FBFBF9] text-obsidian">
-        {/* LEFT */}
+      {/* === BODY (Pillars + Form) === */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-20 py-24 grid grid-cols-1 lg:grid-cols-12 gap-20 bg-bone text-obsidian">
+
+        {/* LEFT: PILLARS */}
         <motion.div
           variants={containerVars}
           initial="hidden"
@@ -117,8 +111,8 @@ export default function ExecutiveContact() {
               </h2>
             </div>
             <p className="text-ash leading-relaxed border-l-2 border-gold/30 pl-5">
-              Capital deployment strategies designed to scale institutional
-              assets with jurisdictional awareness and sovereign tech control.
+              Capital deployment strategies designed to scale institutional assets with
+              jurisdictional awareness and sovereign tech control.
             </p>
           </motion.div>
 
@@ -145,8 +139,132 @@ export default function ExecutiveContact() {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT FORM (kept intentionally restrained) */}
-        {/* FORM CODE CONTINUES EXACTLY AS YOU ALREADY HAVE IT */}
+        {/* RIGHT: FORM */}
+        <motion.div
+          variants={containerVars}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="lg:col-span-7"
+        >
+          <div className="relative z-10 p-10 bg-bone rounded-2xl shadow-[0_30px_60px_-10px_rgba(0,0,0,0.12)] border border-gold/20 overflow-hidden">
+            <div className="absolute top-6 right-6 opacity-10">
+              <Lock size={120} className="text-gold/40" />
+            </div>
+
+            <h3 className="text-[10px] font-black uppercase tracking-[0.45em] text-gold mb-8 text-center">
+              Briefing Transmission
+            </h3>
+
+            <AnimatePresence mode="wait">
+              {state.succeeded ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="text-center py-16 space-y-5"
+                  aria-live="polite"
+                >
+                  <div className="w-24 h-24 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <CheckCircle2 size={50} className="text-gold" />
+                  </div>
+                  <h4 className="text-2xl font-display uppercase tracking-tight text-obsidian">Transmission Successful</h4>
+                  <p className="text-ash text-sm font-medium uppercase tracking-[0.2em]">
+                    Logged to GFA Executive Registry
+                  </p>
+                  <button
+                    onClick={() => window.location.reload()}
+                    className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-gold text-obsidian font-bold tracking-[0.35em] uppercase rounded-md shadow hover:scale-[1.02] transition-all"
+                  >
+                    New Transmission <ArrowRight size={16} />
+                  </button>
+                </motion.div>
+              ) : (
+                <form
+                  onSubmit={(e) => { e.preventDefault(); handleSubmit(e); }}
+                  className="space-y-6 relative z-10"
+                  aria-label="Executive briefing form"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Identity */}
+                    <div className="relative">
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        placeholder=" "
+                        className="peer w-full bg-bone border-b-2 border-gold/30 py-4 text-base text-obsidian placeholder-transparent focus:border-gold outline-none rounded-md"
+                      />
+                      <label className="absolute left-3 top-3 text-gold/70 text-[10px] font-black uppercase tracking-[0.35em] peer-placeholder-shown:top-4 peer-placeholder-shown:text-gold/30 peer-placeholder-shown:text-[9px] transition-all pointer-events-none">
+                        Identity
+                      </label>
+                    </div>
+
+                    {/* Email */}
+                    <div className="relative">
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        placeholder=" "
+                        className="peer w-full bg-bone border-b-2 border-gold/30 py-4 text-base text-obsidian placeholder-transparent focus:border-gold outline-none rounded-md"
+                      />
+                      <label className="absolute left-3 top-3 text-gold/70 text-[10px] font-black uppercase tracking-[0.35em] peer-placeholder-shown:top-4 peer-placeholder-shown:text-gold/30 peer-placeholder-shown:text-[9px] transition-all pointer-events-none">
+                        Secure Email
+                      </label>
+                      <ValidationError prefix="Email" field="email" errors={state.errors} className="text-gold text-[11px] mt-1" />
+                    </div>
+                  </div>
+
+                  {/* Intent */}
+                  <div className="relative">
+                    <select
+                      name="intent"
+                      className="peer w-full bg-bone border-b-2 border-gold/30 py-4 text-base text-obsidian focus:border-gold outline-none rounded-md appearance-none"
+                    >
+                      <option>Wealth Acceleration Opportunity</option>
+                      <option>GFA Strategic Growth Network Inquiry</option>
+                      <option>Digital Integration Partnership</option>
+                      <option>Executive Protocol Consultation</option>
+                    </select>
+                    <label className="absolute left-3 top-3 text-gold/70 text-[10px] font-black uppercase tracking-[0.35em] peer-focus:text-gold transition-all pointer-events-none">
+                      Strategic Intent
+                    </label>
+                  </div>
+
+                  {/* Message */}
+                  <div className="relative">
+                    <textarea
+                      name="message"
+                      rows={6}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      placeholder=" "
+                      maxLength={maxChars}
+                      className="peer w-full bg-bone border-2 border-gold/20 rounded-md p-4 text-base text-obsidian focus:border-gold outline-none resize-none min-h-[140px]"
+                    />
+                    <label className="absolute left-4 top-4 text-gold/70 text-[10px] font-black uppercase tracking-[0.35em] peer-focus:text-gold transition-all pointer-events-none">
+                      Detailed Briefing
+                    </label>
+                    <div className="flex justify-end text-[11px] text-ash mt-1">
+                      {charCount}/{maxChars}
+                    </div>
+                  </div>
+
+                  {/* Submit */}
+                  <button
+                    type="submit"
+                    disabled={state.submitting || !message.trim()}
+                    className="group w-full bg-gold text-obsidian py-4 text-[12px] font-black uppercase tracking-[0.45em] rounded-md shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50"
+                  >
+                    {state.submitting ? "TRANSMITTING..." : "Send Securely"}
+                    <Send size={16} />
+                  </button>
+                </form>
+              )}
+            </AnimatePresence>
+          </div>
+        </motion.div>
       </section>
 
       {/* FOOTER */}
