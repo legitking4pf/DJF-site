@@ -1,13 +1,12 @@
 /** @type {import('next').NextConfig} */
 const cspHeader = `
   default-src 'self';
-  img-src 'self' blob: data: https://**.public.blob.vercel-storage.com https://www.transparenttextures.com https://images.unsplash.com;
+  img-src 'self' blob: data: https://**.public.blob.vercel-storage.com https://www.transparenttextures.com https://images.unsplash.com https://invatlan.hn https://cdn.prod.website-files.com https://www.bancatlan.hn;
   script-src 'self' 'unsafe-eval' 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
 `;
 
 const nextConfig = {
-  // 1. Headers (Including CSP)
   async headers() {
     return [
       {
@@ -22,7 +21,6 @@ const nextConfig = {
     ];
   },
 
-  // 2. Experimental Features
   experimental: {
     cacheComponents: true,
     optimizePackageImports: ['lucide-react'],
@@ -31,34 +29,33 @@ const nextConfig = {
   reactStrictMode: true,
   bundlePagesRouterDependencies: true,
   
-  // 3. Image Optimization & Security
   images: {
-    formats: ['image/avif', 'image/webp', 'image/jpg', 'image/jpeg', 'image/png'],
+    formats: ['image/avif', 'image/webp'], 
     minimumCacheTTL: 60,
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**.public.blob.vercel-storage.com', // For your Vercel Blob images
+        hostname: '**.public.blob.vercel-storage.com',
       },
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com', // For Unsplash
+        hostname: 'images.unsplash.com',
       },
       {
         protocol: 'https',
-        hostname: 'www.bancatlan.hn'
+        hostname: '**.bancatlan.hn', // Added wildcard for subdomains
       },
       {
         protocol: 'https',
-        hostname: 'www.cdn.prod.website-files.com'
+        hostname: 'cdn.prod.website-files.com', // Removed 'www.' prefix
       },
       {
         protocol: 'https',
-        hostname: 'www.invatlan.hn'
+        hostname: '**.invatlan.hn', // Added wildcard for subdomains
       },
       {
         protocol: 'https',
-        hostname: 'www.transparenttextures.com', // For your textures
+        hostname: 'www.transparenttextures.com',
       }
     ],
   },
