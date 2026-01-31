@@ -7,6 +7,7 @@ const cspHeader = `
 `;
 
 const nextConfig = {
+  cacheComponents: true,
   async headers() {
     return [
       {
@@ -22,7 +23,6 @@ const nextConfig = {
   },
 
   experimental: {
-    cacheComponents: true,
     optimizePackageImports: ['lucide-react'],
   },
   
