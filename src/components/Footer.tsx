@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react'; // Added hooks here
 import {
   Building2,
   ShieldCheck,
@@ -13,12 +13,19 @@ import {
 } from 'lucide-react';
 
 export default function Footer() {
+  // 1. Initialize state with null or a fallback string
+  const [currentYear, setCurrentYear] = useState<number | string>('2026');
   
+  // 2. Update the year only after the component is mounted on the client
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
-  
-  const currentYear = new Date().getFullYear();
   
   return (
     <footer id="footer" className="bg-[#050505] text-white/80 font-sans border-t border-white/10 relative overflow-hidden">
@@ -41,36 +48,34 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
           
-          {/* 2. BRAND IDENTITY (4 Columns) */}
-<div className="md:col-span-4 space-y-8">
-  <div>
-    <h2 className="text-2xl font-serif text-white tracking-tight mb-2">David Jackson Fernandez</h2>
-    <p className="text-xs text-gold uppercase tracking-[0.25em] font-bold">
-      CAO & CTO // Grupo Financiero Atlántida 
-    </p>
-  </div>
-  
-  {/* QUICK CONTACT TRIGGER */}
-  <div className="space-y-4">
-    <p className="text-sm text-gray-500 leading-relaxed">
-      Have a strategic briefing or feedback for the Executive Office?
-    </p>
-    <a 
-      href="/contact" 
-      className="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-white hover:bg-gold hover:text-black transition-all group"
-    >
-      Open Contact Channel <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-    </a>
-  </div>
+          {/* 2. BRAND IDENTITY */}
+          <div className="md:col-span-4 space-y-8">
+            <div>
+              <h2 className="text-2xl font-serif text-white tracking-tight mb-2">David Jackson Fernandez</h2>
+              <p className="text-xs text-gold uppercase tracking-[0.25em] font-bold">
+                CAO & CTO // Grupo Financiero Atlántida 
+              </p>
+            </div>
+            
+            <div className="space-y-4">
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Have a strategic briefing or feedback for the Executive Office?
+              </p>
+              <a 
+                href="/contact" 
+                className="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-white hover:bg-gold hover:text-black transition-all group"
+              >
+                Open Contact Channel <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
 
-  <div className="flex gap-4">
-    <SocialLink href="https://hn.linkedin.com/company/grupofinancieroatlantida" icon={<Linkedin size={18} />} label="LinkedIn" />
-    <SocialLink href="#" icon={<Twitter size={18} />} label="X" />
-  </div>
-</div>
+            <div className="flex gap-4">
+              <SocialLink href="https://hn.linkedin.com/company/grupofinancieroatlantida" icon={<Linkedin size={18} />} label="LinkedIn" />
+              <SocialLink href="#" icon={<Twitter size={18} />} label="X" />
+            </div>
+          </div>
 
-
-          {/* 3. STRATEGIC NAVIGATION (2 Columns) */}
+          {/* 3. NAVIGATION */}
           <div className="md:col-span-2 md:col-start-6 space-y-6">
             <h3 className="text-xs font-bold text-white uppercase tracking-[0.2em]">The Ecosystem</h3>
             <ul className="space-y-4 text-sm text-gray-400">
@@ -81,7 +86,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 4. GOVERNANCE & LEGAL (2 Columns) */}
+          {/* 4. GOVERNANCE */}
           <div className="md:col-span-2 space-y-6">
             <h3 className="text-xs font-bold text-white uppercase tracking-[0.2em]">Governance</h3>
             <ul className="space-y-4 text-sm text-gray-400">
@@ -92,7 +97,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* 5. LOCATION DATA (3 Columns) */}
+          {/* 5. LOCATION */}
           <div className="md:col-span-3 space-y-6">
             <h3 className="text-xs font-bold text-white uppercase tracking-[0.2em]">Regional HQ</h3>
             <div className="flex items-start gap-3 text-sm text-gray-400 leading-relaxed">
@@ -104,14 +109,12 @@ export default function Footer() {
               </address>
             </div>
           </div>
-
         </div>
       </div>
 
-      {/* 6. BOTTOM BAR: COPYRIGHT & UTILITY */}
+      {/* 6. BOTTOM BAR */}
       <div className="border-t border-white/5 bg-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-xs text-gray-600">
             <span className="flex items-center gap-1">
               <Copyright size={12} /> {currentYear} DJF Executive Office.
@@ -136,7 +139,6 @@ export default function Footer() {
 }
 
 // --- HELPER COMPONENTS ---
-
 const FooterLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
   <li>
     <a 
