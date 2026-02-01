@@ -30,7 +30,7 @@ const nextConfig = {
   bundlePagesRouterDependencies: true,
   
   images: {
-    formats: ['image/avif', 'image/webp'], 
+    formats: ['image/avif', 'image/webp', 'video/mp4'], 
     minimumCacheTTL: 60,
     remotePatterns: [
       {
