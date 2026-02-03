@@ -86,7 +86,7 @@ export default function RefinedHeader() {
           {/* DESKTOP ACTIONS + HAMBURGER */}
           <div className="flex items-center gap-4">
             <a
-              href="#contact"
+              href="/app/contact"
               className="hidden md:inline-flex items-center gap-2 px-5 py-2 text-[11px] font-bold uppercase tracking-widest text-gold border border-gold/20 rounded-full hover:bg-gold hover:text-black transition-all duration-300"
             >
               <Fingerprint size={14} />
@@ -121,7 +121,7 @@ export default function RefinedHeader() {
               <div className="flex items-center justify-between mb-8">
                 {/* Brand in Overlay */}
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center font-bold text-sm">
+                  <div className="w-11 h-11 rounded-full bg-white text-black flex items-center justify-center font-bold text-sm">
                     DJF
                   </div>
                   <div className="leading-tight">

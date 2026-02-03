@@ -88,7 +88,7 @@ export default function CTODossier() {
             </h2>
             <p className="text-bone/60 text-lg md:text-xl font-light leading-relaxed">
               Orchestrating the convergence of high-end financial infrastructure. A core build in the Banco Atlantida Hn service base and scope 
-              <span className="text-white font-medium italic">===</span>.
+              <span className="text-white font-medium italic">preferences.</span>
             </p>
           </div>
 
