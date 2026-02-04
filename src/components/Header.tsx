@@ -61,7 +61,7 @@ export default function RefinedHeader() {
               <div className="text-sm tracking-widest text-white font-medium">
                 JACKSON <span className="text-gold">F.</span>
               </div>
-              <div className="text-[9px] uppercase tracking-wider text-white/40">
+              <div className="text-[9px] uppercase tracking-wider text-white/70">
                 Institutional Portfolio
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function RefinedHeader() {
               <div className="flex items-center justify-between mb-8">
                 {/* Brand in Overlay */}
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-full bg-white text-black flex items-center justify-center font-bold text-sm">
+                  <div className="w-11 h-11 rounded-full bg-[#FFFFFF] text-black flex items-center justify-center font-bold text-sm">
                     DJF
                   </div>
                   <div className="leading-tight">
