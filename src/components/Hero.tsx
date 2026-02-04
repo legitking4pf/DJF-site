@@ -19,8 +19,7 @@ export default function Hero() {
   }, []);
   
   return (
-    <section id="hero"
-      className="relative w-full bg-obsidian text-bone overflow-hidden flex flex-col selection:bg-gold/30"
+    <section id="hero" aria-labelledby="hero-heading" className="relative w-full bg-obsidian text-bone overflow-hidden flex flex-col selection:bg-gold/30"
       style={{ 
         /* MATHEMATICAL ALIGNMENT */
         marginTop: 'var(--header-height, 0px)', 
@@ -71,16 +70,14 @@ export default function Hero() {
                 </span>
                 <div className="h-px w-12 bg-gold/20" />
               </div>
-
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-display tracking-tighter uppercase leading-[1.1] mb-8 md:mb-12 text-white">
-                Governance <br />
+              <h1 id="hero-heading" className="text-4xl sm:text-5xl md:text-7xl font-display tracking-tighter uppercase leading-[1.1] mb-8 md:mb-12 text-white">
+                Financial Governance <br />
                 <span className="text-gold italic font-serif font-light opacity-90">Infrastructure.</span> <br />
                 Aesthetics.
               </h1>
 
               <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 border-l border-gold/40 pl-6 md:pl-8">
-                <p className="text-white/90 text-sm md:text-lg font-light tracking-wide max-w-md leading-relaxed">
-                  Leading the <span className="text-gold font-bold">Digital Sovereignty</span> and Architectural Curation of the Grupo Financiero Atlántida ecosystem [cite: 2025-12-09].
+                <p className="text-white/90 text-sm md:text-lg font-light tracking-wide max-w-md leading-relaxed"> Leading <span className = "text-gold font-bold"> Digital Sovereignty </span> and architectural governance. <br className = "hidden sm:block"/> Within the Grupo Financiero Atlántida ecosystem <span className="text-white/40">[mandate active · 2025].</span>
                 </p>
                 <div className="hidden md:block w-px h-12 bg-white/10" />
                 <div className="flex flex-col">
