@@ -1,3 +1,7 @@
+import { EventEmitter } from 'node:events'; // Use the 'node:' prefix for clarity
+
+EventEmitter.defaultMaxListeners = 25;
+
 /** @type {import('next').NextConfig} */
 const cspHeader = `
   default-src 'self';
@@ -8,7 +12,7 @@ const cspHeader = `
 `;
 
 const nextConfig = {
-  cacheComponents: true,
+  // Your existing configuration
   async headers() {
     return [
       {
@@ -16,7 +20,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: cspHeader.replace(/\n/g, ''),
+            value: cspHeader.replace(/\s{2,}/g, ' ').trim(), // Cleaner regex for CSP formatting
           },
         ],
       },
@@ -28,7 +32,6 @@ const nextConfig = {
   },
   
   reactStrictMode: true,
-  bundlePagesRouterDependencies: true,
   
   images: {
     formats: ['image/avif', 'image/webp'], 
