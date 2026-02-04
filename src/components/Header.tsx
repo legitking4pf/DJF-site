@@ -54,7 +54,7 @@ export default function RefinedHeader() {
           
           {/* BRAND LOGO */}
           <div className="flex items-center gap-4">
-            <div className="w-11 h-11 rounded-full bg-gold text-black flex items-center justify-center font-bold select-none text-sm">
+            <div className="w-11 h-11 rounded-full bg-[#FFFFFF] text-black flex items-center justify-center font-bold select-none text-sm">
               DJF
             </div>
             <div className="leading-tight  sm:block">
