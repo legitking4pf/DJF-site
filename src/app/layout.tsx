@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     images: [
       {
         /* FIXED: Removed /public/ prefix for production pathing */
-        url: "/og-image.jpg", 
+        url: "/public/og-image.jpg", 
         width: 1200,
         height: 630,
         alt: "David Jackson Fernandez - Executive Profile",
@@ -60,13 +60,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/public/favicon.ico" },
+      { url: "/public/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/public/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
+    shortcut: "/public/favicon.ico",
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/public/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
   alternates: {
@@ -79,9 +79,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
         <link rel="preconnect" href="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/public/favicon.ico" sizes="any" />
         {/* CTO Optimization: Mobile PWA manifest link */}
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="/public/site.webmanifest" />
       </head>
       <body className="antialiased bg-obsidian text-bone selection:bg-gold/30">
         {children}
