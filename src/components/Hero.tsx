@@ -77,8 +77,11 @@ export default function Hero() {
               </h1>
 
               <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10 border-l border-gold/40 pl-6 md:pl-8">
-                <p className="text-white/90 text-sm md:text-lg font-light tracking-wide max-w-md leading-relaxed"> Leading <span className = "text-gold font-bold"> Digital Sovereignty </span> and architectural governance. <br className = "hidden sm:block"/> Within the Grupo Financiero Atlántida ecosystem <span className="text-white/40">[mandate active · 2025].</span>
-                </p>
+                <p className="text-white/90 text-sm md:text-lg font-light tracking-wide max-w-md leading-relaxed">
+  Welcome to the professional portfolio of <span className="text-gold font-bold">David Jackson Fernandez</span> — a leader in digital governance, fintech innovation, and strategic architecture. <br className="hidden sm:block" />
+  DJF drives sustained growth and innovation across institutional governance, digital infrastructure, and design. <br className="hidden sm:block" />
+  Within the Grupo Financiero Atlántida ecosystem <span className="text-white/40">[mandate active · 2025]</span>.
+</p>
                 <div className="hidden md:block w-px h-12 bg-white/10" />
                 <div className="flex flex-col">
                   <span className="text-[8px] text-white/40 uppercase tracking-[0.3em] font-black mb-1">Current Status</span>
