@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     url: "https://djf-site.vercel.app/",
     siteName: "David Jackson Fernandez | Institutional Portfolio",
     title: "David Jackson Fernandez | C.A.O Grupo Financiero Atlantida",
-    description: "CAO & CTO leading institutional expansion and fintech innovation across Central and South America.",
+    description: "CAO & CTO | Founder. Leading institutional expansion and fintech innovation across Central and South America. ",
     images: [
       {
         url: "/og-image.jpg", // Removed /public
