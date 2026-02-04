@@ -5,7 +5,7 @@ import {
   ShieldCheck,
   Globe,
   ArrowUpRight,
-  Twitter,
+  Instagram,
   Linkedin,
   ArrowUp,
   ArrowRight,
