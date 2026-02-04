@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
   
   return (
-    <section id="hero" aria-labelledby="hero-heading" className="relative w-full bg-obsidian text-bone overflow-hidden flex flex-col selection:bg-gold/30"
+    <section id="hero" aria-labelledby="hero-heading" className="relative w-full pt-24 md:pt-32 bg-obsidian text-bone overflow-hidden flex flex-col selection:bg-gold/30"
       style={{ 
         /* MATHEMATICAL ALIGNMENT */
         marginTop: 'var(--header-height, 0px)', 
@@ -53,7 +53,7 @@ export default function Hero() {
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-obsidian via-transparent to-obsidian" />
       </div>
 
-      {/* 2. COMMAND CONTENT: Center-aligned within the available viewport */}
+      {/* 2. COMMAND CONTENT: Center-aligned within the available :viewport */}
       <div className="relative z-20 flex-1 flex flex-col justify-center max-w-7xl mx-auto px-8 md:px-12 w-full py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start lg:items-center">
 

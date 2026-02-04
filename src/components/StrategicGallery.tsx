@@ -47,7 +47,7 @@ export default function StrategicGallery() {
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
               <Layers className="text-gold w-4 h-4" />
-              <span className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase">DJF Asset Portfolio // GFA/EBN</span>
+              <span className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase">DJF Asset Portfolio.</span>
             </div>
             <h2 className="text-3xl md:text-6xl font-serif tracking-tighter text-obsidian leading-[1.8] mb-8">
               Company <span className="italic font-light">Environments</span>
