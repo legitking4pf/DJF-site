@@ -13,6 +13,7 @@ const playfair = Playfair_Display({
   display: 'swap',
   variable: '--font-playfair' 
 });
+
 export const viewport: Viewport = {
   themeColor: "#050505",
   width: "device-width",
@@ -35,23 +36,20 @@ export const metadata: Metadata = {
     "KONCEPTO Décor Founder",
     "GFA Strategic Vision 2030",
     "Wealth Acceleration Opportunity", 
-    "GFA",
-    "DJF"
   ],
   authors: [{ name: "David Jackson Fernandez" }],
   creator: "David Jackson Fernandez",
-  metadataBase: new URL("https://your-domain.com"), 
+  metadataBase: new URL("https://djf-site.vercel.app/"), 
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://your-domain.com",
+    url: "https://djf-site.vercel.app/",
     siteName: "David Jackson Fernandez | Institutional Portfolio",
-    title: "David Jackson Fernandez | Strategic Growth & Digital Transformation",
+    title: "David Jackson Fernandez | C.A.O Grupo Financiero Atlantida",
     description: "CAO & CTO leading institutional expansion and fintech innovation across Central and South America.",
     images: [
       {
-        /* FIXED: Removed /public/ prefix for production pathing */
-        url: "/public/og-image.jpg", 
+        url: "/og-image.jpg", // Removed /public
         width: 1200,
         height: 630,
         alt: "David Jackson Fernandez - Executive Profile",
@@ -60,17 +58,19 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/public/favicon.ico" },
-      { url: "/public/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/public/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.ico" }, // Removed /public
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
-    shortcut: "/public/favicon.ico",
     apple: [
-      { url: "/public/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
+    other: [
+      { rel: "manifest", url: "/site.webmanifest" }
+    ]
   },
   alternates: {
-    canonical: "https://your-domain.com",
+    canonical: "/",
   },
 };
 
@@ -78,10 +78,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
+        {/* Preconnecting to your Vercel Blob storage for faster asset delivery */}
         <link rel="preconnect" href="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com" />
-        <link rel="icon" href="/public/favicon.ico" sizes="any" />
-        {/* CTO Optimization: Mobile PWA manifest link */}
-        <link rel="manifest" href="/public/site.webmanifest" />
       </head>
       <body className="antialiased bg-obsidian text-bone selection:bg-gold/30">
         {children}
