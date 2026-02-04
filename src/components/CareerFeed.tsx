@@ -29,15 +29,14 @@ const ledgerData = [
   },
   {
     id: "003",
-    category: "Strategic Growth",
-    title: "Wealth Acceleration: Institutional $1,000 Tier",
-    desc: "A dedicated wealth acceleration opportunity designed for long-term digital asset appreciation and zero-trust security.",
-    image: "https://images.unsplash.com/photo-1611974717482-95edec13969c?auto=format&fit=crop&q=80",
-    date: "JAN 21, 2026",
-    link: "/wealth-acceleration",
-    cta: "Access Node",
-    isHighlight: true,
-    tag: "Asset Growth"
+    category: "Subsidiaries",
+    title: "AFP CONFIA's image is evolving to reaffirm its strength and track record, as well as its commitment to innovation and excellence in service.",
+    desc: "CONFIA's visual evolution is a manifestation of its continuous pursuit of excellence, reflecting its adaptability and forward-thinking vision. This rebranding modernizes its market presence and reinforces its membership in Grupo Financiero Atlántida, a financial organization recognized for its strength and leadership, backed by over 111 years of experience, more than 260 offices, and 6,000 employees.",
+    image: "https://cdn.prod.website-files.com/68363d5a1fb3537423263bff/683fcb25cfb6588ffd8a90be_Toma%20ae%CC%81rea%20AFP%20Confia%20-%20El%20Salvador-p-1080.jpg",
+    date: "JUN 04, 2025",
+    link: "https://invatlan.hn/blogs/la-imagen-de-afp-confia-evoluciona-para-reconfirmar-su-solidez-y-trayectoria-asi-como-su-compromiso-con-la-innovacion-y-la-excelencia-en-el-servicio",
+    cta: "Read press",
+    tag: "Press Room"
   }
 ];
 
@@ -113,7 +112,7 @@ A centralized repository of David Jackson Fernandez’s leadership updates, mana
                   <a 
                     href={item.link}
                     className={`flex items-center justify-between w-full text-[10px] font-bold uppercase tracking-[0.3em] transition-all group/btn
-                      ${item.isHighlight ? "bg-gold text-obsidian p-4 shadow-lg" : "text-obsidian hover:text-gold"}`}
+                      `}
                   >
                     <span>{item.cta}</span>
                     <ArrowUpRight size={14} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
