@@ -8,4 +8,5 @@ Disallow: /private/
 Disallow: /temp/
 
 # Link to your sitemap (Crucial for SEO)
-Sitemap: https://djf-site.vercel.app
+Sitemap: https://djf-site.netlify.app/sitemap.xml
+
