@@ -34,11 +34,6 @@ export default function RefinedHeader() {
     }
   }, [open]);
 
-useEffect(() => {
-  // Set the initial height variable
-  document.documentElement.style.setProperty('--header-height', '96px');
-}, []);
-
   // ESC key listener
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {

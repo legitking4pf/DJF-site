@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
   
   return (
-    <section id="hero" aria-labelledby="hero-heading" className="relative w-full pt-24 md:pt-32 bg-obsidian text-bone overflow-hidden flex flex-col selection:bg-gold/30"
+    <section id="hero" aria-labelledby="hero-heading" className="relative w-full bg-obsidian text-bone overflow-hidden flex flex-col selection:bg-gold/30"
       style={{ 
         /* MATHEMATICAL ALIGNMENT */
         marginTop: 'var(--header-height, 0px)', 
