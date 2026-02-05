@@ -41,7 +41,7 @@ export default function ExecutiveContact() {
   };
   
   return (
-    <main className="min-h-screen bg-[#0B0D0F] text-white selection:bg-gold/30">
+    <main className="min-h-screen bg-[#050505] text-white selection:bg-gold/30">
 
       {/* === HERO / HEADER === */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
@@ -61,7 +61,7 @@ export default function ExecutiveContact() {
             <motion.div variants={itemVars} className="lg:col-span-8">
               <div className="flex items-center gap-4 mb-8">
                 <Fingerprint className="w-4 h-4 text-gold" />
-                <span className="text-gold text-[10px] font-black tracking-[0.45em] uppercase">
+                <span className="text-gold-light text-[10px] font-black tracking-[0.45em] uppercase">
                   Secure Channel // GFA Executive
                 </span>
               </div>
@@ -279,9 +279,9 @@ export default function ExecutiveContact() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-14 border-t border-white/10 bg-[#0B0D0F]">
+      <footer className="py-14 border-t border-white/10 bg-[#050505]">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <ShieldCheck className="mx-auto text-gold/20 mb-4" size={36} />
+          <ShieldCheck className="mx-auto text-gold-light mb-4" size={36} />
           <p className="text-[10px] font-black uppercase tracking-[0.45em] text-ash">
             Encrypted Under GFA Governance Protocols
           </p>

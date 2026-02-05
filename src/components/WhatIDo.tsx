@@ -83,7 +83,7 @@ export default function StrategicEcosystems() {
              <span className="text-white font-bold tracking-[0.3em] text-sm mb-2 uppercase">
               David Jackson Fernandez
             </span>
-            <div className="flex items-center gap-3 text-gold/60 text-[10px] font-mono tracking-widest uppercase">
+            <div className="flex items-center gap-3 text-gold text-[10px] font-mono tracking-widest uppercase">
               <Fingerprint size={12} /> CAO • CTO • FOUNDER
             </div>
           </div>
