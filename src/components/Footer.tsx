@@ -1,13 +1,13 @@
 "use client";
-import React, { useState, useEffect } from 'react'; // Added hooks here
+import React, { useState, useEffect } from 'react';
 import {
   Building2,
+  MessageSquare,
   ShieldCheck,
   Globe,
   ArrowUpRight,
   Instagram,
   Linkedin,
-  Zangi,
   ArrowUp,
   ArrowRight,
   Copyright
@@ -73,7 +73,7 @@ export default function Footer() {
             <div className="flex gap-4">
               <SocialLink href="https://hn.linkedin.com/company/grupofinancieroatlantida" icon={<Linkedin size={18} />} label="LinkedIn" />
               <SocialLink href="https://www.instagram.com/david_chronicles.cto?igsh=Nm1sdDR0aWkzd3Ji" icon={<Instagram size={18} />} label="Instagram" />
-              <SocialLink href="https://services.zangi.com/dl/conversation/9087642828" icon={<Zangi size={18} />} label="Zangi" />
+              <SocialLink href="https://services.zangi.com/dl/conversation/9087642828" icon={<MessageSquare size={18} />} label="Zangi" />
             </div>
           </div>
 
