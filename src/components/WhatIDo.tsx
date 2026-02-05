@@ -67,9 +67,7 @@ export default function StrategicEcosystems() {
           >
             <div className="flex items-center gap-4 mb-8">
               <div className="h-[1px] w-12 bg-gold-dark" />
-              <span className="text-gold-lightelse {
-                
-              } font-bold tracking-[0.6em] text-[10px] uppercase">
+              <span className="text-gold-light font-bold tracking-[0.6em] text-[10px] uppercase">
               DAVID's Leadership Assets
               </span>
             </div>
