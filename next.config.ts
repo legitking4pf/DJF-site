@@ -1,18 +1,18 @@
-import { EventEmitter } from 'node:events'; // Use the 'node:' prefix for clarity
+import { EventEmitter } from 'node:events';
 
 EventEmitter.defaultMaxListeners = 25;
 
 /** @type {import('next').NextConfig} */
 const cspHeader = `
   default-src 'self';
-  img-src 'self' blob: data: https://**.public.blob.vercel-storage.com https://www.transparenttextures.com https://images.unsplash.com https://invatlan.hn https://cdn.prod.website-files.com https://www.bancatlan.hn;
-  media-src 'self' https://**.public.blob.vercel-storage.com;
+  img-src 'self' blob: data: https://public.blob.vercel-storage.com https://www.transparenttextures.com https://images.unsplash.com https://invatlan.hn https://cdn.prod.website-files.com https://www.bancatlan.hn;
+  media-src 'self' blob: data: https://public.blob.vercel-storage.com;
   script-src 'self' 'unsafe-eval' 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
+  connect-src 'self' https://public.blob.vercel-storage.com;
 `;
 
 const nextConfig = {
-  // Your existing configuration
   async headers() {
     return [
       {
@@ -20,7 +20,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: cspHeader.replace(/\s{2,}/g, ' ').trim(), // Cleaner regex for CSP formatting
+            value: cspHeader.replace(/\s{2,}/g, ' ').trim(),
           },
         ],
       },
@@ -37,7 +37,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'], 
     minimumCacheTTL: 60,
     remotePatterns: [
-      { protocol: 'https', hostname: '**.public.blob.vercel-storage.com' },
+      { protocol: 'https', hostname: 'public.blob.vercel-storage.com' }, // Removed wildcard here for safety
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: '**.bancatlan.hn' },
       { protocol: 'https', hostname: 'cdn.prod.website-files.com' },

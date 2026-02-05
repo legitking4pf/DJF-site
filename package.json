@@ -1,15 +1,19 @@
 {
   "name": "DJF-site",
   "description": "Professional portfolio of David Jackson Fernandez: Strategic architecture, fintech innovation, and digital governance within the Grupo Financiero Atlántida ecosystem.",
+  "keywords": [
+    "David Jackson Fernandez",
+    "CAO Grupo Financiero Atlántida",
+    "CTO Banco Atlántida",
+    "Digital Sovereignty",
+    "Fintech Core Migration",
+    "KONCEPTO Décor Founder",
+    "GFA Strategic Vision 2030",
+    "Wealth Acceleration Opportunity"
+  ],
   "version": "0.1.0",
   "private": true,
-  "company": {
-    "brand": "Legit Creations",
-    "developer": "King Marvis",
-    "creator": "King Marvis",
-    "git": "https://github.com/legitking4pf",
-    "github repository": "https://github.com/legitking4pf/DJF-site"
-  },
+  "author": "King Marvis(Legit Creations",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
