@@ -39,11 +39,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "David Jackson Fernandez" }],
   creator: "David Jackson Fernandez",
-  metadataBase: new URL("https://djf-site.vercel.app"), 
+  metadataBase: new URL("https://djf.vercel.app"), 
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://djf-site.vercel.app",
+    url: "https://djf.vercel.app",
     siteName: "David Jackson Fernandez | Institutional Portfolio",
     title: "David Jackson Fernandez | C.A.O Grupo Financiero Atlantida",
     description: "CAO & CTO | Founder. Leading institutional expansion and fintech innovation across Central and South America. ",
@@ -78,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
-        <meta name="google-site-verification" content="3-zan2mnlXQc8aKFUYw0sEkcBZjHcEXk8DvEArCczwE" />
+        <meta name="google-verification" content="3-zan2mnlXQc8aKFUYw0sEkcBZjHcEXk8DvEArCczwE" />
         {/* Preconnecting to your Vercel Blob storage for faster asset delivery */}
         <link rel="preconnect" href="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com" />
       </head>
