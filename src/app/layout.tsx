@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "David Jackson Fernandez | Executive Command",
+    default: "David Jackson Fernandez",
     template: "%s | David Jackson Fernandez"
   },
   description: "Dual-mandate executive leading Digital Integration and Strategic Growth at Grupo Financiero Atlántida. Architecting the future of wealth through high-precision fintech and aesthetic essentialism.",
@@ -35,15 +35,20 @@ export const metadata: Metadata = {
     "Fintech Core Migration",
     "KONCEPTO Décor Founder",
     "GFA Strategic Vision 2030",
-    "Wealth Acceleration Opportunity", 
+    "Wealth Acceleration Opportunity",
+    "DJF",
+    "djf",
+    "banco Atlantida",
+    "koncepto",
+    "GFA"
   ],
   authors: [{ name: "David Jackson Fernandez" }],
   creator: "David Jackson Fernandez",
-  metadataBase: new URL("https://djf.vercel.app"), 
+  metadataBase: new URL("https://djf-site.vercel.app"), 
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://djf.vercel.app",
+    url: "https://djf-site.vercel.app",
     siteName: "David Jackson Fernandez | Institutional Portfolio",
     title: "David Jackson Fernandez | C.A.O Grupo Financiero Atlantida",
     description: "CAO & CTO | Founder. Leading institutional expansion and fintech innovation across Central and South America. ",
