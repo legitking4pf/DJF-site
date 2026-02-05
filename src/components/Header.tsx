@@ -64,7 +64,7 @@ useEffect(() => {
             </div>
             <div className="leading-tight  sm:block">
               <div className="text-sm tracking-widest text-white font-medium">
-                JACKSON <span className="text-gold">F.</span>
+                JACKSON <span className="text-gold-light">F.</span>
               </div>
               <div className="text-[9px] uppercase tracking-wider text-white/70">
                 Institutional Portfolio
@@ -131,7 +131,7 @@ useEffect(() => {
                   </div>
                   <div className="leading-tight">
                     <div className="text-sm tracking-widest text-white font-medium">
-                      JACKSON <span className="text-gold">F.</span>
+                      JACKSON <span className="text-gold-light">F.</span>
                     </div>
                     <div className="text-[9px] uppercase tracking-wider text-white/40">
                       Menu Active
@@ -170,8 +170,8 @@ useEffect(() => {
 
               {/* FOOTER (Simple, no buttons) */}
               <div className="mt-auto pt-8 border-t border-white/[0.05] flex items-center gap-3">
-                <Globe size={14} className="text-gold" />
-                <span className="text-[10px] uppercase tracking-widest text-white/40">
+                <Globe size={14} className="text-gold-light" />
+                <span className="text-[10px] uppercase tracking-widest text-gold-light">
                   Honduras · Spain · Guatemala
                 </span>
               </div>

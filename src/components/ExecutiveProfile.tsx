@@ -133,7 +133,7 @@ export default function ExecutiveProfile() {
                  </div>
                </div>
 
-              <h4 className="text-gold uppercase tracking-[0.5em] text-[10px] font-black mb-16">Operational Status</h4>
+              <h4 className="text-gold-light uppercase tracking-[0.5em] text-[10px] font-black mb-16">Operational Status</h4>
               
               <div className="space-y-12">
                 <div className="border-l border-gold/30 pl-6">

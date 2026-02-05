@@ -65,7 +65,7 @@ export default function Hero() {
               transition={{ duration: 1.2, ease: "easeOut" }}
             >
               <div className="flex items-center gap-4 mb-6 md:mb-10">
-                <span className="text-gold font-black tracking-[0.5em] text-[9px] uppercase bg-gold/5 px-3 py-1 border border-gold/20">Institutional Mandate
+                <span className="text-gold-light font-black tracking-[0.5em] text-[9px] uppercase bg-gold/5 px-3 py-1 border border-gold-dark">Institutional Mandate
                 </span>
                 <div className="h-px w-12 bg-gold/20" />
               </div>

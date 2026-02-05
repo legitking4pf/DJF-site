@@ -74,7 +74,7 @@ export default function ExecutiveContact() {
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-xl text-sm text-ash/90 leading-relaxed">
+              <p className="mt-8 max-w-xl text-sm text-white leading-relaxed">
                 Encrypted institutional access for CAO & CTO-level engagements.
                 Briefings only. Vetted. Actionable.
               </p>
@@ -85,7 +85,7 @@ export default function ExecutiveContact() {
               variants={itemVars}
               className="lg:col-span-4 lg:text-right"
             >
-              <p className="text-[11px] uppercase tracking-[0.35em] text-ash font-bold">
+              <p className="text-[11px] uppercase tracking-[0.35em] text-white/80 font-bold">
                 Institutional Ops
                 <br />
                 Strategic Growth
