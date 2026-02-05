@@ -14,7 +14,6 @@ import {
 } from 'lucide-react';
 
 export default function Footer() {
-  // 1. Initialize state with null or a fallback string
   const [currentYear, setCurrentYear] = useState<number | string>('2026');
   
   // 2. Update the year only after the component is mounted on the client
