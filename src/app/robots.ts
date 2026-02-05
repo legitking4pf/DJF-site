@@ -1,13 +1,13 @@
 import { MetadataRoute } from 'next'
 
-export default function robots(): MetadataRoute.Sitemap {
+export default function robots(): MetadataRoute.Robots {
   const baseUrl = 'https://djf-site.vercel.app';
 
   return {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/admin/'], // Keeps private directories hidden from crawlers
+      disallow: ['/api/', '/admin/'], 
     },
     sitemap: `${baseUrl}/sitemap.xml`,
   }
