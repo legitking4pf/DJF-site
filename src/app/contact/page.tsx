@@ -60,7 +60,7 @@ export default function ExecutiveContact() {
             {/* Left */}
             <motion.div variants={itemVars} className="lg:col-span-8">
               <div className="flex items-center gap-4 mb-8">
-                <Fingerprint className="w-4 h-4 text-gold" />
+                <Fingerprint className="w-4 h-4 text-gold-light" />
                 <span className="text-gold-light text-[10px] font-black tracking-[0.45em] uppercase">
                   Secure Channel // GFA Executive
                 </span>
@@ -109,14 +109,14 @@ export default function ExecutiveContact() {
         >
           <motion.div variants={itemVars}>
             <div className="flex items-center gap-5 mb-4">
-              <div className="w-12 h-12 flex items-center justify-center border border-gold/30 text-gold rounded-md">
+              <div className="w-12 h-12 flex items-center justify-center border border-gold-dark text-gold-light rounded-md">
                 <Landmark size={18} />
               </div>
               <h2 className="text-2xl font-display uppercase">
                 Wealth Acceleration
               </h2>
             </div>
-            <p className="text-ash leading-relaxed border-l-2 border-gold/30 pl-5">
+            <p className="text-ash leading-relaxed border-l-2 border-gold-dark pl-5">
               Capital deployment strategies designed to scale institutional
               assets with jurisdictional awareness and sovereign tech control.
             </p>
@@ -124,14 +124,14 @@ export default function ExecutiveContact() {
 
           <motion.div variants={itemVars}>
             <div className="flex items-center gap-5 mb-4">
-              <div className="w-12 h-12 flex items-center justify-center border border-gold/30 text-gold rounded-md">
+              <div className="w-12 h-12 flex items-center justify-center border border-gold-dark text-gold-light rounded-md">
                 <Zap size={18} />
               </div>
               <h2 className="text-2xl font-display uppercase">
                 Digital Integration
               </h2>
             </div>
-            <p className="text-ash leading-relaxed border-l-2 border-gold/30 pl-5">
+            <p className="text-ash leading-relaxed border-l-2 border-gold-dark pl-5">
               Zero-trust infrastructure, fintech modernization, and interoperable
               executive systems across the Atlántida ecosystem.
             </p>
@@ -139,7 +139,7 @@ export default function ExecutiveContact() {
 
           <motion.div variants={itemVars} className="pt-6">
             <div className="flex items-center gap-3 text-[11px] uppercase tracking-widest text-ash font-mono">
-              <Globe size={14} className="text-gold" />
+              <Globe size={14} className="text-gold-light" />
               Tegucigalpa • HND — ES — GT
             </div>
           </motion.div>
@@ -211,7 +211,7 @@ export default function ExecutiveContact() {
                         name="name"
                         placeholder="Principal Name"
                         required
-                        className="mt-2 bg-transparent border-b border-obsidian/10 py-3 text-base focus:border-gold outline-none placeholder:text-obsidian/30"
+                        className="mt-2 bg-transparent border-b border-obsidian/10 py-3 text-base focus:border-gold-dark outline-none placeholder:text-obsidian/30"
                       />
                     </div>
 
@@ -224,7 +224,7 @@ export default function ExecutiveContact() {
                         name="email"
                         placeholder="official@domain.com"
                         required
-                        className="mt-2 bg-transparent border-b border-obsidian/10 py-3 text-base focus:border-gold outline-none placeholder:text-obsidian/30"
+                        className="mt-2 bg-transparent border-b border-obsidian/10 py-3 text-base focus:border-gold-dark outline-none placeholder:text-obsidian/30"
                       />
                       <ValidationError prefix="Email" field="email" errors={state.errors} className="text-gold text-[11px] mt-1" />
                     </div>
@@ -236,7 +236,7 @@ export default function ExecutiveContact() {
                     </label>
                     <select
                       name="intent"
-                      className="mt-2 bg-transparent border-b border-obsidian/10 py-3 text-base focus:border-gold outline-none cursor-pointer appearance-none w-full"
+                      className="mt-2 bg-transparent border-b border-obsidian/10 py-3 text-base focus:border-gold-dark outline-none cursor-pointer appearance-none w-full"
                     >
                       <option>Wealth Acceleration Opportunity</option>
                       <option>GFA Strategic Growth Network Inquiry</option>
@@ -255,7 +255,7 @@ export default function ExecutiveContact() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder="Define objectives and scope… (concise)"
-                      className="mt-2 bg-transparent border border-obsidian/8 rounded p-3 text-base focus:border-gold outline-none resize-none min-h-[120px]"
+                      className="mt-2 bg-transparent border border-obsidian/8 rounded p-3 text-base focus:border-gold-dark outline-none resize-none min-h-[120px]"
                       maxLength={maxChars}
                     />
                     <div className="flex justify-between items-center mt-2 text-[11px] text-ash">
