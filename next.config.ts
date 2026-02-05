@@ -15,18 +15,16 @@ const cspHeader = `
 const nextConfig = {
   async headers() {
     return [
+    {
+      source: '/(.*)',
+      headers: [
       {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Content-Security-Policy',
-            value: cspHeader.replace(/\s{2,}/g, ' ').trim(),
-          },
-        ],
-      },
-    ];
+        key: 'Content-Security-Policy',
+        value: cspHeader.replace(/\s{2,}/g, ' ').trim(),
+      }, ],
+    }, ];
   },
-
+  
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
@@ -34,10 +32,10 @@ const nextConfig = {
   reactStrictMode: true,
   
   images: {
-    formats: ['image/avif', 'image/webp'], 
+    formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
     remotePatterns: [
-      { protocol: 'https', hostname: 'public.blob.vercel-storage.com' }, // Removed wildcard here for safety
+      { protocol: 'https', hostname: '**.public.blob.vercel-storage.com' }, // Removed wildcard here for safety
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: '**.bancatlan.hn' },
       { protocol: 'https', hostname: 'cdn.prod.website-files.com' },
