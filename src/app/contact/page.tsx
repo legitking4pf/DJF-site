@@ -288,5 +288,5 @@ export default function ExecutiveContact() {
         </div>
       </footer>
     </main>
-  );
+  )
 }
