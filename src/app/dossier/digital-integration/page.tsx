@@ -65,7 +65,7 @@ export default function CTODossier() {
     <section className="relative py-32 bg-obsidian text-bone overflow-hidden">
       {/* BACKGROUND ELEMENT: Digital Topography */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none grayscale">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+        <div className="absolute inset-0 bg-grid-pattern" />
         <svg width="100%" height="100%" className="stroke-gold fill-none">
           <circle cx="100%" cy="0%" r="40%" strokeWidth="0.5" />
           <circle cx="100%" cy="0%" r="30%" strokeWidth="0.5" strokeDasharray="10 10" />

@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# David Jackson Fernandez | Professional Portfolio
 
-## Getting Started
+This is the official professional portfolio for **David Jackson Fernandez**, highlighting his leadership in strategic architecture, fintech innovation (CTO Banco Atlántida), and digital governance within the Grupo Financiero Atlántida ecosystem.
 
-First, run the development server:
+## 🏛 Project Overview
+A high-performance web application designed to reflect the **Strategic Vision 2030**. The site balances a luxury aesthetic (KONCEPTO Décor) with technical rigor, featuring interactive mapping and on-the-fly document generation.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠 Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Core
+* **Framework:** [Next.js 16.1](https://nextjs.org/) (App Router)
+* **Library:** [React 19](https://react.dev/)
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Database:** [Neon](https://neon.tech/) (Serverless PostgreSQL)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### UI & UX
+* **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+* **Animations:** [Framer Motion](https://www.framer.com/motion/)
+* **Icons:** [Lucide React](https://lucide.dev/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Specialized Utilities
+* **PDF Generation:** `jspdf` & `html2canvas` for dynamic resume/report exporting.
+* **Geospatial:** `Leaflet` & `react-leaflet` for infrastructure visualization.
+* **Forms:** `Formspree` for secure communications.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prerequisites
+* Node.js 20+
+* NPM or PNPM
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/your-repo/david-jackson-portfolio.git](https://github.com/your-repo/david-jackson-portfolio.git)
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Run Development Server:**
+    ```bash
+    npm run dev
+    ```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🏗 Key Features
+* **Dynamic Hero UI:** A high-impact landing experience built with Framer Motion.
+* **Digital Sovereignty:** Engineered for performance, security, and scalability.
+* **Fintech Core Migration Insights:** Integrated case studies/details on regional financial architecture.
+* **Exportable Content:** Users can generate PDF summaries of the portfolio content instantly.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📝 Scripts
+* `npm run dev`: Starts the Next.js development server.
+* `npm run build`: Creates an optimized production build.
+* `npm run lint`: Runs ESLint to ensure code quality.
+
+---
+
+## 🛡 License
+**Private & Confidential.** Developed by **King Marvis (Legit Creations)** for David Jackson Fernandez. All rights reserved.
