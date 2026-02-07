@@ -1,6 +1,5 @@
 "use client";
-import React, {useState, useEffect } from "react";
-import { useForm, ValidationError } from "@formspree/react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Variants } from "framer-motion";
 import {
@@ -16,18 +15,19 @@ import {
 } from "lucide-react";
 
 export default function ExecutiveContact() {
-  const [state, handleSubmit] = useForm("xojnqyjg");
   const [message, setMessage] = useState("");
   const [charCount, setCharCount] = useState(0);
+  const [submitting, setSubmitting] = useState(false);
+  const [succeeded, setSucceeded] = useState(false);
   const maxChars = 1200;
-  
+
   useEffect(() => setCharCount(message.length), [message]);
-  
+
   const containerVars = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { staggerChildren: 0.08 } },
   };
-  
+
   const itemVars: Variants = {
     hidden: { opacity: 0, y: 18 },
     show: {
@@ -39,7 +39,47 @@ export default function ExecutiveContact() {
       },
     },
   };
-  
+
+  const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!message.trim()) return;
+
+    setSubmitting(true);
+
+    const formData = {
+      name: (e.currentTarget as any).name.value,
+      email: (e.currentTarget as any).email.value,
+      intent: (e.currentTarget as any).intent.value,
+      message: message,
+      ts: Date.now(), // prevents caching issues
+    };
+
+    try {
+      const res = await fetch("https://formspree.io/f/xojnqyjg", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Cache-Control": "no-cache",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSucceeded(true);
+        setMessage("");
+        setCharCount(0);
+      } else {
+        console.error("Form submission failed", res.statusText);
+        alert("Transmission failed ❌");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Transmission failed ❌");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-[#050505] text-white selection:bg-gold/30">
 
@@ -57,7 +97,6 @@ export default function ExecutiveContact() {
             animate="show"
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end"
           >
-            {/* Left */}
             <motion.div variants={itemVars} className="lg:col-span-8">
               <div className="flex items-center gap-4 mb-8">
                 <Fingerprint className="w-4 h-4 text-gold-light" />
@@ -80,7 +119,6 @@ export default function ExecutiveContact() {
               </p>
             </motion.div>
 
-            {/* Right */}
             <motion.div
               variants={itemVars}
               className="lg:col-span-4 lg:text-right"
@@ -170,7 +208,7 @@ export default function ExecutiveContact() {
             </div>
 
             <AnimatePresence mode="wait">
-              {state.succeeded ? (
+              {succeeded ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -181,12 +219,14 @@ export default function ExecutiveContact() {
                   <div className="w-20 h-20 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-3">
                     <CheckCircle2 size={44} className="text-gold" />
                   </div>
-                  <h4 className="text-2xl font-display uppercase tracking-tight">Transmission Successful</h4>
+                  <h4 className="text-2xl font-display uppercase tracking-tight">
+                    Transmission Successful
+                  </h4>
                   <p className="text-ash text-sm font-medium uppercase tracking-[0.2em]">
                     Logged to GFA Executive Registry
                   </p>
                   <button
-                    onClick={() => window.location.reload()}
+                    onClick={() => setSucceeded(false)}
                     className="mt-6 inline-flex items-center gap-2 px-5 py-3 bg-obsidian text-white uppercase text-[11px] font-bold tracking-[0.35em] hover:bg-gold hover:text-obsidian transition"
                   >
                     New Transmission <ArrowRight size={14} />
@@ -194,10 +234,9 @@ export default function ExecutiveContact() {
                 </motion.div>
               ) : (
                 <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    handleSubmit(e);
-                  }}
+                  onSubmit={submitForm}
+                  autoComplete="off"
+                  noValidate
                   className="space-y-6 relative z-10"
                   aria-label="Executive briefing form"
                 >
@@ -226,7 +265,6 @@ export default function ExecutiveContact() {
                         required
                         className="mt-2 bg-transparent border-b border-obsidian/10 py-3 text-base focus:border-gold-dark outline-none placeholder:text-obsidian/30"
                       />
-                      <ValidationError prefix="Email" field="email" errors={state.errors} className="text-gold text-[11px] mt-1" />
                     </div>
                   </div>
 
@@ -265,10 +303,10 @@ export default function ExecutiveContact() {
 
                   <button
                     type="submit"
-                    disabled={state.submitting || !message.trim()}
+                    disabled={submitting || !message.trim()}
                     className="group w-full bg-obsidian text-white py-4 text-[12px] font-black uppercase tracking-[0.45em] hover:bg-gold hover:text-obsidian transition-all duration-300 flex items-center justify-center gap-3 disabled:opacity-50 shadow"
                   >
-                    {state.submitting ? "TRANSMITTING..." : "Send Securely"}
+                    {submitting ? "TRANSMITTING..." : "Send Securely"}
                     <Send size={14} />
                   </button>
                 </form>
@@ -288,5 +326,5 @@ export default function ExecutiveContact() {
         </div>
       </footer>
     </main>
-  )
+  );
 }
