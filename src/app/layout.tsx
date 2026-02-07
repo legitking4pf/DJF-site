@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     "Fintech Core Migration",
     "KONCEPTO Décor Founder",
     "GFA Strategic Vision 2030",
+    "Fintech", "Governance", "Sovereign", "Infrastructure", "David Jackson",
     "Wealth Acceleration Opportunity",
     "DJF",
     "djf",
