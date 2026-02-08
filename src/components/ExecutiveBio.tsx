@@ -30,20 +30,20 @@ export default function ExecutiveBio({
       <div className="bg-obsidian h-[320px] w-full" />
 
       {/* Content Wrapper */}
-      <div className="max-w-[1100px] mx-auto px-4 -mt-[220px] pb-24">
+      <div className="max-w-[80%] mx-auto px-4 -mt-[220px]">
         <div className="flex flex-col items-center">
           
           {/* Profile Image - Large Forbes Style */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="relative w-[340px] h-[340px] z-10 shadow-2xl"
+            className="relative w-[50%] z-10"
           >
             <Image
               src={imageSrc}
               alt={name}
               fill
-              className="object-cover border-[12px] border-white"
+              className="object-cover"
               priority
             />
           </motion.div>
@@ -61,10 +61,10 @@ export default function ExecutiveBio({
 
             {/* Name & Title */}
             <div className="text-center mb-16 px-6">
-              <h1 className="text-6xl md:text-7xl font-display text-obsidian mb-4 tracking-tight">
+              <h1 className="text-[16px] md:text-2xl font-display text-obsidian mb-4 tracking-tight">
                 {name}
               </h1>
-              <p className="text-lg text-gray-500 uppercase tracking-widest font-medium">
+              <p className="text-sm text-gray-500 uppercase tracking-widest font-medium">
                 {title}, <span className="text-obsidian">{organization}</span>
               </p>
             </div>
