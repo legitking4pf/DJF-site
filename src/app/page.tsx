@@ -18,7 +18,7 @@ export default function LandingPage() {
   organization="Atlantida"
   netWorth="$780.2M"
   netWorthDelta="$62M (1.06%)"
-  rankNote="Real Time Net Worth"
+  rankNote="#176 in the world today"
   asOf="07/12/2025"
   imageSrc="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/profile%20image"
 />

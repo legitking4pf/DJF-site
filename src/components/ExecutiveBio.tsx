@@ -30,14 +30,14 @@ export default function ExecutiveBio({
       <div className="bg-obsidian h-[320px] w-full" />
 
       {/* Content Wrapper */}
-      <div className="max-w-[80%] mx-auto px-4 -mt-[220px]">
+      <div className="max-w-[80%] bg-gold mx-auto px-4 -mt-[220px]">
         <div className="flex flex-col items-center">
           
           {/* Profile Image - Large Forbes Style */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="relative w-[50%] z-10"
+            className="relative w-100px h-100px z-10"
           >
             <Image
               src={imageSrc}
@@ -61,33 +61,33 @@ export default function ExecutiveBio({
 
             {/* Name & Title */}
             <div className="text-center mb-16 px-6">
-              <h1 className="text-[16px] md:text-2xl font-display text-obsidian mb-4 tracking-tight">
+              <h1 className="text-[20px] md:text-2xl font-display text-obsidian mb-4 tracking-tight">
                 {name}
               </h1>
-              <p className="text-sm text-gray-500 uppercase tracking-widest font-medium">
-                {title}, <span className="text-obsidian">{organization}</span>
+              <p className="text-sm text-obsidian uppercase tracking-widest font-medium">
+                {title}, <span className="text-gray-500">{organization}</span>
               </p>
             </div>
 
             {/* Metrics Layout - Matches the reference grid exactly */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-gray-100 pt-12">
+            <div className="flex justify space-between border-t border-gray-100 pt-12">
               
               {/* Left Column: The Big Number */}
               <div className="flex flex-col items-start md:items-end md:pr-12 md:border-r border-gray-100 pb-8 md:pb-0">
-                <div className="text-[64px] font-display font-medium leading-none text-obsidian mb-3">
+                <div className="text-[40px] font-display font-medium leading-none text-obsidian mb-3">
                   {netWorth}
                 </div>
-                <div className="flex items-center text-green-700 font-bold text-xl">
-                  <span className="mr-2 text-2xl">▲</span> {netWorthDelta}
+                <div className="flex items-center  text-lg">
+            <span className="mr-2 text-2xl text-green-700">▲ </span> {netWorthDelta}
                 </div>
               </div>
 
               {/* Right Column: The Stats */}
               <div className="flex flex-col justify-center md:pl-12">
-                <div className="text-xl font-bold text-obsidian mb-1">
+                <div className="text-sm font-bold text-obsidian mb-1">
                   Real Time Net Worth
                 </div>
-                <div className="text-sm text-gray-500 mb-4 italic">
+                <div className="text-12px text-gray-500 mb-4 italic">
                   as of {asOf}
                 </div>
                 <div className="text-[#005587] font-semibold text-lg hover:underline cursor-pointer">

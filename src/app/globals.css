@@ -37,7 +37,7 @@
 }
 
 /* Scrollbar optimized for Spanish Minimalist Aesthetics */
-::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar { width:  5px; }
 ::-webkit-scrollbar-track { background: var(--color-bone); }
 ::-webkit-scrollbar-thumb { background: var(--color-gold); border-radius: 0px; }
 html {
