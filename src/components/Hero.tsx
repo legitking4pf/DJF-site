@@ -24,10 +24,10 @@ export default function Hero() {
           alt="Hero background"
           fill
           priority
-          className="object-cover opacity-80"
+          className="object-cover"
         />
         {/* Soft Gradient Overlay for Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/30 to-transparent" />
       </motion.div>
 
       {/* 2. Content Layer */}
