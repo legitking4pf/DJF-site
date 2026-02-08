@@ -1,27 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
+  const imageSrc =
+    "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/hero%20background-kICOZiiGPTRANFyueDNNCLOEz1VR9Y";
+  
   return (
     <section
       id="hero"
       aria-labelledby="hero-heading"
       className="relative w-full min-h-screen overflow-hidden"
       style={{
-      marginTop: 'var(--header-height, 0px)',minHeight: 'calc(100vh - var(--header-height, 0px))',
-        backgroundImage: "url('/https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/hero%20background-kICOZiiGPTRANFyueDNNCLOEz1VR9Y')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        marginTop: "var(--header-height, 0px)",
+        minHeight: "calc(100vh - var(--header-height, 0px))",
       }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/45" />
+      {/* Hero Background */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src={imageSrc}
+          alt="Hero background"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/45" />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 flex items-center min-h-screen">
         <div className="max-w-6xl mx-auto px-6 md:px-10 w-full">
-          
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
