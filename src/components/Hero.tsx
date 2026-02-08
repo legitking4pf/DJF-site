@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen overflow-hidden bg-white"
+      className="relative w-full min-h-screen overflow-hidden"
       style={{ marginTop: "var(--header-height, 0px)", minHeight: "calc(100vh - var(--header-height, 0px))" }}
     >
       {/* 1. Background Layer with subtle zoom */}
