@@ -64,7 +64,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-ash px-6 py-3 text-[white] font-medium">
+              <button className="bg-ash/50 px-6 py-3 text-[black] font-medium">
                 Read More
               </button>
             </div>
