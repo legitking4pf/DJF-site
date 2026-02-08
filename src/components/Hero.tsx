@@ -25,7 +25,6 @@ export default function Hero() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/45" />
       </div>
 
       {/* Content */}
@@ -38,7 +37,7 @@ export default function Hero() {
           >
             {/* Label */}
             <div className="mb-6">
-              <span className="inline-block text-xs uppercase tracking-[0.3em] text-slate-200 text-gold-dark border border-gold-/30 px-4 py-2">
+              <span className="inline-block text-xs uppercase tracking-[0.3em] text-slate-200 text-ash border border-ash px-4 py-2">
                 Institutional Mandate
               </span>
             </div>
@@ -54,7 +53,7 @@ export default function Hero() {
             </h1>
 
             {/* Subtext */}
-            <p className="max-w-2xl text-slate-200 text-[black] text-base md:text-lg leading-relaxed mb-10">
+            <p className="max-w-2xl text-[black] md:text-lg leading-relaxed mb-10">
               The professional portfolio of{" "}
               <span className="font-semibold text-gold-dark">
                 David Jackson Fernandez
