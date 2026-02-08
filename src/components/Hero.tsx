@@ -9,7 +9,8 @@ export default function Hero() {
       aria-labelledby="hero-heading"
       className="relative w-full min-h-screen overflow-hidden"
       style={{
-        backgroundImage: "url('/images/corporate-bg.jpg')",
+      marginTop: 'var(--header-height, 0px)',minHeight: 'calc(100vh - var(--header-height, 0px))',
+        backgroundImage: "url('/public/HeroBck.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
