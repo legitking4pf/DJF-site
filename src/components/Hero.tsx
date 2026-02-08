@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   const imageSrc =
-    "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/hero%20background-kICOZiiGPTRANFyueDNNCLOEz1VR9Y";
+    "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/smal%20screen%20background";
   
   return (
     <section
@@ -38,7 +38,7 @@ export default function Hero() {
           >
             {/* Label */}
             <div className="mb-6">
-              <span className="inline-block text-xs uppercase tracking-[0.3em] text-slate-200 border border-white/30 px-4 py-2">
+              <span className="inline-block text-xs uppercase tracking-[0.3em] text-slate-200 text-gold-dark border border-gold-/30 px-4 py-2">
                 Institutional Mandate
               </span>
             </div>
@@ -46,7 +46,7 @@ export default function Hero() {
             {/* Headline */}
             <h1
               id="hero-heading"
-              className="text-4xl md:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6"
+              className="text-4xl md:text-6xl xl:text-7xl font-bold text-[#1C1C1C] leading-tight mb-6"
             >
               Financial Governance <br />
               Infrastructure for <br />
@@ -54,9 +54,9 @@ export default function Hero() {
             </h1>
 
             {/* Subtext */}
-            <p className="max-w-2xl text-slate-200 text-base md:text-lg leading-relaxed mb-10">
+            <p className="max-w-2xl text-slate-200 text-[black] text-base md:text-lg leading-relaxed mb-10">
               The professional portfolio of{" "}
-              <span className="font-semibold text-white">
+              <span className="font-semibold text-gold-dark">
                 David Jackson Fernandez
               </span>
               , focused on building institutional-grade digital governance and
@@ -65,11 +65,8 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg text-white font-medium">
-                View Portfolio
-              </button>
-              <button className="border border-white/40 hover:border-white transition px-6 py-3 rounded-lg text-white font-medium">
-                Contact
+              <button className="bg-ash px-6 py-3 text-[black] font-medium">
+                Read More
               </button>
             </div>
           </motion.div>
