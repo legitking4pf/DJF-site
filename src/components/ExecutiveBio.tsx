@@ -25,83 +25,95 @@ export default function ExecutiveBio({
   imageSrc,
 }: ExecutiveBioProps) {
   return (
-    <section className="relative w-full bg-white font-body overflow-hidden">
-      {/* 1. Top Black Stage: Height 340px */}
-      <div className="bg-obsidian h-[340px] w-full" />
+    <section className="relative">
 
-      {/* 2. Content Wrapper: max-width 680px for that tight Forbes column look */}
-      <div className="relative max-w-[680px] mx-auto px-4">
-        <div className="flex flex-col items-center">
+      {/* ===== BLACK STAGE ===== */}
+      <div className="relative bg-black h-[520px]">
 
-          {/* 3. Profile Image: 440px x 440px 
-              -mt-[220px] pulls it exactly halfway into the black stage
-          */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="relative w-[440px] h-[440px] z-20"
-          >
-            <Image
-              src={imageSrc}
-              alt={name}
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
+        {/* Floating Portrait anchored to black stage */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="absolute bottom-[-120px] left-1/2 -translate-x-1/2 bg-white p-4 shadow-2xl z-20"
+        >
+          <Image
+            src={imageSrc}
+            alt={`${name} profile`}
+            width={400}
+            height={400}
+            priority
+            className="object-cover"
+          />
+        </motion.div>
 
-          {/* 4. Info Card: Removing the max-height constraint so it can grow */}
-          <div className="w-full bg-white pt-12 pb-10">
+      </div>
 
-            {/* Forbes 'F' Branding */}
-            <div className="flex items-center justify-center gap-2">
-              <div className="bg-obsidian text-white font-black px-2 py-0.5 text-[14px] leading-none">
-                F
-              </div>
-              <span className="uppercase tracking-[0.3em] text-[12px] font-bold text-obsidian">
-                Profile
-              </span>
-            </div>
+      {/* ===== WHITE EDITORIAL ZONE ===== */}
+      <div className="relative bg-white pt-40 pb-32">
 
-            {/* Name & Title: Font sizes matched to Forbes header scale */}
-            <div className="text-center px-6">
-              <h1 className="text-[30px] font-display text-obsidian mb-2 tracking-tight leading-tight">
-                {name}
-              </h1>
-              <p className="text-[17px] text-gray-500 uppercase tracking-[0.2em] font-medium">
-                {title}, <span className="text-obsidian">{organization}</span>
-              </p>
-            </div>
-
-            {/* 5. Metrics Layout: 2-column grid with vertical divider */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t border-gray-100 pt-12">
-
-              {/* Left Column: The Big Number (64px) */}
-              <div className="flex flex-col items-start md:items-end md:pr-12 md:border-r border-gray-100 pb-8 md:pb-0">
-                <div className="text-[64px] font-display font-medium leading-none text-obsidian mb-2 tracking-tighter">
-                  {netWorth}
-                </div>
-                <div className="flex items-center text-lg font-bold text-obsidian">
-                  <span className="mr-2 text-2xl text-green-700">▲</span> {netWorthDelta}
-                </div>
-              </div>
-
-              {/* Right Column: The Stats */}
-              <div className="flex flex-col justify-center md:pl-12">
-                <div className="text-[14px] font-bold text-obsidian mb-1">
-                  Real Time Net Worth
-                </div>
-                <div className="text-sm text-gray-400 mb-4 italic font-light">
-                  as of {asOf}
-                </div>
-                <div className="text-[#005587] font-semibold text-[12px] hover:underline cursor-pointer">
-                  {rankNote}
-                </div>
-              </div>
-
-            </div>
+        {/* Offset Info Panel (NOT centered card) */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="
+            relative
+            max-w-4xl
+            ml-auto
+            mr-auto
+            lg:mr-24
+            bg-white
+            px-10
+            py-12
+            border-l-4
+            border-black
+          "
+        >
+          {/* Editorial Label */}
+          <div className="uppercase tracking-widest text-xs text-gray-500 mb-4">
+            Executive Profile
           </div>
-        </div>
+
+          {/* Name */}
+          <h2 className="text-5xl font-serif leading-tight mb-3">
+            {name}
+          </h2>
+
+          {/* Role */}
+          <p className="text-lg text-gray-700 mb-10">
+            {title}, {organization}
+          </p>
+
+          {/* Metrics — stacked editorial, not grid marketing */}
+          <div className="space-y-8 border-t pt-8">
+
+            <div>
+              <div className="text-sm text-gray-500 mb-1">
+                Real Time Net Worth
+              </div>
+              <div className="text-4xl font-semibold">
+                {netWorth}
+              </div>
+              <div className="text-green-600 text-sm mt-1">
+                ▲ {netWorthDelta}
+              </div>
+            </div>
+
+            <div>
+              <div className="text-sm text-gray-500 mb-1">
+                Ranking
+              </div>
+              <div className="text-xl font-medium">
+                {rankNote}
+              </div>
+              <div className="text-xs text-gray-400 mt-2">
+                as of {asOf}
+              </div>
+            </div>
+
+          </div>
+        </motion.div>
       </div>
     </section>
   );
