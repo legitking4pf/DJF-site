@@ -10,7 +10,7 @@ export default function Hero() {
       className="relative w-full min-h-screen overflow-hidden"
       style={{
       marginTop: 'var(--header-height, 0px)',minHeight: 'calc(100vh - var(--header-height, 0px))',
-        backgroundImage: "url('/public/HeroBck.jpg')",
+        backgroundImage: "url('/https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/hero%20background-kICOZiiGPTRANFyueDNNCLOEz1VR9Y')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
