@@ -37,7 +37,7 @@ export default function Hero() {
           >
             {/* Label */}
             <div className="mb-6">
-              <span className="inline-block text-xs uppercase tracking-[0.3em] text-slate-200 text-ash border border-ash px-4 py-2">
+              <span className="inline-block text-xs uppercase tracking-[0.3em] text-ash border border-ash px-4 py-2">
                 Institutional Mandate
               </span>
             </div>
@@ -55,7 +55,7 @@ export default function Hero() {
             {/* Subtext */}
             <p className="max-w-2xl text-[black] md:text-lg leading-relaxed mb-10">
               The professional portfolio of{" "}
-              <span className="font-semibold text-gold-dark">
+              <span className="font-semibold text-gold-dark uppercase">
                 David Jackson Fernandez
               </span>
               , focused on building institutional-grade digital governance and
@@ -64,7 +64,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-ash px-6 py-3 text-[black] font-medium">
+              <button className="bg-ash px-6 py-3 text-[white] font-medium">
                 Read More
               </button>
             </div>
