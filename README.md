@@ -21,7 +21,6 @@ A high-performance web application designed to reflect the **Strategic Vision 20
 ### Specialized Utilities
 * **PDF Generation:** `jspdf` & `html2canvas` for dynamic resume/report exporting.
 * **Geospatial:** `Leaflet` & `react-leaflet` for infrastructure visualization.
-* **Forms:** `Formspree` for secure communications.
 
 ---
 

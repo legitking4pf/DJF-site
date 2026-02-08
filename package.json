@@ -21,7 +21,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@formspree/react": "^3.0.0",
     "@neondatabase/serverless": "^1.0.2",
     "framer-motion": "^12.26.2",
     "html2canvas": "^1.4.1",
