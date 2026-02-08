@@ -23,6 +23,7 @@ export default function Hero() {
           src={imageSrc}
           alt="Hero background"
           fill
+          sizes="100vw"
           priority
           className="object-cover"
         />
