@@ -55,7 +55,7 @@ export default function Hero() {
             {/* Subtext */}
             <p className="max-w-2xl text-[black] md:text-lg leading-relaxed mb-10">
               The professional portfolio of{" "}
-              <span className="font-semibold text-gold-dark uppercase">
+              <span className="font-semibold text-gold-dark uppercase font-robotomono">
                 David Jackson Fernandez
               </span>
               , focused on building institutional-grade digital governance and

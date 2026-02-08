@@ -18,7 +18,7 @@ const config: Config = {
         bone: '#FDFBF7',
       },
       fontFamily: {
-        body: ["Inter", "sans-serif"],
+        body: ["Inter", "sans-serif", "Roboto Mono"],
         display: ["Playfair Display", "serif"],
       },
       backgroundImage: {
