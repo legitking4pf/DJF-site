@@ -26,8 +26,6 @@ export default function Hero() {
           priority
           className="object-cover"
         />
-        {/* Soft Gradient Overlay for Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/30 to-transparent" />
       </motion.div>
 
       {/* 2. Content Layer */}
@@ -42,7 +40,8 @@ export default function Hero() {
           >
             {/* High-End Label */}
             <div className="mb-8">
-              <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-stone-500 font-medium border-l-2 border-stone-800 pl-4 py-1">
+              <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-gold
+              font-medium border-l-2 border-gold pl-4 py-1">
                 Institutional Mandate
               </span>
             </div>
