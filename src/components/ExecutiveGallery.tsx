@@ -45,7 +45,7 @@ const gridItems: GridItem[] = [
   },
 ];
 
-const HeroGrid: React.FC = () => {
+const ExecutiveGallery: React.FC = () => {
   return (
     <section className="w-full max-w-[1600px] mx-auto p-4">
       {/* GRID CONFIGURATION:
@@ -122,4 +122,4 @@ const GridCard: React.FC<{ item: GridItem; priority?: boolean }> = ({ item, prio
   );
 };
 
-export default HeroGrid;
+export default ExecutiveGallery;
