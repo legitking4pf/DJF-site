@@ -12,7 +12,6 @@ export default function LandingPage() {
     <main className="relative">
       <Header />
       <Hero />
-      <ExecutiveGallery />
       <ExecutiveProfile /> 
       <StrategicGallery /> 
       <WhatIDo />
