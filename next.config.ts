@@ -13,6 +13,7 @@ const cspHeader = `
 `;
 
 const nextConfig = {
+  output:'standalone',
   async headers() {
     return [
     {
@@ -24,13 +25,11 @@ const nextConfig = {
       }, ],
     }, ];
   },
-  
   experimental: {
-    optimizePackageImports: ['lucide-react'],
+    optimizePackageImports: [],
   },
-  
+  transpilePackages: ['lucide-react'], 
   reactStrictMode: true,
-  
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,

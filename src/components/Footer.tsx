@@ -3,9 +3,6 @@ import React, { useState, useEffect } from 'react';
 import {
   Building2,
   MessageSquare,
-  ShieldCheck,
-  Globe,
-  ArrowUpRight,
   Instagram,
   Linkedin,
   ArrowUp,
@@ -14,10 +11,12 @@ import {
 } from 'lucide-react';
 
 export default function Footer() {
-  const [currentYear, setCurrentYear] = useState<number | string>('2026');
+  // Use a null or empty initial state to prevent hydration mismatch 
+  // between server and client during the build process.
+  const [currentYear, setCurrentYear] = useState<number | string>('');
   
-  // 2. Update the year only after the component is mounted on the client
   useEffect(() => {
+    // Only set the year once the component is mounted on the client
     setCurrentYear(new Date().getFullYear());
   }, []);
 
@@ -118,7 +117,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-xs text-gray-600">
             <span className="flex items-center gap-1">
-              <Copyright size={12} /> {currentYear} DJF Executive Office.
+              <Copyright size={12} /> {currentYear || '2026'} DJF Executive Office.
             </span>
             <span className="hidden md:inline text-white/10">|</span>
             <span>All Rights Reserved.</span>

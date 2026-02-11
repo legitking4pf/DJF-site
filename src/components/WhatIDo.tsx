@@ -17,7 +17,7 @@ const specializations = [
   },
   {
     title: "Executive Sovereignty",
-    desc: "In his capacity as Chief Administrative Officer, David Jackson Fernandez directs corporate governance and operational efficiency across the Atlantida Group framework. He orchestrates regional expansion by cultivating strategic investment partnerships, ensuring that the group’s administrative architecture supports long-term growth and institutional resilience",
+    desc: "In his capacity as Chief Administrative Officer, David Jackson Fernandez directs corporate governance and operational efficiency across the Atlantida Group framework. He orchestrates regional expansion by cultivating strategic investment partnerships, ensuring that the group’s administrative architecture supports long-term growth and institutional resilience.",
     icon: <ShieldCheck className="w-5 h-5" />,
     role: "Chief Administrative Officer",
     metric: "Operational Compliance",
@@ -33,14 +33,13 @@ const specializations = [
     metric: "Aesthetic Innovation",
     link: "https://www.konceptodecor.com",
     cta: "Explore Koncepto",
-    // Premium marble texture to reflect high-end design
     texture: "https://images.unsplash.com/photo-1504198266287-1659872e6590?auto=format&fit=crop&q=80",
     isDesign: true,
     tag: "Koncepto Decor"
   },
   {
     title: "Finance Diversifications",
-    desc: "Understand ad Bargain more with Direct access to managed asset portfolios and global stocks / investment opportunities within the Group strategic growth network, prioritizing transparency and long-term capital appreciation.",
+    desc: "Understand and bargain more with direct access to managed asset portfolios and global stocks / investment opportunities within the Group strategic growth network, prioritizing transparency and long-term capital appreciation.",
     icon: <Globe className="w-5 h-5" />,
     role: "Asset Advisory",
     metric: "Growth Network",
@@ -56,7 +55,7 @@ export default function StrategicEcosystems() {
     <section id="whatIDo" className="py-24 md:py-40 bg-obsidian text-bone overflow-hidden selection:bg-gold/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
-        {/* EXECUTIVE HEADER: THE COMMAND CENTER */}
+        {/* EXECUTIVE HEADER */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-24 md:mb-32 gap-12">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
@@ -68,14 +67,14 @@ export default function StrategicEcosystems() {
             <div className="flex items-center gap-4 mb-8">
               <div className="h-[1px] w-12 bg-gold-dark" />
               <span className="text-gold-light font-bold tracking-[0.6em] text-[10px] uppercase">
-              DAVID's Leadership Assets
+                DAVID&apos;S Leadership Assets
               </span>
             </div>
             <h2 className="text-3xl md:text-6xl font-display tracking-tighter leading-[1.1] uppercase mb-10">
               Institutional <br /> <span className="text-gold italic font-light">Ecosystems</span>
             </h2>
             <p className="text-white/80 text-base md:text-xl font-light leading-relaxed max-w-xl">
-              David Jackson Fernandez has Aquired and hold leadership authority from management control and in ownership power in his current career life.  He has A comprehensive mandate driving <span className="text-white font-medium border-b border-gold/30">Digital Transfomation</span> in the banking and finance sector. And <span className="text-white font-medium border-b border-gold/30">Design Innovation</span> in the Luxury / E commerce sector. Having more significant achievements and strategic leadership majorly across the GFA / EBN Group
+              David Jackson Fernandez has acquired and holds leadership authority from management control and ownership power in his current career. He has a comprehensive mandate driving <span className="text-white font-medium border-b border-gold/30">Digital Transformation</span> in the banking and finance sector, and <span className="text-white font-medium border-b border-gold/30">Design Innovation</span> in the Luxury / E-commerce sector.
             </p>
           </motion.div>
 
@@ -100,7 +99,6 @@ export default function StrategicEcosystems() {
               transition={{ delay: index * 0.1, duration: 1 }}
               className="group relative p-10 md:p-20 bg-obsidian flex flex-col justify-between min-h-[500px] md:min-h-[600px] transition-all duration-700 hover:bg-white/[0.02]"
             >
-              {/* MATERIAL TEXTURE OVERLAY (Specific for Koncepto/Design) */}
               {item.texture && (
                 <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-10 transition-opacity duration-1000 pointer-events-none grayscale">
                   <NextImage 
@@ -112,7 +110,6 @@ export default function StrategicEcosystems() {
                 </div>
               )}
 
-              {/* CARD TOP: BRANDING & METRICS */}
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-20">
                   <div className="w-14 h-14 flex items-center justify-center border border-white/10 text-gold bg-white/5 transition-all duration-500 group-hover:border-gold group-hover:bg-gold group-hover:text-obsidian">
@@ -133,13 +130,11 @@ export default function StrategicEcosystems() {
                   {item.title}
                 </h3>
                 
-                {/* ACCESSIBILITY: High Contrast descriptions */}
                 <p className="text-base md:text-lg text-white/70 font-light leading-relaxed mb-10 max-w-sm group-hover:text-white transition-colors">
                   {item.desc}
                 </p>
               </div>
 
-              {/* CARD BOTTOM: ROLE & ACTION */}
               <div className="relative z-10 space-y-12">
                 <div className="flex flex-col">
                   <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-black mb-4">Functional Mandate</span>

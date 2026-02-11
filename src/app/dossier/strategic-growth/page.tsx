@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react'; // Fixed import
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 
@@ -14,7 +14,7 @@ const Timeline = dynamic(() => import("@/components/Timeline"), {
 });
 
 export default function CAODossier() {
-  // HOOKS MUST BE INSIDE THE COMPONENT
+  // Use a number or null, but we'll initialize it in useEffect to satisfy React's hydration
   const [year, setYear] = useState<number | null>(null);
 
   useEffect(() => {
@@ -110,8 +110,7 @@ export default function CAODossier() {
             </p>
             <div className="h-[1px] w-12 bg-neutral-200 hidden md:block"></div>
             <p className="text-[9px] uppercase tracking-[0.3em] text-neutral-400">
-              {/* Added fallback to avoid blank space during hydration */}
-              © {year || '2026'} Grupo Financiero Atlántida
+              © {year ?? '2026'} Grupo Financiero Atlántida
             </p>
           </div>
         </div>
