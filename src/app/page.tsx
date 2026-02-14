@@ -1,6 +1,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-//import ExecutiveGallery from '@/components/ExecutiveGallery'
+import ExecutiveGallery from '@/components/ExecutiveGallery'
 import ExecutiveProfile from '@/components/ExecutiveProfile';
 import StrategicGallery from '@/components/StrategicGallery'
 import WhatIDo from '@/components/WhatIDo';
@@ -12,6 +12,7 @@ export default function LandingPage() {
     <main className="relative">
       <Header />
       <Hero />
+      <ExecutiveGallery />
       <ExecutiveProfile /> 
       <StrategicGallery /> 
       <WhatIDo />
