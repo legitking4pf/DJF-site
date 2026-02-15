@@ -49,27 +49,12 @@ const gridItems: GridItem[] = [
 const ExecutiveGallery: React.FC = () => {
   return (
     <section className="w-full max-w-[1600px] mx-auto p-4">
-      {/* GRID CONFIGURATION:
-        - Mobile: 1 Column (grid-cols-1)
-        - Tablet: 2 Columns (md:grid-cols-2)
-        - Desktop: 4 Columns (lg:grid-cols-4)
-        - Dense flow helps fill gaps if heights vary slightly
-      */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-min">
         
-        {/* MAPPING STRATEGY: 
-           To replicate the vertical columns exactly as seen in the image,
-           we need to be careful with CSS Grid 'auto-flow'. 
-           
-           Standard CSS Grid fills Row 1 (Left->Right) then Row 2.
-           The reference image is organized by COLUMNS (Top->Bottom).
-           
-           To achieve the Masonry look without complex JS libraries, 
-           we map them into 4 distinct flexible columns for Desktop,
-           but combine them for smaller screens.
-        */}
+        {}
 
-        {/* --- COLUMN 1 (Desktop) --- */}
+        {}
         <div className="flex flex-col gap-4">
           <GridCard item={gridItems[0]} /> {/* Car */}
           <GridCard item={gridItems[1]} /> {/* Forest */}
