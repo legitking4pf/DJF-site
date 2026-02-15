@@ -14,7 +14,7 @@ const NAV_ITEMS = [
 ];
 
 export default function RefinedHeader() {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
   
@@ -74,7 +74,7 @@ export default function RefinedHeader() {
           </div>
 
           {/* DESKTOP NAVIGATION */}
-          <nav className="hidden lg:flex gap-10">
+          <nav className="lg:flex gap-10">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.id}

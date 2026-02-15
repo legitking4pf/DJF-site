@@ -33,7 +33,6 @@ export default function Hero() {
           className="object-cover object-center"
         />
         {/* TOP SCRIM: Ensures header visibility regardless of image brightness */}
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-900/20 via-transparent to-transparent h-40" />
         
         {/* SUBTLE OVERLAY: Gives that 'paper' or 'premium' texture look */}
         <div className="absolute inset-0 bg-stone-900/5 mix-blend-multiply" />
