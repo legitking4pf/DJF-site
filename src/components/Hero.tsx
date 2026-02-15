@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -24,7 +23,7 @@ export default function Hero() {
           alt="Hero background"
           fill
           sizes="100vw"
-          priority
+          priority 
           className="object-cover"
         />
       </motion.div>
