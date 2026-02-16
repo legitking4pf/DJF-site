@@ -1,13 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useTransform,
-  useMotionValueEvent
-} from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Fingerprint, Globe, X, Menu } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -20,191 +14,168 @@ const NAV_ITEMS = [
 ];
 
 export default function RefinedHeader() {
-  // ✅ CLOSED by default
   const [open, setOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  
   const { scrollY } = useScroll();
   
-  // Smooth header animation values
-  const height = useTransform(scrollY, [0, 80], ["96px", "72px"]);
-  const backgroundColor = useTransform(
+  // Header animations
+  const height = useTransform(scrollY, [0, 60], ["96px", "72px"]);
+  const bg = useTransform(
     scrollY,
-    [0, 80],
-    ["rgba(255,255,255,0)", "rgba(10,10,10,0.95)"]
-  );
-  const borderColor = useTransform(
-    scrollY,
-    [0, 80],
-    ["rgba(28,25,23,0.1)", "rgba(255,255,255,0.1)"]
+    [0, 60],
+    ["rgba(0,0,0,0)", "rgba(4,4,4,0.92)"]
   );
   
-  // Track scroll state + update CSS variable dynamically
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const scrolled = latest > 50;
-    setIsScrolled(scrolled);
-    
-    const newHeight = scrolled ? "72px" : "96px";
-    document.documentElement.style.setProperty("--header-height", newHeight);
-  });
-  
-  // Handle body scroll locking
+  // Disable body scroll when menu is open
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = "unset";
     }
-    
-    return () => {
-      document.body.style.overflow = "";
-    };
   }, [open]);
-  
-  const activeTextColor = isScrolled ? "text-white" : "text-stone-900";
-  const activeSubtextColor = isScrolled ?
-    "text-white/60" :
-    "text-stone-500";
-  const activeBorderColor = isScrolled ?
-    "border-white/10" :
-    "border-stone-900/10";
+
+useEffect(() => {
+  // Set the initial height variable
+  document.documentElement.style.setProperty('--header-height', '96px');
+}, []);
+
+  // ESC key listener
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    if (open) document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [open]);
   
   return (
     <>
+      {/* --- MAIN HEADER (z-50) --- */}
       <motion.header
-        style={{ height, backgroundColor, borderColor }}
-        className="fixed inset-x-0 top-0 z-50 border-b backdrop-blur-md transition-colors duration-300"
+        style={{ height, backgroundColor: bg }}
+        className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.03] backdrop-blur-sm"
       >
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 h-full flex items-center justify-between">
-
-          {/* BRAND */}
+          
+          {/* BRAND LOGO */}
           <div className="flex items-center gap-4">
-            <div className="w-11 h-11 rounded-full bg-stone-900 text-white flex items-center justify-center font-bold select-none text-sm shadow-xl">
+            <div className="w-11 h-11 rounded-full bg-[#FFFFFF] text-black flex items-center justify-center font-bold select-none text-sm">
               DJF
             </div>
-            <div className="leading-tight hidden sm:block">
-              <div className={`text-sm tracking-widest font-bold ${activeTextColor}`}>
-                JACKSON <span className="text-amber-600">F.</span>
+            <div className="leading-tight  sm:block">
+              <div className="text-sm tracking-widest text-white font-medium">
+                JACKSON <span className="text-gold-light">F.</span>
               </div>
-              <div className={`text-[9px] uppercase tracking-[0.2em] ${activeSubtextColor}`}>
+              <div className="text-[9px] uppercase tracking-wider text-white/70">
                 Institutional Portfolio
               </div>
             </div>
           </div>
 
-          {/* DESKTOP NAV */}
+          {/* DESKTOP NAVIGATION */}
           <nav className="hidden lg:flex gap-10">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className={`relative group transition-colors duration-300 ${
-                  isScrolled
-                    ? "text-white/70 hover:text-white"
-                    : "text-stone-600 hover:text-stone-900"
-                }`}
+                className="relative group text-white/60 hover:text-white transition-colors duration-300"
               >
-                <span className="text-[11px] uppercase tracking-[0.25em] font-semibold">
+                <span className="text-[11px] uppercase tracking-[0.2em] font-medium">
                   {item.label}
                 </span>
-                <span className="absolute left-0 right-0 -bottom-1 h-[1px] bg-amber-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                <span className="absolute left-0 right-0 -bottom-2 h-[1px] bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </a>
             ))}
           </nav>
 
-          {/* ACTIONS */}
+          {/* DESKTOP ACTIONS + HAMBURGER */}
           <div className="flex items-center gap-4">
-
             <a
               href="/app/contact"
-              className={`hidden md:inline-flex items-center gap-2 px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest border rounded-full transition-all duration-300 ${
-                isScrolled
-                  ? "text-amber-500 border-amber-500/30 hover:bg-amber-500 hover:text-black"
-                  : "text-stone-900 border-stone-900/20 hover:bg-stone-900 hover:text-white"
-              }`}
+              className="hidden md:inline-flex items-center gap-2 px-5 py-2 text-[11px] font-bold uppercase tracking-widest text-gold border border-gold/20 rounded-full hover:bg-gold hover:text-black transition-all duration-300"
             >
               <Fingerprint size={14} />
               <span>Contact Office</span>
             </a>
 
-            {/* TOGGLE BUTTON */}
             <button
               aria-label="Toggle menu"
-              onClick={() => setOpen((prev) => !prev)}  // ✅ real toggle
-              className={`w-11 h-11 rounded-full border flex items-center justify-center transition-all duration-300 ${activeBorderColor} ${activeTextColor}`}
+              aria-expanded={open}
+              onClick={() => setOpen(true)}
+              className="w-11 h-11 rounded-full border border-white/10 hover:border-gold/50 hover:text-gold flex items-center justify-center transition-colors"
             >
-              {open ? <X size={20} /> : <Menu size={20} />}
+              <Menu size={20} />
             </button>
           </div>
         </div>
       </motion.header>
 
-      {/* MOBILE OVERLAY */}
+      {/* --- MOBILE OVERLAY (z-[60] to cover header) --- */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[100] bg-stone-950 text-white flex flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[60] bg-[#050505] text-white"
           >
-            <div className="max-w-[1600px] mx-auto px-6 md:px-12 py-8 w-full h-full flex flex-col">
-
-              {/* Top */}
-              <div className="flex items-center justify-between mb-16">
+            <div className="max-w-[1600px] mx-auto px-6 md:px-12 py-8 h-full flex flex-col">
+              
+              {/* OVERLAY HEADER */}
+              <div className="flex items-center justify-between mb-8">
+                {/* Brand in Overlay */}
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-full bg-white text-black flex items-center justify-center font-bold">
+                  <div className="w-11 h-11 rounded-full bg-[#FFFFFF] text-black flex items-center justify-center font-bold text-sm">
                     DJF
                   </div>
-                  <span className="text-sm tracking-widest uppercase font-medium">
-                    Menu
-                  </span>
+                  <div className="leading-tight">
+                    <div className="text-sm tracking-widest text-white font-medium">
+                      JACKSON <span className="text-gold-light">F.</span>
+                    </div>
+                    <div className="text-[9px] uppercase tracking-wider text-white/40">
+                      Menu Active
+                    </div>
+                  </div>
                 </div>
 
+                {/* Close Button */}
                 <button
                   onClick={() => setOpen(false)}
-                  className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"
+                  className="w-11 h-11 rounded-full border border-white/10 hover:bg-white/10 flex items-center justify-center transition-colors"
                 >
-                  <X size={24} />
+                  <X size={20} />
                 </button>
               </div>
 
-              {/* Nav */}
-              <nav className="flex flex-col gap-8">
+              {/* NAV LINKS (Top Aligned) */}
+              <nav className="flex flex-col gap-6 mt-12 px-2">
                 {NAV_ITEMS.map((item, idx) => (
                   <motion.a
                     key={item.id}
                     href={`#${item.id}`}
                     onClick={() => setOpen(false)}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + idx * 0.05 }}
-                    className="group flex items-baseline gap-6"
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.1 + idx * 0.05, duration: 0.4 }}
+                    className="group flex items-center gap-4"
                   >
-                    <span className="text-stone-600 font-mono text-sm">
-                      0{idx + 1}
-                    </span>
-                    <span className="text-4xl md:text-6xl font-light tracking-tighter hover:text-amber-500 transition-colors">
+                    <span className="text-3xl md:text-5xl font-serif font-light text-white/80 group-hover:text-gold transition-colors duration-300">
                       {item.label}
                     </span>
+                    <span className="h-[1px] bg-gold w-0 group-hover:w-12 transition-all duration-300 opacity-50" />
                   </motion.a>
                 ))}
               </nav>
 
-              {/* Footer */}
-              <div className="mt-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-6">
-                <div className="flex items-center gap-3">
-                  <Globe size={16} className="text-amber-500" />
-                  <span className="text-[11px] uppercase tracking-[0.3em] text-stone-400">
-                    Honduras · Spain · Guatemala
-                  </span>
-                </div>
-                <div className="text-[10px] text-stone-500 uppercase tracking-widest">
-                  © 2026 David Jackson Fernandez
-                </div>
+              {/* FOOTER (Simple, no buttons) */}
+              <div className="mt-auto pt-8 border-t border-white/[0.05] flex items-center gap-3">
+                <Globe size={14} className="text-gold-light" />
+                <span className="text-[10px] uppercase tracking-widest text-gold-light">
+                  Honduras · Spain · Guatemala
+                </span>
               </div>
-
+              
             </div>
           </motion.div>
         )}

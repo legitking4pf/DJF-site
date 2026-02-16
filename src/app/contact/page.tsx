@@ -46,16 +46,12 @@ export default function ExecutiveContact() {
 
     setSubmitting(true);
 
-    // Extract values safely using FormData
-    const target = e.currentTarget;
-    const data = new FormData(target);
-    
     const formData = {
-      name: data.get("name") as string,
-      email: data.get("email") as string,
-      intent: data.get("intent") as string,
+      name: (e.currentTarget as any).name.value,
+      email: (e.currentTarget as any).email.value,
+      intent: (e.currentTarget as any).intent.value,
       message: message,
-      ts: Date.now(),
+      ts: Date.now(), // prevents caching issues
     };
 
     try {

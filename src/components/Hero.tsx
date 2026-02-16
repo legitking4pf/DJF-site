@@ -4,114 +4,82 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Hero() {
-  // Ensure the URL is the correct path to your asset
   const imageSrc = "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/smal%20screen%20background";
   
   return (
     <section
       id="hero"
-      className="relative w-full overflow-hidden bg-stone-50"
-      style={{ 
-        // Syncs with the CSS variable set in Header
-        paddingTop: "var(--header-height, 96px)", 
-        minHeight: "100vh" 
-      }}
+      className="relative w-full min-h-screen overflow-hidden"
+      style={{ marginTop: "var(--header-height, 0px)", minHeight: "calc(100vh - var(--header-height, 0px))" }}
     >
-      {/* 1. Background Layer */}
+      {/* 1. Background Layer with subtle zoom */}
       <motion.div 
-        initial={{ scale: 1.1, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
         className="absolute inset-0 -z-10"
       >
         <Image
           src={imageSrc}
-          alt="Institutional Background"
+          alt="Hero background"
           fill
           sizes="100vw"
-          priority 
-          className="object-cover object-center"
+          priority
+          className="object-cover"
         />
-        {/* TOP SCRIM: Ensures header visibility regardless of image brightness */}
-        
-        {/* SUBTLE OVERLAY: Gives that 'paper' or 'premium' texture look */}
-        <div className="absolute inset-0 bg-stone-900/5 mix-blend-multiply" />
       </motion.div>
 
       {/* 2. Content Layer */}
-      <div className="relative z-10 flex items-center min-h-[calc(100vh-96px)]">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full">
+      <div className="relative z-10 flex items-center min-h-screen">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
           
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-4xl"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-3xl"
           >
             {/* High-End Label */}
-            <div className="mb-10 overflow-hidden">
-              <motion.span 
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.5em] text-amber-700
-                font-bold border-l-2 border-amber-600 pl-6 py-1"
-              >
-                Executive Mandate 2026
-              </motion.span>
+            <div className="mb-8">
+              <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-gold
+              font-medium border-l-2 border-gold pl-4 py-1">
+                Institutional Mandate
+              </span>
             </div>
 
-            {/* Headline: Designed for Mobile Impact */}
-            <h1 className="text-5xl md:text-8xl font-light text-stone-900 leading-[1.05] mb-10 tracking-tight">
-              Financial <span className="font-serif italic text-stone-700">Governance</span> <br className="hidden md:block" />
-              Infrastructure for <br className="hidden md:block" />
+            {/* Headline with Serif swap & tighter leading */}
+            <h1 className="text-5xl md:text-7xl font-light text-stone-900 leading-[1.1] mb-8 tracking-tight italic-serif-fix">
+              Financial <span className="font-serif italic text-stone-700">Governance</span> <br />
+              Infrastructure for <br />
               Modern Institutions
             </h1>
 
-            {/* Subtext: Focused on your specific role and prestige */}
-            <div className="max-w-xl space-y-6 mb-14">
-              <p className="text-stone-600 text-lg md:text-xl leading-relaxed font-light">
-                The digital dossier of{" "}
-                <span className="font-semibold text-stone-900 underline decoration-amber-600/30 underline-offset-4">
-                  David Jackson Fernandez
-                </span>. 
-              </p>
-              <p className="text-stone-500 text-sm md:text-base leading-relaxed uppercase tracking-widest border-t border-stone-200 pt-6">
-                Chief Administration Officer · Grupo Financiero Atlantida <br />
-                Chief Technology Officer · Banco Atlantida
-              </p>
-            </div>
+            {/* Subtext with better typography */}
+            <p className="max-w-xl text-stone-600 md:text-lg leading-relaxed mb-12 font-light">
+              The professional portfolio of{" "}
+              <span className="font-semibold text-stone-900 border-b border-gold-dark/30">
+                David Jackson Fernandez
+              </span>
+              . Architecting institutional-grade digital governance and fintech solutions for the global stage.
+            </p>
 
-            {/* Institutional CTA */}
-            <div className="flex flex-wrap gap-8 items-center">
+            {/* Refined CTA */}
+            <div className="flex flex-wrap gap-6">
               <motion.button 
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="group relative px-10 py-5 bg-stone-900 text-white text-xs font-bold tracking-[0.3em] uppercase overflow-hidden transition-all shadow-2xl"
+                className="group relative px-8 py-4 bg-stone-900 text-white text-sm font-bold tracking-widest uppercase overflow-hidden transition-all"
               >
-                <span className="relative z-10">Access Portfolio</span>
-                <div className="absolute inset-0 bg-amber-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                <span className="relative z-10">Read More</span>
+                <div className="absolute inset-0 bg-stone-700 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </motion.button>
-
-              <a href="#profile" className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400 hover:text-amber-700 transition-colors flex items-center gap-4 group">
-                <span className="w-8 h-[1px] bg-stone-300 group-hover:w-12 group-hover:bg-amber-600 transition-all" />
-                Explore Dossier
-              </a>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* 3. Aesthetic Floor: Scroll Indicator */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-10 left-12 hidden lg:flex flex-col items-center gap-4"
-      >
-        <span className="[writing-mode:vertical-lr] text-[9px] uppercase tracking-[0.4em] text-stone-400">Scroll</span>
-        <div className="w-[1px] h-12 bg-gradient-to-b from-stone-400 to-transparent" />
-      </motion.div>
+      {/* 3. Decorative "Grid" lines (Optional for that 'Institutional' blueprint look) */}
+      <div className="absolute inset-0 pointer-events-none border-x border-stone-100 mx-auto max-w-7xl opacity-50" />
     </section>
   );
 }

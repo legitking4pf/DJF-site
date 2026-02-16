@@ -1,31 +1,31 @@
 "use client";
 import { motion } from 'framer-motion';
-import { ShieldCheck, Fingerprint, Activity, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, ShieldCheck, Fingerprint, Activity } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ExecutiveProfile() {
   const positions = [
-    {
-      role: "Chief Administration Officer",
-      company: "Grupo Financiero Atlántida",
-      url: "https://www.grupofinancieroatlantida.com",
-      tag: "Institutional Governance",
-      ref: "GFA-CAO-2030"
-    },
-    {
-      role: "Chief Technology Officer",
-      company: "Banco Atlántida Honduras",
-      url: "https://www.bancatlan.hn",
-      tag: "Digital Infrastructure",
-      ref: "BA-CTO-CORE"
-    },
-    {
-      role: "Founder & Creative Lead",
-      company: "KONCEPTO Décor",
-      url: "https://www.konceptodecor.com",
-      tag: "Design Innovation",
-      ref: "KD-EST-2018"
-    }
-  ];
+  {
+    role: "Chief Administration Officer",
+    company: "Grupo Financiero Atlántida",
+    url: "https://www.grupofinancieroatlantida.com",
+    tag: "Institutional Governance",
+    ref: "GFA-CAO-2030"
+  },
+  {
+    role: "Chief Technology Officer",
+    company: "Banco Atlántida Honduras",
+    url: "https://www.bancatlan.hn",
+    tag: "Digital Infrastructure",
+    ref: "BA-CTO-CORE"
+  },
+  {
+    role: "Founder & Creative Lead",
+    company: "KONCEPTO Décor",
+    url: "https://www.konceptodecor.com",
+    tag: "Design Innovation",
+    ref: "KD-EST-2018"
+  }];
   
   return (
     <section id="profile" className="relative py-32 md:py-48 bg-[#FBFBF9] text-obsidian overflow-hidden border-t border-gold/10">
@@ -52,7 +52,7 @@ export default function ExecutiveProfile() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-6xl font-serif italic tracking-tighter leading-none mb-0"
+              className="text-3xl md:text-6xl font-serif italic tracking-tighter leading-[] mb-0"
             >
               Strategic <br /> <span className="not-italic font-black text-obsidian uppercase">Sovereignty</span>
             </motion.h2>
@@ -117,7 +117,7 @@ export default function ExecutiveProfile() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-ash text-base md:text-lg leading-relaxed font-light">
                 <p> As a dual-mandate executive within the GFA ecosystem, David Jackson Fernandez maintains a singular focus: the absolute elimination of operational friction. Through high-precision Digital Integration and administrative rigor, he secures the velocity of wealth across regional borders, aligning every milestone with a Strategic Growth Network built for long-term sustainability.
               </p>
-              <p>This philosophy extends into his curation of the physical realm via KONCEPTO Décor. Here, he employs architectural essentialism to curate minimalist environments that reflect the structural integrity and high-end privacy of a well-governed financial system. </p>
+              <p>This philosophy extends into his curation of the physical realm via KONCEPTO Décor. Here, he employs architectural essentialism to curate minimalist environments that reflect the structural integrity and high-end privacy of a well-governed financial system        </p>
               </div>
             </div>
           </div>
@@ -167,7 +167,7 @@ export default function ExecutiveProfile() {
 
             <div className="p-10 border border-obsidian/5 bg-white shadow-sm flex flex-col items-center text-center">
               <p className="text-ash text-xs uppercase tracking-widest leading-loose font-medium mb-6">
-                &quot;We don&apos;t manage trends; <br /> we architect permanence.&quot;
+                "We don't manage trends; <br /> we architect permanence."
               </p>
               <div className="w-8 h-[1px] bg-gold" />
             </div>
