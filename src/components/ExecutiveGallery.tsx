@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Camera } from 'lucide-react';
+import NextImage from "next/image";
 
 interface GalleryItem {
   id: number;
@@ -64,7 +65,7 @@ export default function ExecutiveGallery() {
               className={`group relative overflow-hidden bg-obsidian/5 border border-gold/5 ${getSpan(item.type)}`}
             >
               {/* Image with hover scaling */}
-              <img 
+              <NextImage 
                 src={item.src} 
                 alt={`Executive Archive ${item.id}`} 
                 className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110
