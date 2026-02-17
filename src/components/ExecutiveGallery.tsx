@@ -43,15 +43,15 @@ export default function ExecutiveGallery() {
   };
   
   return (
-    <section className="bg-bone py-24 border-t border-gold/10">
+    <section className="bg-bone py-24 md:py-40">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Gallery Header to match your Profile style */}
         <div className="flex items-center gap-4 mb-12">
           <Camera className="text-gold w-5 h-5" />
-          <h3 className="font-display uppercase tracking-widest text-obsidian text-sm font-bold">
-            Visual Documentation <span className="text-gold/40 ml-2 font-mono">// DJF-ARCHIVE</span>
-          </h3>
+          <span className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase">
+            The CAO Gallery
+          </span>
         </div>
 
         {/* The Grid */}

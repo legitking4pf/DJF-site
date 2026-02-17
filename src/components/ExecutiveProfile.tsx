@@ -28,7 +28,7 @@ export default function ExecutiveProfile() {
   }];
   
   return (
-    <section id="profile" className="relative py-32 md:py-48 bg-[#FBFBF9] text-obsidian overflow-hidden border-t border-gold/10">
+    <section id="profile" className="relative py-24 md:py-40 bg-[#FBFBF9] text-obsidian overflow-hidden border-t border-gold/10">
       {/* BACKGROUND DECOR: Blueprints */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-[0.03] pointer-events-none">
         <svg width="100%" height="100%" className="stroke-obsidian fill-none">

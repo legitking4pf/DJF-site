@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { timeline } from "@/data/timeline";
 
-export default function Timeline() {
+export default function ExecutiveTimeline() {
   return (
     <section className="space-y-8">
       <h2 className="text-2xl font-medium">Strategic Timeline</h2>

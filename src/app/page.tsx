@@ -2,6 +2,8 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import ExecutiveGallery from '@/components/ExecutiveGallery'
 import ExecutiveProfile from '@/components/ExecutiveProfile';
+import ExecutiveDoctrine from '@/components/ExecutiveDoctrine';
+import ExecutiveTimeline from '@/components/ExecutiveTimeline';
 import StrategicGallery from '@/components/StrategicGallery'
 import WhatIDo from '@/components/WhatIDo';
 import CareerFeed from '@/components/CareerFeed';
@@ -14,6 +16,8 @@ export default function LandingPage() {
       <Hero />
       <ExecutiveGallery />
       <ExecutiveProfile /> 
+      <ExecutiveDoctrine />
+      <ExecutiveTimeline />
       <StrategicGallery /> 
       <WhatIDo />
       <CareerFeed />

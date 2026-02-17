@@ -7,7 +7,7 @@ interface DoctrineProps {
   content: string[];
 }
 
-export default function DoctrineSection({
+export default function ExecutiveDoctrine({
   title,
   subtitle,
   content,

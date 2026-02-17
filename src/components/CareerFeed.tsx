@@ -42,7 +42,7 @@ const ledgerData = [
 
 export default function ExecutiveLedger() {
   return (
-    <section id="ledger" className="py-32 bg-[#F6F6F3] text-obsidian px-6 overflow-hidden">
+    <section id="ledger" className="py-24 md:py-40 bg-[#F6F6F3] text-obsidian px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* HEADER: Institutional Typography */}
