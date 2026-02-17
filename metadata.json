@@ -1,6 +1,27 @@
 {
-  "name": "David Jackson Fernandez",
-  "short_name": "DJF",
-  "description": "Professional portfolio of David Jackson Fernandez: Strategic architecture, fintech innovation, and digital governance within the Grupo Financiero Atlántida ecosystem."
+  "identity": {
+    "name": "David Jackson Fernandez",
+    "short_name": "DJF",
+    "site_name": "DJF Institutional",
+    "role": "CAO & CTO",
+    "organization": "Grupo Financiero Atlántida"
+  },
+  "description": "Strategic architecture and fintech innovation within the Grupo Financiero Atlántida ecosystem.",
+  "seo": {
+    "display_title": "David Jackson Fernandez | Executive Profile",
+    "keywords": [
+      "David Jackson Fernandez", "CAO", "CTO", "Fintech", "GFA", "KONCEPTO"
+    ],
+    "canonical_url": "https://djf-site.vercel.app",
+    "robots": "index, follow"
+  },
+  "social": {
+    "og_title": "David Jackson Fernandez",
+    "og_type": "profile",
+    "og_image": "/og-image.jpg"
+  },
+  "config": {
+    "theme_color": "#A67C00",
+    "last_updated": "2026-02-17"
+  }
 }
-

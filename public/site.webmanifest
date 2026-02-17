@@ -1,24 +1,25 @@
 {
   "name": "David Jackson Fernandez",
   "short_name": "DJF",
-  "description": "Professional portfolio of David Jackson Fernandez: Strategic architecture, fintech innovation, and digital governance within the Grupo Financiero Atlántida ecosystem.",
+  "description": "Strategic architecture and fintech innovation at Grupo Financiero Atlántida.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050505",
+  "theme_color": "#050505",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
-  ],
-  "theme_color": "#050505",
-  "background_color": "#050505",
-  "display": "standalone",
-  "orientation": "portrait",
-  "start_url": "/"
+  ]
 }

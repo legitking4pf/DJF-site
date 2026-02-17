@@ -22,49 +22,77 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  // 1. Basic Identity
   title: {
     default: "David Jackson Fernandez",
-    template: "%s | David Jackson Fernandez"
+    template: "%s | David Jackson Fernandez",
   },
-  description: "Dual-mandate executive leading Digital Integration and Strategic Growth at Grupo Financiero Atlántida. Architecting the future of wealth through high-precision fintech and aesthetic essentialism.",
+  description: "Executive at Grupo Financiero Atlántida. Architecting the future of fintech, digital sovereignty, and strategic growth.",
+  
+  // 2. Search Engine Visibility
   keywords: [
     "David Jackson Fernandez",
     "CAO Grupo Financiero Atlántida",
     "CTO Banco Atlántida",
     "Digital Sovereignty",
     "Fintech Core Migration",
-    "KONCEPTO Décor Founder",
-    "GFA Strategic Vision 2030",
-    "Fintech", "Governance", "Sovereign", "Infrastructure", "David Jackson",
-    "Wealth Acceleration Opportunity",
+    "KONCEPTO",
+    "GFA Strategic Vision",
+    "Wealth Acceleration",
     "DJF",
-    "djf",
-    "banco Atlantida",
-    "koncepto",
-    "GFA"
+    "Infrastructure Governance"
   ],
   authors: [{ name: "David Jackson Fernandez" }],
   creator: "David Jackson Fernandez",
-  metadataBase: new URL("https://djf-site.vercel.app"), 
+  publisher: "Grupo Financiero Atlántida",
+  
+  // 3. URLs & Indexing
+  metadataBase: new URL("https://djf-site.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  // 4. Social Media (Open Graph)
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://djf-site.vercel.app",
-    siteName: "David Jackson Fernandez | Institutional Portfolio",
-    title: "David Jackson Fernandez | C.A.O Grupo Financiero Atlantida",
-    description: "CAO & CTO | Founder. Leading institutional expansion and fintech innovation across Central and South America. ",
+    siteName: "David Jackson Fernandez",
+    title: "David Jackson Fernandez | Executive Profile",
+    description: "CAO & CTO at Banco Atlántida. Driving institutional fintech innovation and strategic architecture.",
     images: [
       {
-        url: "/og-image.jpg", // Removed /public
+        url: "/og-image.jpg", // Ensure this is in /public
         width: 1200,
         height: 630,
         alt: "David Jackson Fernandez - Executive Profile",
       },
     ],
   },
+
+  // 5. Social Media (X/Twitter)
+  twitter: {
+    card: "summary_large_image",
+    title: "David Jackson Fernandez | CAO & CTO",
+    description: "Architecting the future of wealth through high-precision fintech.",
+    images: ["/og-image.jpg"],
+  },
+
+  // 6. Icons & Branding
   icons: {
     icon: [
-      { url: "/favicon.ico" }, // Removed /public
+      { url: "/favicon.ico" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
@@ -75,8 +103,12 @@ export const metadata: Metadata = {
       { rel: "manifest", url: "/site.webmanifest" }
     ]
   },
-  alternates: {
-    canonical: "/",
+
+  // 7. Mobile UI
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "DJF",
   },
 };
 
