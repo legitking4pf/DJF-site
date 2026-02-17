@@ -16,6 +16,7 @@
   --font-size-huge: clamp(3rem, 10vw, 8rem);
 }
 
+
 @layer base {
   body {
     background-color: var(--color-bone);
@@ -35,61 +36,10 @@
   }
 }
 
-@layer components {
-  .bento-grid-layer {
-    display: grid;
-    gap: 1.5rem; /* Increased spacing for minimalist breathing room */
-    grid-template-columns: repeat(6, 1fr);
-    /* Set a base height for rows - adjust based on your hero height needs */
-    grid-auto-rows: minmax(180px, auto); 
-    grid-template-areas:
-      "img1 img3 img3 img3 img4 img5"
-      "img2 img3 img3 img3 img6 img7"
-      "img8 img9 img10 img13 img13 img13"
-      "img11 img12 img14 img13 img13 img13";
-  }
-
-  /* Assigning the specific grid areas */
-  .grid-item-1 { grid-area: img1; }
-  .grid-item-2 { grid-area: img2; }
-  .grid-item-3 { grid-area: img3; } /* Large Center Portrait */
-  .grid-item-4 { grid-area: img4; }
-  .grid-item-5 { grid-area: img5; }
-  .grid-item-6 { grid-area: img6; }
-  .grid-item-7 { grid-area: img7; }
-  .grid-item-8 { grid-area: img8; }
-  .grid-item-9 { grid-area: img9; }
-  .grid-item-10 { grid-area: img10; }
-  .grid-item-11 { grid-area: img11; }
-  .grid-item-12 { grid-area: img12; }
-  .grid-item-13 { grid-area: img13; } /* Large Bottom Right */
-  .grid-item-14 { grid-area: img14; }
-
-  /* Luxury Hover Effect using your Gold palette */
-  .bento-item {
-    @apply relative overflow-hidden transition-all duration-700 ease-in-out;
-    border: 1px solid transparent;
-  }
-  
-  .bento-item:hover {
-    border-color: var(--color-gold-light);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-  }
-}
-
+/* Scrollbar optimized for Spanish Minimalist Aesthetics */
 ::-webkit-scrollbar { width:  5px; }
 ::-webkit-scrollbar-track { background: var(--color-bone); }
 ::-webkit-scrollbar-thumb { background: var(--color-gold); border-radius: 0px; }
 html {
   scroll-behavior: smooth;
-}
-
-/* Responsive override */
-@media (max-width: 1024px) {
-  .bento-grid-layer {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: none;
-    grid-auto-rows: 300px;
-  }
-  .bento-item { grid-area: auto !important; }
 }
