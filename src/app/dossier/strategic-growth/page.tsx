@@ -4,11 +4,11 @@ import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 
 // Standard Imports
-import DoctrineSection from "@/components/DoctrineSection";
+import ExecutiveDoctrine from "@/components/ExecutiveDoctrine";
 import { doctrines } from "@/data/doctrines";
 
 // Strategic Dynamic Imports
-const Timeline = dynamic(() => import("@/components/Timeline"), { 
+const Timeline = dynamic(() => import("@/components/ExecutiveTimeline"), { 
   ssr: false,
   loading: () => <div className="h-96 w-full bg-neutral-50 animate-pulse rounded-lg" />
 });
@@ -53,7 +53,7 @@ export default function CAODossier() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
           >
-            <DoctrineSection {...d} />
+           <ExecutiveDoctrine {...d} />
           </motion.div>
         ))}
       </section>
