@@ -123,55 +123,46 @@ export default function ExecutiveProfile() {
           </div>
 
           {/* SIDEBAR: SYSTEM BENCHMARKS */}
-          <div className="lg:col-span-4 space-y-6">
-            <div className="bg-obsidian p-10 text-bone shadow-2xl relative overflow-hidden">
-               {/* Pulse Animation for Status */}
-               <div className="absolute top-0 right-0 p-6">
-                 <div className="flex items-center gap-2">
-                   <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                   <span className="text-[9px] font-mono tracking-widest text-white/40 uppercase">System Active</span>
-                 </div>
-               </div>
+          {/* SIDEBAR: EXECUTIVE MANIFESTO */}
+<div className="lg:col-span-4 flex flex-col">
+  <div className="relative p-0 border-t-[1px] border-obsidian/20 pt-12">
+    {/* Identification */}
+    <div className="mb-12">
+      <h4 className="text-gold uppercase tracking-[0.4em] text-[10px] font-black mb-2">Institutional Manifesto</h4>
+      <p className="text-[10px] font-mono text-ash/60 uppercase tracking-widest">Document No. GFA-2030-STRAT</p>
+    </div>
+    
+    <div className="space-y-10">
+      <p className="text-lg md:text-xl font-serif leading-[1.7] text-obsidian/90 antialiased">
+        The modernization of a century-old financial legacy does not occur through the mere adoption of software; it is a structural reimagining of how authority is exercised in a digital landscape. At the group level, my focus remains on the convergence of institutional trust and systemic velocity. We are building a sovereign framework that treats digital infrastructure not as a utility, but as a strategic asset—one that must be as resilient as the capital it protects.
+      </p>
 
-              <h4 className="text-gold-light uppercase tracking-[0.5em] text-[10px] font-black mb-16">Operational Status</h4>
-              
-              <div className="space-y-12">
-                <div className="border-l border-gold/30 pl-6">
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2">Regional Authority</p>
-                  <p className="text-3xl font-display text-white">HND // ES // GT</p>
-                  <div className="flex gap-1 mt-2">
-                    {[1,2,3].map(i => <div key={i} className="h-1 w-4 bg-gold" />)}
-                  </div>
-                </div>
+      <p className="text-lg md:text-xl font-serif leading-[1.7] text-obsidian/90 antialiased">
+        In the Central American corridor, where cross-border complexity often introduces operational friction, we have shifted the paradigm toward absolute integration. By enforcing a single standard of digital governance across our regional footprint, we eliminate the traditional vulnerabilities of legacy banking. This is the "Sovereign Tier"—a state of structural consistency where every transaction and administrative action is executed with mathematical precision.
+      </p>
 
-                <div className="border-l border-gold/30 pl-6">
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2">Digital Integration</p>
-                  <p className="text-3xl font-display text-white uppercase">Sovereign Tier</p>
-                  <p className="text-[10px] text-white/30 mt-2 font-mono">100% Structural Consistency</p>
-                </div>
+      <p className="text-lg md:text-xl font-serif leading-[1.7] text-obsidian/90 antialiased">
+        This rigor is mirrored in my pursuit of architectural essentialism. Whether I am architecting a banking core or a physical environment through KONCEPTO, the objective is the same: the removal of the superfluous to expose the permanence of the form. We are moving away from the ephemeral trends of the industry, focusing instead on the creation of high-precision environments—both digital and physical—that reflect the structural integrity required of a global financial leader.
+      </p>
 
-                <div className="border-l border-gold/30 pl-6">
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 mb-2">Design Philosophy</p>
-                  <p className="text-3xl font-display text-white uppercase">Essentialism</p>
-                  <p className="text-[10px] text-white/30 mt-2 font-mono">KONCEPTO Structural Rigor</p>
-                </div>
-              </div>
+      <p className="text-lg md:text-xl font-serif leading-[1.7] text-obsidian/90 antialiased">
+        The future of wealth acceleration depends on this synthesis of governance and aesthetics. It is about creating systems that do not just function, but endure.
+      </p>
+    </div>
 
-              <div className="mt-20 pt-10 border-t border-white/10">
-                 <div className="flex items-center gap-4">
-                   <Activity className="text-gold w-4 h-4" />
-                   <span className="text-[10px] uppercase tracking-[0.4em] font-bold">2030 Vision Compliance</span>
-                 </div>
-              </div>
-            </div>
+    {/* Verification Footer */}
+    <div className="mt-16 pt-10 border-t border-obsidian/5 flex items-center justify-between">
+      <div className="space-y-1">
+        <p className="text-[9px] uppercase tracking-[0.3em] font-bold text-gold">Validated for Release</p>
+        <p className="text-[11px] font-display uppercase tracking-tighter text-obsidian">Executive Office // GFA</p>
+      </div>
+      <div className="opacity-10 grayscale">
+        <Fingerprint size={40} strokeWidth={0.5} />
+      </div>
+    </div>
+  </div>
+</div>
 
-            <div className="p-10 border border-obsidian/5 bg-white shadow-sm flex flex-col items-center text-center">
-              <p className="text-ash text-xs uppercase tracking-widest leading-loose font-medium mb-6">
-                "We don't manage trends; <br /> we architect permanence."
-              </p>
-              <div className="w-8 h-[1px] bg-gold" />
-            </div>
-          </div>
         </div>
       </div>
     </section>
