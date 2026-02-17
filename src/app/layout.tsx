@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Roboto_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const inter = Inter({ 
   subsets: ['latin'], 
   display: 'swap',
