@@ -52,7 +52,7 @@ export default function StrategicGallery() {
             <h2 className="text-3xl md:text-6xl font-serif tracking-tighter text-obsidian leading-[1.8] mb-8">
               Company <span className="italic font-light">Environments</span>
             </h2>
-            <p className="text-ash text-sm md:text-lg max-w-xl font-light leading-relaxed">
+            <p className="text-ash text-lg max-w-xl font-light leading-relaxed">
               A comprehensive visualization of David Jackson Fernandez, The Group and Subsidiaries physical and digital footprint (Images), mapped under DJF Oversight and Leadership Management.
             </p>
           </div>

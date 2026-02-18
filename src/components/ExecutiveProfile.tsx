@@ -109,12 +109,12 @@ export default function ExecutiveProfile() {
 
             {/* NARRATIVE SECTION */}
             <div className="mt-24 space-y-12">
-               <h4 className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase">Strategic Intent</h4>
-               <p className="text-2xl font-light leading-[1.1] text-obsidian uppercase content-justify tracking-tighter">
-                Architecting the <span className="italic font-serif">permanent systems</span> that bridge the gap between cloud-native governance and Spanish Modernist aesthetics.
+               <h4 className="text-gold font-bold tracking-[0.6em] text-[10px] uppercase">Strategic Intent</h4>
+               <p className="text-obsidian font-bold text-2xl uppercase tracking-tighter">
+                Architecting the permanent system that bridge the gap between cloud-native governance and Spanish Modernist aesthetics.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-obsidian text-lg leading-relaxed">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-ash text-lg font-light leading-relaxed content-justify">
                 <p> As a dual-mandate executive within the GFA ecosystem, David Jackson Fernandez maintains a singular focus: the absolute elimination of operational friction. Through high-precision Digital Integration and administrative rigor, he secures the velocity of wealth across regional borders, aligning every milestone with a Strategic Growth Network built for long-term sustainability.
               </p>
               <p>This philosophy extends into his curation of the physical realm via KONCEPTO Décor. Here, he employs architectural essentialism to curate minimalist environments that reflect the structural integrity and high-end privacy of a well-governed financial system        </p>
@@ -131,7 +131,7 @@ export default function ExecutiveProfile() {
       <h4 className="text-gold uppercase tracking-[0.4em] text-[10px] font-black mb-2">Institutional Manifesto</h4>
       <p className="text-[10px] font-mono text-ash/60 uppercase tracking-widest">Document No. GFA-20dBz-STRAT</p>
     </div>
-    <div className="space-y-10 text-lg font-serif leading-relaxed text-obsidian/90 antialiased content-justify">
+    <div className="space-y-10 text-lg leading-relaxed text-ash antialiased content-justify font-light">
       <p>
         The modernization of a century-old financial legacy does not occur through the mere adoption of software; it is a structural reimagining of how authority is exercised in a digital landscape. At the group level, my focus remains on the convergence of institutional trust and systemic velocity. We are building a sovereign framework that treats digital infrastructure not as a utility, but as a strategic asset—one that must be as resilient as the capital it protects.
       </p>
@@ -150,7 +150,7 @@ export default function ExecutiveProfile() {
     </div>
 
     {/* Verification Footer */}
-    <div className="mt-16 pt-10 border-t border-obsidian/5 flex items-center justify-between">
+    <div className="mt-16 pt-10 border-t border-obsidian/5 flex items-center justify-between">:
       <div className="space-y-1">
         <p className="text-[9px] uppercase tracking-[0.3em] font-bold text-gold">Validated for Release</p>
         <p className="text-[11px] font-display uppercase tracking-tighter text-obsidian">Executive Office // GFA</p>
