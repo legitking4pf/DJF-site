@@ -55,7 +55,7 @@ export default function Hero() {
             </h1>
 
             {/* Subtext with better typography */}
-            <p className="max-w-xl text-stone-600 md:text-lg leading-relaxed mb-12 font-light">
+            <p className="max-w-xl text-stone-600 md:text-lg leading-relaxed mb-12 font-light text-balanced-justify">
               The professional portfolio of{" "}
               <span className="font-semibold text-stone-900 border-b border-gold-dark/30">
                 David Jackson Fernandez
@@ -70,7 +70,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.98 }}
                 className="group relative px-8 py-4 bg-stone-900 text-white text-sm font-bold tracking-widest uppercase overflow-hidden transition-all"
               >
-                <span className="relative z-10">Read More</span>
+                <span className="relative z-10">Scroll Down</span>
                 <div className="absolute inset-0 bg-stone-700 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </motion.button>
             </div>
