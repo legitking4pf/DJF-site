@@ -82,49 +82,30 @@ export default function ExecutiveGallery() {
               </p>
             </div>
           </div>
-
-          {/* Featured Hero Image */}
-          {heroItem && (
-            <div className="lg:col-span-7 h-[500px] relative overflow-hidden bg-obsidian/5 border border-gold/10">
-              <NextImage 
-                src={heroItem.src} 
-                alt="Executive Portrait" 
-                fill
-                className="object-cover transition-transform duration-1000 hover:scale-105"
-                priority
-              />
-            </div>
-          )}
         </div>
 
         {/* SECTION 2: The Grid (The Archive) */}
-        <div className="grid grid-cols-2 md:grid-cols-6 auto-rows-[150px] md:auto-rows-[180px] grid-flow-dense gap-2 md:gap-1.5 overflow-hidden">
-          {otherItems.map((item, idx) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.05, duration: 0.6 }}
-              className={`group relative overflow-hidden bg-obsidian/5 border border-gold/5 ${getSpan(item.type)}`}
-            >
-              <NextImage 
-                src={item.src} 
-                alt={`Executive Archive ${item.id}`} 
-                fill
-                className={`object-cover transition-transform duration-700 ease-out group-hover:scale-110
-                  ${item.type === 'wide' ? 'object-top' : 'object-center'}`}
-                loading="lazy" 
-              />
-              
-              <div className="absolute inset-0 bg-obsidian/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                <span className="text-[10px] font-mono text-white tracking-[0.3em] uppercase">
-                  Ref: {item.id.toString().padStart(2, '0')}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <div
+  className="grid grid-cols-2 md:grid-cols-6 auto-rows-[150px] md:auto-rows-[180px] grid-flow-dense gap-2 md:gap-1.5 overflow-hidden">
+  {galleryData.map((item, idx) => (
+  <motion.div key={item.id} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ delay: idx * 0.05, duration: 0.5 }} className={`group relative overflow-hidden bg-obsidian/5 border
+    border-gold/5 ${getSpan(item.type)}`}>
+    {/* Image with hover scaling */}
+    <NextImage src={item.src} alt={`Executive Archive ${item.id}`} className={`w-full h-full object-cover
+      transition-transform duration-700 ease-out group-hover:scale-110 ${item.type==='wide' ? 'object-top'
+      : 'object-center' }`} loading="lazy" />
+    
+    {/* Ref label appearing on hover */}
+    <div
+      className="absolute inset-0 bg-obsidian/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+      <span className="text-[10px] font-mono text-white tracking-[0.3em] uppercase">
+        Ref: {item.id.toString().padStart(2, '0')}
+      </span>
+    </div>
+  </motion.div>
+  ))}
+</div>
       </div>
     </section>
   );
