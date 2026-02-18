@@ -68,7 +68,7 @@ export default function ExecutiveGallery() {
             </p>
 
             <div className="space-y-6 text-obsidian/70 text-sm leading-relaxed">
-              <p className="text-balanced-justify" lang="en">
+              <p className="content-justify" lang="en">
                 As the Chief Administrative Officer, David Jackson Fernandez 
                 stewards the institutional legacy and operational integrity 
                 of the organization. His leadership is defined by a commitment 

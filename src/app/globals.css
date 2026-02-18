@@ -23,12 +23,17 @@
     color: var(--color-obsidian);
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-body);
-
+    
     h1 {
       font-size: revert;
       margin-block: revert;
     }
     
+    .content-justify {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
   }
   
   h1,

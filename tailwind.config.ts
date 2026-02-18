@@ -1,6 +1,5 @@
 // tailwind.config.ts
 import type { Config } from "tailwindcss";
-const plugin = require('tailwindcss/plugin')
 
 const config: Config = {
   content: [
@@ -28,17 +27,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    plugin(function({ addComponents }) {
-      addComponents({
-        '.text-balanced-justify': {
-          textAlign: 'justify',
-          textJustify: 'inter-word',
-          hyphens: 'auto',
-        },
-      })
-    }),
-  ],
+  plugins: [],
 };
 
 export default config;

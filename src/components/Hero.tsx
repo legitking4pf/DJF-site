@@ -55,7 +55,7 @@ export default function Hero() {
             </h1>
 
             {/* Subtext with better typography */}
-            <p className="max-w-xl text-stone-600 md:text-lg leading-relaxed mb-12 font-light text-balanced-justify">
+            <p className="max-w-xl text-stone-600 md:text-lg leading-relaxed mb-12 font-light content-justify">
               The professional portfolio of{" "}
               <span className="font-semibold text-stone-900 border-b border-gold-dark/30">
                 David Jackson Fernandez
