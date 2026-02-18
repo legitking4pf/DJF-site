@@ -117,7 +117,7 @@ export default function ExecutiveGallery() {
             Chief Administrative Officer
           </p>
 
-          <div className="space-y-6 text-obsidian/70 text-sm leading-relaxed">
+          <div className="space-y-6 text-obsidian text-lg leading-relaxed mb-8">
             <p className="content-justify" lang="en">
               As the Chief Administrative Officer, David Jackson Fernandez
               stewards the institutional legacy and operational integrity
@@ -125,7 +125,7 @@ export default function ExecutiveGallery() {
               to structural clarity and the seamless integration of
               administrative strategy within the corporate landscape.
             </p>
-            <p className="text-justify hyphens-auto" lang="en">
+            <p className="content-justify" lang="en">
               This archive serves as a formal visual record of his tenure,
               capturing the precision, environment, and perspective that
               shape the modern institutional experience.
@@ -140,7 +140,7 @@ export default function ExecutiveGallery() {
               initial={ { opacity: 0, scale: 0.95 }}
               whileInView={ { opacity: 1, scale: 1 }}
               transition={ { delay: idx * 0.05, duration: 0.5 }}
-              className={`group relative overflow-hidden bg-obsidian/5 border border-gold/5 ${getSpan(item.type)}`}
+              className={`group relative overflow-hidden bg-obsidian/5 ${getSpan(item.type)}`}
               >
               {/* Image with hover scaling */}
               <NextImage

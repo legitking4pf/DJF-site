@@ -109,12 +109,12 @@ export default function ExecutiveProfile() {
 
             {/* NARRATIVE SECTION */}
             <div className="mt-24 space-y-12">
-               <h4 className="text-[10px] uppercase tracking-[0.6em] text-gold font-black">Strategic Intent</h4>
-               <p className="text-3xl md:text-5xl font-light leading-[1.1] text-obsidian tracking-tight">
+               <h4 className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase">Strategic Intent</h4>
+               <p className="text-2xl font-light leading-[1.1] text-obsidian uppercase content-justify tracking-tighter">
                 Architecting the <span className="italic font-serif">permanent systems</span> that bridge the gap between cloud-native governance and Spanish Modernist aesthetics.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-ash text-base md:text-lg leading-relaxed font-light">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-obsidian text-lg leading-relaxed">
                 <p> As a dual-mandate executive within the GFA ecosystem, David Jackson Fernandez maintains a singular focus: the absolute elimination of operational friction. Through high-precision Digital Integration and administrative rigor, he secures the velocity of wealth across regional borders, aligning every milestone with a Strategic Growth Network built for long-term sustainability.
               </p>
               <p>This philosophy extends into his curation of the physical realm via KONCEPTO Décor. Here, he employs architectural essentialism to curate minimalist environments that reflect the structural integrity and high-end privacy of a well-governed financial system        </p>
@@ -129,23 +129,22 @@ export default function ExecutiveProfile() {
     {/* Identification */}
     <div className="mb-12">
       <h4 className="text-gold uppercase tracking-[0.4em] text-[10px] font-black mb-2">Institutional Manifesto</h4>
-      <p className="text-[10px] font-mono text-ash/60 uppercase tracking-widest">Document No. GFA-2030-STRAT</p>
+      <p className="text-[10px] font-mono text-ash/60 uppercase tracking-widest">Document No. GFA-20dBz-STRAT</p>
     </div>
-    
-    <div className="space-y-10">
-      <p className="text-lg md:text-xl font-serif leading-[1.7] text-obsidian/90 antialiased">
+    <div className="space-y-10 text-lg font-serif leading-relaxed text-obsidian/90 antialiased content-justify">
+      <p>
         The modernization of a century-old financial legacy does not occur through the mere adoption of software; it is a structural reimagining of how authority is exercised in a digital landscape. At the group level, my focus remains on the convergence of institutional trust and systemic velocity. We are building a sovereign framework that treats digital infrastructure not as a utility, but as a strategic asset—one that must be as resilient as the capital it protects.
       </p>
 
-      <p className="text-lg md:text-xl font-serif leading-[1.7] text-obsidian/90 antialiased">
+      <p>
         In the Central American corridor, where cross-border complexity often introduces operational friction, we have shifted the paradigm toward absolute integration. By enforcing a single standard of digital governance across our regional footprint, we eliminate the traditional vulnerabilities of legacy banking. This is the "Sovereign Tier"—a state of structural consistency where every transaction and administrative action is executed with mathematical precision.
       </p>
 
-      <p className="text-lg md:text-xl font-serif leading-[1.7] text-obsidian/90 antialiased">
+      <p>
         This rigor is mirrored in my pursuit of architectural essentialism. Whether I am architecting a banking core or a physical environment through KONCEPTO, the objective is the same: the removal of the superfluous to expose the permanence of the form. We are moving away from the ephemeral trends of the industry, focusing instead on the creation of high-precision environments—both digital and physical—that reflect the structural integrity required of a global financial leader.
       </p>
 
-      <p className="text-lg md:text-xl font-serif leading-[1.7] text-obsidian/90 antialiased">
+      <p>
         The future of wealth acceleration depends on this synthesis of governance and aesthetics. It is about creating systems that do not just function, but endure.
       </p>
     </div>
@@ -157,7 +156,7 @@ export default function ExecutiveProfile() {
         <p className="text-[11px] font-display uppercase tracking-tighter text-obsidian">Executive Office // GFA</p>
       </div>
       <div className="opacity-10 grayscale">
-        <Fingerprint size={40} strokeWidth={0.5} />
+        <Fingerprint size={40} strokeWidth={1.0} />
       </div>
     </div>
   </div>
