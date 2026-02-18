@@ -150,7 +150,7 @@ export default function ExecutiveProfile() {
     </div>
 
     {/* Verification Footer */}
-    <div className="mt-16 pt-10 border-t border-obsidian/5 flex items-center justify-between">:
+    <div className="mt-16 pt-10 border-t border-obsidian/5 flex items-center justify-between">
       <div className="space-y-1">
         <p className="text-[9px] uppercase tracking-[0.3em] font-bold text-gold">Validated for Release</p>
         <p className="text-[11px] font-display uppercase tracking-tighter text-obsidian">Executive Office // GFA</p>
