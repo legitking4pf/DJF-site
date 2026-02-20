@@ -44,7 +44,7 @@ export default function ExecutiveProfile() {
         {/* HEADER: Institutional Identity */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-32 items-end">
           <div className="lg:col-span-8">
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-12">
               <ShieldCheck className="text-gold w-4 h-4" />
               <span className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase">Official Executive Mandate</span>
             </div>

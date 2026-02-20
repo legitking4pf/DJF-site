@@ -45,7 +45,7 @@ export default function StrategicGallery() {
         {/* HEADER: Institutional Command */}
         <div className="flex flex-col lg:flex-row justify-between items-end mb-20 gap-8">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-12">
               <Layers className="text-gold w-4 h-4" />
               <span className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase">DJF Asset Portfolio.</span>
             </div>
@@ -53,10 +53,10 @@ export default function StrategicGallery() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl text-obsidian md:text-6xl font-serif italic tracking-tighter leading-[0.9]"
-            > Company <br /> <span className="not-italic text-obsidian uppercase">Environments</span>
+              className="text-3xl md:text-6xl font-serif italic tracking-tighter leading-[0.9] mb-0"
+            > Company <br /> <span className="not-italic font-bold text-obsidian uppercase">Environments</span>
             </motion.h2>
-            <p className="text-ash text-lg max-w-xl font-light leading-relaxed">
+            <p className="mt-12 text-ash text-lg max-w-xl font-light leading-relaxed">
               A comprehensive visualization of David Jackson Fernandez, The Group and Subsidiaries physical and digital footprint (Images), mapped under DJF Oversight and Leadership Management.
             </p>
           </div>
