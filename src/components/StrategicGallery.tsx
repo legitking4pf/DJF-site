@@ -53,8 +53,8 @@ export default function StrategicGallery() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-6xl font-serif italic tracking-tighter leading-[] mb-0"
-            > Company <br /> <span className="not-italic font-black text-obsidian uppercase">Environments</span>
+              className="text-3xl text-obsidian md:text-6xl font-serif italic tracking-tighter leading-[0.9]"
+            > Company <br /> <span className="not-italic text-obsidian uppercase">Environments</span>
             </motion.h2>
             <p className="text-ash text-lg max-w-xl font-light leading-relaxed">
               A comprehensive visualization of David Jackson Fernandez, The Group and Subsidiaries physical and digital footprint (Images), mapped under DJF Oversight and Leadership Management.
