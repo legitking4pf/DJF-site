@@ -7,7 +7,7 @@ import NextImage from 'next/image';
 const specializations = [
   {
     title: "Digital Integration",
-    desc: "As Chief Technology Officer of Banco Atlántida Honduras—a primary subsidiary of Grupo Financiero Atlántida (GFA)—David Jackson Fernandez orchestrates the architecture of secure digital banking ecosystems. His mandate encompasses leading large-scale fintech transformations across the Banco Atlántida network, subsidiaries, and affiliates. By prioritizing digital integration and institutional sustainability, he ensures a seamless, future-ready experience for both the bank and its global consumer base.",
+    desc: "Serving Chief Technology Officer of Banco Atlántida Honduras—a primary subsidiary of Grupo Financiero Atlántida (GFA)—David Jackson Fernandez orchestrates the architecture of secure digital banking ecosystems. His mandate encompasses leading large-scale fintech transformations across the Banco Atlántida network, subsidiaries, and affiliates. By prioritizing digital integration and institutional sustainability, he ensures a seamless, future-ready experience for both the bank and its global consumer base.",
     icon: <Cpu className="w-5 h-5" />,
     role: "Chief Technology Officer",
     metric: "Digital Sovereignty",
@@ -74,7 +74,7 @@ export default function StrategicEcosystems() {
             <h2 className="text-3xl md:text-6xl font-display tracking-tighter leading-[1.1] uppercase mb-10">
               Institutional <br /> <span className="text-gold italic font-light">Ecosystems</span>
             </h2>
-            <p className="text-white/80 text-base md:text-xl font-light leading-relaxed max-w-xl">
+            <p className="text-white/80 content-justify text-base md:text-xl font-light leading-relaxed max-w-xl">
               David Jackson Fernandez has Aquired and hold leadership authority from management control and in ownership power in his current career life.  He has A comprehensive mandate driving <span className="text-white font-medium border-b border-gold/30">Digital Transfomation</span> in the banking and finance sector. And <span className="text-white font-medium border-b border-gold/30">Design Innovation</span> in the Luxury / E commerce sector. Having more significant achievements and strategic leadership majorly across the GFA / EBN Group
             </p>
           </motion.div>
@@ -134,7 +134,7 @@ export default function StrategicEcosystems() {
                 </h3>
                 
                 {/* ACCESSIBILITY: High Contrast descriptions */}
-                <p className="text-base md:text-lg text-white/70 font-light leading-relaxed mb-10 max-w-sm group-hover:text-white transition-colors">
+                <p className="text-base content-justify md:text-lg text-white/70 font-light leading-relaxed mb-10 max-w-sm group-hover:text-white transition-colors">
                   {item.desc}
                 </p>
               </div>

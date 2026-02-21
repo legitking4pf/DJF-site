@@ -48,7 +48,7 @@ export default function ExecutiveLedger() {
         {/* HEADER: Institutional Typography */}
         <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-24 border-b border-obsidian/10 pb-12">
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
+            <div className="flex mb-12 items-center gap-3">
                <ShieldCheck className="text-gold w-4 h-4" />
                <span className="text-gold font-bold text-[10px] uppercase tracking-[0.5em]">from the Group Governance Hub</span>
             </div>
@@ -58,8 +58,8 @@ export default function ExecutiveLedger() {
             </h2>
           </div>
           <div className="max-w-xs space-y-4">
-            <p className="text-xs uppercase tracking-[0.2em] font-bold text-obsidian/40">Executive Log // Leadership & Regional Milestones </p>
-            <p className="text-sm font-light leading-relaxed text-ash">
+            <p className="text-xs uppercase tracking-[0.2em] font-bold text-obsidian/40 content-justify">Executive Log // Leadership & Regional Milestones </p>
+            <p className="text-lg content-justify font-light leading-relaxed text-ash">
 A centralized repository of David Jackson Fernandez’s leadership updates, management insights, and real-time synchronization of regional milestones. This feed tracks the high-velocity digital transformations and investment partnerships orchestrated across Grupo Financiero Atlántida and EBN Group subsidiaries, offering a direct view into the execution of the Group leadership exercises        </p>
           </div>
         </div>
@@ -81,7 +81,7 @@ A centralized repository of David Jackson Fernandez’s leadership updates, mana
                   src={item.image} 
                   alt={item.title} 
                   fill
-                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  sizes="(max-width: 1024px) d100vw, 33vw"
                   className="object-cover grayscale-[50%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
                 />
                 <div className="absolute top-0 right-0 p-4">
@@ -104,7 +104,7 @@ A centralized repository of David Jackson Fernandez’s leadership updates, mana
                   {item.title}
                 </h3>
 
-                <p className="text-sm font-light leading-relaxed text-ash line-clamp-3">
+                <p className="text-sm content-justify font-light leading-relaxed text-ash line-clamp-3">
                   {item.desc}
                 </p>
 
