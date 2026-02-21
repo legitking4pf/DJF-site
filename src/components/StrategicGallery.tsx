@@ -53,7 +53,7 @@ export default function StrategicGallery() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl md:text-6xl font-serif italic text-obsidian tracking-tighter leading-[0.9] mb-0"
+              className="text-3xl md:text-6xl font-serif italic text-obsidian tracking-tighter leading-[1.1]"
             > Company <br /> <span className="not-italic font-bold text-obsidian uppercase">Environments</span>
             </motion.h2>
             <p className="mt-12 text-ash text-lg max-w-xl font-light leading-relaxed">
