@@ -19,7 +19,7 @@ export default function ExecutiveDoctrine({
         <p className="text-neutral-400 text-sm mt-1">{subtitle}</p>
       </div>
 
-      <div className="space-y-4 text-neutral-200 leading-relaxed">
+      <div className="space-y-4 text-neutral-200 leading-relaxed content-justify">
         {content.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
