@@ -6,8 +6,9 @@ import { Fingerprint, Globe, X, Menu } from "lucide-react";
 
 const NAV_ITEMS = [
   { label: "Hero", id: "hero" },
+  {label: "DJF_Gallery", id:"djf_gallery"}
   { label: "Dossier", id: "profile" },
-  { label: "Gallery", id: "gallery" },
+  { label: "GfA_Gallery", id: "gallery" },
   { label: "Portfolio", id: "whatIDo" },
   { label: "Ledger", id: "ledger" },
   { label: "Footer", id: "footer" }

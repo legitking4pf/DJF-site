@@ -71,7 +71,7 @@ export default function StrategicEcosystems() {
               DAVID's Leadership Assets
               </span>
             </div>
-            <motion.h2 initial = { { opacity: 0, y: 30 } } whileInView = { { opacity: 1, y: 0 } }transition = { { duration: 0.8 }} className="text-3xl md:text-6xl font-display tracking-tighter leading-[1.1] mb-12">
+            <motion.h2 initial = { { opacity: 0, y: 30 } } whileInView = { { opacity: 1, y: 0 } }transition = { { duration: 0.8 }} className="text-3xl md:text-6xl font-display italic font-serif tracking-tighter leading-[] mb-12">
               Institutional <br /> <span className="text-gold font-bold uppercase">Ecosystems</span>
             </motion.h2>
             <p className="text-white/80 content-justify text-base md:text-xl font-light leading-relaxed max-w-xl">
