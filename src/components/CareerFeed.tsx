@@ -52,10 +52,12 @@ export default function ExecutiveLedger() {
                <ShieldCheck className="text-gold w-4 h-4" />
                <span className="text-gold font-bold text-[10px] uppercase tracking-[0.5em]">from the Group Governance Hub</span>
             </div>
-            <h2 className="text-3xl md:text-6xl font-serif tracking-tighter leading-[1.1]">
+            <motion.h2 initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }} className="text-3xl md:text-6xl font-serif tracking-tighter leading-[1.1]">
               The <span className="italic font-light">Executive</span> <br />
               <span className="font-bold">Ledger</span>
-            </h2>
+            </motion.h2>
           </div>
           <div className="max-w-xs space-y-4">
             <p className="text-xs uppercase tracking-[0.2em] font-bold text-obsidian/40 content-justify">Executive Log // Leadership & Regional Milestones </p>

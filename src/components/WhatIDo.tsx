@@ -65,15 +65,15 @@ export default function StrategicEcosystems() {
             transition={{ duration: 1 }}
             className="max-w-3xl"
           >
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-12">
               <div className="h-[1px] w-12 bg-gold-dark" />
               <span className="text-gold-light font-bold tracking-[0.6em] text-[10px] uppercase">
               DAVID's Leadership Assets
               </span>
             </div>
-            <h2 className="text-3xl md:text-6xl font-display tracking-tighter leading-[1.1] uppercase mb-10">
-              Institutional <br /> <span className="text-gold italic font-light">Ecosystems</span>
-            </h2>
+            <motion.h2 initial = { { opacity: 0, y: 30 } } whileInView = { { opacity: 1, y: 0 } }transition = { { duration: 0.8 }} className="text-3xl md:text-6xl font-display tracking-tighter leading-[1.1] mb-12">
+              Institutional <br /> <span className="text-gold font-bold uppercase">Ecosystems</span>
+            </motion.h2>
             <p className="text-white/80 content-justify text-base md:text-xl font-light leading-relaxed max-w-xl">
               David Jackson Fernandez has Aquired and hold leadership authority from management control and in ownership power in his current career life.  He has A comprehensive mandate driving <span className="text-white font-medium border-b border-gold/30">Digital Transfomation</span> in the banking and finance sector. And <span className="text-white font-medium border-b border-gold/30">Design Innovation</span> in the Luxury / E commerce sector. Having more significant achievements and strategic leadership majorly across the GFA / EBN Group
             </p>
