@@ -8,22 +8,12 @@ EventEmitter.defaultMaxListeners = 25;
 const stsHeader = `max-age=31536000; includeSubDomains; preload`;
 
 // Content Security Policy
-const cspHeader = `
-  default-src 'self';
-  script-src 'self' 'unsafe-inline';
-  style-src 'self' 'unsafe-inline';
-  img-src 'self' blob: data: https://public.blob.vercel-storage.com https://www.transparenttextures.com https://images.unsplash.com https://invatlan.hn https://cdn.prod.website-files.com https://www.bancatlan.hn;
-  media-src 'self' blob: data: https://public.blob.vercel-storage.com;
-  connect-src 'self' https://public.blob.vercel-storage.com;
-  object-src 'none';
-  frame-ancestors 'none';
-`.replace(/\s{2,}/g, ' ').trim();
+const cspHeader = `default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://public.blob.vercel-storage.com https://www.transparenttextures.com https://images.unsplash.com https://invatlan.hn https://cdn.prod.website-files.com https://www.bancatlan.hn; media-src 'self' blob: data: https://public.blob.vercel-storage.com; connect-src 'self' https://public.blob.vercel-storage.com;
+  object-src 'none'; frame-ancestors 'none';`
 
-// Referrer and Permissions Policies
 const referrerPolicy = 'no-referrer';
 const permissionsPolicy = "geolocation=(), camera=(), microphone=(), payment=(), fullscreen=(self)";
 
-// Cross-Origin Isolation for advanced security
 const crossOriginOpenerPolicy = 'same-origin';
 const crossOriginEmbedderPolicy = 'require-corp';
 
@@ -33,27 +23,26 @@ const xFrameOptions = 'DENY';
 const nextConfig = {
   async headers() {
     return [
-      {
-        source: '/(.*)',
-        headers: [
-          { key: 'Content-Security-Policy', value: cspHeader },
-          { key: 'Strict-Transport-Security', value: stsHeader },
-          { key: 'Referrer-Policy', value: referrerPolicy },
-          { key: 'Permissions-Policy', value: permissionsPolicy },
-          { key: 'Cross-Origin-Opener-Policy', value: crossOriginOpenerPolicy },
-          { key: 'Cross-Origin-Embedder-Policy', value: crossOriginEmbedderPolicy },
-          { key: 'X-Frame-Options', value: xFrameOptions },
-        ],
-      },
-    ];
+    {
+      source: '/(.*)',
+      headers: [
+        { key: 'Content-Security-Policy', value: cspHeader.replace(/\s{2,}/g, ' ').trim();},
+        { key: 'Strict-Transport-Security', value: stsHeader },
+        { key: 'Referrer-Policy', value: referrerPolicy },
+        { key: 'Permissions-Policy', value: permissionsPolicy },
+        { key: 'Cross-Origin-Opener-Policy', value: crossOriginOpenerPolicy },
+        { key: 'Cross-Origin-Embedder-Policy', value: crossOriginEmbedderPolicy },
+        { key: 'X-Frame-Options', value: xFrameOptions },
+      ],
+    }, ];
   },
-
+  
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
-
+  
   reactStrictMode: true,
-
+  
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
@@ -62,7 +51,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'bancatlan.hn' },
       { protocol: 'https', hostname: 'cdn.prod.website-files.com' },
-      { protocol: 'https', hostname: 'invatlan.hn' },
+      { protocol: 'https', hostname: '**.invatlan.hn' },
       { protocol: 'https', hostname: 'www.transparenttextures.com' },
     ],
   },
