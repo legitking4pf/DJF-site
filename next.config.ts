@@ -41,19 +41,26 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react'],
   },
   
-  reactStrictMode: true,
+  //reactStrictMode: true,
   
   images: {
-    formats: ['image/avif', 'image/webp'], dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'self'; sandbox;",
+    formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
-    remotePatterns: [
+    /*remotePatterns: [
       { protocol: 'https', hostname: 'public.blob.vercel-storage.com' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'bancatlan.hn' },
       { protocol: 'https', hostname: 'cdn.prod.website-files.com' },
       { protocol: 'https', hostname: '*.invatlan.hn' },
       { protocol: 'https', hostname: 'www.transparenttextures.com' },
+    ],*/
+    remotePatterns: [
+      { protocol: 'https', hostname: '**.vercel-storage.com' },
+      { protocol: 'https', hostname: '**.unsplash.com' },
+      { protocol: 'https', hostname: '**.bancatlan.hn' },
+      { protocol: 'https', hostname: '**.website-files.com' },
+      { protocol: 'https', hostname: '**.invatlan.hn' },
+      { protocol: 'https', hostname: '**.transparenttextures.com' },
     ],
   },
 };
