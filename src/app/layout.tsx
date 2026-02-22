@@ -72,9 +72,7 @@ export const metadata: Metadata = {
     description: "CAO & CTO at Banco Atlántida. Driving institutional fintech innovation and strategic architecture.",
     images: [
       {
-        url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.png", // Ensure this is in /public
-        width: 1200,
-        height: 630,
+        url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.png", 
         alt: "David Jackson Fernandez - Executive Profile",
       },
     ],
@@ -85,7 +83,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "David Jackson Fernandez | CAO & CTO",
     description: "Architecting the future of wealth through high-precision fintech.",
-    images: ["/og-image.jpg"],
+    images: [
+      {
+        url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/6.png", 
+        alt: "David Jackson Fernandez - Executive Profile",
+      },
+    ],
   },
 
   // 6. Icons & Branding
