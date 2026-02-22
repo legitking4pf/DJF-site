@@ -11,11 +11,10 @@
   --color-bone: #FDFBF7;
   --color-gold: #946C00;
   --color-gold-light: #C5A059;
-  --color-gold-dark: #735400;
+  --color-gold-dark: #856404;
   --color-ash: #575757;
   --font-size-huge: clamp(3rem, 10vw, 8rem);
 }
-
 
 @layer base {
   body {

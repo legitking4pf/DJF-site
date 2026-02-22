@@ -3,7 +3,7 @@
 This is the official professional portfolio for **David Jackson Fernandez**, highlighting his leadership in strategic architecture, fintech innovation (CTO Banco Atlántida), and digital governance within the Grupo Financiero Atlántida ecosystem.
 
 ## 🏛 Project Overview
-A high-performance web application designed to reflect the **Strategic Vision 2030**. The site balances a luxury aesthetic (KONCEPTO Décor) with technical rigor, featuring interactive mapping and on-the-fly document generation.
+A high-performance web application designed to reflect the **Strategic Portfolio of the CTO Atlantis Bank**. The site balances a luxury aesthetic (KONCEPTO Décor) with technical rigor, featuring interactive mapping and on-the-fly document generation.
 
 ## 🛠 Tech Stack
 
@@ -18,10 +18,6 @@ A high-performance web application designed to reflect the **Strategic Vision 20
 * **Animations:** [Framer Motion](https://www.framer.com/motion/)
 * **Icons:** [Lucide React](https://lucide.dev/)
 
-### Specialized Utilities
-* **PDF Generation:** `jspdf` & `html2canvas` for dynamic resume/report exporting.
-* **Geospatial:** `Leaflet` & `react-leaflet` for infrastructure visualization.
-
 ---
 
 ## 🚀 Getting Started
@@ -33,7 +29,7 @@ A high-performance web application designed to reflect the **Strategic Vision 20
 ### Installation
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-repo/david-jackson-portfolio.git](https://github.com/your-repo/david-jackson-portfolio.git)
+    git clone [https://github.com/legitking4pf/DJF-site.git](https://github.com/legitking4pf/DJF-site.git)
     ```
 2.  **Install dependencies:**
     ```bash
@@ -50,8 +46,6 @@ A high-performance web application designed to reflect the **Strategic Vision 20
 * **Dynamic Hero UI:** A high-impact landing experience built with Framer Motion.
 * **Digital Sovereignty:** Engineered for performance, security, and scalability.
 * **Fintech Core Migration Insights:** Integrated case studies/details on regional financial architecture.
-* **Exportable Content:** Users can generate PDF summaries of the portfolio content instantly.
-
 ---
 
 ## 📝 Scripts
