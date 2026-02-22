@@ -9,13 +9,13 @@ const stsHeader = `max-age=31536000; includeSubDomains; preload`;
 
 // Content Security Policy
 const cspHeader = `default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://public.blob.vercel-storage.com https://www.transparenttextures.com https://images.unsplash.com https://invatlan.hn https://cdn.prod.website-files.com https://www.bancatlan.hn; media-src 'self' blob: data: https://public.blob.vercel-storage.com; connect-src 'self' https://public.blob.vercel-storage.com;
-  object-src 'none'; frame-ancestors 'none';`
+  object-src 'self'; frame-ancestors 'none';`
 
 const referrerPolicy = 'no-referrer';
 const permissionsPolicy = "geolocation=(), camera=(), microphone=(), payment=(), fullscreen=(self)";
 
 const crossOriginOpenerPolicy = 'same-origin';
-const crossOriginEmbedderPolicy = 'credentialless';
+const crossOriginEmbedderPolicy = 'unsafe-none';
 
 // Extra clickjacking protection
 const xFrameOptions = 'DENY';
@@ -52,7 +52,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'bancatlan.hn' },
       { protocol: 'https', hostname: 'cdn.prod.website-files.com' },
-      { protocol: 'https', hostname: '**.invatlan.hn' },
+      { protocol: 'https', hostname: '*.invatlan.hn' },
       { protocol: 'https', hostname: 'www.transparenttextures.com' },
     ],
   },
