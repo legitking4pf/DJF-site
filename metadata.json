@@ -17,8 +17,14 @@
   },
   "social": {
     "og_title": "David Jackson Fernandez",
-    "og_type": "profile",
-    "og_image": "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.png"
+    "og_type": "website",
+    "og_image": [
+    {
+      url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.png",
+      width: 1264,
+      height: 848,
+      alt: "David Jackson Fernandez - Executive Profile",
+    }, ],
   },
   "config": {
     "theme_color": "#A67C00",

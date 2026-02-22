@@ -1,16 +1,16 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Roboto_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
-const inter = Inter({ 
-  subsets: ['latin'], 
+const inter = Inter({
+  subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter' 
+  variable: '--font-inter'
 });
 
-const playfair = Playfair_Display({ 
-  subsets: ['latin'], 
+const playfair = Playfair_Display({
+  subsets: ['latin'],
   display: 'swap',
-  variable: '--font-playfair' 
+  variable: '--font-playfair'
 });
 
 export const viewport: Viewport = {
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-
+  
   // 4. Social Media (Open Graph)
   openGraph: {
     type: "website",
@@ -71,26 +71,23 @@ export const metadata: Metadata = {
     title: "David Jackson Fernandez | Executive Profile",
     description: "CAO & CTO at Banco Atlántida. Driving institutional fintech innovation and strategic architecture.",
     images: [
-      {
-        url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.png", 
-        alt: "David Jackson Fernandez - Executive Profile",
-      },
-    ],
+    {
+      url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.png",
+      width: 1264,
+      height: 848,
+      alt: "David Jackson Fernandez - Executive Profile",
+    }, ],
   },
-
+  
   // 5. Social Media (X/Twitter)
   twitter: {
     card: "summary_large_image",
     title: "David Jackson Fernandez | CAO & CTO",
     description: "Architecting the future of wealth through high-precision fintech.",
-    images: [
-      {
-        url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/6.png", 
-        alt: "David Jackson Fernandez - Executive Profile",
-      },
+    images: [ "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/6.png"
     ],
   },
-
+  
   // 6. Icons & Branding
   icons: {
     icon: [
@@ -105,7 +102,7 @@ export const metadata: Metadata = {
       { rel: "manifest", url: "/site.webmanifest" }
     ]
   },
-
+  
   // 7. Mobile UI
   appleWebApp: {
     capable: true,
