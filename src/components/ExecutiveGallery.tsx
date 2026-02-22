@@ -41,7 +41,7 @@ const galleryData: GalleryItem[] = [{
 },
 {
   id: 6,
-  src: 'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/6.jpg',
+  src: 'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/6.png',
   type: 'normal'
 },
 {
@@ -61,7 +61,7 @@ const galleryData: GalleryItem[] = [{
 },
 {
   id: 10,
-  src: 'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.jpg',
+  src: 'https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.png',
   type: 'wide'
 },
 {

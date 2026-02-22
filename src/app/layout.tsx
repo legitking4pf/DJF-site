@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     description: "CAO & CTO at Banco Atlántida. Driving institutional fintech innovation and strategic architecture.",
     images: [
       {
-        url: "/og-image.jpg", // Ensure this is in /public
+        url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.png", // Ensure this is in /public
         width: 1200,
         height: 630,
         alt: "David Jackson Fernandez - Executive Profile",
