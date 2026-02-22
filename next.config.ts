@@ -15,7 +15,7 @@ const referrerPolicy = 'no-referrer';
 const permissionsPolicy = "geolocation=(), camera=(), microphone=(), payment=(), fullscreen=(self)";
 
 const crossOriginOpenerPolicy = 'same-origin';
-const crossOriginEmbedderPolicy = 'require-corp';
+const crossOriginEmbedderPolicy = 'credentialless';
 
 // Extra clickjacking protection
 const xFrameOptions = 'DENY';
@@ -44,7 +44,8 @@ const nextConfig = {
   reactStrictMode: true,
   
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/avif', 'image/webp'], dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'self'; sandbox;",
     minimumCacheTTL: 60,
     remotePatterns: [
       { protocol: 'https', hostname: 'public.blob.vercel-storage.com' },
