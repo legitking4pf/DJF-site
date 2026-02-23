@@ -1,3 +1,4 @@
+// /src/data/timeline.ts
 export const timeline = [
   {
     year: "2022",
