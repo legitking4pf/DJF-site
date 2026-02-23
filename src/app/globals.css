@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @theme {
   /* High-Contrast Executive Palette */
@@ -7,7 +10,7 @@
   --color-obsidian: #050505;
   --color-bone: #FDFBF7;
   --color-gold: #946C00;
-  --color-gold-light: #C5A059;
+  --color-gold-light:#C5A059;
   --color-gold-dark: #856404;
   --color-ash: #575757;
   --font-size-huge: clamp(3rem, 10vw, 8rem);
@@ -19,28 +22,29 @@
     color: var(--color-obsidian);
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-body);
-  }
-
-  /* Moved h1 out of body for better compatibility */
-  h1 {
-    font-size: revert;
-    margin-block: revert;
+    
+    h1 {
+      font-size: revert;
+      margin-block: revert;
+    }
+    
+    .content-justify {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
   }
   
-  .content-justify {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-  }
-  
-  h1, h2, h3, .font-display {
+  h1,
+  h2,
+  h3,
+  .font-display {
     font-family: var(--font-display);
-    /* font-display: swap; is a font-face property, not a standard CSS property. 
-       Removing it here to prevent syntax errors. Set this in your layout.tsx font loader instead. */
+    /* Fixing the render-blocking typography delay */
+    font-display: swap;
   }
 }
 
-/* Scrollbar Styles */
 ::-webkit-scrollbar {
   width: 5px;
 }
