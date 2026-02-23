@@ -100,9 +100,9 @@ export default function ExecutiveGallery() {
   };
   return (
     <section id="djfgallery" className="bg-bone py-24 md:py-40">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Gallery Header to match your Profile style */}
-        <div className="">
+        <div className="mb-24 border-b border-obsidian/10 pb-12">
           <div className="flex items-center gap-4 mb-12">
             <Camera className="text-gold w-4 h-4" />
             <span className="text-gold font-bold tracking-[0.5em] text-[10px] uppercase">
@@ -110,10 +110,15 @@ export default function ExecutiveGallery() {
             </span>
           </div>
 
-          <h1 className="text-4xl font-light text-obsidian mb-2 tracking-tight">
-            David Jackson Fernandez
-          </h1>
-          <p className="text-[12px] uppercase tracking-[0.3em] text-gold/80 mb-8 font-medium">
+          
+          <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-3xl md:text-6xl font-serif italic text-obsidian tracking-tighter leading-[1.1]"
+            > David Jackson <br /> <span className="not-italic font-bold text-obsidian uppercase">Fernandez</span>
+            </motion.h2>
+          <p className="text-[12px] md:text-[16px] uppercase tracking-[0.3em] text-gold/80 mb-12 font-medium">
             Chief Administrative Officer
           </p>
 

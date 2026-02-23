@@ -54,7 +54,7 @@ const specializations = [
 export default function StrategicEcosystems() {
   return (
     <section id="whatIDo" className="py-24 md:py-40 bg-obsidian text-bone overflow-hidden selection:bg-gold/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* EXECUTIVE HEADER: THE COMMAND CENTER */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-24 md:mb-32 gap-12">
@@ -71,8 +71,12 @@ export default function StrategicEcosystems() {
               DAVID's Leadership Assets
               </span>
             </div>
-            <motion.h2 initial = { { opacity: 0, y: 30 } } whileInView = { { opacity: 1, y: 0 } }transition = { { duration: 0.8 }} className="text-3xl md:text-6xl font-display italic font-serif tracking-tighter leading-[] mb-12">
-              Institutional <br /> <span className="text-gold font-bold uppercase">Ecosystems</span>
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-3xl md:text-6xl font-serif italic text-obsidian tracking-tighter leading-[1.1] mb-12"
+            > Institutional <br /> <span className="not-italic font-bold text-gold uppercase">Ecosystems</span>
             </motion.h2>
             <p className="text-white/80 content-justify text-base md:text-xl font-light leading-relaxed max-w-xl">
               David Jackson Fernandez has Aquired and hold leadership authority from management control and in ownership power in his current career life.  He has A comprehensive mandate driving <span className="text-white font-medium border-b border-gold/30">Digital Transfomation</span> in the banking and finance sector. And <span className="text-white font-medium border-b border-gold/30">Design Innovation</span> in the Luxury / E commerce sector. Having more significant achievements and strategic leadership majorly across the GFA / EBN Group

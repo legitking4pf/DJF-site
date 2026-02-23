@@ -32,7 +32,7 @@ export default function Footer() {
       
       {/* 1. TOP BAR: GLOBAL CONTEXT */}
       <div className="border-b border-white/5 bg-white/[0.02]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">
           <div className="flex items-center gap-2 mb-2 md:mb-0">
             <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
             <span>Systems Nominal // DFJ Contact Core</span>
@@ -45,13 +45,15 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
           
           {/* 2. BRAND IDENTITY */}
           <div className="md:col-span-4 space-y-8">
             <div>
-              <h2 className="text-2xl font-serif text-white tracking-tight mb-2">David Jackson Fernandez</h2>
+              <motion.h2 initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }} className="text-2xl font-serif text-white tracking-tight mb-2">David Jackson Fernandez</motion.h2>
               <p className="text-xs text-gold uppercase tracking-[0.25em] font-bold">
                 CAO & CTO // Grupo Financiero Atlántida 
               </p>
@@ -115,7 +117,7 @@ export default function Footer() {
 
       {/* 6. BOTTOM BAR */}
       <div className="border-t border-white/5 bg-black">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-xs text-gray-600">
             <span className="flex items-center gap-1">
               <Copyright size={12} /> {currentYear} DJF Executive Office.
