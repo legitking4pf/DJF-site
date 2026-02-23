@@ -1,7 +1,7 @@
 'use client'
 
 interface DoctrineSection {
-  heading: string[];
+  heading: string;
   points: string[];
 }
 
