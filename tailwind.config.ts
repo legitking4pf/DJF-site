@@ -16,7 +16,7 @@ const config: Config = {
           dark: '#856404',
         },
         obsidian: '#050505',
-        wbone: '#FDFBF7',
+        bone: '#FDFBF7',
       },
       fontFamily: {
         body: ["Inter", "sans-serif", "Roboto Mono"],

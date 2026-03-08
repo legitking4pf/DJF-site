@@ -1,50 +1,62 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @theme {
-  /* --- Colors (Matching your Config) --- */
-  --color-gold: #A67C00;
+  /* High-Contrast Executive Palette */
+  --font-display: var(--font-playfair), serif;
+  --font-body: var(--font-inter), sans-serif;
+  --color-obsidian: #050505;
+  --color-bone: #FDFBF7;
+  --color-gold: #946C00;
   --color-gold-light: #C5A059;
   --color-gold-dark: #856404;
-  --color-obsidian: #050505;
-  --color-wbone: #FDFBF7;
-
-  /* --- Typography --- */
-  --font-body: "Inter", "sans-serif", "Roboto Mono";
-  --font-display: "Playfair Display", "serif";
-
+  --color-ash: #575757;
+  --font-size-huge: clamp(3rem, 10vw, 8rem);
 }
 
 @layer base {
   body {
-    background-color: var(--color-wbone);
+    background-color: var(--color-bone);
     color: var(--color-obsidian);
-    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+    font-family: var(--font-body);
+    
+    h1 {
+      font-size: revert;
+      margin-block: revert;
+    }
+    
+    .content-justify {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
   }
-
-  h1, h2, h3, .font-display {
+  
+  h1,
+  h2,
+  h3,
+  .font-display {
     font-family: var(--font-display);
+    /* Fixing the render-blocking typography delay */
+    font-display: swap;
   }
 }
 
-/* Custom Utilities */
-@layer utilities {
-  .content-justify {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-  }
-}
-
-/* Branding Scrollbar */
+/* Scrollbar optimized for Spanish Minimalist Aesthetics */
 ::-webkit-scrollbar {
   width: 5px;
 }
+
 ::-webkit-scrollbar-track {
-  background: var(--color-wbone);
+  background: var(--color-bone);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-gold);
+  border-radius: 0px;
 }
 
 html {

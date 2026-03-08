@@ -64,6 +64,10 @@ export default function CAODossier() {
           <h2 className="text-sm uppercase tracking-widest text-neutral-400">Evolutionary Timeline</h2>
           <Timeline />
         </div>
+        
+        <div className="space-y-2">
+          <h2 className="text-sm uppercase tracking-widest text-neutral-400">Global Asset Footprint</h2>
+        </div>
       </section>
 
       <footer className="mt-40 border-t border-neutral-100 pt-16 pb-24">

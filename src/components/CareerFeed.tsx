@@ -42,7 +42,7 @@ const ledgerData = [
 
 export default function ExecutiveLedger() {
   return (
-    <section id="ledger" className="py-24 md:py-40 bg-[#F6F6F3] text-obsidian px-6 md:px-12 overflow-hidden">
+    <section id="ledger" className="py-24 md:py-40 bg-[#F6F6F3] text-obsidian px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* HEADER: Institutional Typography */}
@@ -54,9 +54,9 @@ export default function ExecutiveLedger() {
             </div>
             <motion.h2 initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }} className="text-3xl md:text-6xl font-serif italic tracking-tighter leading-[1.1]">
-              The Executive <br />
-              <span className="font-bold not-italic text-obsidian uppercase">Ledger</span>
+              transition={{ duration: 0.8 }} className="text-3xl md:text-6xl font-serif tracking-tighter leading-[1.1]">
+              The <span className="italic font-light">Executive</span> <br />
+              <span className="font-bold">Ledger</span>
             </motion.h2>
           </div>
           <div className="max-w-xs space-y-4">
