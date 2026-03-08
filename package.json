@@ -14,12 +14,8 @@
   "version": "0.1.0",
   "private": true,
   "author": "King Marvis(Legit Creations",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+
+  
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
     "@vercel/speed-insights": "^1.3.1",
