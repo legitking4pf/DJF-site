@@ -99,7 +99,7 @@ export default function ExecutiveGallery() {
     }
   };
   return (
-    <section id="djfgallery" className="bg-bone py-24 md:py-40">
+    <section id="djfgallery" className="bg-wbone py-24 md:py-40">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Gallery Header to match your Profile style */}
         <div className="mb-24 border-b border-obsidian/10 pb-12">

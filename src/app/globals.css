@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  /* High-Contrast Executive Palette */
+  --color-wbone:#fDFBF7;
   --font-display: var(--font-playfair), serif;
   --font-body: var(--font-inter), sans-serif;
   --color-gold: #946C00;
-  --color-obsidian: #050505;
-  --color-bone: #FDFBF7;
+  --color-obsidian:#050505;
   --color-gold-light: #C5A059;
   --color-gold-dark: #856404;
   --color-ash: #575757;
@@ -15,7 +14,7 @@
 
 @layer base {
   body {
-    background-color: var(--color-bone);
+    background-color: var(--color-wbone);
     color: var(--color-obsidian);
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-body);
@@ -43,7 +42,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bone);
+  background: var(--color-wbone);
 }
 
 ::-webkit-scrollbar-thumb {

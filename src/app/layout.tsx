@@ -112,7 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preconnecting to your Vercel Blob storage for faster asset delivery */}
         <link rel="preconnect" href="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com" />
       </head>
-      <body className="antialiased bg-obsidian text-bone selection:bg-gold/30">
+      <body className="antialiased bg-obsidian text-wbone selection:bg-gold/30">
         {children}
       </body>
     </html>

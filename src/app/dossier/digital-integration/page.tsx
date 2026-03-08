@@ -62,7 +62,7 @@ const itemVars = {
 
 export default function CTODossier() {
   return (
-    <section className="relative py-32 bg-obsidian text-bone overflow-hidden">
+    <section className="relative py-32 bg-obsidian text-wbone overflow-hidden">
       {/* BACKGROUND ELEMENT: Digital Topography */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none grayscale">
         <div className="absolute inset-0 bg-grid-pattern" />
@@ -86,7 +86,7 @@ export default function CTODossier() {
             <h2 className="text-3xl md:text-6xl font-display uppercase tracking-tighter leading-none mb-8">
               Digital <br /> <span className="text-gold italic font-light">Integration</span>
             </h2>
-            <p className="text-bone/60 text-lg md:text-xl font-light leading-relaxed">
+            <p className="text-wbone/60 text-lg md:text-xl font-light leading-relaxed">
               Orchestrating the convergence of high-end financial infrastructure. A core build in the Banco Atlantida Hn service base and scope 
               <span className="text-white font-medium italic">preferences.</span>
             </p>
@@ -127,7 +127,7 @@ export default function CTODossier() {
                 <h3 className="text-2xl md:text-3xl font-display uppercase tracking-tight group-hover:translate-x-2 transition-transform duration-500">
                   {item.title}
                 </h3>
-                <p className="text-bone/50 text-sm md:text-base font-light leading-relaxed group-hover:text-bone transition-colors">
+                <p className="text-wbone/50 text-sm md:text-base font-light leading-relaxed group-hover:text-wbone transition-colors">
                   {item.desc}
                 </p>
               </div>
@@ -136,7 +136,7 @@ export default function CTODossier() {
               <div className="pt-8 border-t border-white/5 space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-[10px] uppercase tracking-widest text-gold font-black">Metric</span>
-                  <span className="text-[10px] font-mono text-bone/70">{item.metrics}</span>
+                  <span className="text-[10px] font-mono text-wbone/70">{item.metrics}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-[10px] uppercase tracking-widest text-gold font-black">Status</span>
@@ -155,12 +155,12 @@ export default function CTODossier() {
           <div className="flex items-center gap-8">
             <div className="flex flex-col">
               <span className="text-gold font-bold text-2xl">Fair</span>
-              <span className="text-[9px] uppercase tracking-[0.3em] text-bone/40 font-mono">Infrastructure Uptime</span>
+              <span className="text-[9px] uppercase tracking-[0.3em] text-wbone/40 font-mono">Infrastructure Uptime</span>
             </div>
             <div className="w-px h-10 bg-white/10" />
             <div className="flex flex-col">
               <span className="text-gold font-bold text-2xl">Tier IV</span>
-              <span className="text-[9px] uppercase tracking-[0.3em] text-bone/40 font-mono">Security Protocol</span>
+              <span className="text-[9px] uppercase tracking-[0.3em] text-wbone/40 font-mono">Security Protocol</span>
             </div>
           </div>
         </div>
