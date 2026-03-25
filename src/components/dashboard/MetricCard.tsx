@@ -1,21 +1,19 @@
-import React from 'react';
-
-interface MetricCardProps {
-  label: string;
-  value: number;
-  isCurrency?: boolean;
-}
+const formatValue = (val: number) => {
+  if (val >= 1000000000) return (val / 1000000000).toFixed(2) + 'B';
+  if (val >= 1000000) return (val / 1000000).toFixed(2) + 'M';
+  return val.toLocaleString();
+};
 
 export const MetricCard = ({ label, value, isCurrency = true }: MetricCardProps) => {
   return (
-    <div className="p-6 border border-white/10 bg-[#050505] rounded-sm flex flex-col justify-between h-32">
-      <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-medium">
+    <div className="p-6 border border-white/10 bg-[#050505] rounded-sm h-32 flex flex-col justify-between">
+      <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-bold">
         {label}
       </p>
       <div className="flex items-baseline gap-1">
         {isCurrency && <span className="text-zinc-600 text-sm font-light">$</span>}
         <h2 className="text-3xl font-light text-white tracking-tight">
-          {value.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+          {formatValue(value)}
         </h2>
       </div>
     </div>
