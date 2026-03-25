@@ -28,7 +28,7 @@ export default function DashboardPage() {
             </div>
 
             {/* FINRA */}
-            <div className="flex items-center gap-2 text-sm text-zinc-400">
+            <div className="flex items-center gap-2 text-sm text-zinc-300">
               <span className="w-5 h-5 bg-white/10 rounded-full flex items-center justify-center text-[10px]">
                 ▲
               </span>
@@ -37,7 +37,7 @@ export default function DashboardPage() {
 
             {/* Rating */}
             <div className="px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm">
-              B- by S&P
+              <span classname="font-bold">B- </span>by S&P
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@ export default function DashboardPage() {
 
           {/* SECURITY ID */}
           <div>
-            <p className="text-[10px] text-zinc-500 uppercase tracking-widest mb-2">
+            <p className="text-xl text-zinc-300 tracking-widest mb-2">
               Security ID
             </p>
 
@@ -55,27 +55,23 @@ export default function DashboardPage() {
               <span className="text-xl font-light tracking-tight">
                 BCSA5185816
               </span>
-
-              <span className="px-2 py-0.5 rounded-full border border-emerald-500/30 text-[9px] text-emerald-400 bg-emerald-500/5">
-                B- by S&P
-              </span>
             </div>
           </div>
 
           {/* YIELD */}
           <div>
-            <p className="text-[10px] text-zinc-500 uppercase tracking-widest mb-2">
+            <p className="text-xl text-zinc-300 tracking-widest mb-2">
               Yield to Maturity
             </p>
 
             <div className="flex items-baseline gap-3">
-              <span className="text-3xl font-light">7.477%</span>
+              <span className="text-3xl font-bold">7.477%</span>
 
-              <span className="text-sm text-rose-500 font-mono">
+              <span className="text-sm text-rose-500 font-mono font-bold">
                 -11.250
               </span>
 
-              <span className="text-sm text-rose-500 font-mono">
+              <span className="text-sm text-rose-500 font-mono font-bold">
                 (-2.83%)
               </span>
             </div>
@@ -83,18 +79,18 @@ export default function DashboardPage() {
 
           {/* PRICE */}
           <div>
-            <p className="text-[10px] text-zinc-500 uppercase tracking-widest mb-2">
+            <p className="text-xl text-zinc-300 tracking-widest mb-2">
               Price
             </p>
 
             <div className="flex items-baseline gap-3">
-              <span className="text-3xl font-light">100.000%</span>
+              <span className="text-3xl font-bold">100.000%</span>
 
-              <span className="text-sm text-emerald-500 font-mono">
+              <span className="text-sm text-emerald-500 font-mono font-bold">
                 +2.750
               </span>
 
-              <span className="text-sm text-emerald-500 font-mono">
+              <span className="text-sm text-emerald-500 font-mono font-bold">
                 (+2.83%)
               </span>
             </div>
@@ -157,7 +153,7 @@ export default function DashboardPage() {
         </motion.div>
 
         {/* ================= FOOTER ================= */}
-        <div className="pt-8 flex justify-between items-center text-[9px] text-zinc-700 uppercase tracking-widest font-mono">
+        <div className="pt-8 flex justify-between items-center text-[9px] text-zinc-300 uppercase tracking-widest font-mono">
           <p>
             © 2026 David Jackson Fernandez // Institutional Sovereign Engine
           </p>
