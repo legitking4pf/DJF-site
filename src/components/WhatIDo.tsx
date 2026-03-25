@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Cpu, ShieldCheck, Palette, Globe, ArrowUpRight, Fingerprint } from 'lucide-react';
 import NextImage from 'next/image';
-
+import Link from 'next/link';
 const specializations = [
   {
     title: "Digital Integration",
@@ -44,7 +44,7 @@ const specializations = [
     icon: <Globe className="w-5 h-5" />,
     role: "Asset Advisory",
     metric: "Growth Network",
-    link: "/wealth-acceleration",
+    link: "/dashboard",
     cta: "Access Opportunity",
     isHighlight: true,
     tag: "Finance"
@@ -148,16 +148,17 @@ export default function StrategicEcosystems() {
                   </span>
                 </div>
 
-                <a 
-                  href={item.link} 
-                  className={`inline-flex items-center gap-6 text-[11px] uppercase tracking-[0.5em] font-black transition-all duration-500 group/btn
-                    ${item.isHighlight 
-                      ? "bg-gold text-obsidian px-10 py-5 shadow-2xl shadow-gold/10 hover:shadow-gold/30" 
-                      : "text-white hover:text-gold"}`}
-                >
-                  {item.cta} 
-                  <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-2 group-hover/btn:-translate-y-2 transition-transform" />
-                </a>
+                <Link 
+  href={item.link} 
+  className={`inline-flex items-center gap-6 text-[11px] uppercase tracking-[0.5em] font-black transition-all duration-500 group/btn
+    ${item.isHighlight 
+      ? "bg-gold text-obsidian px-10 py-5 shadow-2xl shadow-gold/10 hover:shadow-gold/30" 
+      : "text-white hover:text-gold"}`}
+>
+  {item.cta} 
+  <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-2 group-hover/btn:-translate-y-2 transition-transform" />
+</Link>
+
               </div>
             </motion.div>
           ))}
