@@ -1,4 +1,5 @@
 import { MetricCard } from '@/components/dashboard/MetricCard';
+import { PerformanceChart } from '@/components/dashboard/PerformanceChart';
 import { RiskPanel } from '@/components/dashboard/RiskPanel';
 import { gfaInstitutionalData } from '@/types/dashboard';
 
@@ -31,13 +32,9 @@ export default function DashboardPage() {
         {/* ZONE 2 & 3 COMBINED ROW */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           
-          {/* ZONE 2: NARRATIVE (Left Column - Spans 2) */}
-          <div className="lg:col-span-2 min-h-[400px] border border-white/10 bg-[#050505] p-8 flex flex-col justify-center items-center">
-             <div className="w-full h-full border border-dashed border-white/5 flex items-center justify-center">
-                <p className="text-[10px] uppercase tracking-[0.3em] text-zinc-800">Performance Chart Engine Pending</p>
-             </div>
+          {/* ZONE 2: Performance Chart*/}
+          <div className="lg:col-span-2 min-h-[450px] border border-white/10 bg-[#050505] overflow-hidden"> <PerformanceChart />
           </div>
-
           {/* ZONE 3: THE REALITY (Right Column - Spans 1) */}
           <div className="lg:col-span-1">
             <RiskPanel />
