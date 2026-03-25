@@ -1,7 +1,14 @@
+import React from 'react';
+interface MetricCardProps {
+  label: string;
+  value: number;
+  isCurrency?: boolean;
+}
+
 const formatValue = (val: number) => {
   if (val >= 1000000000) return (val / 1000000000).toFixed(2) + 'B';
   if (val >= 1000000) return (val / 1000000).toFixed(2) + 'M';
-  return val.toLocaleString();
+  return val.toLocaleString(undefined, { minimumFractionDigits: 2 });
 };
 
 export const MetricCard = ({ label, value, isCurrency = true }: MetricCardProps) => {
