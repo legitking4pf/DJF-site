@@ -8,48 +8,40 @@ import { gfaInstitutionalData } from '@/types/dashboard';
 import { motion } from 'framer-motion';
 import { Fingerprint, Activity } from 'lucide-react';
 
-export default function DashboardPage() {
-  // Logic: 11.38% Performance Calculation based on your S&P research data
-  const netGain = gfaInstitutionalData.clientAllocation * 0.1138;
+export default function DashboardPage() {  const netGain = gfaInstitutionalData.clientAllocation * 0.1138;
 
   return (
     <main className="min-h-screen bg-[#050505] text-white p-4 md:p-12 font-sans selection:bg-gold/30">
       <div className="max-w-7xl mx-auto space-y-6">
         
-        {/* EXECUTIVE HEADER: THE COMMAND CENTER */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/5 pb-8 mb-8 gap-6"
-        >
-          <div>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="h-[1px] w-8 bg-gold" />
-              <h1 className="text-[10px] font-bold tracking-[0.5em] text-gold uppercase">
-                Asset Control Panel // GFA Group
-              </h1>
-            </div>
-            <p className="text-3xl md:text-4xl font-light tracking-tighter italic font-serif">
-              Institutional Portfolio Summary
-            </p>
-          </div>
+{/* Security Overview Bar */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 border-t border-white/5 pt-8">
+  <div>
+    <p className="text-[10px] text-zinc-500 uppercase tracking-widest mb-2">Security ID</p>
+    <div className="flex items-center gap-2">
+      <span className="text-xl font-light tracking-tight text-white">BCSA5185816</span>
+      <span className="px-2 py-0.5 rounded-full border border-emerald-500/30 text-[9px] text-emerald-500 bg-emerald-500/5">
+        B- by S&P
+      </span>
+    </div>
+  </div>
 
-          <div className="flex items-center gap-6 text-right">
-            <div className="hidden md:block">
-              <p className="text-[9px] text-zinc-600 uppercase tracking-[0.3em] mb-1">Status</p>
-              <div className="flex items-center gap-2 text-[10px] font-mono text-emerald-500">
-                <Activity size={12} className="animate-pulse" /> SYSTEM ACTIVE
-              </div>
-            </div>
-            <div className="h-10 w-[1px] bg-white/10 hidden md:block" />
-            <div>
-              <p className="text-[9px] text-zinc-600 uppercase tracking-[0.3em] mb-1">Identity Verified</p>
-              <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-400">
-                <Fingerprint size={12} /> DJF-ADMIN-2026
-              </div>
-            </div>
-          </div>
-        </motion.div>
+  <div>
+    <p className="text-[10px] text-zinc-500 uppercase tracking-widest mb-2">Yield to Maturity</p>
+    <div className="flex items-baseline gap-2">
+      <span className="text-3xl font-light text-white">7.477%</span>
+      <span className="text-xs text-rose-500 font-mono">-11.250 (2.83%)</span>
+    </div>
+  </div>
+
+  <div className="text-right md:text-left">
+    <p className="text-[10px] text-zinc-500 uppercase tracking-widest mb-2">Par Value Status</p>
+    <div className="flex items-baseline gap-2">
+      <span className="text-3xl font-light text-white">100.000%</span>
+      <span className="text-xs text-emerald-500 font-mono">+2.750 (+2.83%)</span>
+    </div>
+  </div>
+</div>
 
         {/* ZONE 1: THE PULSE (Metrics) */}
         <motion.div 

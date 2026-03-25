@@ -11,3 +11,6 @@ export const gfaInstitutionalData: PortfolioData = {
   clientAllocation: 10000000,   // Example: 10M managed within the pool
   lastUpdated: "2026-03-25T17:00:00Z",
 };
+
+
+
