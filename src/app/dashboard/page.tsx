@@ -96,7 +96,7 @@ export default function DashboardPage() {
           </motion.div>
         </div>
 
-        {/* ZONE 4: THE PROOF (Transaction Logs) */ }
+        {/* ZONE 4: THE PROOF (Transaction Logs) */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
