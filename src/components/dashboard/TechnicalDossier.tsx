@@ -27,31 +27,80 @@ export const TechnicalDossier = () => {
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-white/10 bg-[#050505] divide-y lg:divide-y-0 lg:divide-x divide-white/10">
       
       {/* 1. KEY TERMS */}
-      <div className="p-4 space-y-7">
-        <h3 className="text-[24px] font-bold tracking-tight text-white mb-8">Key terms</h3>
+      {/* 1. KEY TERMS */}
+<div className="p-4 space-y-7">
+  <h3 className="text-[24px] font-bold tracking-tight text-white mb-8">Key terms</h3>
+  
+  <div className="space-y-5">
+    {[
+      { 
+        label: 'Outstanding amount', 
+        value: '102.21 M', 
+        unit: 'USD', 
+        url: 'https://www.investopedia.com/terms/o/outstandingshares.asp' 
+      },
+      { 
+        label: 'Face value', 
+        value: '1,000.00', 
+        unit: 'USD', 
+        url: 'https://www.investopedia.com/terms/f/facevalue.asp' 
+      },
+      { 
+        label: 'Minimum denomination', 
+        value: '200,000.00', 
+        unit: 'USD', 
+        url: 'https://www.investopedia.com/terms/d/denomination.asp' 
+      },
+      { 
+        label: 'Coupon', 
+        value: '7.50% (Fixed)', 
+        url: 'https://www.investopedia.com/terms/c/coupon.asp' 
+      },
+      { 
+        label: 'Coupon frequency', 
+        value: 'Semi-annual', 
+        url: 'https://www.investopedia.com/terms/p/paymentfrequency.asp' 
+      },
+      { 
+        label: 'Maturity date', 
+        value: 'May 19, 2026', 
+        url: 'https://www.investopedia.com/terms/m/maturitydate.asp' 
+      },
+      { 
+        label: 'Term to maturity', 
+        value: '1 month', 
+        url: 'https://www.investopedia.com/terms/t/termtomaturity.asp' 
+      },
+    ].map((item, i) => (
+      <div key={i} className="group flex flex-col gap-1">
+        {/* Label as a Link */}
+        <a 
+          href={item.url} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="flex items-center gap-1.5 no-underline"
+        >
+          <p className="text-[14px] font-bold text-zinc-500 tracking-wider uppercase leading-none group-hover:text-gold transition-colors">
+            {item.label}
+          </p>
+          <HelpCircle 
+            size={14} 
+            className="text-zinc-700 group-hover:text-gold transition-colors cursor-pointer" 
+          />
+        </a>
         
-        <div className="space-y-5">
-          {[
-            { label: 'Outstanding amount', value: '102.21 M', unit: 'USD' },
-            { label: 'Face value', value: '1,000.00', unit: 'USD' },
-            { label: 'Minimum denomination', value: '200,000.00', unit: 'USD' },
-            { label: 'Coupon', value: '7.50% (Fixed)' },
-            { label: 'Coupon frequency', value: 'Semi-annual' },
-            { label: 'Maturity date', value: 'May 19, 2026' },
-            { label: 'Term to maturity', value: '1 month' },
-          ].map((item, i) => (
-            <div key={i} className="group flex flex-col gap-1">
-              <p className="text-[14px] font-bold text-zinc-500 tracking-wider flex items-center gap-1.5">
-                {item.label} 
-                <HelpCircle size={16} className="text-zinc-700 group-hover:text-gold transition-colors" />
-              </p>
-              <p className="text-[18px] text-white tracking-tight font-medium">
-                {item.value} {item.unit && <span className="text-[12px] text-white font-mono ml-1">{item.unit}</span>}
-              </p>
-            </div>
-          ))}
-        </div>
+        <p className="text-[18px] text-white tracking-tight font-medium mt-0.5">
+          {item.value} 
+          {item.unit && (
+            <span className="text-[12px] text-zinc-400 font-mono ml-1 uppercase">
+              {item.unit}
+            </span>
+          )}
+        </p>
       </div>
+    ))}
+  </div>
+</div>
 
       {/* 2. ABOUT INVERSIONES ATLANTIDA */}
       <div className="p-4 space-y-7 bg-white/[0.01]">
@@ -128,10 +177,17 @@ export const TechnicalDossier = () => {
   <div className="space-y-6">
     {/* Corrected Alignment for Title and Icon */}
     <div className="flex items-center gap-2">
-      <p className="text-[16px] font-bold text-white uppercase tracking-wide leading-none">
-        Redemption
-      </p>
-      <HelpCircle size={16} className="text-zinc-700 hover:text-gold transition-colors cursor-help" />
+      <a 
+        href="https://www.tradingview.com/symbols/FINRA-BCSA5185816/?solution=43000730585" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="group flex items-center gap-2"
+      >
+        <p className="text-[16px] font-bold text-white uppercase tracking-wide leading-none group-hover:text-gold transition-colors">
+          Redemption
+        </p>
+        <HelpCircle size={16} className="text-zinc-700 group-hover:text-gold transition-colors cursor-pointer" />
+      </a>
     </div>
 
     {/* Donut Chart */}
@@ -177,12 +233,17 @@ export const TechnicalDossier = () => {
   {/* PAYMENTS SECTION */}
   <div className="pt-8 border-t border-white/5 space-y-6">
     <div className="flex items-center gap-2">
-      <p className="text-[16px] font-bold text-white uppercase tracking-wide leading-none">
-        Payments
-      </p>
-      <HelpCircle size={16} className="text-zinc-700 hover:text-gold transition-colors cursor-help" />
+      <a 
+        href="https://www.tradingview.com/symbols/FINRA-BCSA5185816/?solution=43000728401" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="group flex items-center gap-2">
+        <p className="text-[16px] font-bold text-white uppercase tracking-wide leading-none">
+        Coupon
+      </p> 
+      <HelpCircle size = { 16 } className = "text-zinc-700 hover:text-gold transition-colors cursor-help" / >
+      </a>
     </div>
-
     {/* Stacked Bar Chart */}
     <div className="h-44 w-full flex items-end justify-between gap-3 relative pb-2 group">
       {[
