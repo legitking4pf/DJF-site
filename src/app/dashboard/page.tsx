@@ -9,8 +9,7 @@ import { gfaInstitutionalData } from "@/types/dashboard";
 import { motion } from "framer-motion";
 
 export default function DashboardPage() {
-  const netGain = gfaInstitutionalData.clientAllocation * 0.1138;
-  
+const { netGain, groupTotalAssets, groupRevenue } = gfaInstitutionalData;  
   return (
     <main className="min-h-screen bg-[#050505] text-white p-4 md:p-12 font-sans">
       <div className="max-w-7xl mx-auto space-y-10">
