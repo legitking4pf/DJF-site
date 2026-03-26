@@ -26,7 +26,7 @@ export const TechnicalDossier = () => {
                 {item.label} 
                 <HelpCircle size={16} className="text-zinc-700 group-hover:text-gold transition-colors" />
               </p>
-              <p className="text-[18px] font-light text-white tracking-tight">
+              <p className="text-[18px] text-white tracking-tight">
                 {item.value} {item.unit && <span className="text-[12px] text-white font-mono ml-1">{item.unit}</span>}
               </p>
             </div>
@@ -51,7 +51,7 @@ export const TechnicalDossier = () => {
               <p className="text-[18px] text-white">Finance</p>
             </div>
             <div className="flex flex-col gap-1 pt-2">
-              <p className="text-[14px] font-bold text-zinc-500 uppercase tracking-wider">Industry</p>
+              <p className="text-[14px] font-bold text-zinc-500 tracking-wider">Industry</p>
               <p className="text-[18px]">Regional Banks</p>
             </div>
 
@@ -87,12 +87,12 @@ export const TechnicalDossier = () => {
         {/* Redemption Donut */}
         <div>
           <div className="flex items-center gap-3">
-            <p className="text-[16px] font-bold text-white mb-6">Redemption </p>
+            <p className="text-[16px] font-bold text-white mb-6">Redemption</p>
             <HelpCircle size={16} className="text-zinc-700 group-hover:text-gold transition-colors" />
           </div>
           <div className="flex justify-center items-center relative py-4">
              {/* Simple CSS Donut representation */}
-             <div className="w-32 h-32 rounded-full border-[20px] border-[#3b82f6] flex items-center justify-center relative">
+             <div className="w-42 h-42 rounded-full border-[20px] border-[#3b82f6] flex items-center justify-center relative">
                 {/* Outstanding Segment (Orange - ~34%) */}
                 <div className="absolute inset-[-20px] rounded-full border-[20px] border-transparent border-t-[#fb923c] border-r-[#fb923c] rotate-[45deg]" 
                      style={{ clipPath: 'polygon(50% 50%, 100% 0, 100% 100%, 50% 100%)' }} />

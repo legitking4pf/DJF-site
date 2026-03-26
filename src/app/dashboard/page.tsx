@@ -47,12 +47,12 @@ export default function DashboardPage() {
 
           {/* SECURITY ID */}
           <div>
-            <p className="text-xl text-zinc-300 tracking-widest mb-2">
+            <p className="text-xl tracking-widest mb-2">
               Security ID
             </p>
 
             <div className="flex items-center gap-2">
-              <span className="text-xl font-light tracking-tight">
+              <span className="text-xl font-light tracking-wider">
                 BCSA5185816
               </span>
             </div>
@@ -60,7 +60,7 @@ export default function DashboardPage() {
 
           {/* YIELD */}
           <div>
-            <p className="text-xl text-zinc-300 tracking-widest mb-2">
+            <p className="text-xl tracking-medium mb-2">
               Yield to Maturity
             </p>
 
