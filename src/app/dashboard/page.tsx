@@ -98,27 +98,44 @@ export default function DashboardPage() {
         </div>
 
         {/* ================= ZONE 1: METRICS ================= */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
-        >
-          <MetricCard
-            label="GFA Group Assets"
-            value={gfaInstitutionalData.groupTotalAssets}
-          />
+{(() => {
+  // 1. Extract latest data for tallying
+  const currentAssetValue = performanceData[performanceData.length - 1].gfaAssets;
+  const previousAssetValue = performanceData[performanceData.length - 2].gfaAssets;
+  
+  // 2. Calculate dynamic growth percentage
+  const assetGrowth = (((currentAssetValue - previousAssetValue) / previousAssetValue) * 100).toFixed(1) + '%';
+  
+  // 3. Sync gfaInstitutionalData with the chart's "Current" point
+  const totalAssetsInBytes = currentAssetValue * 1000000000;
 
-          <MetricCard
-            label="Annual Group Revenue"
-            value={gfaInstitutionalData.groupRevenue}
-          />
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+      className="grid grid-cols-1 md:grid-cols-3 gap-4"
+    >
+      <MetricCard
+        label="GFA Group Assets"
+        value={totalAssetsInBytes}
+        trend={assetGrowth}
+      />
 
-          <MetricCard
-            label="Net Performance (Yield)"
-            value={netGain}
-          />
-        </motion.div>
+      <MetricCard
+        label="Annual Group Revenue"
+        value={gfaInstitutionalData.groupRevenue}
+        trend="+1.2%" 
+      />
+
+      <MetricCard
+        label="Net Performance (Yield)"
+        value={netGain}
+        trend="+7.5%"
+      />
+    </motion.div>
+  );
+})()}
 
         {/* ================= CENTER GRID ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
