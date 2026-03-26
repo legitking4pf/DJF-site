@@ -150,44 +150,45 @@ const { netGain, groupTotalAssets, groupRevenue } = gfaInstitutionalData;
           >
             <PerformanceChart />
           </motion.div>
-          {/* ================= ANALYSIS CALLOUT ================= */}
+{/* ================= INSTITUTIONAL PROOF SECTION ================= */}
 <motion.div
-  initial={{ opacity: 0, scale: 0.95 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ delay: 0.5 }}
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
   className="lg:col-span-1"
 >
-  <a 
-    href="https://docs.google.com/document/d/1qU0ccdu5c2MPzP0jeZd5KaJvZNwIe05C-lUOTw6XZY8/edit?usp=drivesdk" 
-    target="_blank"
-    rel="noopener noreferrer"
-    className="group block h-full p-8 bg-white/5 border border-white/10 hover:border-white/40 transition-all duration-500"
-  >
-    <div className="flex justify-between items-start mb-6">
-      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-zinc-500 group-hover:text-white transition-colors">
-        [span_0](start_span)[span_1](start_span)FINRA TRACE: BCSA5185816[span_0](end_span)[span_1](end_span)
-      </span>
-      <ArrowUpRight className="w-5 h-5 text-zinc-500 group-hover:text-white transition-colors" />
-    </div>
-    
-    <h2 className="text-xl font-light text-white mb-3 tracking-tight">
-      [span_2](start_span)[span_3](start_span)Full Redemption Analysis[span_2](end_span)[span_3](end_span)
-    </h2>
-    
-    <p className="text-sm text-zinc-400 font-light leading-relaxed mb-8">
-      [span_4](start_span)[span_5](start_span)[span_6](start_span)Technical deep-dive into the 7.5% Senior Secured Notes and the March 30, 2026, full principal recovery.[span_4](end_span)[span_5](end_span)[span_6](end_span)
-    </p>
+  <div className="h-full p-8 bg-[#0A0A0A] border border-white/10 rounded-sm flex flex-col justify-between">
+    <div>
+      <div className="flex items-center gap-2 mb-6">
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+        <span className="text-[10px] tracking-[0.3em] uppercase font-bold text-zinc-500">
+          Source Verification
+        </span>
+      </div>
 
-    <div className="flex items-center gap-4">
-      <span className="px-2 py-1 bg-emerald-500/20 text-[10px] text-emerald-400 uppercase tracking-widest font-bold border border-emerald-500/30">
-        [span_7](start_span)Settled[span_7](end_span)
-      </span>
-      <span className="text-[10px] text-zinc-500 font-mono">
-        [span_8](start_span)ISIN: USP5865GAC44[span_8](end_span)
-      </span>
+      <h2 className="text-xl font-medium text-white mb-4">
+        Performance Analysis & Stock Symbol Deep-Dive
+      </h2>
+
+      <p className="text-sm text-zinc-400 font-light leading-relaxed mb-6">
+        This technical dossier provides the underlying analysis for the 
+        <span className="text-white font-medium"> Inversiones Atlántida (BCSA5185816) </span> 
+        performance data. It details the 2025 refinancing crisis, the 53.45% yield volatility, 
+        and the final 100% principal recovery on March 30, 2026.
+      </p>
     </div>
-  </a>
+
+    <a 
+      href="https://docs.google.com/document/d/1qU0ccdu5c2MPzP0jeZd5KaJvZNwIe05C-lUOTw6XZY8/edit?usp=drivesdk" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center gap-3 w-full py-4 bg-white text-black text-sm font-bold uppercase tracking-widest hover:bg-zinc-200 transition-colors"
+    >
+      View Full Analysis
+      <ArrowUpRight className="w-4 h-4" />
+    </a>
+  </div>
 </motion.div>
+
 
           {/* RISK PANEL */}
           <motion.div
