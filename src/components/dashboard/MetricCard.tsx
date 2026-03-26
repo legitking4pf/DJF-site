@@ -16,24 +16,23 @@ const formatValue = (val: number) => {
 
 export const MetricCard = ({ label, value, isCurrency = true, trend }: MetricCardProps) => {
   return (
-    <div className="p-6 border border-white/5 bg-[#050505] rounded-sm h-32 flex flex-col justify-between group hover:border-white/20 transition-all">
-      <div className="flex justify-between items-start">
-        <p className="text-[11px] uppercase tracking-[0.2em] font-black text-zinc-500 group-hover:text-zinc-300 transition-colors">
+    <div className="p-8 border border-white/10 bg-[#0a0a0a] rounded-lg h-40 flex flex-col justify-between hover:border-gold/50 transition-all duration-500 shadow-xl">
+      <div className="flex justify-between items-center">
+        <p className="text-[12px] uppercase tracking-[0.3em] font-black text-zinc-400">
           {label}
         </p>
         {trend && (
-          <div className="flex items-center gap-1 text-gold text-[10px] font-mono font-bold">
-            <ArrowUpRight size={12} />
-            {trend}
-          </div>
+          <span className="bg-gold/10 text-gold px-2 py-1 text-[10px] font-bold rounded-sm border border-gold/20">
+             {trend}
+          </span>
         )}
       </div>
       
-      <div className="flex items-baseline gap-1">
+      <div className="flex items-baseline gap-2">
         {isCurrency && (
-          <span className="text-zinc-500 text-xl font-light group-hover:text-gold transition-colors">$</span>
+          <span className="text-zinc-500 text-2xl font-light">$</span>
         )}
-        <h2 className="text-3xl font-bold text-white tracking-tighter">
+        <h2 className="text-[42px] font-bold text-white tracking-tighter leading-none">
           {formatValue(value)}
         </h2>
       </div>
