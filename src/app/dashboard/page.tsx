@@ -152,7 +152,6 @@ export default function DashboardPage() {
           <TechnicalDossier />
         </motion.div>
 
-        {/* ================= FOOTER ================= */}
       </div>
     </main>
   );
