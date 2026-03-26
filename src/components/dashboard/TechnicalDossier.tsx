@@ -1,9 +1,28 @@
 "use client";
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, ExternalLink, Copy, MoreHorizontal, HelpCircle } from 'lucide-react';
 
 export const TechnicalDossier = () => {
+  const [showExtraIds, setShowExtraIds] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown when clicking anywhere else on the screen
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowExtraIds(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const extraIdentifiers = [
+    { label: 'CUSIP', value: 'P5865GAC4' },
+    { label: 'FIGI', value: 'BBG01111RXS0' }
+  ];
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-white/10 bg-[#050505] divide-y lg:divide-y-0 lg:divide-x divide-white/10">
       
@@ -26,7 +45,7 @@ export const TechnicalDossier = () => {
                 {item.label} 
                 <HelpCircle size={16} className="text-zinc-700 group-hover:text-gold transition-colors" />
               </p>
-              <p className="text-[18px] text-white tracking-tight">
+              <p className="text-[18px] text-white tracking-tight font-medium">
                 {item.value} {item.unit && <span className="text-[12px] text-white font-mono ml-1">{item.unit}</span>}
               </p>
             </div>
@@ -46,14 +65,14 @@ export const TechnicalDossier = () => {
             <p className="text-[14px] font-bold text-zinc-500 tracking-wider">Issuer</p>
             <p className="text-[18px] text-white">Inversiones Atlantida SA</p>
           </div>
-            <div className="flex flex-col gap-1 pt-2">
-              <p className="text-[14px] font-bold text-zinc-500 tracking-wider">Sector</p>
-              <p className="text-[18px] text-white">Finance</p>
-            </div>
-            <div className="flex flex-col gap-1 pt-2">
-              <p className="text-[14px] font-bold text-zinc-500 tracking-wider">Industry</p>
-              <p className="text-[18px]">Regional Banks</p>
-            </div>
+          <div className="flex flex-col gap-1 pt-2">
+            <p className="text-[14px] font-bold text-zinc-500 tracking-wider">Sector</p>
+            <p className="text-[18px] text-white">Finance</p>
+          </div>
+          <div className="flex flex-col gap-1 pt-2">
+            <p className="text-[14px] font-bold text-zinc-500 tracking-wider">Industry</p>
+            <p className="text-[18px] text-white">Regional Banks</p>
+          </div>
 
           <div className="flex flex-col gap-1 pt-2">
             <p className="text-[14px] font-bold text-zinc-500 tracking-wider">Home page</p>
@@ -62,73 +81,144 @@ export const TechnicalDossier = () => {
             </a>
           </div>
 
-          <div className="flex flex-col gap-1 pt-2">
+          {/* IDENTIFIERS WITH DROPDOWN TOGGLE */}
+          <div className="flex flex-col gap-1 pt-2 relative" ref={dropdownRef}>
             <p className="text-[14px] font-bold text-zinc-500 tracking-wider">Identifiers</p>
             <div className="flex items-center gap-3">
               <code className="text-[18px] font-mono text-white bg-white/5 px-2 py-1 rounded">ISIN USP5865GAC44</code>
               <div className="flex gap-2 text-zinc-600">
                 <Copy size={16} className="cursor-pointer hover:text-white transition-colors" />
-                <MoreHorizontal size={16} className="cursor-pointer hover:text-white transition-colors" />
+                <button onClick={() => setShowExtraIds(!showExtraIds)}>
+                  <MoreHorizontal size={16} className={`cursor-pointer transition-colors ${showExtraIds ? 'text-white' : 'hover:text-white'}`} />
+                </button>
               </div>
             </div>
+
+            {/* Hidden Toggle Container */}
+            {showExtraIds && (
+              <div className="absolute top-full left-0 mt-3 w-64 bg-[#0a0a0a] border border-white/10 rounded shadow-2xl z-50 p-1">
+                {extraIdentifiers.map((id, idx) => (
+                  <div key={idx} className="flex justify-between items-center p-3 hover:bg-white/5 transition-colors border-b border-white/5 last:border-0 group">
+                    <div>
+                      <p className="text-[11px] text-zinc-500 font-bold uppercase tracking-widest">{id.label}</p>
+                      <p className="text-[15px] text-white font-mono">{id.value}</p>
+                    </div>
+                    <Copy size={14} className="text-zinc-600 opacity-0 group-hover:opacity-100 cursor-pointer" />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
 
       {/* 3. ANALYSIS */}
-      <div className="p-4 space-y-8">
-        <div className="flex justify-between items-center">
-          <h3 className="text-[22px] font-bold tracking-tight text-white flex items-center gap-2">
-            Analysis <ChevronRight size={20} className="text-zinc-600" />
-          </h3>
-          <span className="text-[10px] px-2 py-0.5 border border-white/10 text-zinc-500 uppercase font-mono">Real-time Feed</span>
-        </div>
+<div className="p-4 space-y-8">
+  {/* Header Section */}
+  <div className="flex justify-between items-center">
+    <h3 className="text-[22px] font-bold tracking-tight text-white flex items-center gap-2">
+      Analysis <ChevronRight size={20} className="text-zinc-600" />
+    </h3>
+    <span className="text-[10px] px-2 py-0.5 border border-white/10 text-zinc-500 uppercase font-mono tracking-tighter">
+      Real-time Feed
+    </span>
+  </div>
 
-        {/* Redemption Donut */}
-        <div>
-          <div className="flex items-center gap-3">
-            <p className="text-[16px] font-bold text-white mb-6">Redemption</p>
-            <HelpCircle size={16} className="text-zinc-700 group-hover:text-gold transition-colors" />
-          </div>
-          <div className="flex justify-center items-center relative py-4">
-             {/* Simple CSS Donut representation */}
-             <div className="w-42 h-42 rounded-full border-[20px] border-[#3b82f6] flex items-center justify-center relative">
-                {/* Outstanding Segment (Orange - ~34%) */}
-                <div className="absolute inset-[-20px] rounded-full border-[20px] border-transparent border-t-[#fb923c] border-r-[#fb923c] rotate-[45deg]" 
-                     style={{ clipPath: 'polygon(50% 50%, 100% 0, 100% 100%, 50% 100%)' }} />
-                
-                <div className="text-center bg-[#050505] w-full h-full rounded-full flex flex-col items-center justify-center m-[1px]">
-                  <span className="text-lg font-bold">300 M</span>
-                  <span className="text-sm uppercase">USD</span>
-                </div>
-             </div>
-          </div>
+  {/* REDEMPTION SECTION */}
+  <div className="space-y-6">
+    {/* Corrected Alignment for Title and Icon */}
+    <div className="flex items-center gap-2">
+      <p className="text-[16px] font-bold text-white uppercase tracking-wide leading-none">
+        Redemption
+      </p>
+      <HelpCircle size={16} className="text-zinc-700 hover:text-gold transition-colors cursor-help" />
+    </div>
 
-          <div className="mt-8 space-y-3">
-            <div className="flex justify-between items-center text-[13px]">
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 bg-[#fb923c] rounded-sm" />
-                <span className="text-zinc-400">Outstanding amount</span>
-              </div>
-              <div className="text-white">
-                <span className="font-bold">102.21M</span> USD <span className="font-bold font-mono"> (34.07%)</span>
-              </div>
-            </div>
-            <div className="flex justify-between items-center text-[13px]">
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 bg-[#3b82f6] rounded-sm" />
-                <span className="text-zinc-400">Paid amount</span>
-              </div>
-              <div>
-                <span>
-                  197.79M
-                </span> USD <span className="font-bold font-mono"> (65.93%)</span>
-
-              </div>
-            </div>
-          </div>
+    {/* Donut Chart */}
+    <div className="flex justify-center items-center relative py-4">
+      <div className="w-44 h-44 rounded-full border-[20px] border-[#3b82f6] flex items-center justify-center relative shadow-[0_0_30px_rgba(59,130,246,0.05)]">
+        {/* Outstanding Segment (Orange ~34%) */}
+        <div 
+          className="absolute inset-[-20px] rounded-full border-[20px] border-transparent border-t-[#fb923c] border-r-[#fb923c] rotate-[45deg]" 
+          style={{ clipPath: 'polygon(50% 50%, 100% 0, 100% 100%, 50% 100%)' }} 
+        />
+        <div className="text-center bg-[#050505] w-full h-full rounded-full flex flex-col items-center justify-center m-[1px]">
+          <span className="text-[20px] font-bold text-white tracking-tighter">300 M</span>
+          <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">USD</span>
         </div>
       </div>
+    </div>
+
+    {/* Redemption Legend/Data */}
+    <div className="mt-8 space-y-4">
+      <div className="flex justify-between items-center text-[13px]">
+        <div className="flex items-center gap-2.5">
+          <div className="w-2.5 h-2.5 bg-[#fb923c] rounded-[2px]" />
+          <span className="text-zinc-400 font-medium">Outstanding amount</span>
+        </div>
+        <p className="text-white text-[14px]">
+          <span className="font-bold">102.21M</span> <span className="text-zinc-500 font-mono text-[11px]">USD</span> 
+          <span className="font-bold font-mono text-zinc-300 ml-1">(34.07%)</span>
+        </p>
+      </div>
+      <div className="flex justify-between items-center text-[13px]">
+        <div className="flex items-center gap-2.5">
+          <div className="w-2.5 h-2.5 bg-[#3b82f6] rounded-[2px]" />
+          <span className="text-zinc-400 font-medium">Paid amount</span>
+        </div>
+        <p className="text-white text-[14px]">
+          <span className="font-bold text-zinc-300">197.79M</span> <span className="text-zinc-500 font-mono text-[11px]">USD</span> 
+          <span className="font-bold font-mono text-zinc-300 ml-1">(65.93%)</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* PAYMENTS SECTION */}
+  <div className="pt-8 border-t border-white/5 space-y-6">
+    <div className="flex items-center gap-2">
+      <p className="text-[16px] font-bold text-white uppercase tracking-wide leading-none">
+        Payments
+      </p>
+      <HelpCircle size={16} className="text-zinc-700 hover:text-gold transition-colors cursor-help" />
+    </div>
+
+    {/* Stacked Bar Chart */}
+    <div className="h-44 w-full flex items-end justify-between gap-3 relative pb-2 group">
+      {[
+        { year: '21', coupon: 15, principal: 0 },
+        { year: '22', coupon: 20, principal: 0 },
+        { year: '23', coupon: 20, principal: 15 },
+        { year: '24', coupon: 18, principal: 35 },
+        { year: '25', coupon: 12, principal: 60 },
+        { year: '26', coupon: 5,  principal: 100 },
+      ].map((bar, i) => (
+        <div key={i} className="flex-1 flex flex-col justify-end items-center gap-2 h-full">
+          <div className="w-full flex flex-col justify-end h-full relative group-hover:opacity-60 hover:!opacity-100 transition-opacity">
+            <div className="w-full bg-[#fb923c] rounded-t-sm" style={{ height: `${bar.principal}%` }} />
+            <div className="w-full bg-[#3b82f6] rounded-sm" style={{ height: `${bar.coupon}%` }} />
+          </div>
+          <span className="text-[10px] font-mono font-bold text-zinc-600 tracking-tighter uppercase">
+            {bar.year}
+          </span>
+        </div>
+      ))}
+      {/* Base Line */}
+      <div className="absolute bottom-6 left-0 right-0 h-px bg-white/10" />
+    </div>
+
+    {/* Bar Chart Legend */}
+    <div className="flex gap-4 pt-2">
+      <div className="flex items-center gap-1.5 text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
+        <div className="w-2 h-2 bg-[#3b82f6] rounded-[1px]" /> Coupon
+      </div>
+      <div className="flex items-center gap-1.5 text-[10px] text-zinc-500 font-bold uppercase tracking-widest">
+        <div className="w-2 h-2 bg-[#fb923c] rounded-[1px]" /> Principal
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
   );
 };
