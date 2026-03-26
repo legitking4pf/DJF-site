@@ -150,6 +150,37 @@ const { netGain, groupTotalAssets, groupRevenue } = gfaInstitutionalData;
             <PerformanceChart />
           </motion.div>
 
+
+    <div className="max-w-md mx-auto my-8">
+      <a 
+        href="https://docs.google.com/document/d/1qU0ccdu5c2MPzP0jeZd5KaJvZNwIe05C-lUOTw6XZY8/edit?usp=drivesdk" 
+        className="group block p-6 bg-[#FAFAFA] border border-neutral-200 hover:border-black transition-all duration-500 rounded-none"
+      >
+        <div className="flex justify-between items-start mb-4">
+          <span className="text-[10px] tracking-[0.2em] uppercase font-semibold text-neutral-500">
+            FINRA TRACE: BCSA5185816
+          </span>
+          <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-black transition-colors" />
+        </div>
+        
+        <h2 className="text-xl font-light text-black mb-2 tracking-tight">
+          Full Redemption Analysis
+        </h2>
+        
+        <p className="text-sm text-neutral-600 font-light leading-relaxed mb-4">
+          A technical deep-dive into the Inversiones Atlántida 7.5% Senior Secured Notes and the March 2026 liquidity resolution.
+        </p>
+
+        <div className="flex items-center gap-3">
+          <span className="px-2 py-1 bg-black text-[9px] text-white uppercase tracking-wider">
+            Settled
+          </span>
+          <span className="text-[10px] text-neutral-400 font-mono uppercase">
+            ISIN: USP5865GAC44
+          </span>
+        </div>
+      </a>
+    </div>
           {/* RISK PANEL */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
