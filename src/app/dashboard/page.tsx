@@ -4,7 +4,7 @@ import React from "react";
 import { MetricCard } from "@/components/dashboard/MetricCard";
 import { RiskPanel } from "@/components/dashboard/RiskPanel";
 import { PerformanceChart } from "@/components/dashboard/PerformanceChart";
-import { TransactionLogs } from "@/components/dashboard/TransactionLogs";
+import { TechnicalDossier } from "@/components/dashboard/TechnicalDossier";
 import { gfaInstitutionalData } from "@/types/dashboard";
 import { motion } from "framer-motion";
 
@@ -149,17 +149,10 @@ export default function DashboardPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          <TransactionLogs />
+          <TechnicalDossier />
         </motion.div>
 
         {/* ================= FOOTER ================= */}
-        <div className="pt-8 flex justify-between items-center text-[9px] text-zinc-300 uppercase tracking-widest font-mono">
-          <p>
-            © 2026 David Jackson Fernandez // Institutional Sovereign Engine
-          </p>
-          <p>Encrypted Session: AES-256-GCM</p>
-        </div>
-
       </div>
     </main>
   );
