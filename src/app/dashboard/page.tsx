@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { performanceData } from '@/data/chartData';
 import { MetricCard } from "@/components/dashboard/MetricCard";
 import { RiskPanel } from "@/components/dashboard/RiskPanel";
 import { PerformanceChart } from "@/components/dashboard/PerformanceChart";
