@@ -85,14 +85,16 @@ export const TechnicalDossier = () => {
         </div>
 
         {/* Redemption Donut */}
-        <div className="bg-white/[0.9]">
-          <p className="text-[14px] font-bold text-white mb-6">Redemption <HelpCircle size={16} className="text-zinc-700 group-hover:text-gold transition-colors" /> </p>
-          
+        <div>
+          <div className="flex items-center gap-3">
+            <p className="text-[16px] font-bold text-white mb-6">Redemption </p>
+            <HelpCircle size={16} className="text-zinc-700 group-hover:text-gold transition-colors" />
+          </div>
           <div className="flex justify-center items-center relative py-4">
              {/* Simple CSS Donut representation */}
-             <div className="w-32 h-32 rounded-full border-[12px] border-[#3b82f6] flex items-center justify-center relative">
+             <div className="w-32 h-32 rounded-full border-[20px] border-[#3b82f6] flex items-center justify-center relative">
                 {/* Outstanding Segment (Orange - ~34%) */}
-                <div className="absolute inset-[-12px] rounded-full border-[20px] border-transparent border-t-[#fb923c] border-r-[#fb923c] rotate-[45deg]" 
+                <div className="absolute inset-[-20px] rounded-full border-[20px] border-transparent border-t-[#fb923c] border-r-[#fb923c] rotate-[45deg]" 
                      style={{ clipPath: 'polygon(50% 50%, 100% 0, 100% 100%, 50% 100%)' }} />
                 
                 <div className="text-center bg-[#050505] w-full h-full rounded-full flex flex-col items-center justify-center m-[1px]">
