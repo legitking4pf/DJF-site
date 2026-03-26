@@ -8,6 +8,7 @@ import { PerformanceChart } from "@/components/dashboard/PerformanceChart";
 import { TechnicalDossier } from "@/components/dashboard/TechnicalDossier";
 import { gfaInstitutionalData } from "@/types/dashboard";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react"; //
 
 export default function DashboardPage() {
 const { netGain, groupTotalAssets, groupRevenue } = gfaInstitutionalData;  
@@ -149,38 +150,45 @@ const { netGain, groupTotalAssets, groupRevenue } = gfaInstitutionalData;
           >
             <PerformanceChart />
           </motion.div>
-
-
-    <div className="max-w-md mx-auto my-8">
-      <a 
-        href="https://docs.google.com/document/d/1qU0ccdu5c2MPzP0jeZd5KaJvZNwIe05C-lUOTw6XZY8/edit?usp=drivesdk" 
-        className="group block p-6 bg-[#FAFAFA] border border-neutral-200 hover:border-black transition-all duration-500 rounded-none"
-      >
-        <div className="flex justify-between items-start mb-4">
-          <span className="text-[10px] tracking-[0.2em] uppercase font-semibold text-neutral-500">
-            FINRA TRACE: BCSA5185816
-          </span>
-          <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-black transition-colors" />
-        </div>
-        
-        <h2 className="text-xl font-light text-black mb-2 tracking-tight">
-          Full Redemption Analysis
-        </h2>
-        
-        <p className="text-sm text-neutral-600 font-light leading-relaxed mb-4">
-          A technical deep-dive into the Inversiones Atlántida 7.5% Senior Secured Notes and the March 2026 liquidity resolution.
-        </p>
-
-        <div className="flex items-center gap-3">
-          <span className="px-2 py-1 bg-black text-[9px] text-white uppercase tracking-wider">
-            Settled
-          </span>
-          <span className="text-[10px] text-neutral-400 font-mono uppercase">
-            ISIN: USP5865GAC44
-          </span>
-        </div>
-      </a>
+          {/* ================= ANALYSIS CALLOUT ================= */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ delay: 0.5 }}
+  className="lg:col-span-1"
+>
+  <a 
+    href="https://docs.google.com/document/d/1qU0ccdu5c2MPzP0jeZd5KaJvZNwIe05C-lUOTw6XZY8/edit?usp=drivesdk" 
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group block h-full p-8 bg-white/5 border border-white/10 hover:border-white/40 transition-all duration-500"
+  >
+    <div className="flex justify-between items-start mb-6">
+      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-zinc-500 group-hover:text-white transition-colors">
+        [span_0](start_span)[span_1](start_span)FINRA TRACE: BCSA5185816[span_0](end_span)[span_1](end_span)
+      </span>
+      <ArrowUpRight className="w-5 h-5 text-zinc-500 group-hover:text-white transition-colors" />
     </div>
+    
+    <h2 className="text-xl font-light text-white mb-3 tracking-tight">
+      [span_2](start_span)[span_3](start_span)Full Redemption Analysis[span_2](end_span)[span_3](end_span)
+    </h2>
+    
+    <p className="text-sm text-zinc-400 font-light leading-relaxed mb-8">
+      [span_4](start_span)[span_5](start_span)[span_6](start_span)Technical deep-dive into the 7.5% Senior Secured Notes and the March 30, 2026, full principal recovery.[span_4](end_span)[span_5](end_span)[span_6](end_span)
+    </p>
+
+    <div className="flex items-center gap-4">
+      <span className="px-2 py-1 bg-emerald-500/20 text-[10px] text-emerald-400 uppercase tracking-widest font-bold border border-emerald-500/30">
+        [span_7](start_span)Settled[span_7](end_span)
+      </span>
+      <span className="text-[10px] text-zinc-500 font-mono">
+        [span_8](start_span)ISIN: USP5865GAC44[span_8](end_span)
+      </span>
+    </div>
+  </a>
+</motion.div>
+
           {/* RISK PANEL */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
