@@ -37,39 +37,39 @@ export const TechnicalDossier = () => {
         label: 'Outstanding amount', 
         value: '102.21 M', 
         unit: 'USD', 
-        url: 'https://www.investopedia.com/terms/o/outstandingshares.asp' 
+        url: 'https://www.tradingview.com/support/solutions/43000728397' 
       },
       { 
         label: 'Face value', 
         value: '1,000.00', 
         unit: 'USD', 
-        url: 'https://www.investopedia.com/terms/f/facevalue.asp' 
+        url: 'https://www.tradingview.com/support/solutions/43000728399' 
       },
       { 
         label: 'Minimum denomination', 
         value: '200,000.00', 
         unit: 'USD', 
-        url: 'https://www.investopedia.com/terms/d/denomination.asp' 
+        url: 'https://www.tradingview.com/support/solutions/43000729400' 
       },
       { 
         label: 'Coupon', 
         value: '7.50% (Fixed)', 
-        url: 'https://www.investopedia.com/terms/c/coupon.asp' 
+        url: 'https://www.tradingview.com/support/solutions/43000728401' 
       },
       { 
         label: 'Coupon frequency', 
         value: 'Semi-annual', 
-        url: 'https://www.investopedia.com/terms/p/paymentfrequency.asp' 
+        url: 'https://www.tradingview.com/support/solutions/43000728405' 
       },
       { 
         label: 'Maturity date', 
         value: 'May 19, 2026', 
-        url: 'https://www.investopedia.com/terms/m/maturitydate.asp' 
+        url: 'https://www.tradingview.com/support/solutions/43000728408' 
       },
       { 
         label: 'Term to maturity', 
         value: '1 month', 
-        url: 'https://www.investopedia.com/terms/t/termtomaturity.asp' 
+        url: 'https://www.tradingview.com/support/solutions/43000703827' 
       },
     ].map((item, i) => (
       <div key={i} className="group flex flex-col gap-1">
@@ -178,7 +178,7 @@ export const TechnicalDossier = () => {
     {/* Corrected Alignment for Title and Icon */}
     <div className="flex items-center gap-2">
       <a 
-        href="https://www.tradingview.com/symbols/FINRA-BCSA5185816/?solution=43000730585" 
+        href="https://www.tradingview.com/support/solutions/43000730585/" 
         target="_blank" 
         rel="noopener noreferrer"
         className="group flex items-center gap-2"
@@ -234,7 +234,7 @@ export const TechnicalDossier = () => {
   <div className="pt-8 border-t border-white/5 space-y-6">
     <div className="flex items-center gap-2">
       <a 
-        href="https://www.tradingview.com/symbols/FINRA-BCSA5185816/?solution=43000728401" 
+        href="https://www.tradingview.com/support/solutions/43000730585/" 
         target="_blank" 
         rel="noopener noreferrer"
         className="group flex items-center gap-2">
