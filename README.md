@@ -11,7 +11,6 @@ A high-performance web application designed to reflect the **Strategic Portfolio
 * **Framework:** [Next.js 16.1](https://nextjs.org/) (App Router)
 * **Library:** [React 19](https://react.dev/)
 * **Language:** [TypeScript](https://www.typescriptlang.org/)
-* **Database:** [Neon](https://neon.tech/) (Serverless PostgreSQL)
 
 ### UI & UX
 * **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
@@ -56,4 +55,4 @@ A high-performance web application designed to reflect the **Strategic Portfolio
 ---
 
 ## 🛡 License
-**Private & Confidential.** Developed by **King Marvis (Legit Creations)** for David Jackson Fernandez. All rights reserved.
+**Private & Confidential.** Developed by **(Legit Creations)** for Author David Jackson Fernandez. All rights reserved.

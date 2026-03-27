@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     default: "David Jackson Fernandez",
     template: "%s | David Jackson Fernandez",
   },
-  description: "Executive at Grupo Financiero Atlántida. Architecting the future of fintech, digital sovereignty, and strategic growth.",
+  description: "Chief Technology Officer at Banco Atlántida Honduras. Governing Member - Advisory Board at Grupo Financiero Atlántida.",
   
   // 2. Search Engine Visibility
   keywords: [
@@ -39,10 +39,11 @@ export const metadata: Metadata = {
     "GFA Strategic Vision",
     "Wealth Acceleration",
     "DJF",
+    "inversiones Atlantida", "South America", "seguros Atlantida", "bank investment", "entrepreneurship", "Spanish", "Honduras", "El salvador",
     "Infrastructure Governance"
   ],
-  authors: [{ name: "David Jackson Fernandez" }],
-  creator: "David Jackson Fernandez",
+  authors: [{ name: "DJF" }],
+  creator: "Banco Atlántida",
   publisher: "Grupo Financiero Atlántida",
   
   // 3. URLs & Indexing
@@ -68,8 +69,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://djf-site.vercel.app",
     siteName: "David Jackson Fernandez",
-    title: "David Jackson Fernandez | Executive Profile",
-    description: "CAO & CTO at Banco Atlántida. Driving institutional fintech innovation and strategic architecture.",
+    title: "David Jackson Fernandez",
+    description: "Chief Technology Officer at Banco Atlántida Honduras. Governing Member - Advisory Board at Grupo Financiero Atlántida.",
     images: ["https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.png"],
   },
   
@@ -77,7 +78,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "David Jackson Fernandez | CAO & CTO",
-    description: "Architecting the future of wealth through high-precision fintech.",
+    description: "Chief Technology Officer at Banco Atlántida Honduras. Governing Member - Advisory Board at Grupo Financiero Atlántida.",
     images: ["https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/6.png"],
   },
   

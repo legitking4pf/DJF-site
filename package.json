@@ -1,19 +1,18 @@
 {
   "name": "David Jackson Fernandez",
-  "description": "Professional portfolio of David Jackson Fernandez: Strategic architecture, fintech innovation, and digital governance within the Grupo Financiero Atlántida ecosystem.",
+  "description": "Professional ortfolio of David Jackson Fernandez: Strategic architecture, fintech innovation, and digital governance within the Grupo Financiero Atlántida ecosystem.",
   "keywords": [
     "David Jackson Fernandez",
-    "CAO Grupo Financiero Atlántida",
-    "CTO Banco Atlántida",
+    "CAO Grupo Financiero Atlántida", "banco Atlantida", "inversiones Atlantida", "South America", "seguros Atlantida", "bank investment", "entrepreneurship", "Spanish", "Honduras", "El salvador", "Grupo financiero Atlantida", "gfa", "CTO", "Banco Atlántida",
     "Digital Sovereignty",
     "Fintech Core Migration",
     "KONCEPTO Décor Founder",
     "GFA Strategic Vision 2030",
     "Wealth Acceleration Opportunity"
   ],
-  "version": "0.1.0",
+  "version": "2.0.0.1_zone",
   "private": true,
-  "author": "King Marvis(Legit Creations",
+  "author": "Legit Creations",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

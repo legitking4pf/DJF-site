@@ -6,11 +6,11 @@
     "role": "CAO & CTO",
     "organization": "Grupo Financiero Atlántida"
   },
-  "description": "Strategic architecture and fintech innovation within the Grupo Financiero Atlántida ecosystem.",
+  "description": "Chief Technology Officer at Banco Atlántida Honduras. Governing Member - Advisory Board at Grupo Financiero Atlántida.",
   "seo": {
-    "display_title": "David Jackson Fernandez | Executive Profile",
+    "display_title": "David Jackson Fernandez",
     "keywords": [
-      "David Jackson Fernandez", "CAO", "CTO", "Fintech", "GFA", "KONCEPTO"
+      "David Jackson Fernandez", "CAO", "CTO", "djf", "djf-site", "Fintech", "GFA", "KONCEPTO", "inversiones Atlantida", "South America", "seguros Atlantida", "bank investment", "entrepreneurship", "Spanish", "Honduras", "El salvador"
     ],
     "canonical_url": "https://djf-site.vercel.app",
     "robots": "index, follow"
@@ -19,7 +19,7 @@
     "og_title": "David Jackson Fernandez",
     "og_type": "website",
     "og_image": [ "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.png"
-    ],
+    ]
   },
   "config": {
     "theme_color": "#A67C00",
