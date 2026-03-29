@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "inversiones Atlantida", "South America", "seguros Atlantida", "bank investment", "entrepreneurship", "Spanish", "Honduras", "El salvador",
     "Infrastructure Governance"
   ],
-  authors: [{ name: "DJF" }],
+  authors: [{ name: "David Jackson Fernandez" }],
   creator: "Banco Atlántida",
   publisher: "Grupo Financiero Atlántida",
   
