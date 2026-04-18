@@ -110,6 +110,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
         <meta name="google-verification" content="3-zan2mnlXQc8aKFUYw0sEkcBZjHcEXk8DvEArCczwE" />
+        <meta name="p:domain_verify" content="ea3a43d2bcb841c330ec3c5d9a7062a3"/>
+        
         {/* Preconnecting to your Vercel Blob storage for faster asset delivery */}
         <link rel="preconnect" href="https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com" />
       </head>
