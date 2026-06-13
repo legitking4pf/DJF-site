@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Roboto_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     siteName: "David Jackson Fernandez",
     title: "David Jackson Fernandez",
     description: "Chief Technology Officer at Banco Atlántida Honduras. Governing Member - Advisory Board at Grupo Financiero Atlántida.",
-    images: ["https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/10.png"],
+    images: ["https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/icon0.svg"],
   },
   
   // 5. Social Media (X/Twitter)
@@ -79,23 +80,21 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "David Jackson Fernandez | CAO & CTO",
     description: "Chief Technology Officer at Banco Atlántida Honduras. Governing Member - Advisory Board at Grupo Financiero Atlántida.",
-    images: ["https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/6.png"],
+    images: ["https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/xxxxxxxxxxxx"],
   },
   
-  // 6. Icons & Branding
+  // 6. Icons & Branding (Updated with automation output)
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/favicon.ico" },
+      { url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/icon0.svg", type: "image/svg+xml" },
+      { url: "https://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/icon1.png", type: "image/png" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "https  ://hv4w1qmfjrk8zaij.public.blob.vercel-storage.com/apple-icon.png", type: "image/png" },
     ],
-    other: [
-      { rel: "manifest", url: "/site.webmanifest" }
-    ]
   },
+  manifest: "/manifest.json",
   
   // 7. Mobile UI
   appleWebApp: {
