@@ -8,7 +8,7 @@ EventEmitter.defaultMaxListeners = 25;
 const stsHeader = `max-age=31536000; includeSubDomains; preload`;
 
 // Content Security Policy
-const cspHeader = `default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://public.blob.vercel-storage.com https://www.transparenttextures.com https://images.unsplash.com https://invatlan.hn https://cdn.prod.website-files.com https://www.bancatlan.hn; media-src 'self' blob: data: https://public.blob.vercel-storage.com; connect-src 'self' https://public.blob.vercel-storage.com;
+const cspHeader = `default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://*.public.blob.vercel-storage.com https://www.transparenttextures.com https://images.unsplash.com https://invatlan.hn https://cdn.prod.website-files.com https://www.bancatlan.hn; media-src 'self' blob: data: https://*.public.blob.vercel-storage.com; connect-src 'self' https://*.public.blob.vercel-storage.com;
   object-src 'self'; frame-ancestors 'none';`
 
 const referrerPolicy = 'no-referrer';
