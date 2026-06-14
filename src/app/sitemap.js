@@ -54,7 +54,16 @@ function sitemap() {
         var isRoot = route.url === '';
         return __assign({ url: "".concat(baseUrl).concat(route.url), lastModified: lastModified, changeFrequency: route.changeFreq, priority: route.priority }, (isRoot && {
             images: rootImages.map(function (img) {
-                return img.startsWith('/_next') ? "".concat(baseUrl).concat(img) : decodeURIComponent(img.split('?url=')[1] || img);
+                if (img.includes('?url=')) {
+                    // Extracts the encoded URL, splits off the Next.js '&w=' parameters, and decodes it to a clean link
+                    var rawUrl = img.split('?url=')[1].split('&')[0];
+                    return decodeURIComponent(rawUrl);
+                }
+                // Fallback for native URLs (like Unsplash) while dropping unescaped query variables
+                if (img.includes('?')) {
+                    return img.split('&')[0];
+                }
+                return img;
             })
         }));
     });
