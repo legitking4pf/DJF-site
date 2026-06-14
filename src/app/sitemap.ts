@@ -3,7 +3,6 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://djf-site.vercel.app'
   const lastModified = new Date('2026-06-14T01:43:05+01:00')
-
   const routes = [
     { url: '', priority: 1.0, changeFreq: 'yearly' as const },
     { url: '/dossier/digital-integration', priority: 0.8, changeFreq: 'yearly' as const },
@@ -11,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/dashboard', priority: 1.0, changeFreq: 'yearly' as const },
     { url: '/contact', priority: 1.0, changeFreq: 'yearly' as const },
   ]
-
   const rootImages = [
     '/_next/image?url=https%3A%2F%2Fhv4w1qmfjrk8zaij.public.blob.vercel-storage.com%2Fsmal+screen+background&w=640&q=75',
     '/_next/image?url=https%3A%2F%2Fhv4w1qmfjrk8zaij.public.blob.vercel-storage.com%2Fmain.png&w=640&q=75',
@@ -41,10 +39,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/_next/image?url=https%3A%2F%2Fcdn.prod.website-files.com%2F68363d5a1fb3537423263bff%2F6841f518e2c7e3dea8ea93a4_ceapi-2024-portada.jpg&w=256&q=75',
     '/_next/image?url=https%3A%2F%2Fcdn.prod.website-files.com%2F68363d5a1fb3537423263bff%2F683fcb25cfb6588ffd8a90be_Toma+ae%CC%81rea+AFP+Confia+-+El+Salvador-p-1080.jpg&w=256&q=75',
   ]
-
   return routes.map((route) => {
     const isRoot = route.url === ''
-    
     return {
       url: `${baseUrl}${route.url}`,
       lastModified,
